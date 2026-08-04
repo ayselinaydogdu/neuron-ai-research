@@ -22,36 +22,41 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 1 — Ayselin
 
-**Search:**
-- Location-based search (city, village and postcode) available.
-- Price, number of bedrooms and property type filters present.
-- With Heads Up Property Alerts, users can create listing notifications based on their criteria.
-- No natural-language search.
-- No AI-powered smart search suggestions or personalised search experience.
+## Search
 
-**Listing Detail:**
-- Property descriptions, photos, Floor Plan, Map and EPC available.
-- No AI-powered Property Summary.
-- No AI Property Comparison feature.
-- No AI-powered Area Insights or Commute Insights.
-- EPC and Floor Plan documents aren't explained by AI.
-- No AI-powered Property Highlights or Lifestyle Matching.
-- No AI-powered personalised similar-listing recommendations.
+- Location-based search (city, village, and postcode) is available.
+- Standard filters such as price, bedrooms, and property type are available.
+- Heads Up Property Alerts allow users to receive notifications based on their search criteria.
+- Natural Language Search is not available.
+- AI-powered smart search suggestions or query interpretation are not available.
 
-**Valuation:**
-- Instant Valuation and Expert Valuation services available.
-- No AI-powered price analysis or valuation explanations.
-- No AI-powered cost analysis (Mortgage/Cost Insights).
+## Property Details
 
-**Contact:**
-- Contact form, phone, email and office details available.
-- No Live Chat or AI Chat Assistant.
-- No AI-powered appointment scheduling or lead qualification system.
+- Property descriptions, photos, Floor Plans, Maps, and EPC certificates are available.
+- An AI-generated Property Summary is not available.
+- AI-powered Property Comparison is not available.
+- AI-powered Area Insights and Commute Insights are not provided.
+- EPC certificates and Floor Plans are not explained or summarized by AI.
+- AI-powered Property Highlights and Lifestyle Matching are not available.
+- AI-powered personalized similar property recommendations were not observed.
 
-**Technical / General:**
-- Modern, user-friendly interface.
-- With Heads Up Property Alerts, users get automatic listing notifications based on their search criteria.
-- Core property functions work well.
+## Valuation
+
+- Instant Valuation and Expert Valuation services are available.
+- AI-powered property price analysis or valuation explanations are not available.
+- Mortgage Calculator or AI-powered cost analysis was not observed.
+
+## Contact
+
+- Contact forms, telephone numbers, email addresses, and office information are available.
+- No Live Chat or AI Chat Assistant is available.
+- AI-powered viewing scheduling and lead qualification are not available.
+
+## Technical / General
+
+- The website has a modern and user-friendly interface.
+- Heads Up Property Alerts allow users to receive automatic notifications based on their saved search criteria.
+- Core real estate features function effectively.
 
 **Status:** Done
 
@@ -137,34 +142,39 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 1 — Ayselin
 
-**Arama:**
+## Arama
+
 - Konum (şehir, köy ve postcode) bazlı arama mevcut.
 - Fiyat, oda sayısı ve property type filtreleri bulunuyor.
-- Heads Up Property Alerts ile kullanıcı kriterlerine göre ilan bildirimi oluşturabiliyor.
+- Heads Up Property Alerts ile kullanıcılar arama kriterlerine göre ilan bildirimi oluşturabiliyor.
 - Doğal dil araması bulunmuyor.
-- AI destekli akıllı arama önerileri ve kişiselleştirilmiş arama deneyimi bulunmuyor.
+- AI destekli akıllı arama önerileri veya sorgu yorumlama bulunmuyor.
 
-**İlan Detay:**
-- Property açıklamaları, fotoğraflar, Floor Plan, Map ve EPC mevcut.
+## İlan Detay
+
+- Property açıklamaları, fotoğraflar, Floor Plan, Map ve EPC belgeleri mevcut.
 - AI destekli Property Summary bulunmuyor.
 - AI Property Comparison özelliği bulunmuyor.
 - AI destekli Area Insights ve Commute Insights sunulmuyor.
 - EPC ve Floor Plan belgeleri AI tarafından açıklanmıyor.
 - AI destekli Property Highlights veya Lifestyle Matching bulunmuyor.
-- AI destekli kişiselleştirilmiş benzer ilan önerileri bulunmuyor.
+- AI destekli kişiselleştirilmiş benzer ilan önerileri gözlemlenmedi.
 
-**Değerleme:**
+## Değerleme
+
 - Instant Valuation ve Expert Valuation hizmetleri mevcut.
 - AI destekli fiyat analizi veya valuation açıklamaları bulunmuyor.
-- AI destekli maliyet analizi (Mortgage/Cost Insights) sunulmuyor.
+- Mortgage Calculator veya AI destekli maliyet analizi gözlemlenmedi.
 
-**İletişim:**
+## İletişim
+
 - İletişim formu, telefon, e-posta ve ofis bilgileri mevcut.
-- Canlı sohbet (Live Chat) veya AI Chat Assistant bulunmuyor.
+- Live Chat veya AI Chat Assistant bulunmuyor.
 - AI destekli randevu planlama ve lead qualification sistemi bulunmuyor.
 
-**Teknik/Genel:**
-- Modern ve kullanıcı dostu arayüz.
+## Teknik / Genel
+
+- Modern ve kullanıcı dostu bir arayüze sahip.
 - Heads Up Property Alerts ile kullanıcılar arama kriterlerine göre otomatik ilan bildirimi alabiliyor.
 - Temel emlak fonksiyonları başarılı şekilde çalışıyor.
 
