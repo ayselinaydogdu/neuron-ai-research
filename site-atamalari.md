@@ -4,27 +4,27 @@
 
 | No | Site URL | Atanan Kişi | Durum |
 |---|---|---|---|
-| 1 | https://kineticestateagents.co.uk/ | Kişi 1 | Yapılmadı |
-| 2 | https://townandcityhomes.com/ | Kişi 2 | Yapılmadı |
-| 3 | https://harrisonshomes.co.uk/ | Kişi 3 | Yapılmadı |
-| 4 | https://lloydsestates.com/ | Kişi 4 | Yapılmadı |
-| 5 | https://thepropertycloud.uk/ | Kişi 1 | Yapılmadı |
-| 6 | https://propertyconnections.uk.com/ | Kişi 2 | Yapılmadı |
-| 7 | https://keystoneestateagents.co.uk/ | Kişi 3 | Yapılmadı |
-| 8 | https://jacksonsproperty.co.uk/ | Kişi 4 | Yapılmadı |
-| 9 | https://harrisandwood.co.uk/ | Kişi 1 | Yapılmadı |
-| 10 | https://roderickthomas.co.uk/ | Kişi 2 | Yapılmadı |
-| 11 | https://copeandco.co.uk/ | Kişi 3 | Yapılmadı |
-| 12 | https://priceestateagents.uk/ | Kişi 4 | Yapılmadı |
-| 13 | https://keysandlee.co.uk/ | Kişi 1 | Yapılmadı |
-| 14 | https://nicholsonsestateagents.co.uk/ | Kişi 2 | Yapılmadı |
-| 15 | https://no86estateagency.co.uk/ | Kişi 3 | Yapılmadı |
-| 16 | https://beercocks.com/ | Kişi 4 | Yapılmadı |
-| 17 | https://greyandco.co.uk/ | Kişi 1 | Yapılmadı |
-| 18 | https://allen-residential.co.uk/ | Kişi 2 | Yapılmadı |
-| 19 | https://brownsestateagents.co.uk/ | Kişi 3 | Yapılmadı |
-| 20 | https://bydesignhomes.com/ | Kişi 4 | Yapılmadı |
-| 21 | https://courtyardhomes.co.uk/ | Kişi 1 | Yapılmadı |
+| 1 | https://kineticestateagents.co.uk/ | Görkem | Yapılmadı |
+| 2 | https://townandcityhomes.com/ | Görkem | Yapılmadı |
+| 3 | https://harrisonshomes.co.uk/ | Görkem | Yapılmadı |
+| 4 | https://lloydsestates.com/ | Görkem | Yapılmadı |
+| 5 | https://thepropertycloud.uk/ | Görkem | Yapılmadı |
+| 6 | https://propertyconnections.uk.com/ | Ayselin | Yapılmadı |
+| 7 | https://keystoneestateagents.co.uk/ | Ayselin | Yapılmadı |
+| 8 | https://jacksonsproperty.co.uk/ | Ayselin | Yapılmadı |
+| 9 | https://harrisandwood.co.uk/ | Ayselin | Yapılmadı |
+| 10 | https://roderickthomas.co.uk/ | Ayselin | Yapılmadı |
+| 11 | https://copeandco.co.uk/ | Yasemin | Yapılmadı |
+| 12 | https://priceestateagents.uk/ | Yasemin| Yapılmadı |
+| 13 | https://keysandlee.co.uk/ | Yasemin | Yapılmadı |
+| 14 | https://nicholsonsestateagents.co.uk/ | Yasemin | Yapılmadı |
+| 15 | https://no86estateagency.co.uk/ |Yasemin | Yapılmadı |
+| 16 | https://beercocks.com/ | Berkay| Yapılmadı |
+| 17 | https://greyandco.co.uk/ | Berkay | Yapılmadı |
+| 18 | https://allen-residential.co.uk/ | Berkay | Yapılmadı |
+| 19 | https://brownsestateagents.co.uk/ | Berkay | Yapılmadı |
+| 20 | https://bydesignhomes.com/ | Berkay | Yapılmadı |
+| 21 | https://courtyardhomes.co.uk/ | Berkay | Yapılmadı |
 
 Durum: `Yapılmadı` / `Devam Ediyor` / `Tamamlandı` / `Çapraz Kontrol Bekliyor` / `Çapraz Kontrol Tamamlandı`.
 
