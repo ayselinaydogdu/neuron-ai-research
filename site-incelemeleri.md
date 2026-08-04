@@ -255,11 +255,36 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 **Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
 **Notlar (Ayselin):**
-- Arama:
-- İlan Detay:
-- Değerleme:
-- İletişim:
-- Teknik/Genel:
+**Arama:**
+- Konum (şehir, köy ve postcode) bazlı arama mevcut.
+- Fiyat, oda sayısı ve property type filtreleri bulunuyor.
+- Heads Up Property Alerts ile kullanıcı kriterlerine göre ilan bildirimi oluşturabiliyor.
+- Doğal dil araması (Natural Language Search) bulunmuyor.
+- AI destekli akıllı arama önerileri ve kişiselleştirilmiş arama deneyimi bulunmuyor.
+
+**İlan Detay:**
+- Property açıklamaları, fotoğraflar, Floor Plan, Map ve EPC mevcut.
+- AI destekli Property Summary bulunmuyor.
+- AI Property Comparison özelliği bulunmuyor.
+- AI destekli Area Insights ve Commute Insights sunulmuyor.
+- EPC ve Floor Plan belgeleri AI tarafından açıklanmıyor.
+- AI destekli Property Highlights veya Lifestyle Matching bulunmuyor.
+- AI destekli kişiselleştirilmiş benzer ilan önerileri bulunmuyor.
+
+**Değerleme:**
+- Instant Valuation ve Expert Valuation hizmetleri mevcut.
+- AI destekli fiyat analizi veya valuation açıklamaları bulunmuyor.
+- AI destekli maliyet analizi (Mortgage/Cost Insights) sunulmuyor.
+
+**İletişim:**
+- İletişim formu, telefon, e-posta ve ofis bilgileri mevcut.
+- Canlı sohbet (Live Chat) veya AI Chat Assistant bulunmuyor.
+- AI destekli randevu planlama ve lead qualification sistemi bulunmuyor.
+
+**Teknik/Genel:**
+- Modern ve kullanıcı dostu arayüz.
+- Heads Up Property Alerts özelliği ile kullanıcılar arama kriterlerine göre otomatik ilan bildirimi alabiliyor.
+- Temel emlak fonksiyonları başarılı şekilde çalışıyor.
 
 **Çapraz Kontrol Notları:**
 - 
