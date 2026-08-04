@@ -32,9 +32,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 1. https://kineticestateagents.co.uk/
 
-**Atanan:** Kişi 1 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Görkem · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 1):**
+**Notlar (Görkem):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -48,9 +48,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 2. https://townandcityhomes.com/
 
-**Atanan:** Kişi 2 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Görkem · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 2):**
+**Notlar (Görkem):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -64,9 +64,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 3. https://harrisonshomes.co.uk/
 
-**Atanan:** Kişi 3 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Görkem · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 3):**
+**Notlar (Görkem):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -80,9 +80,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 4. https://lloydsestates.com/
 
-**Atanan:** Kişi 4 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Görkem · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 4):**
+**Notlar (Görkem):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -96,9 +96,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 5. https://thepropertycloud.uk/
 
-**Atanan:** Kişi 1 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Görkem · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 1):**
+**Notlar (Görkem):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -112,9 +112,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 6. https://propertyconnections.uk.com/
 
-**Atanan:** Kişi 2 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 2):**
+**Notlar (Ayselin):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -128,9 +128,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 7. https://keystoneestateagents.co.uk/
 
-**Atanan:** Kişi 3 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 3):**
+**Notlar (Ayselin):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -144,9 +144,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 8. https://jacksonsproperty.co.uk/
 
-**Atanan:** Kişi 4 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 4):**
+**Notlar (Ayselin):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -160,9 +160,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 9. https://harrisandwood.co.uk/
 
-**Atanan:** Kişi 1 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 1):**
+**Notlar (Ayselin):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -176,9 +176,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 10. https://roderickthomas.co.uk/
 
-**Atanan:** Kişi 2 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 2):**
+**Notlar (Ayselin):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -192,9 +192,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 11. https://copeandco.co.uk/
 
-**Atanan:** Kişi 3 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Yasemin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 3):**
+**Notlar (Yasemin):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -208,9 +208,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 12. https://priceestateagents.uk/
 
-**Atanan:** Kişi 4 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Yasemin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 4):**
+**Notlar (Yasemin):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -224,9 +224,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 13. https://keysandlee.co.uk/
 
-**Atanan:** Kişi 1 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Yasemin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 1):**
+**Notlar (Yasemin):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -240,9 +240,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 14. https://nicholsonsestateagents.co.uk/
 
-**Atanan:** Kişi 2 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Yasemin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 2):**
+**Notlar (Yasemin):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -256,9 +256,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 15. https://no86estateagency.co.uk/
 
-**Atanan:** Kişi 3 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Yasemin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 3):**
+**Notlar (Yasemin):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -272,9 +272,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 16. https://beercocks.com/
 
-**Atanan:** Kişi 4 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Berkay · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 4):**
+**Notlar (Berkay):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -288,9 +288,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 17. https://greyandco.co.uk/
 
-**Atanan:** Kişi 1 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Berkay · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 1):**
+**Notlar (Berkay):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -304,9 +304,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 18. https://allen-residential.co.uk/
 
-**Atanan:** Kişi 2 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Berkay · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 2):**
+**Notlar (Berkay):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -320,9 +320,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 19. https://brownsestateagents.co.uk/
 
-**Atanan:** Kişi 3 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Berkay · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 3):**
+**Notlar (Berkay):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -336,9 +336,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 20. https://bydesignhomes.com/
 
-**Atanan:** Kişi 4 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Berkay · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 4):**
+**Notlar (Berkay):**
 - Arama:
 - İlan Detay:
 - Değerleme:
@@ -352,9 +352,9 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 21. https://courtyardhomes.co.uk/
 
-**Atanan:** Kişi 1 · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Berkay · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
-**Notlar (Kişi 1):**
+**Notlar (Berkay):**
 - Arama:
 - İlan Detay:
 - Değerleme:
