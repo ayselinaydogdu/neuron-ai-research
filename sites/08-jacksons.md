@@ -22,32 +22,37 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 1 — Ayselin
 
-**Search:**
-- Location, price, number of bedrooms and other classic filters available.
-- The search box is address/location-focused only.
-- Natural-language search is not supported (queries like "3 bedroom family", "house under £300k" are treated as an address).
-- No AI-powered smart search or query interpretation.
+## Search
 
-**Listing Detail:**
-- An AI Chat Assistant is present and can answer basic questions about a listing ("Is this property suitable for a family?").
-- For questions needing deeper analysis ("What are the disadvantages of this property?") the AI defers to an agent instead of answering.
-- No AI Property Comparison feature.
-- Floor Plan and EPC documents exist but aren't summarised or explained by AI.
-- Google Maps is shown, but no AI-powered Area Insights or Commute Insights.
+- Traditional filter-based search is available, including location, price, bedrooms, and other standard filters.
+- The search bar is focused on address/location-based searches.
+- Natural Language Search is not supported. Queries such as "3 bedroom family" or "house under £300k" are treated as location searches rather than search intent.
+- AI-powered smart search and query interpretation are not available.
 
-**Valuation:**
-- Online valuation service available.
-- Stamp Duty and Mortgage Calculator present.
-- The calculators only show a result; no AI-powered cost analysis or financial advice.
+## Property Details
 
-**Contact:**
-- AI Chat Assistant available.
-- Contact form and viewing request can be created.
-- The AI routes users to an agent rather than answering complex questions.
+- An AI Chat Assistant is available and can answer basic questions about a property.
+- An AI-generated Property Summary is not available.
+- AI-powered Property Comparison is not available.
+- Floor Plans and EPC certificates are available but are not summarized or explained by AI.
+- Google Maps is provided, but AI-powered Area Insights and Commute Insights are not available.
 
-**Technical / General:**
-- Modern, user-friendly interface.
-- AI chatbot integrated into the platform.
+## Valuation
+
+- An Online Valuation service is available.
+- Stamp Duty Calculator and Mortgage Calculator are available.
+- The calculators provide calculation results only and do not offer AI-powered financial analysis or recommendations.
+
+## Contact
+
+- An AI Chat Assistant is available.
+- Users can submit contact forms and request property viewings.
+- For complex or detailed enquiries, the AI assistant directs users to an estate agent.
+
+## Technical / General
+
+- The website has a modern and user-friendly interface.
+- An AI chatbot is integrated into the platform.
 
 **Status:** Done
 
@@ -133,31 +138,36 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 1 — Ayselin
 
-**Arama:**
+## Arama
+
 - Konum, fiyat, oda sayısı ve diğer klasik filtreler mevcut.
 - Arama kutusu yalnızca adres/konum odaklı çalışıyor.
-- Doğal dil araması desteklenmiyor ("3 bedroom family", "house under £300k" gibi sorgular adres olarak algılanıyor).
+- Doğal dil araması (Natural Language Search) desteklenmiyor. "3 bedroom family" veya "house under £300k" gibi serbest metin sorguları adres olarak algılanıyor.
 - AI destekli akıllı arama ve sorgu yorumlama bulunmuyor.
 
-**İlan Detay:**
-- AI Chat Assistant mevcut ve ilan hakkında temel soruları cevaplayabiliyor ("Is this property suitable for a family?").
-- AI, detaylı analiz isteyen sorularda ("What are the disadvantages of this property?") cevap vermek yerine emlak danışmanına yönlendiriyor.
+## İlan Detay
+
+- AI Chat Assistant mevcut ve ilan hakkında temel soruları yanıtlayabiliyor.
+- AI destekli Property Summary (ilan özeti) bulunmuyor.
 - AI Property Comparison özelliği bulunmuyor.
 - Floor Plan ve EPC belgeleri mevcut ancak AI tarafından özetlenmiyor veya açıklanmıyor.
 - Google Maps gösteriliyor ancak AI destekli Area Insights veya Commute Insights sunulmuyor.
 
-**Değerleme:**
-- Online valuation hizmeti mevcut.
-- Stamp Duty ve Mortgage Calculator bulunuyor.
+## Değerleme
+
+- Online Valuation hizmeti mevcut.
+- Stamp Duty Calculator ve Mortgage Calculator bulunuyor.
 - Hesaplayıcılar yalnızca sonuç gösteriyor; AI destekli maliyet analizi veya finansal öneri sunmuyor.
 
-**İletişim:**
+## İletişim
+
 - AI Chat Assistant mevcut.
 - İletişim formu ve viewing talebi oluşturulabiliyor.
-- AI, karmaşık soruları yanıtlamak yerine kullanıcıyı danışmana yönlendiriyor.
+- Karmaşık veya detaylı sorularda kullanıcı emlak danışmanına yönlendiriliyor.
 
-**Teknik/Genel:**
-- Modern ve kullanıcı dostu arayüz.
+## Teknik / Genel
+
+- Modern ve kullanıcı dostu bir arayüze sahip.
 - AI chatbot platforma entegre edilmiş.
 
 **Durum:** Yapıldı
