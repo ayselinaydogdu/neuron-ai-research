@@ -168,11 +168,40 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 **Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
 **Notlar (Ayselin):**
-- Arama:
-- İlan Detay:
-- Değerleme:
-- İletişim:
-- Teknik/Genel:
+### https://jacksonsproperty.co.uk/
+
+**Atanan:** Ayselin
+**Çapraz Kontrol Eden:** (belirlenecek)
+**Durum:** Tamamlandı
+
+**Notlar (Ayselin):**
+
+**Arama:**
+- Konum, fiyat, oda sayısı ve diğer klasik filtreler mevcut.
+- Arama kutusu yalnızca adres/konum odaklı çalışıyor.
+- Doğal dil araması (Natural Language Search) desteklenmiyor. ("3 bedroom family", "house under £300k" gibi sorgular adres olarak algılanıyor.)
+- AI destekli akıllı arama ve sorgu yorumlama bulunmuyor.
+
+**İlan Detay:**
+- AI Chat Assistant mevcut ve ilan hakkında temel soruları cevaplayabiliyor (ör. "Is this property suitable for a family?").
+- AI, detaylı analiz isteyen sorularda (ör. "What are the disadvantages of this property?") cevap vermek yerine emlak danışmanına yönlendiriyor.
+- AI Property Comparison özelliği bulunmuyor.
+- Floor Plan ve EPC belgeleri mevcut ancak AI tarafından özetlenmiyor veya açıklanmıyor.
+- Google Maps gösteriliyor ancak AI destekli Area Insights veya Commute Insights sunulmuyor.
+
+**Değerleme:**
+- Online valuation hizmeti mevcut.
+- Stamp Duty ve Mortgage Calculator bulunuyor.
+- Hesaplayıcılar yalnızca sonuç gösteriyor; AI destekli maliyet analizi veya finansal öneriler sunulmuyor.
+
+**İletişim:**
+- AI Chat Assistant mevcut.
+- İletişim formu ve viewing talebi oluşturulabiliyor.
+- AI, karmaşık soruları yanıtlamak yerine kullanıcıyı danışmana yönlendiriyor.
+
+**Teknik/Genel:**
+- Modern ve kullanıcı dostu arayüz.
+- AI chatbot platforma entegre edilmiş.
 
 **Çapraz Kontrol Notları:**
 - 
