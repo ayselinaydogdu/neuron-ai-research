@@ -9,10 +9,10 @@
 | 3 | https://harrisonshomes.co.uk/ | Görkem | Yapılmadı |
 | 4 | https://lloydsestates.com/ | Görkem | Yapılmadı |
 | 5 | https://thepropertycloud.uk/ | Görkem | Yapılmadı |
-| 6 | https://propertyconnections.uk.com/ | Ayselin | Yapıldı |
+| 6 | https://propertyconnections.uk.com/ | Ayselin | Çapraz Kontrol Bekliyor |
 | 7 | https://keystoneestateagents.co.uk/ | Ayselin | Yapılmadı |
-| 8 | https://jacksonsproperty.co.uk/ | Ayselin | Yapıldı |
-| 9 | https://harrisandwood.co.uk/ | Ayselin | Yapıldı |
+| 8 | https://jacksonsproperty.co.uk/ | Ayselin | Çapraz Kontrol Bekliyor |
+| 9 | https://harrisandwood.co.uk/ | Ayselin | Çapraz Kontrol Bekliyor |
 | 10 | https://roderickthomas.co.uk/ | Ayselin | Yapılmadı |
 | 11 | https://copeandco.co.uk/ | Yasemin | Yapılmadı |
 | 12 | https://priceestateagents.uk/ | Yasemin| Yapılmadı |
