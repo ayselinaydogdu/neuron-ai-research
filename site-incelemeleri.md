@@ -115,11 +115,32 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 **Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
 
 **Notlar (Ayselin):**
-- Arama:
-- İlan Detay:
-- Değerleme:
-- İletişim:
-- Teknik/Genel:
+**Arama:**
+- Klasik filtre tabanlı arama mevcut (price, bedrooms, property type vb.).
+- Doğal dil araması (Natural Language Search) bulunmuyor. Örneğin "3 bedroom house under £300k near schools" gibi sorgular desteklenmiyor.
+
+**İlan Detay:**
+- Property açıklamaları detaylı ancak oldukça uzun; AI destekli özet (Property Summary) bulunmuyor.
+- Kullanıcı ilan hakkında soru soramıyor (AI Property Q&A yok).
+- "Ideal for..." gibi yaşam tarzına yönelik öneriler bulunmuyor.
+- AI destekli Property Highlights, Property Comparison ve kişiselleştirilmiş benzer ilan önerileri bulunmuyor.
+- Google Maps ile konum gösteriliyor ancak AI destekli Commute Insights veya Area Insights sunulmuyor.
+- EPC, Floor Plan gibi belgeler mevcut ancak AI tarafından açıklanmıyor.
+
+**Değerleme:**
+- Instant Valuation ve Mortgage Calculator mevcut.
+- Mortgage Calculator yalnızca hesaplama yapıyor; AI destekli finansal yorum veya öneriler sunmuyor.
+- AI destekli valuation açıklamaları veya kişiselleştirilmiş öneriler bulunmuyor.
+
+**İletişim:**
+- İletişim formu ve viewing talebi mevcut.
+- AI chatbot veya AI destekli müşteri asistanı bulunmuyor.
+- Kullanıcı ilan hakkında doğal dilde soru soramıyor.
+
+**Teknik/Genel:**
+- Site modern ve kullanıcı dostu.
+- Google Maps entegrasyonu mevcut.
+- Temel emlak fonksiyonları (arama, filtreleme, valuation, mortgage calculator) başarılı çalışıyor.
 
 **Çapraz Kontrol Notları:**
 - 
