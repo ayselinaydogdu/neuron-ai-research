@@ -112,7 +112,7 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 6. https://propertyconnections.uk.com/
 
-**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapıldı
 
 **Notlar (Ayselin):**
 **Arama:**
@@ -165,7 +165,7 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 8. https://jacksonsproperty.co.uk/
 
-**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapıldı
 
 **Notlar (Ayselin):**
 ### https://jacksonsproperty.co.uk/
@@ -210,7 +210,7 @@ Kısa ve somut yazın. Kontrol noktaları için `kontrol-listesi.md`'ye bakın.
 
 ### 9. https://harrisandwood.co.uk/
 
-**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapılmadı
+**Atanan:** Ayselin · **Çapraz Kontrol Eden:** _(belirlenecek)_ · **Durum:** Yapıldı
 
 **Notlar (Ayselin):**
 **Arama:**
