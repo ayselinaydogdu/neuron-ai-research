@@ -22,32 +22,43 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 1 — Ayselin
 
-**Search:**
-- Classic filter-based search (price, bedrooms, property type, etc.).
-- No natural-language search. Queries like "3 bedroom house under £300k near schools" are not supported.
+## Search
 
-**Listing Detail:**
-- Property descriptions are detailed but quite long; no AI-powered summary (Property Summary).
-- Users can't ask questions about a listing (no AI Property Q&A).
-- No lifestyle-oriented suggestions such as "Ideal for...".
-- No AI-powered Property Highlights, Property Comparison, or personalised similar-listing recommendations.
-- Location shown via Google Maps, but no AI-powered Commute Insights or Area Insights.
-- Documents like EPC and Floor Plan exist but aren't explained by AI.
+- Traditional filter-based search is available (price, bedrooms, property type, etc.).
+- Natural Language Search is not available. Queries such as "3 bedroom house under £300k near schools" are not supported.
+- Smart query interpretation (e.g., typo correction, synonym recognition, or AI-assisted result refinement) is not available.
+- Saved searches or property alerts are not available.
 
-**Valuation:**
-- Instant Valuation and Mortgage Calculator available.
-- The Mortgage Calculator only computes; no AI-powered financial commentary or advice.
-- No AI-powered valuation explanations or personalised recommendations.
+## Property Details
 
-**Contact:**
-- Contact form and viewing request available.
-- No AI chatbot or AI-powered customer assistant.
-- Users can't ask about a listing in natural language.
+- Property descriptions are detailed but lengthy; an AI-generated Property Summary is not available.
+- Users cannot ask free-form questions about a property (AI Property Q&A is not available).
+- Lifestyle recommendations such as "Ideal for..." are not provided.
+- AI-powered Property Highlights, Property Comparison, and personalized similar property recommendations are not available.
+- Property locations are displayed using Google Maps; however, AI-powered Area Insights and Commute Insights are not available.
+- EPC certificates and Floor Plans are provided, but they are not explained or summarized by AI.
 
-**Technical / General:**
-- Site is modern and user-friendly.
-- Google Maps integration present.
-- Core property functions (search, filtering, valuation, mortgage calculator) work well.
+## Valuation
+
+- Instant Valuation and a Mortgage Calculator are available.
+- The Mortgage Calculator performs calculations only and does not provide AI-powered financial advice or recommendations.
+- AI-generated valuation explanations or personalized valuation insights are not available.
+
+## Contact
+
+- A contact form and property viewing request are available.
+- No AI chatbot or AI-powered customer assistant is provided.
+- Users cannot ask natural language questions about a property.
+- AI-powered lead qualification or visitor prioritization is not available.
+- AI-assisted viewing scheduling and out-of-hours automated responses are not available.
+
+## Technical / General
+
+- The website has a modern and user-friendly interface.
+- Google Maps integration is available.
+- Search, filters, and contact forms are usable on mobile devices.
+- No obvious AI service or Neuron API integrations were observed during the inspection.
+- Core real estate features (search, filtering, valuation, and mortgage calculator) function effectively.
 
 **Status:** Done
 
@@ -133,11 +144,15 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 1 — Ayselin
 
-**Arama:**
+## Arama
+
 - Klasik filtre tabanlı arama mevcut (price, bedrooms, property type vb.).
 - Doğal dil araması (Natural Language Search) bulunmuyor. "3 bedroom house under £300k near schools" gibi sorgular desteklenmiyor.
+- Akıllı öneri / sorgu yorumlama (yazım hatası düzeltme, eş anlamlı anlama veya AI destekli sonuç iyileştirme) bulunmuyor.
+- Kayıtlı arama veya otomatik ilan bildirimleri (Alerts) sunulmuyor.
 
-**İlan Detay:**
+## İlan Detay
+
 - Property açıklamaları detaylı ancak oldukça uzun; AI destekli özet (Property Summary) bulunmuyor.
 - Kullanıcı ilan hakkında soru soramıyor (AI Property Q&A yok).
 - "Ideal for..." gibi yaşam tarzına yönelik öneriler bulunmuyor.
@@ -145,19 +160,26 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 - Google Maps ile konum gösteriliyor ancak AI destekli Commute Insights veya Area Insights sunulmuyor.
 - EPC, Floor Plan gibi belgeler mevcut ancak AI tarafından açıklanmıyor.
 
-**Değerleme:**
+## Değerleme
+
 - Instant Valuation ve Mortgage Calculator mevcut.
 - Mortgage Calculator yalnızca hesaplama yapıyor; AI destekli finansal yorum veya öneri sunmuyor.
 - AI destekli valuation açıklamaları veya kişiselleştirilmiş öneriler bulunmuyor.
 
-**İletişim:**
+## İletişim
+
 - İletişim formu ve viewing talebi mevcut.
 - AI chatbot veya AI destekli müşteri asistanı bulunmuyor.
 - Kullanıcı ilan hakkında doğal dilde soru soramıyor.
+- AI destekli lead qualification (ön eleme/önceliklendirme) bulunmuyor.
+- AI destekli otomatik viewing planlama veya mesai dışı otomatik yanıt sistemi bulunmuyor.
 
-**Teknik/Genel:**
+## Teknik / Genel
+
 - Site modern ve kullanıcı dostu.
 - Google Maps entegrasyonu mevcut.
+- Mobil cihazlarda temel arama, filtreleme ve iletişim formları kullanılabiliyor.
+- İnceleme sırasında AI servislerine veya Neuron API'lerine ait belirgin API entegrasyonları gözlemlenmedi.
 - Temel emlak fonksiyonları (arama, filtreleme, valuation, mortgage calculator) başarılı çalışıyor.
 
 **Durum:** Yapıldı
