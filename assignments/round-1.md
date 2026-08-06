@@ -85,7 +85,7 @@ dosyasında **Tur 1** bloğunu doldurun, bitirince buradaki kutucuğu işaretley
 
 ### Yasemin — Grup C (11–15)
 
-- [ ] 11 · copeandco.co.uk → ../sites/11-copeandco.md
+- [x] 11 · copeandco.co.uk → ../sites/11-copeandco.md
 - [ ] 12 · priceestateagents.uk → ../sites/12-price.md
 - [ ] 13 · keysandlee.co.uk → ../sites/13-keysandlee.md
 - [ ] 14 · nicholsonsestateagents.co.uk → ../sites/14-nicholsons.md
