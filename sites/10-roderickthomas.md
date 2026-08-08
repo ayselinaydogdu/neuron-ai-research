@@ -12,7 +12,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | Round | Reviewer | Status |
 |---|---|---|
 | 1 | Ayselin | Done |
-| 2 | Görkem | Not done |
+| 2 | Görkem | Done |
 | 3 | Berkay | Not done |
 | 4 | Yasemin | Not done |
 
@@ -63,21 +63,23 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 2 — Görkem
 
 **Search:**
--
+- Same platform search under a very different, heritage brand ("50 years of experience", rural Somerset — Castle Cary, Somerton, Wells). The contrast is striking: a traditional, long-established agency running the exact same modern-but-thin Neuron search as the young challenger brands. No natural language, no map, no type filter.
+- For rural/village stock this hurts more than in the towns: buyers think in villages and travel time, not radius circles, and there's no draw-on-map. **AI/area opportunity is strongest here** — village + commute insight suits an agency whose entire value proposition is deep local knowledge.
 
 **Listing Detail:**
--
+- Same Neuron template and gaps. A 50-year-old firm's real asset is local knowledge, yet the listing pages express none of it in structured form — same prose-description setup as everyone else, no AI summary/Q&A, thin map.
 
 **Valuation:**
--
+- Instant online estimate ("a starting point") + expert in-person. Same gated pattern across three regional offices.
 
 **Contact:**
--
+- Three regional phone numbers + contact form; no chat, no out-of-hours, no qualification.
 
 **Technical / General:**
--
+- Neuron/Iceberg, Vercel, S3 CDN. Google reviews, named team (Bridget/Lizzie/Harry), company reg — trust is solid and the heritage framing genuinely reassures.
+- Main takeaway across the round: even the most established, local-expertise-driven brand in my ten is under-served by the platform's generic search and listing pages. The strongest tenants and the weakest all hit the same platform ceiling — which is precisely why the fixes belong in Neuron, not in any one site.
 
-**Status:** Not done
+**Status:** Done
 
 ### Round 3 — Berkay
 
@@ -132,7 +134,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | Tur | İnceleyen | Durum |
 |---|---|---|
 | 1 | Ayselin | Yapıldı |
-| 2 | Görkem | Yapılmadı |
+| 2 | Görkem | Yapıldı |
 | 3 | Berkay | Yapılmadı |
 | 4 | Yasemin | Yapılmadı |
 
@@ -183,21 +185,23 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 2 — Görkem
 
 **Arama:**
--
+- Aynı platform araması, ama çok farklı bir köklü marka altında ("50 yıllık deneyim", kırsal Somerset — Castle Cary, Somerton, Wells). Kontrast çarpıcı: geleneksel, uzun soluklu bir acente, genç meydan-okuyucu markalarla birebir aynı modern-ama-zayıf Neuron aramasını çalıştırıyor. Doğal dil yok, harita yok, type filtresi yok.
+- Kırsal/köy stoğu için bu, kasabalardan daha çok canını yakıyor: alıcılar yarıçap daireleriyle değil köyler ve seyahat süresiyle düşünüyor ve haritaya-çizme yok. **AI/bölge fırsatı burada en güçlüsü** — köy + commute içgörüsü, tüm değer önermesi derin yerel bilgi olan bir acenteye yakışır.
 
 **İlan Detay:**
--
+- Aynı Neuron şablonu ve açıkları. 50 yıllık bir firmanın gerçek varlığı yerel bilgi, ama ilan sayfaları bunun hiçbirini yapılandırılmış biçimde ifade etmiyor — herkesle aynı düz-yazı-açıklama düzeni, AI özet/Q&A yok, zayıf harita.
 
 **Değerleme:**
--
+- Anlık online tahmin ("bir başlangıç noktası") + uzman yüz yüze. Üç bölgesel ofiste aynı kapı-tutan kalıp.
 
 **İletişim:**
--
+- Üç bölgesel telefon numarası + iletişim formu; chat yok, mesai dışı yok, kalifikasyon yok.
 
 **Teknik/Genel:**
--
+- Neuron/Iceberg, Vercel, S3 CDN. Google yorumları, isimli ekip (Bridget/Lizzie/Harry), şirket kaydı — güven sağlam ve köklülük çerçevesi gerçekten güven veriyor.
+- Turun ana çıkarımı: on sitem içindeki en köklü, yerel-uzmanlığa dayalı marka bile platformun jenerik arama ve ilan sayfalarınca yetersiz hizmet alıyor. En güçlü tenant'lar da en zayıflar da aynı platform tavanına çarpıyor — düzeltmelerin neden herhangi bir sitede değil, Neuron'da olması gerektiğinin tam nedeni bu.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Tur 3 — Berkay
 

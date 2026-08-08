@@ -12,7 +12,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | Round | Reviewer | Status |
 |---|---|---|
 | 1 | Ayselin | Done |
-| 2 | Görkem | Not done |
+| 2 | Görkem | Done |
 | 3 | Berkay | Not done |
 | 4 | Yasemin | Not done |
 
@@ -65,21 +65,25 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 2 — Görkem
 
 **Search:**
--
+- I agree with Ayselin's Round 1 (filter-only, no natural language) and can now add the platform context: having seen the whole Neuron group, this isn't a Property Connections choice — it's the untouched platform default. Buy/Rent toggle on the homepage; results page limited to price interval, min–max beds and radius 0–40mi; no type, no keyword, no map, list-only, sort = Suggested/price/date. Scottish agency (Livingston/Bathgate, SC company).
+- **AI opportunity (platform-level):** natural-language search mapped onto the shared filter API — reusable across every tenant, not just this one.
 
 **Listing Detail:**
--
+- Confirmed the same template as Group A: bullet key-features + long hand-written narrative, floorplan, sometimes video, no 360, no AI summary, no ask-a-question, area info as prose, thin map tab. The "similar" block is just "our latest properties" — newest-in, not matched to the viewer.
+- **AI opportunities:** listing summary + grounded Q&A, and a genuinely personalised "similar homes" using listing embeddings instead of latest-in.
 
 **Valuation:**
--
+- Instant tool (`valuation.propertyconnections.uk.com`) + in-person. Same as the group: it promises an "immediate estimate" but is really a gated lead form — collects details then follows up. The on-screen wording oversells what actually happens (I didn't submit it).
 
 **Contact:**
--
+- Form + phone (01506) + email; no chat, no out-of-hours, no lead qualification — the same generic single form for everyone.
+- **AI opportunity:** a lightweight out-of-hours assistant / lead qualifier grounded in this tenant's own stock + FAQs would at least acknowledge and triage enquiries when the office is closed.
 
 **Technical / General:**
--
+- Neuron/Iceberg, Vercel, S3 CDN. Trust is good (named-agent reviews — Kevin/Chris/Sarah, SC company reg, redress scheme).
+- Telling detail: the "A Different Kind Of Estate Agency" tagline is **identical to Jacksons (08)** — clear evidence of shared template copy across tenants, which reinforces that AI features should be built once at platform level, not per agency.
 
-**Status:** Not done
+**Status:** Done
 
 ### Round 3 — Berkay
 
@@ -134,7 +138,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | Tur | İnceleyen | Durum |
 |---|---|---|
 | 1 | Ayselin | Yapıldı |
-| 2 | Görkem | Yapılmadı |
+| 2 | Görkem | Yapıldı |
 | 3 | Berkay | Yapılmadı |
 | 4 | Yasemin | Yapılmadı |
 
@@ -187,21 +191,25 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 2 — Görkem
 
 **Arama:**
--
+- Ayselin'in Tur 1 gözlemine katılıyorum (sadece filtre, doğal dil yok) ve şimdi platform bağlamını ekleyebilirim: tüm Neuron grubunu gördükten sonra bunun Property Connections'a özel bir tercih olmadığı, dokunulmamış platform varsayılanı olduğu net. Ana sayfada Buy/Rent toggle; sonuç sayfası price interval, min–max beds ve 0–40mil yarıçapla sınırlı; type yok, keyword yok, harita yok, sadece liste, sıralama = Suggested/price/date. İskoç acente (Livingston/Bathgate, SC şirket).
+- **AI fırsatı (platform seviyesi):** paylaşılan filtre API'sine bağlanan doğal dil araması — sadece bu değil, her tenant için yeniden kullanılabilir.
 
 **İlan Detay:**
--
+- Grup A ile aynı şablon doğrulandı: bullet key-features + uzun elle yazılmış anlatı, floorplan, bazen video, 360 yok, AI özet yok, soru sorma yok, bölge bilgisi düz yazı, zayıf map sekmesi. "Similar" bloğu sadece "our latest properties" — en yeni, izleyiciye göre eşleştirilmiş değil.
+- **AI fırsatları:** ilan özeti + veriye dayalı Q&A, ve latest-in yerine listing embedding'leriyle gerçekten kişiselleştirilmiş "similar homes".
 
 **Değerleme:**
--
+- Anlık araç (`valuation.propertyconnections.uk.com`) + yüz yüze. Grupla aynı: "immediate estimate" vaat ediyor ama aslında kapı-tutan lead formu — bilgi toplayıp sonra dönüyor. Ekrandaki ifade gerçekte olanı abartıyor (göndermedim).
 
 **İletişim:**
--
+- Form + telefon (01506) + e-posta; chat yok, mesai dışı yok, lead qualification yok — herkese aynı tek tip form.
+- **AI fırsatı:** bu tenant'ın kendi stoğu + FAQ'larına dayalı hafif bir mesai dışı asistanı / lead qualifier, ofis kapalıyken enquiry'leri en azından karşılayıp önceliklendirir.
 
 **Teknik/Genel:**
--
+- Neuron/Iceberg, Vercel, S3 CDN. Güven iyi (isimli-danışman yorumları — Kevin/Chris/Sarah, SC şirket kaydı, redress scheme).
+- Anlamlı detay: "A Different Kind Of Estate Agency" tagline'ı **Jacksons (08) ile birebir aynı** — tenant'lar arası paylaşılan şablon metnine açık kanıt; bu da AI özelliklerinin acente başına değil, platform seviyesinde bir kez inşa edilmesi gerektiğini pekiştiriyor.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Tur 3 — Berkay
 

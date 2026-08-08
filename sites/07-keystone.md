@@ -12,7 +12,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | Round | Reviewer | Status |
 |---|---|---|
 | 1 | Ayselin | Not done |
-| 2 | Görkem | Not done |
+| 2 | Görkem | Done |
 | 3 | Berkay | Not done |
 | 4 | Yasemin | Not done |
 
@@ -57,21 +57,24 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 2 — Görkem
 
 **Search:**
--
+- Same platform search. Flintshire/Chester (01244). Homepage teases "Latest properties for sale in Flintshire" but has no on-page filters — you go to `/properties` for the standard price/beds/radius set. No type, no keyword, no natural language, no map, list-only.
+- "Register for Property Alerts" is present (the Heads-Up equivalent) — again criteria matching, not smart matching.
 
 **Listing Detail:**
--
+- Same Neuron template, same gaps: bullet features + hand-written narrative, floorplan, no AI summary/Q&A, area info as prose.
+- Their real differentiator is the service model — "a single dedicated consultant", Case Studies, a "How We Help You Move" explainer. It's good, reassuring content, but none of it enriches the listing page itself, where a buyer actually makes the shortlist decision.
 
 **Valuation:**
--
+- Online tool (`valuation.keystonepmc.co.uk`) + face-to-face + an "Instruct Keystone" shortcut. Same gated instant-valuation pattern as the group — details captured, number delivered later.
 
 **Contact:**
--
+- Phone (01244), email, contact form; Trustpilot referenced. No chat, no out-of-hours, no qualification.
 
 **Technical / General:**
--
+- Neuron/Iceberg, Vercel.
+- Trust is fine (87% completion stat, TPO, company reg, "personal consultant" framing). Small consistency snag: the valuation subdomain uses the `keystonepmc` brand while the main site is `keystoneestateagents` — a minor trust wobble mid-journey, worth noting because that split-domain valuation flow is a shared platform pattern.
 
-**Status:** Not done
+**Status:** Done
 
 ### Round 3 — Berkay
 
@@ -126,7 +129,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | Tur | İnceleyen | Durum |
 |---|---|---|
 | 1 | Ayselin | Yapılmadı |
-| 2 | Görkem | Yapılmadı |
+| 2 | Görkem | Yapıldı |
 | 3 | Berkay | Yapılmadı |
 | 4 | Yasemin | Yapılmadı |
 
@@ -171,21 +174,24 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 2 — Görkem
 
 **Arama:**
--
+- Aynı platform araması. Flintshire/Chester (01244). Ana sayfa "Latest properties for sale in Flintshire" gösteriyor ama sayfa içi filtre yok — standart price/beds/radius için `/properties`'e gidiyorsun. Type yok, keyword yok, doğal dil yok, harita yok, sadece liste.
+- "Register for Property Alerts" mevcut (Heads-Up karşılığı) — yine kriter eşleşmesi, akıllı eşleşme değil.
 
 **İlan Detay:**
--
+- Aynı Neuron şablonu, aynı açıklar: bullet features + elle yazılmış anlatı, floorplan, AI özet/Q&A yok, bölge bilgisi düz yazı.
+- Gerçek farklılaştırıcıları hizmet modeli — "tek özel danışman", Case Studies, "How We Help You Move" anlatımı. Güzel, güven veren içerik, ama hiçbiri alıcının aslında kısa listeyi oluşturduğu ilan sayfasını zenginleştirmiyor.
 
 **Değerleme:**
--
+- Online araç (`valuation.keystonepmc.co.uk`) + yüz yüze + "Instruct Keystone" kısayolu. Grupla aynı kapı-tutan instant-valuation kalıbı — bilgi toplanıyor, rakam sonra veriliyor.
 
 **İletişim:**
--
+- Telefon (01244), e-posta, iletişim formu; Trustpilot referansı. Chat yok, mesai dışı yok, kalifikasyon yok.
 
 **Teknik/Genel:**
--
+- Neuron/Iceberg, Vercel.
+- Güven iyi (%87 completion istatistiği, TPO, şirket kaydı, "kişisel danışman" çerçevesi). Küçük tutarlılık pürüzü: valuation subdomain'i `keystonepmc` markasını kullanırken ana site `keystoneestateagents` — yolun ortasında minör bir güven sarsıntısı; bu bölünmüş-domain valuation akışı paylaşılan bir platform kalıbı olduğu için not edilmeye değer.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Tur 3 — Berkay
 

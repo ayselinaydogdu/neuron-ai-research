@@ -12,7 +12,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | Round | Reviewer | Status |
 |---|---|---|
 | 1 | Ayselin | Done |
-| 2 | Görkem | Not done |
+| 2 | Görkem | Done |
 | 3 | Berkay | Not done |
 | 4 | Yasemin | Not done |
 
@@ -64,21 +64,23 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 2 — Görkem
 
 **Search:**
--
+- Same platform search. Essex (Colchester/Witham/Tendring), black branding, and an unusually strong social presence (TikTok, YouTube, Instagram). But the search itself is still the default price/beds/radius — no type, no free text, no map. The marketing energy on social doesn't translate into a smarter on-site search.
 
 **Listing Detail:**
--
+- Same Neuron template and same gaps. Award badges (gold winners) and heavy social proof are a homepage/brand strength, not a listing-page one — the listings are the usual bullet-features + narrative, no AI summary/Q&A.
 
 **Valuation:**
--
+- Instant tool (`valuation.harrisandwood.co.uk`) + book. Same gated instant pattern.
 
 **Contact:**
--
+- Four department phone lines + `team@` email + form; no chat, no out-of-hours. The multi-branch phone list is thorough but leaves the user with a "which number is actually mine?" decision.
+- Mostly a **UX/routing fix** (a pick-your-branch selector, no AI needed). The lightweight AI version would be a postcode-based router that sends the enquiry to the right branch automatically.
 
 **Technical / General:**
--
+- Neuron/Iceberg, Vercel, Lifesycle.
+- Trust is well covered (awards, CMP, ICO reg, TPOS) and the brand is polished and marketing-savvy. It's the most social-media-fluent tenant of my ten, which makes the plain, un-personalised search feel like the biggest missed opportunity here.
 
-**Status:** Not done
+**Status:** Done
 
 ### Round 3 — Berkay
 
@@ -133,7 +135,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | Tur | İnceleyen | Durum |
 |---|---|---|
 | 1 | Ayselin | Yapıldı |
-| 2 | Görkem | Yapılmadı |
+| 2 | Görkem | Yapıldı |
 | 3 | Berkay | Yapılmadı |
 | 4 | Yasemin | Yapılmadı |
 
@@ -185,21 +187,23 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 2 — Görkem
 
 **Arama:**
--
+- Aynı platform araması. Essex (Colchester/Witham/Tendring), siyah marka ve alışılmadık derecede güçlü sosyal medya varlığı (TikTok, YouTube, Instagram). Ama aramanın kendisi hâlâ varsayılan price/beds/radius — type yok, serbest metin yok, harita yok. Sosyaldeki pazarlama enerjisi site içi daha akıllı bir aramaya dönüşmüyor.
 
 **İlan Detay:**
--
+- Aynı Neuron şablonu ve aynı açıklar. Ödül rozetleri (gold winners) ve yoğun sosyal kanıt ana sayfa/marka gücü, ilan sayfası gücü değil — ilanlar yine bullet-features + anlatı, AI özet/Q&A yok.
 
 **Değerleme:**
--
+- Anlık araç (`valuation.harrisandwood.co.uk`) + randevu. Aynı kapı-tutan anlık kalıp.
 
 **İletişim:**
--
+- Dört departman telefon hattı + `team@` e-posta + form; chat yok, mesai dışı yok. Çok şubeli telefon listesi kapsamlı ama kullanıcıyı "hangi numara benim?" kararıyla baş başa bırakıyor.
+- Çoğunlukla bir **UX/yönlendirme düzeltmesi** (şube-seç seçici, AI gerekmez). Hafif AI versiyonu, enquiry'yi otomatik doğru şubeye gönderen postcode tabanlı bir router olurdu.
 
 **Teknik/Genel:**
--
+- Neuron/Iceberg, Vercel, Lifesycle.
+- Güven iyi kapsanmış (ödüller, CMP, ICO kaydı, TPOS) ve marka cilalı, pazarlama-zeki. On sitem içinde sosyal medyaya en hâkim tenant, bu da sade ve kişiselleştirilmemiş aramayı buradaki en büyük kaçırılmış fırsat gibi gösteriyor.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Tur 3 — Berkay
 

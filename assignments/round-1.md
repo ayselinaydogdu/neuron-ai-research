@@ -18,11 +18,11 @@ For the full rotation see ../site-assignments.md.
 
 ### Görkem — Group A (01–05)
 
-- [ ] 01 · kineticestateagents.co.uk → ../sites/01-kinetic.md
-- [ ] 02 · townandcityhomes.com → ../sites/02-townandcity.md
-- [ ] 03 · harrisonshomes.co.uk → ../sites/03-harrisons.md
-- [ ] 04 · lloydsestates.com → ../sites/04-lloyds.md
-- [ ] 05 · thepropertycloud.uk → ../sites/05-propertycloud.md
+- [x] 01 · kineticestateagents.co.uk → ../sites/01-kinetic.md
+- [x] 02 · townandcityhomes.com → ../sites/02-townandcity.md
+- [x] 03 · harrisonshomes.co.uk → ../sites/03-harrisons.md
+- [x] 04 · lloydsestates.com → ../sites/04-lloyds.md
+- [x] 05 · thepropertycloud.uk → ../sites/05-propertycloud.md
 
 ### Ayselin — Group B (06–10)
 
@@ -69,11 +69,11 @@ dosyasında **Tur 1** bloğunu doldurun, bitirince buradaki kutucuğu işaretley
 
 ### Görkem — Grup A (01–05)
 
-- [ ] 01 · kineticestateagents.co.uk → ../sites/01-kinetic.md
-- [ ] 02 · townandcityhomes.com → ../sites/02-townandcity.md
-- [ ] 03 · harrisonshomes.co.uk → ../sites/03-harrisons.md
-- [ ] 04 · lloydsestates.com → ../sites/04-lloyds.md
-- [ ] 05 · thepropertycloud.uk → ../sites/05-propertycloud.md
+- [x] 01 · kineticestateagents.co.uk → ../sites/01-kinetic.md
+- [x] 02 · townandcityhomes.com → ../sites/02-townandcity.md
+- [x] 03 · harrisonshomes.co.uk → ../sites/03-harrisons.md
+- [x] 04 · lloydsestates.com → ../sites/04-lloyds.md
+- [x] 05 · thepropertycloud.uk → ../sites/05-propertycloud.md
 
 ### Ayselin — Grup B (06–10)
 

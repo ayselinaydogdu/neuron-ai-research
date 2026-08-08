@@ -26,11 +26,11 @@ For the full rotation see ../site-assignments.md.
 
 ### Görkem — Group B (06–10)
 
-- [ ] 06 · propertyconnections.uk.com → ../sites/06-propertyconnections.md
-- [ ] 07 · keystoneestateagents.co.uk → ../sites/07-keystone.md
-- [ ] 08 · jacksonsproperty.co.uk → ../sites/08-jacksons.md
-- [ ] 09 · harrisandwood.co.uk → ../sites/09-harrisandwood.md
-- [ ] 10 · roderickthomas.co.uk → ../sites/10-roderickthomas.md
+- [x] 06 · propertyconnections.uk.com → ../sites/06-propertyconnections.md
+- [x] 07 · keystoneestateagents.co.uk → ../sites/07-keystone.md
+- [x] 08 · jacksonsproperty.co.uk → ../sites/08-jacksons.md
+- [x] 09 · harrisandwood.co.uk → ../sites/09-harrisandwood.md
+- [x] 10 · roderickthomas.co.uk → ../sites/10-roderickthomas.md
 
 ### Ayselin — Group C (11–15)
 
@@ -77,11 +77,11 @@ dosyasında **Tur 2** bloğunu doldurun, bitirince buradaki kutucuğu işaretley
 
 ### Görkem — Grup B (06–10)
 
-- [ ] 06 · propertyconnections.uk.com → ../sites/06-propertyconnections.md
-- [ ] 07 · keystoneestateagents.co.uk → ../sites/07-keystone.md
-- [ ] 08 · jacksonsproperty.co.uk → ../sites/08-jacksons.md
-- [ ] 09 · harrisandwood.co.uk → ../sites/09-harrisandwood.md
-- [ ] 10 · roderickthomas.co.uk → ../sites/10-roderickthomas.md
+- [x] 06 · propertyconnections.uk.com → ../sites/06-propertyconnections.md
+- [x] 07 · keystoneestateagents.co.uk → ../sites/07-keystone.md
+- [x] 08 · jacksonsproperty.co.uk → ../sites/08-jacksons.md
+- [x] 09 · harrisandwood.co.uk → ../sites/09-harrisandwood.md
+- [x] 10 · roderickthomas.co.uk → ../sites/10-roderickthomas.md
 
 ### Ayselin — Grup C (11–15)
 
