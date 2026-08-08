@@ -83,22 +83,53 @@ Network tab.
 
 ### Round 2 — Ayselin
 
-**Search:**
--
+## Search
 
-**Listing Detail:**
--
+- A traditional filter-based search is available, including location with radius, price, number of bedrooms, and property type. There is no map-based search view, and the default search radius is only 0.25 miles.
+- Natural Language Search is not available. Search input is interpreted as an address/location query. For example, searching for "big house" returns properties with those words in their names rather than understanding the user's intent.
+- Smart query interpretation is partially available: spelling mistakes are corrected, but this appears to be a feature of the underlying location service rather than a property-specific AI search capability. Suggestions are not ranked according to real estate context.
+- There is no intelligent refinement when too many results are returned. For example, 49 results are simply displayed using a "LOAD MORE" option.
+- No recovery mechanism is provided when there are no results. The system does not automatically expand the search radius or suggest nearby properties; the main alternative is to register for Heads Up alerts.
+- Personalized result ranking is not available. The default "Suggested" sorting is not clearly explained, while other sorting options include price and listing date.
+- Saved searches and automatic property alerts are available through **Heads Up Property Alerts**, which match properties based on user-defined criteria.
+- Search parameters are not consistently synchronized with the URL. Switching tabs or refreshing the page can reset the selected criteria, and changing the location can sometimes result in an incorrect "0 results" state.
+- Sold and let-agreed properties (SSTC / Let Agreed) are included in the search results by default.
 
-**Valuation:**
--
+## Property Details
 
-**Contact:**
--
+- Property descriptions are manually written and often lengthy; no AI-generated Property Summary is provided.
+- Users cannot ask questions about a property in natural language (AI Property Q&A is not available).
+- Property features are presented as bullet points, but these are manually entered by the estate agent rather than AI-generated Property Highlights.
+- Lifestyle recommendations such as "Ideal for..." and AI-powered Property Comparison are not available.
+- No personalized similar-property recommendations are provided; the property page leads directly to the footer instead.
+- Google Maps is used to display the property location, but AI-powered Area Insights and Commute Insights are not provided.
+- EPC certificates and Floor Plans are available, but they are not explained or simplified by AI.
+- Property galleries and Giraffe360 360° virtual tours are available, although the content is presented without AI-generated interpretation.
+- A contact CTA is displayed below the property price, but the form contains more than 10 fields and does not provide available appointment times through a calendar.
 
-**Technical / General:**
--
+## Valuation
 
-**Status:** Not done
+- An Instant Valuation service is available, but the estimated value is not displayed directly on the results page. Users must provide their name, email address, and phone number to receive the valuation.
+- The valuation tool is provided by ValPal Network through a separate subdomain rather than directly by Neuron.
+- No AI-powered valuation explanation or personalized valuation recommendations are provided.
+- No Mortgage Calculator or Stamp Duty Calculator is available.
+
+## Contact
+
+- Contact and viewing request forms are available. The contact form contains seven required fields, while the user's intent is categorized only through Buy/Sell/Rent/Let checkboxes.
+- No AI chatbot or AI-powered customer assistant is available.
+- AI-powered lead qualification is not available. Although the Heads Up registration form asks about income and moving timeframe, the qualification process remains form-based rather than AI-driven.
+- No AI-powered viewing scheduling is available. A calendar with available appointment times is not provided.
+- No automated out-of-hours response system is available.
+
+## Technical / General
+
+- The source code loads components named `whatsapp-chatbot` and `BlendedFeeCalculator`, but these components do not appear to be active or visible on the website.
+- The website uses Nuxt (Vue) with server-side rendering (SSR).
+- No Neuron API requests were observed in the Network tab during the inspection.
+- The website is responsive, and filters and forms can be used smoothly on mobile devices.
+
+**Status:** Done
 
 ### Round 3 — Görkem
 
@@ -215,22 +246,53 @@ sonuçlara dahil ediliyor.
 
 ### Tur 2 — Ayselin
 
-**Arama:**
--
+## Arama
 
-**İlan Detay:**
--
+- Konum ve yarıçap, fiyat, oda sayısı ve mülk tipi gibi klasik filtre tabanlı arama mevcut. Harita üzerinden arama özelliği bulunmuyor ve varsayılan arama yarıçapı yalnızca 0.25 mil.
+- Doğal dil araması (Natural Language Search) bulunmuyor. Arama girdileri adres/konum sorgusu olarak yorumlanıyor. Örneğin, "big house" araması kullanıcı niyetini anlamak yerine adında bu kelimeler geçen mülkleri getiriyor.
+- Akıllı sorgu yorumlama kısmen mevcut: Yazım hataları düzeltiliyor ancak bunun emlak odaklı bir AI özelliğinden ziyade kullanılan konum servisinin özelliği olduğu görülüyor. Öneriler emlak bağlamına göre sıralanmıyor.
+- Çok fazla sonuç olduğunda akıllı daraltma yapılmıyor. Örneğin 49 sonuç yalnızca "LOAD MORE" seçeneğiyle listeleniyor.
+- Hiç sonuç bulunmadığında herhangi bir kurtarma mekanizması sunulmuyor. Sistem arama yarıçapını otomatik olarak genişletmiyor veya yakınlardaki ilanları önermiyor; temel alternatif Heads Up bildirimi oluşturmak.
+- Kişiselleştirilmiş sonuç sıralaması bulunmuyor. Varsayılan "Suggested" sıralamasının nasıl belirlendiği açıklanmıyor; diğer sıralama seçenekleri fiyat ve ilan tarihine göre.
+- Kayıtlı arama ve otomatik ilan bildirimleri **Heads Up Property Alerts** üzerinden mevcut. Sistem, kullanıcı tarafından belirlenen kriterlere uygun ilanları eşleştiriyor.
+- Arama kriterleri URL ile tutarlı şekilde senkronize edilmiyor. Sekme değiştirme veya sayfayı yenileme seçilen kriterlerin sıfırlanmasına neden olabiliyor; konum değiştirildiğinde zaman zaman hatalı şekilde "0 results" gösterilebiliyor.
+- Satılmış ve kiralanmış ilanlar (SSTC / Let Agreed) varsayılan olarak arama sonuçlarına dahil ediliyor.
 
-**Değerleme:**
--
+## İlan Detay
 
-**İletişim:**
--
+- İlan açıklamaları manuel olarak hazırlanmış ve genellikle uzun; AI destekli Property Summary bulunmuyor.
+- Kullanıcılar ilan hakkında doğal dilde soru soramıyor (AI Property Q&A bulunmuyor).
+- İlan özellikleri madde halinde listeleniyor ancak bunlar emlak danışmanı tarafından giriliyor; AI tarafından oluşturulan Property Highlights özelliği bulunmuyor.
+- "Ideal for..." gibi yaşam tarzı önerileri ve AI destekli Property Comparison bulunmuyor.
+- Kişiselleştirilmiş benzer ilan önerileri sunulmuyor; ilan sayfası doğrudan footer bölümüne yöneliyor.
+- Google Maps ile mülk konumu gösteriliyor ancak AI destekli Area Insights veya Commute Insights sunulmuyor.
+- EPC ve Floor Plan belgeleri mevcut ancak AI tarafından açıklanmıyor veya sadeleştirilmiyor.
+- İlan galerisi ve Giraffe360 360° sanal tur mevcut ancak içerikler AI tarafından yorumlanmadan sunuluyor.
+- İlan fiyatının altında iletişim CTA'sı bulunuyor ancak açılan form 10'dan fazla alan içeriyor ve takvim üzerinden müsait randevu saatleri gösterilmiyor.
 
-**Teknik/Genel:**
--
+## Değerleme
 
-**Durum:** Yapılmadı
+- Instant Valuation hizmeti mevcut ancak tahmini değer sonuç ekranında doğrudan gösterilmiyor. Değeri alabilmek için ad, e-posta ve telefon bilgilerinin girilmesi gerekiyor.
+- Değerleme aracı Neuron tarafından değil, ayrı bir subdomain üzerinden ValPal Network tarafından sağlanıyor.
+- AI destekli valuation açıklaması veya kişiselleştirilmiş değerleme önerileri bulunmuyor.
+- Mortgage Calculator veya Stamp Duty Calculator bulunmuyor.
+
+## İletişim
+
+- İletişim ve viewing talep formları mevcut. İletişim formunda yedi zorunlu alan bulunuyor ve kullanıcı niyeti yalnızca Buy/Sell/Rent/Let seçenekleriyle belirleniyor.
+- AI chatbot veya AI destekli müşteri asistanı bulunmuyor.
+- AI destekli lead qualification bulunmuyor. Heads Up kayıt formunda gelir ve taşınma zamanı gibi bilgiler sorulsa da değerlendirme süreci AI yerine form tabanlı ilerliyor.
+- AI destekli viewing planlama bulunmuyor. Takvim üzerinden müsait randevu saatleri sunulmuyor.
+- Mesai dışı otomatik yanıt sistemi bulunmuyor.
+
+## Teknik / Genel
+
+- Kaynak kodda `whatsapp-chatbot` ve `BlendedFeeCalculator` isimli bileşenler yükleniyor ancak bu bileşenler sitede aktif veya kullanıcıya görünür durumda değil.
+- Site Nuxt (Vue) kullanıyor ve server-side rendering (SSR) ile sunuluyor.
+- İnceleme sırasında Network sekmesinde Neuron API çağrısı gözlemlenmedi.
+- Site responsive yapıda; filtreler ve formlar mobil cihazlarda sorunsuz kullanılabiliyor.
+
+**Durum:** Yapıldı
 
 ### Tur 3 — Görkem
 
