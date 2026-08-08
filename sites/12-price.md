@@ -62,22 +62,45 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 2 — Ayselin
 
-**Search:**
--
+## Search
 
-**Listing Detail:**
--
+- A traditional search system is available with standard filters such as price, bedrooms, bathrooms, and property type; however, there is no map-based search view.
+- Natural Language Search is not supported. Queries such as "family home near schools" are interpreted as address/location searches rather than being understood as user intent.
+- Smart suggestions and query interpretation are partially available. Spelling mistakes can be corrected, but this appears to come from the underlying location service rather than an AI-powered property search feature.
+- There is no AI-powered refinement when many results are returned. 58 listings are displayed progressively using a "LOAD MORE" option.
+- Personalized result ranking is not available. Sorting options are based on price and listing date, with "Highest Price" set as the default.
+- Saved searches and automatic property alerts are available through **Heads Up Property Alerts**.
 
-**Valuation:**
--
+## Property Details
 
-**Contact:**
--
+- Property descriptions are manually written, with the writing style and level of detail varying between listings. An AI-generated Property Summary is not available.
+- A photo gallery is available, but there is no 360° virtual tour. Floor Plans are provided on the property page, while EPC information is provided through a link to the gov.uk website. None of these materials are explained or summarized by AI.
+- The sidebar mainly displays the newest listings. Personalized similar-property recommendations, AI-powered Property Comparison, and lifestyle-based suggestions such as "Ideal for..." are not available.
+- A contact CTA is placed below the property price. The viewing form contains more than 10 fields, and there is no AI Property Q&A feature for asking questions about the listing.
+- Google Maps is used to display the property location, but no school, transport, or demographic information is provided. AI-powered Area Insights and Commute Insights are not available.
 
-**Technical / General:**
--
+## Valuation
 
-**Status:** Not done
+- Instant Valuation and Mortgage Calculator services are available.
+- The Instant Valuation process consists of two steps. The estimated value is not displayed directly on screen; users need to provide their contact details and receive the result by email.
+- AI-powered valuation explanations or personalized valuation insights are not available.
+- The valuation tool operates through the ValPal platform.
+
+## Contact
+
+- There is no active AI Chat Assistant or chatbot visible on the website.
+- The contact form asks for first name, last name, phone number, email, message, and a Buy/Sell/Rent/Let selection. However, selecting an option does not change the form or trigger different processing, and there is no AI-powered Lead Qualification.
+- Viewing and valuation requests require users to enter their preferred date and time as free text. There is no calendar showing real-time availability or AI-powered automated appointment scheduling.
+- Opening hours are listed as 09:00–17:30 on weekdays, 09:00–16:00 on Saturdays, and closed on Sundays. No automated out-of-hours response or AI-powered customer support is provided.
+
+## Technical / General
+
+- No active chatbot or AI widget is visible in the user interface. A `whatsapp-chatbot`-related style definition is present in the source code, but the component does not appear to be active.
+- The website uses Nuxt and is server-side rendered (SSR). Property content is delivered directly within the HTML.
+- Fetch/XHR traffic shows Sentry and Google tracking requests, but no separate Neuron content API call was observed.
+- The website is responsive on mobile devices, with the gallery, tabs, and forms remaining usable on smaller screens.
+
+**Status:** Done
 
 ### Round 3 — Görkem
 
@@ -182,22 +205,45 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 2 — Ayselin
 
-**Arama:**
--
+## Arama
 
-**İlan Detay:**
--
+- Fiyat, bedrooms, bathrooms ve property type gibi standart filtrelerle klasik arama yapılabiliyor; ancak harita tabanlı bir arama görünümü bulunmuyor.
+- Natural Language Search desteklenmiyor. Örneğin, "family home near schools" gibi bir sorgu kullanıcı niyeti olarak yorumlanmak yerine adres/konum araması şeklinde ele alınıyor.
+- Akıllı öneri ve sorgu yorumlama kısmen mevcut. Yazım hataları düzeltilebiliyor ancak bu davranış konum servisinden kaynaklanıyor; emlak odaklı AI destekli sonuç iyileştirmesi bulunmuyor.
+- Çok sayıda sonuç olduğunda kullanıcıya AI tabanlı filtreleme veya daraltma önerisi sunulmuyor. 58 ilan "LOAD MORE" seçeneğiyle aşamalı olarak gösteriliyor.
+- Sonuçların kişiselleştirilmiş şekilde sıralandığı bir sistem bulunmuyor. Fiyat ve ilan tarihi bazlı sıralama seçenekleri mevcut ve varsayılan sıralama "Highest Price" olarak ayarlanmış.
+- Kayıtlı arama ve otomatik ilan bildirimleri **Heads Up Property Alerts** üzerinden sunuluyor.
 
-**Değerleme:**
--
+## İlan Detay
 
-**İletişim:**
--
+- İlan açıklamaları manuel olarak hazırlanmış ve içerik ile detay seviyesi ilanlara göre farklılık gösteriyor. AI destekli Property Summary özelliği bulunmuyor.
+- Fotoğraf galerisi mevcut ancak 360° sanal tur bulunmuyor. Floor Plan ilan sayfasında yer alırken EPC bilgisi gov.uk sitesine yönlendiren bir bağlantı olarak sunuluyor. Bu içeriklerin hiçbiri AI tarafından açıklanmıyor veya özetlenmiyor.
+- Sağ taraftaki bölümde yalnızca en yeni ilanlar gösteriliyor. Kişiselleştirilmiş benzer ilan önerileri, AI Property Comparison ve "Ideal for..." gibi Lifestyle Matching özellikleri bulunmuyor.
+- Fiyat bilgisinin altında iletişim CTA'sı yer alıyor. Viewing formu 10'dan fazla alan içeriyor ve kullanıcıların ilanla ilgili doğal dilde soru sorabileceği bir AI Property Q&A özelliği bulunmuyor.
+- Google Maps üzerinden konum gösteriliyor ancak okul, ulaşım veya demografik bilgiler sunulmuyor. AI destekli Area Insights ve Commute Insights özellikleri bulunmuyor.
 
-**Teknik/Genel:**
--
+## Değerleme
 
-**Durum:** Yapılmadı
+- Instant Valuation ve Mortgage Calculator hizmetleri mevcut.
+- Instant Valuation süreci iki aşamadan oluşuyor. Tahmini değer doğrudan ekranda gösterilmiyor; kullanıcı iletişim bilgilerini sağladıktan sonra sonuç e-posta üzerinden iletiliyor.
+- AI destekli valuation açıklaması veya kişiselleştirilmiş değerleme özelliği bulunmuyor.
+- Valuation aracı ValPal altyapısı üzerinden çalışıyor.
+
+## İletişim
+
+- Kullanıcı arayüzünde aktif bir AI Chat Assistant veya chatbot bulunmuyor.
+- İletişim formunda ad, soyad, telefon, e-posta ve mesaj bilgilerinin yanı sıra Buy/Sell/Rent/Let seçenekleri sunuluyor. Ancak seçilen kategori forma göre farklı bir işlem veya yönlendirme oluşturmuyor; AI destekli Lead Qualification bulunmuyor.
+- Viewing ve valuation taleplerinde kullanıcıdan uygun gün ve saatini serbest metin olarak belirtmesi isteniyor. Gerçek zamanlı müsaitlik gösteren bir takvim veya AI destekli otomatik randevu planlama sistemi bulunmuyor.
+- Çalışma saatleri hafta içi 09:00–17:30, cumartesi 09:00–16:00 ve pazar günü kapalı olarak belirtilmiş. Mesai saatleri dışında otomatik yanıt veya AI destekli müşteri hizmeti bulunmuyor.
+
+## Teknik / Genel
+
+- Kullanıcı arayüzünde aktif bir chatbot veya AI widget bulunmuyor. Kaynak kodda `whatsapp-chatbot` ile ilişkili bir stil tanımı görülmesine rağmen bileşen aktif olarak çalışmıyor.
+- Site Nuxt kullanıyor ve sayfalar server-side rendering (SSR) ile sunuluyor. İlan içeriği doğrudan HTML içerisinde geliyor.
+- Fetch/XHR trafiğinde Sentry ve Google tracking istekleri görülüyor; ayrı bir Neuron içerik API çağrısı gözlemlenmiyor.
+- Mobil görünüm responsive şekilde çalışıyor. Galeri, sekmeler ve formlar dar ekranlarda kullanılabilir durumda.
+
+**Durum:** Yapıldı
 
 ### Tur 3 — Görkem
 
