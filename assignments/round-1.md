@@ -89,7 +89,7 @@ dosyasında **Tur 1** bloğunu doldurun, bitirince buradaki kutucuğu işaretley
 - [x] 12 · priceestateagents.uk → ../sites/12-price.md
 - [x] 13 · keysandlee.co.uk → ../sites/13-keysandlee.md
 - [x] 14 · nicholsonsestateagents.co.uk → ../sites/14-nicholsons.md
-- [ ] 15 · no86estateagency.co.uk → ../sites/15-no86.md
+- [x] 15 · no86estateagency.co.uk → ../sites/15-no86.md
 
 ### Berkay — Grup D (16–21)
 
