@@ -65,22 +65,45 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 2 — Ayselin
 
-**Search:**
--
+## Search
 
-**Listing Detail:**
--
+- The website provides a standard filter-based property search with criteria such as price, bedrooms, bathrooms, and property type. There is no map view available.
+- Natural Language Search is not supported; queries written in natural language are treated as address/location searches rather than being interpreted as user intent.
+- Spelling corrections are available, but this appears to be part of the address autocomplete functionality rather than AI-powered search improvement.
+- There is no personalized ranking system; the available sorting options are based on price and listing date.
+- No intelligent refinement is offered when there are many results. A total of 64 listings are displayed using `LOAD MORE`. Saved searches are available through **Heads Up Property Alerts**.
+- Pre-market properties are blurred and placed behind the registration system. This functions as an access restriction rather than a recommendation or personalization layer.
 
-**Valuation:**
--
+## Property Details
 
-**Contact:**
--
+- Property descriptions are manually written, and there is no AI-generated Property Summary.
+- Users cannot ask natural-language questions about a property; there is no AI Property Q&A feature.
+- A standard image gallery is available, but there is no 360° virtual tour.
+- Similar property recommendations and Property Comparison are not available. The sidebar mainly contains fixed promotional blocks.
+- Property locations are displayed through Google Maps, but there are no AI-powered Area Insights or Commute Insights.
+- Floor Plans and EPC information are provided through separate tabs, but they are not explained or summarized using AI.
 
-**Technical / General:**
--
+## Valuation
 
-**Status:** Not done
+- An Instant Valuation service is available, while Mortgage and Stamp Duty Calculators are not provided.
+- The Instant Valuation process consists of two steps. The estimated value is not displayed directly on the screen and is instead provided after the user submits their contact details.
+- There is no AI-powered explanation of the valuation or personalized valuation analysis. The valuation tool is powered by the ValPal platform.
+
+## Contact
+
+- There is no active AI Chat Assistant or chatbot. A WhatsApp messaging widget powered by `msgboxx` is available, but it sends messages directly to the estate agency team rather than providing an AI-based conversation.
+- The contact form asks for first name, last name, phone number, email, message, and whether the user is looking to Buy/Sell/Rent/Let. The selected option does not dynamically change the form, and there is no AI-powered Lead Qualification.
+- Valuation appointments can be scheduled by selecting a date and time through a calendar. However, the process does not include AI-powered automated scheduling.
+- Opening hours are listed on the website, but there is no automated out-of-hours response or AI assistant.
+
+## Technical / General
+
+- The website is built with Nuxt and rendered using SSR. Search results and filter options are retrieved client-side through Neuron's REST API.
+- API requests use standard property filtering parameters such as `property_types`, `property_styles`, and `tenure_types`. No requests to an AI or LLM service were identified.
+- The main third-party integrations observed are ValPal for valuations, Cal.com for appointments, msgboxx for WhatsApp messaging, Sentry for monitoring, and YouTube for video content. No dedicated AI service layer was identified.
+- The website is responsive on mobile, with filters, property cards, and forms remaining usable on smaller screens. No mobile-specific AI functionality is provided.
+  
+**Status:** Done
 
 ### Round 3 — Görkem
 
@@ -187,22 +210,45 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 2 — Ayselin
 
-**Arama:**
--
+## Arama
 
-**İlan Detay:**
--
+- Sitede fiyat, oda sayısı, banyo sayısı ve mülk tipi gibi standart kriterlere dayalı klasik filtreleme mevcut. Harita görünümü bulunmuyor.
+- Doğal Dil Araması (Natural Language Search) desteklenmiyor; doğal dilde yazılan sorgular kullanıcı niyeti olarak yorumlanmak yerine adres/konum araması şeklinde değerlendiriliyor.
+- Yazım hatası düzeltme özelliği mevcut ancak bunun AI destekli bir arama özelliğinden ziyade adres otomatik tamamlama sisteminin bir parçası olduğu görülüyor.
+- Kişiselleştirilmiş bir sıralama sistemi bulunmuyor; mevcut sıralama seçenekleri fiyat ve ilan tarihine dayanıyor.
+- Çok sayıda sonuç olduğunda akıllı daraltma özelliği sunulmuyor. Toplam 64 ilan `LOAD MORE` seçeneğiyle listeleniyor. Kayıtlı arama özelliği **Heads Up Property Alerts** üzerinden sunuluyor.
+- Pre-market ilanlar bulanık şekilde gösteriliyor ve kayıt arkasında tutuluyor. Bu durum bir öneri veya kişiselleştirme katmanı değil, ilanlara erişimi kısıtlayan bir sistem olarak çalışıyor.
 
-**Değerleme:**
--
+## İlan Detay
 
-**İletişim:**
--
+- İlan açıklamaları manuel olarak hazırlanmış ve AI tarafından oluşturulan bir Property Summary bulunmuyor.
+- Kullanıcılar ilan hakkında doğal dilde soru soramıyor; AI Property Q&A özelliği mevcut değil.
+- Standart fotoğraf galerisi bulunuyor ancak 360° sanal tur sunulmuyor.
+- Benzer ilan önerileri ve Property Comparison özelliği bulunmuyor. Sağ sütunda ağırlıklı olarak sabit tanıtım blokları yer alıyor.
+- İlan konumu Google Maps üzerinden gösteriliyor ancak AI destekli Area Insights veya Commute Insights sunulmuyor.
+- Floor Plan ve EPC bilgileri ayrı sekmeler üzerinden sunuluyor ancak AI tarafından açıklanmıyor veya özetlenmiyor.
 
-**Teknik/Genel:**
--
+## Değerleme
 
-**Durum:** Yapılmadı
+- Instant Valuation hizmeti mevcut; Mortgage ve Stamp Duty Calculator bulunmuyor.
+- Instant Valuation iki aşamalı bir süreçten oluşuyor. Tahmini değer doğrudan ekranda gösterilmiyor; kullanıcı iletişim bilgilerini girdikten sonra iletiliyor.
+- AI destekli valuation açıklaması veya kişiselleştirilmiş valuation analizi bulunmuyor. Değerleme aracı ValPal altyapısıyla çalışıyor.
+
+## İletişim
+
+- Aktif bir AI Chat Assistant veya chatbot bulunmuyor. `msgboxx` tarafından sağlanan bir WhatsApp mesajlaşma widget'ı mevcut ancak bu sistem AI ile sohbet etmek yerine mesajları doğrudan emlak ekibine iletiyor.
+- İletişim formunda ad, soyad, telefon, e-posta, mesaj ve Buy/Sell/Rent/Let seçimi isteniyor. Seçilen seçenek forma göre dinamik bir değişiklik oluşturmuyor ve AI destekli Lead Qualification bulunmuyor.
+- Değerleme randevuları takvim üzerinden tarih ve saat seçilerek oluşturulabiliyor. Ancak süreçte AI destekli otomatik randevu planlama bulunmuyor.
+- Çalışma saatleri web sitesinde belirtilmiş ancak mesai dışında otomatik yanıt veren bir sistem veya AI asistanı bulunmuyor.
+
+## Teknik / Genel
+
+- Site Nuxt ile geliştirilmiş ve SSR kullanılarak render ediliyor. Arama sonuçları ve filtre seçenekleri client-side olarak Neuron REST API üzerinden alınıyor.
+- API isteklerinde `property_types`, `property_styles` ve `tenure_types` gibi standart property filtre parametreleri kullanılıyor. AI veya LLM servisine gönderilen herhangi bir istek tespit edilmiyor.
+- Görülen temel üçüncü taraf entegrasyonlar; valuation için ValPal, randevular için Cal.com, WhatsApp mesajlaşma için msgboxx, monitoring için Sentry ve video içerikleri için YouTube. Ayrı bir AI servis katmanı bulunmuyor.
+- Site mobil cihazlarda responsive şekilde çalışıyor; filtreler, ilan kartları ve formlar küçük ekranlarda kullanılabilir durumda. Mobil cihazlara özel bir AI özelliği bulunmuyor.
+
+**Durum:** Yapıldı
 
 ### Tur 3 — Görkem
 
