@@ -64,22 +64,45 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 2 — Ayselin
 
-**Search:**
--
+## Search
 
-**Listing Detail:**
--
+- The website provides traditional property search with standard filters such as price, bedrooms, bathrooms, and property type; however, there is no map-based search view.
+- Natural Language Search is not supported. Queries such as `"family home near schools under £400k"` are interpreted as address/location searches rather than being understood as user intent.
+- There are no smart search or query interpretation features such as spelling correction, synonym understanding, or AI-powered result improvement.
+- Personalized ranking is not available. Although `SUGGESTED` is selected by default, the other sorting options are based on price and listing date. The `100% MATCH` badge indicates how well a property matches the entered criteria rather than AI-based personalization.
+- There is no AI-powered refinement when many results are returned; listings are displayed using `LOAD MORE`. Saved searches and automated property alerts are available through **Heads Up Property Alerts**.
 
-**Valuation:**
--
+## Property Details
 
-**Contact:**
--
+- Property descriptions are manually written and generally consist of long, room-by-room paragraphs. There is no AI-generated Property Summary or Property Q&A feature for asking questions about the listing.
+- A photo gallery, walkthrough videos, and Video Tour content are available, but there is no 360° virtual tour.
+- The sidebar displays `Latest Properties`. Personalized similar-property recommendations and AI-powered Property Comparison are not available.
+- `Book a Viewing` and `Get in Touch` CTAs remain visible in the sidebar. The contact form asks for first name, last name, phone number, email, Buy/Sell/Rent/Let selection, and a message; there is no AI chat or free-form property Q&A functionality.
+- Google Maps displays the property location and nearby schools, but there are no AI-powered Area Insights or Commute Insights. Distance information such as `"0.8 miles to Clockhouse primary school"` appears in the Features section and is manually provided by the agent.
+- Floor Plans and EPC information are embedded on the property page, but neither is simplified or explained in plain language by AI.
 
-**Technical / General:**
--
+## Valuation
 
-**Status:** Not done
+- Both Instant Valuation and in-person valuation services are available.
+- The Instant Valuation process has two stages. Users first provide their postcode, number of bedrooms, property type, and valuation type, followed by their name, email, and phone number. The estimated value is not displayed directly on the screen.
+- There is no AI-powered valuation explanation or personalized valuation analysis. The Instant Valuation tool operates using the ValPal Network infrastructure.
+- The in-person valuation form asks users to provide their preferred date and time as free text. There is no calendar showing real-time availability or automated appointment scheduling.
+- Mortgage Calculator and Stamp Duty Calculator are not available on the property pages.
+
+## Contact
+
+- There is no active AI Chat Assistant or chatbot available across the website or on individual property pages.
+- The forms consist of predefined fields. The `Book a Viewing` form asks for name, message, email, phone number, address, and whether the property is for sale or rent. The Heads Up Alerts registration also collects information such as moving timeframe, solicitor status, and mortgage status. However, the form does not dynamically branch based on the answers, and there is no AI-powered Lead Qualification.
+- The viewing form includes date and time fields, but actual availability is not displayed. After selecting a time, a notice indicates that the appointment will not be automatically confirmed. Therefore, AI-powered automated viewing scheduling is not available.
+- Opening hours are listed as 09:00–17:30 on weekdays, 09:00–15:30 on Saturdays, and closed on Sundays. There is no automated out-of-hours response or AI-powered support system.
+
+## Technical / General
+
+- No active chatbot or AI widget is visible in the user interface. A `whatsapp-chatbot`-related style definition exists in the source code, but the component does not appear to be active.
+- The website uses Nuxt and is server-side rendered (SSR). Property content is delivered directly within the HTML. Network traffic shows a `filter` request for search results along with Sentry and Google tracking requests.
+- The mobile layout is responsive, with the gallery, filters, and forms remaining usable on smaller screens.
+
+**Status:** Done
 
 ### Round 3 — Görkem
 
@@ -187,22 +210,45 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 2 — Ayselin
 
-**Arama:**
--
+## Arama
 
-**İlan Detay:**
--
+- Site, fiyat, bedroom, bathroom ve property type gibi standart filtrelerle klasik arama sunuyor; ancak arama sonuçlarında harita görünümü bulunmuyor.
+- Natural Language Search desteği yok. Örneğin, `"family home near schools under £400k"` gibi doğal dilde yazılan sorgular kullanıcı niyeti olarak yorumlanmak yerine adres/konum araması şeklinde değerlendiriliyor.
+- Yazım hatalarını düzeltme, eş anlamlı kelimeleri algılama veya sonuçları AI ile iyileştirme gibi akıllı arama ve query interpretation özellikleri bulunmuyor.
+- Kişiye özel bir sonuç sıralama sistemi mevcut değil. Varsayılan olarak `SUGGESTED` seçili olsa da diğer sıralama seçenekleri fiyat ve ilan tarihine dayanıyor. `100% MATCH` etiketi ise AI tabanlı kişiselleştirme yerine girilen arama kriterleriyle eşleşmeyi ifade ediyor.
+- Çok sayıda sonuç olduğunda kullanıcıya AI destekli daraltma önerisi sunulmuyor; ilanlar `LOAD MORE` seçeneğiyle devam ediyor. Kullanıcıların kriterlerine göre otomatik bildirim almasını sağlayan **Heads Up Property Alerts** sistemi mevcut.
 
-**Değerleme:**
--
+## İlan Detay
 
-**İletişim:**
--
+- İlan açıklamaları manuel olarak hazırlanmış ve genellikle uzun, oda bazında ilerleyen metinlerden oluşuyor. AI tarafından oluşturulan Property Summary bulunmuyor ve ilan hakkında doğal dilde soru sorulabilecek bir Property Q&A sistemi mevcut değil.
+- Fotoğraf galerisine ek olarak walkthrough videoları ve Video Tour içerikleri sunuluyor; ancak 360° virtual tour özelliği bulunmuyor.
+- Sayfanın sağ tarafındaki bölümde `Latest Properties` gösteriliyor. Kullanıcı davranışına göre kişiselleştirilmiş Similar Properties önerileri veya AI Property Comparison özelliği bulunmuyor.
+- `Book a Viewing` ve `Get in Touch` CTA'ları sağ tarafta sabit şekilde yer alıyor. İletişim formunda ad, soyad, telefon, e-posta, Buy/Sell/Rent/Let seçimi ve mesaj bilgileri isteniyor; AI chat veya ilanla ilgili serbest biçimde soru sorulabilecek bir alan sunulmuyor.
+- Google Maps üzerinden konum ve yakın çevredeki okullar gösteriliyor. Ancak AI destekli Area Insights veya Commute Insights bulunmuyor. Features bölümündeki `"0.8 miles to Clockhouse primary school"` gibi mesafe bilgileri AI tarafından oluşturulmuyor, emlakçı tarafından girilen bilgiler olarak sunuluyor.
+- Floor Plan ve EPC içerikleri sayfaya entegre edilmiş durumda; ancak bu belgeleri AI kullanarak sade bir dille açıklayan veya özetleyen herhangi bir özellik bulunmuyor.
 
-**Teknik/Genel:**
--
+## Değerleme
 
-**Durum:** Yapılmadı
+- Hem Instant Valuation hem de yüz yüze valuation hizmeti sunuluyor.
+- Instant Valuation iki aşamalı bir form üzerinden ilerliyor. Öncelikle postcode, bedroom sayısı, property type ve valuation type bilgileri alınıyor; ardından isim, e-posta ve telefon bilgileri isteniyor. Tahmini değer doğrudan ekranda gösterilmiyor.
+- Valuation sürecinde AI destekli fiyat açıklaması veya kullanıcıya özel valuation analizi bulunmuyor. Instant Valuation aracı ValPal Network altyapısını kullanıyor.
+- Yüz yüze valuation talebinde kullanıcıdan uygun gün/saat bilgisini serbest metin şeklinde girmesi isteniyor. Gerçek zamanlı müsaitlik gösteren bir takvim veya otomatik randevu planlama sistemi bulunmuyor.
+- Property sayfalarında Mortgage Calculator veya Stamp Duty Calculator bulunmuyor.
+
+## İletişim
+
+- Web sitesinde genel veya property-specific olarak çalışan bir AI Chat Assistant / Chatbot bulunmuyor.
+- Formlar önceden belirlenmiş alanlardan oluşuyor. `Book a Viewing` formunda ad, mesaj, e-posta, telefon, adres ve mülkün satılık/kiralık durumuyla ilgili bilgiler isteniyor. Heads Up Alerts kayıt sürecinde ise taşınma zamanı, solicitor ve mortgage durumu gibi ek bilgiler alınıyor. Ancak verilen cevaplara göre dinamik bir lead qualification süreci oluşmuyor ve AI destekli ön eleme yapılmıyor.
+- Viewing formunda tarih ve saat seçimi için alan bulunuyor ancak gerçek müsaitlik bilgileri gösterilmiyor. Seçim sonrasında randevunun otomatik olarak onaylanmayacağına dair bir uyarı gösteriliyor. Dolayısıyla AI destekli otomatik viewing scheduling mevcut değil.
+- Çalışma saatleri hafta içi 09:00–17:30, cumartesi 09:00–15:30 ve pazar günü kapalı olarak belirtiliyor. Mesai dışında otomatik yanıt veren bir chatbot veya AI destek sistemi bulunmuyor.
+
+## Teknik / Genel
+
+- Kullanıcı arayüzünde aktif bir chatbot veya AI widget bulunmuyor. Kaynak kodunda `whatsapp-chatbot` ile ilişkili bir stil tanımı bulunmasına rağmen ilgili bileşen aktif olarak kullanılmıyor.
+- Site Nuxt kullanıyor ve sayfalar server-side rendering (SSR) ile oluşturuluyor. Property içerikleri doğrudan HTML içerisinde sunuluyor. Network tarafında arama sonuçları için bir `filter` isteğinin yanı sıra Sentry ve Google tracking çağrıları görülüyor.
+- Mobil görünüm responsive şekilde çalışıyor. Galeri, filtreleme seçenekleri ve formlar küçük ekranlarda da kullanılabilir durumda.
+
+**Durum:** Yapıldı
 
 ### Tur 3 — Görkem
 
