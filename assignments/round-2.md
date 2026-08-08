@@ -42,7 +42,7 @@ For the full rotation see ../site-assignments.md.
 
 ### Yasemin — Group D (16–21)
 
-- [ ] 16 · beercocks.com → ../sites/16-beercocks.md
+- [x] 16 · beercocks.com → ../sites/16-beercocks.md
 - [ ] 17 · greyandco.co.uk → ../sites/17-greyandco.md
 - [ ] 18 · allen-residential.co.uk → ../sites/18-allen.md
 - [ ] 19 · brownsestateagents.co.uk → ../sites/19-browns.md
