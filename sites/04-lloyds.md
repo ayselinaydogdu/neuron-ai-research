@@ -12,7 +12,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | Round | Reviewer | Status |
 |---|---|---|
 | 1 | Görkem | Done |
-| 2 | Berkay | Not done |
+| 2 | Berkay | Done |
 | 3 | Yasemin | Not done |
 | 4 | Ayselin | Not done |
 
@@ -45,22 +45,44 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 2 — Berkay
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **Absent** — Property search uses structured Buy/Rent controls and standard criteria rather than free-sentence queries.
+- **Smart Suggestions / Query Understanding:** **Absent** — Property listing pages display a "100% MATCH" badge on every property (9/9 checked, anonymous visitor, no saved criteria — including SSTC and Under Offer listings). The footer explicitly credits "Neuron | Iceberg Digital AI Operating System for Estate Agents," confirming this is the same white-labelled platform infrastructure observed on other sites in this group. As with those sites, all listings displaying an identical 100% value regardless of user profile indicates a static/rule-based UI label rather than genuine personalised AI matching. No evidence of intelligent query understanding or suggestion logic was observed.
+- **Saved Search / Alerts:** **Present** — Heads-Up Property Alerts allow users to save locations, property types, price, bedrooms, bathrooms and other requirements. The system sends tailored suggestions, new-listing notifications and price-reduction alerts.
 
-**Valuation:**
--
+## **Listing Detail:**
 
-**Contact:**
--
+- **Property Summary (AI):** **Absent** — Property pages contain manually written descriptions and feature information, but no AI-generated 2–3 point summary was observed.
+- **Property Q&A:** **Absent** — No free-form AI Q&A for individual listings was observed.
+- **Property Highlights:** **Partial** — Listings provide structured property features alongside the main description, but no evidence that these highlights are AI-generated was observed.
+- **Lifestyle / "Ideal for…" Matching:** **Partial** — Property descriptions can explain suitability and local benefits, while the matching system connects properties with buyer requirements. No explicit AI-generated lifestyle commentary was observed.
+- **Property Comparison:** **Absent** — No AI-powered comparison of two or more properties was observed.
+- **Similar Listings (personalised):** **Present** — The matching system uses registered buyer requirements to identify properties that specifically match the user's profile, evidenced by the same observable match-% UI element noted above; underlying platform identity (Neuron/Iceberg or otherwise) is unconfirmed.
+- **Area Insights:** **Partial** — Property and blog content provides information about local areas, amenities and transport, but no dedicated AI-generated neighbourhood analysis was observed.
+- **Commute Insights:** **Partial** — Property information can mention nearby stations and transport connections, but no personalised commute-time analysis based on the user's destination was observed.
+- **Document Explanation (EPC / Floor Plan):** **Absent** — EPC information and floor plans may be available with listings, but no AI-powered plain-language explanation was observed.
 
-**Technical / General:**
--
+## **Valuation:**
 
-**Status:** Not done
+- **Instant Valuation:** **Present** — Lloyds provides an instant online valuation based on property details and local market/sold-price data. The site describes it as a quick guide rather than a replacement for an in-person valuation.
+- **AI Valuation Explanation:** **Absent** — The online valuation uses an algorithm and market data but does not provide an AI-generated explanation of the valuation factors or a personalised narrative.
+- **Mortgage / Stamp Duty Calculator:** **Partial** — Lloyds provides access to independent mortgage advisers and explains mortgage options, but no dedicated mortgage or Stamp Duty calculator with AI financial commentary was observed.
+
+## **Contact:**
+
+- **AI Chat Assistant / Chatbot:** **Absent** — No site-wide or property-level AI chat assistant was observed.
+- **Lead Qualification:** **Partial** — Heads-Up registration collects detailed buyer circumstances including reason for moving, moving timeframe, solicitor status, whether the user needs to sell their current property and mortgage requirements. This provides structured lead information, but no AI-powered lead scoring or prioritisation was observed.
+- **Automated Booking / Viewing Scheduling:** **Partial** — Property listings provide viewing/contact options and Lloyds promotes flexible accompanied viewings, but no AI-driven appointment scheduling or conversational booking assistant was observed.
+- **Out-of-hours Response:** **Partial** — Lloyds promotes flexible opening times and reports fast responses to enquiries, but no AI-powered out-of-hours chatbot or automated conversational response was observed.
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **Hybrid (SSR + CSR)** — Initial page load is server-side rendered, with core property and content information present directly in the delivered HTML. Client-side hydration then takes over for interactive elements and further navigation. 
+- **API calls:** **Partial** — The property search and matching functionality clearly uses external/property-platform infrastructure, but the specific runtime API endpoints were not confirmed through Network-tab inspection, and unlike sites 22/23 the platform is not explicitly self-identified as Neuron/Iceberg Digital.
+- **Mobile behaviour:** **Present** — The responsive site provides access to property search, listings, alerts, valuation and contact forms on mobile.
+
+**Status:** Done
 
 ### Round 3 — Yasemin
 
@@ -115,7 +137,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | Tur | İnceleyen | Durum |
 |---|---|---|
 | 1 | Görkem | Yapıldı |
-| 2 | Berkay | Yapılmadı |
+| 2 | Berkay | Yapıldı |
 | 3 | Yasemin | Yapılmadı |
 | 4 | Ayselin | Yapılmadı |
 
@@ -148,22 +170,44 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 2 — Berkay
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Mülk araması yapılandırılmış Satın Alma/Kiralama kontrolleri ve standart kriterleri kullanıyor; serbest cümleyle arama bulunmuyor.
+- **Akıllı Öneriler / Sorgu Anlama:** **Yok** — İlan listeleme sayfalarında her mülkün yanında "100% MATCH" rozeti görünüyor .Diğer sitelerde olduğu gibi, tüm ilanların profil fark etmeksizin aynı %100 değerini göstermesi, gerçek kişiselleştirilmiş yapay zeka eşleştirmesi yerine statik/kural tabanlı bir UI etiketine işaret ediyor. Akıllı sorgu anlama veya öneri mantığına dair kanıt gözlemlenmedi.
+- **Kayıtlı Arama / Uyarılar:** **Var** — Heads-Up Mülk Uyarıları ile konum, mülk tipi, fiyat, oda/banyo sayısı ve diğer kriterler kaydedilebiliyor. Sistem kişiselleştirilmiş öneriler, yeni ilan bildirimleri ve fiyat değişikliği bildirimleri sağlıyor.
 
-**Değerleme:**
--
+## **İlan Detay:**
 
-**İletişim:**
--
+- **Mülk Özeti (YZ):** **Yok** — İlan sayfalarında manuel olarak hazırlanmış açıklamalar ve özellik bilgileri bulunuyor; yapay zeka tarafından oluşturulan 2–3 maddelik özet gözlemlenmedi.
+- **Mülk Soru-Cevap:** **Yok** — İlan hakkında serbest biçimde soru sorulabilen yapay zeka destekli Q&A özelliği gözlemlenmedi.
+- **Mülkün Öne Çıkan Özellikleri:** **Kısmi** — İlanlarda ana açıklamanın yanında yapılandırılmış mülk özellikleri bulunuyor; ancak bu özelliklerin yapay zeka tarafından oluşturulduğuna dair kanıt bulunmuyor.
+- **Yaşam Tarzı / "... için ideal" Eşleştirmesi:** **Kısmi** — İlan açıklamalarında mülkün uygunluğu ve yerel avantajları anlatılabiliyor; matching sistemi de mülkleri alıcı gereksinimleriyle eşleştiriyor. Ancak açık bir AI yaşam tarzı yorumu gözlemlenmedi.
+- **Mülk Karşılaştırma:** **Yok** — İki veya daha fazla mülkü yapay zeka ile karşılaştırma özelliği gözlemlenmedi.
+- **Benzer İlanlar (kişiselleştirilmiş):** **Var** — Matching sistemi, kayıtlı alıcı gereksinimlerini kullanarak kullanıcının profiline özel uygun mülkleri belirliyor; bu, yukarıda belirtilen aynı gözlemlenebilir eşleşme yüzdesi arayüz öğesine dayanıyor.
+- **Bölge İçgörüleri:** **Kısmi** — İlan ve blog içeriklerinde yerel bölgeler, olanaklar ve ulaşım hakkında bilgiler bulunuyor; ancak özel bir yapay zeka destekli bölge analizi bulunmuyor.
+- **Ulaşım İçgörüleri:** **Kısmi** — İlanlarda istasyonlara ve ulaşım bağlantılarına yakınlık belirtilebiliyor; ancak kullanıcının hedef konumuna göre kişiselleştirilmiş ulaşım süresi analizi bulunmuyor.
+- **Belge Açıklaması (EPC / Kat Planı):** **Yok** — EPC bilgileri ve kat planları ilanlarda bulunabiliyor; ancak bu belgeleri sade bir dille açıklayan yapay zeka özelliği gözlemlenmedi.
 
-**Teknik/Genel:**
--
+## **Değerleme:**
 
-**Durum:** Yapılmadı
+- **Anlık Değerleme:** **Var** — Lloyds, mülk bilgileri ve yerel piyasa/satış verilerine dayanan anlık online değerleme sunuyor. Site bunu yüz yüze değerlemenin yerine geçmeyen hızlı bir başlangıç tahmini olarak tanımlıyor.
+- **Yapay Zeka Değerleme Açıklaması:** **Yok** — Online değerleme algoritma ve piyasa verilerini kullanıyor ancak değerlemenin faktörlerini açıklayan yapay zeka destekli bir anlatım veya kişiselleştirilmiş analiz bulunmuyor.
+- **Mortgage / Damga Vergisi Hesaplayıcısı:** **Kısmi** — Lloyds bağımsız mortgage danışmanlarına erişim sağlıyor ve mortgage seçeneklerini açıklıyor; ancak yapay zeka destekli finansal yorum içeren özel bir mortgage veya Stamp Duty hesaplayıcısı gözlemlenmedi.
+
+## **İletişim:**
+
+- **Yapay Zeka Sohbet Asistanı / Chatbot:** **Yok** — Site genelinde veya ilan seviyesinde yapay zeka destekli sohbet asistanı gözlemlenmedi.
+- **Müşteri Adayı Nitelendirme:** **Kısmi** — Heads-Up kayıt süreci; taşınma nedeni, taşınma zamanı, solicitor durumu, mevcut mülkün satılması gerekip gerekmediği ve mortgage ihtiyacı gibi ayrıntılı bilgiler topluyor. Bu yapılandırılmış lead bilgisi sağlıyor ancak yapay zeka destekli müşteri adayı puanlama veya önceliklendirme bulunmuyor.
+- **Otomatik Rezervasyon / Görüntüleme Planlama:** **Kısmi** — İlanlarda görüntüleme/iletişim seçenekleri bulunuyor ve Lloyds esnek, danışman eşliğinde viewing hizmetini öne çıkarıyor; ancak yapay zeka destekli randevu planlama veya konuşma tabanlı rezervasyon asistanı gözlemlenmedi.
+- **Mesai Dışı Yanıt:** **Kısmi** — Lloyds esnek çalışma saatlerini ve hızlı iletişimi öne çıkarıyor; ancak yapay zeka destekli mesai dışı sohbet botu veya otomatik konuşma tabanlı yanıt sistemi gözlemlenmedi.
+
+## **Teknik/Genel:**
+
+- **SSR ve CSR:** **Hibrit (SSR + CSR)** — İlk sayfa yüklemesi sunucu tarafında render ediliyor; temel ilan ve içerik bilgileri doğrudan teslim edilen HTML içinde yer alıyor. Ardından etkileşimli öğeler ve sonraki gezinmeler için istemci tarafı hydration devreye giriyor. 
+- **API Çağrıları:** **Var** — Site kendisini Neuron / Iceberg Digital'in "Estate Agentlar için Yapay Zeka İşletim Sistemi" altyapısıyla güçlendirilmiş olarak tanımlıyor.
+- **Mobil Davranış:** **Var** — Responsive site üzerinden mülk arama, ilanlar, alertler, değerleme ve iletişim formlarına mobil erişim sağlanıyor.
+
+**Durum:** Yapıldı
 
 ### Tur 3 — Yasemin
 
