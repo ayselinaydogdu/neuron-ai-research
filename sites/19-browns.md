@@ -141,21 +141,44 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 2 — Yasemin
 
 **Arama:**
--
+
+- Doğal dil araması bulunmuyor; serbest cümle "Couldn't find the address" ile reddediliyor.
+- Yazım hatası düzeltilmiyor; "Sheilds" için South Shields yerine Hull'daki "SHEilds Ltd" öneriliyor ve boş sonuca düşürüyor.
+- Kriterlerin önem sırasını çıkaran bir yorumlama bulunmuyor; fiyat, oda, banyo, mülk tipi ve Must Haves manuel seçime bırakılmış.
+- Kişiselleştirilmiş sıralama bulunmuyor; "100% MATCH" rozeti "tahmin" olarak sunulsa da yalnızca kaydedilen filtre kriterlerine dayanıyor.
+- Sonuç boş kaldığında yalnızca Heads Up alert önerisi çıkıyor; hangi filtrenin gevşetileceği söylenmiyor.
 
 **İlan Detay:**
--
+
+- İlan metni elle yazılmış; uzun açıklamayı kısaltan AI Özet veya Property Highlights üretilmiyor.
+- Fotoğraf, kat planı ve EPC sunuluyor ancak ana sayfada iddia edilen 3D Digital Twin / Matterport turu ilan sayfasında yer almıyor.
+- "Benzer ilanlar" bölümü bulunmuyor; ilanlar arası karşılaştırma veya davranışa göre öneri sunulmuyor.
+- Stamp Duty ve Mortgage hesaplayıcıları rakam üretiyor fakat sonucu yorumlayan finansal öneri katmanı bulunmuyor.
+- Harita konumu gösteriyor; ulaşım ve okul bilgisi metne elle işlenmiş, Area Insights ve Commute Insights bulunmuyor.
 
 **Değerleme:**
--
+
+- Form doldurulduğu anda ekranda tahmin üretilmiyor; rakam iletişim bilgisi karşılığında sonradan iletiliyor.
+- Üretilen rakamın hangi karşılaştırmalı satışa veya bölge verisine dayandığı açıklanmıyor.
+- Mülkün durumu veya tadilatı gibi fiyatı belirleyen nitelikler sorulmuyor, tahmin bunlara göre düzeltilmiyor.
+- Serbest metin alanına yazılan bilgi çözümlenmiyor, tahmine veya randevu akışına yansımıyor.
+- Stamp Duty ve Mortgage çıktıları alıcının profiline göre karşılanabilirlik yorumuna dönüştürülmüyor.
 
 **İletişim:**
--
+
+- Kaynakta chatbot stilleri hazır olmasına rağmen çalışan bir AI Chat Assistant devrede değil; her soru forma veya telefona yönleniyor.
+- Toplanan Buy/Sell/Rent/Let seçimi ve Heads Up yanıtları Lead Qualification'a dönüşmüyor, herkes aynı akıştan geçiyor.
+- Viewing talebinde müsaitlik teyidi ve AI destekli planlama bulunmuyor.
+- Mesai dışında otomatik yanıt sunulmuyor; gelen mesaj ertesi iş gününe kadar bekliyor.
 
 **Teknik/Genel:**
--
 
-**Durum:** Yapılmadı
+- İlan listesi client-side filtre çağrısıyla besleniyor; sorguyu yorumlayan bir katman araya girmiyor.
+- Ağ trafiğinde yalnızca IcebergTracker, Sentry ve Neuron REST uçları var; öneri veya içerik üreten bir AI servisi çağrılmıyor.
+- Kaynakta chatbot stilleri yükleniyor ama çalışan bir asistan devrede değil.
+- Toplanan ziyaret verisi kişiselleştirilmiş içerik veya öneriye dönüşmüyor.
+
+**Durum:** Yapıldı
 
 ### Tur 3 — Ayselin
 
