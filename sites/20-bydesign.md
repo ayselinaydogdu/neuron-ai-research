@@ -9,12 +9,12 @@
 
 This site is reviewed independently by 4 people across 4 rounds.
 
-| Round | Reviewer | Status |
-|---|---|---|
-| 1 | Berkay | Not done |
-| 2 | Yasemin | Not done |
-| 3 | Ayselin | Not done |
-| 4 | Görkem | Not done |
+| Round | Reviewer | Status   |
+| ----- | -------- | -------- |
+| 1     | Berkay   | Done     |
+| 2     | Yasemin  | Done     |
+| 3     | Ayselin  | Not done |
+| 4     | Görkem   | Not done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -22,22 +22,43 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 1 — Berkay
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **Absent** — Property search uses structured filters (buy/rent toggle, distance radius, price range, bedroom range) rather than free-sentence queries.
+- **Smart Suggestions / Query Understanding:** **Present** — Every listing on the search results page displays a "100% MATCH" badge with a "Match Score" tooltip: "This is a prediction of what our software thinks you may find an interesting property, based on the unique search criteria that you gave us. You can improve the relevance of your match score by adjusting and saving your search criteria."
+- **Saved Search / Alerts:** **Present** — Heads Up Property Alerts let users build a detailed saved profile (locations via towns/villages/postcodes/schools/pubs, property type, price range, bedrooms/bathrooms/receptions, new-homes/retirement/shared-ownership/investment toggles) and receive suggested properties and price-reduction alerts.
 
-**Valuation:**
--
+## **Listing Detail:**
 
-**Contact:**
--
+- **Property Summary (AI):** **Absent** — Listings contain long, hand-written narrative descriptions (including a "Seller's Story" section written in first person), but no separate AI-generated 2–3 point summary was observed.
+- **Property Q&A:** **Absent** — No free-form AI Q&A for individual listings was observed.
+- **Property Highlights:** **Absent** — Listings present a manually written bullet list of key selling points above the description, but no AI-extracted highlights module was observed.
+- **Lifestyle / "Ideal for…" Matching:** **Absent** — Descriptions mention nearby schools, sport and leisure suitable for a lifestyle (e.g. "Mount Kelly in Tavistock... provide strong independent education options"), but this is manually written editorial copy, not AI-generated lifestyle matching.
+- **Property Comparison:** **Absent** — No AI-powered comparison of two or more properties was observed.
+- **Similar Listings (personalised):** **Absent** — The listing page reviewed did not show a "similar properties" or "you might also like" module; the site's personalisation is expressed through the search-results Match Score rather than on individual listing pages.
+- **Area Insights:** **Partial** — Listings include a hand-written "Location" section describing schools, amenities, restaurants and access, but this is editorial copy, not an AI-generated neighbourhood analysis with data (demographics, crime, etc.).
+- **Commute Insights:** **Absent** — Descriptions mention distances/road access in prose (e.g. "7 miles from Ashburton with excellent access to the A38"), but there is no dedicated commute-time calculator or AI commentary.
+- **Document Explanation (EPC / Floor Plan):** **Absent** — Multiple floor plans and EPC certificates are provided as images/PDF-style graphics, but no AI-powered plain-language explanation of them was observed.
 
-**Technical / General:**
--
+## **Valuation:**
 
-**Status:** Not done
+- **Instant Valuation:** **Absent** — Unlike other sites on the same platform, the Valuation page offers only a "Face to Face Valuation" booking option; no instant/online self-serve valuation tool was found on this site.
+- **AI Valuation Explanation:** **Absent** — N/A given no instant valuation tool is offered; no AI-generated valuation explanation exists on the site.
+- **Mortgage / Stamp Duty Calculator:** **Absent** — The property listing reviewed (a £4.5m estate) has no mortgage or stamp duty calculator widget; only "What's MY property worth?" and direct call/email CTAs are shown.
+
+## **Contact:**
+
+- **AI Chat Assistant / Chatbot:** **Absent** — No site-wide or property-level AI chat assistant or live-chat widget was observed.
+- **Lead Qualification:** **Partial** — The Heads Up Alerts registration form collects detailed buyer circumstances (reason for buying, moving timeframe, solicitor status, whether they need to sell an existing property, mortgage/cash status, how they heard about By Design), enabling structured lead segmentation, but no AI-powered lead scoring or prioritisation was observed.
+- **Automated Booking / Viewing Scheduling:** **Partial** — Listings provide an "ARRANGE A VIEWING" call-to-action plus a named agent's direct phone/email, but no AI-driven scheduling or automated qualification flow was observed.
+- **Out-of-hours Response:** **Absent** — No out-of-hours chatbot or automated response system was observed; contact is via direct agent phone/email or a general enquiry route.
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **Hybrid (SSR + CSR)** — Initial page load is server-side rendered, with core property and content information present directly in the delivered HTML. Client-side hydration then takes over for interactive elements and further navigation. 
+- **API calls:** **Present** — The site is explicitly powered by Neuron / Iceberg Digital's "AI Operating System for Estate Agents". Property search results also expose the AI matching functionality through percentage-based match indicators. This verdict rests on vendor self-identification plus the observable match-% UI element; specific runtime API endpoints were not confirmed through Network-tab inspection.
+- **Mobile behaviour:** **Present** — The responsive site provides access to property search, listings, alerts, valuation and contact functionality on mobile.
+**Status:** Done
 
 ### Round 2 — Yasemin
 
@@ -132,12 +153,12 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
-| Tur | İnceleyen | Durum |
-|---|---|---|
-| 1 | Berkay | Yapılmadı |
-| 2 | Yasemin | Yapılmadı |
-| 3 | Ayselin | Yapılmadı |
-| 4 | Görkem | Yapılmadı |
+| Tur   | İnceleyen| Durum    |
+| ----- | -------- | -------- |
+| 1     | Berkay   | Yapıldı  |
+| 2     | Yasemin  | Yapıldı  |
+| 3     | Ayselin  | Yapılmadı|
+| 4     | Görkem   | Yapılmadı|
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
@@ -145,22 +166,44 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 1 — Berkay
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Mülk araması, serbest cümle yerine yapılandırılmış filtreler kullanıyor (buy/rent seçici, mesafe yarıçapı, fiyat aralığı, oda sayısı aralığı).
+- **Akıllı Öneriler / Sorgu Anlama:** **Var** — Arama sonuçları sayfasındaki her ilanda "100% MATCH" rozeti ve şu metni içeren bir "Eşleşme Skoru" tooltip'i bulunuyor: "This is a prediction of what our software thinks you may find an interesting property, based on the unique search criteria that you gave us. You can improve the relevance of your match score by adjusting and saving your search criteria."
+- **Kayıtlı Arama / Uyarılar:** **Var** — Heads Up Mülk Uyarıları, kullanıcının konum (kasaba/köy/posta kodu/okul/pub bazlı), mülk tipi, fiyat aralığı, oda/banyo/salon sayısı ve yeni ev/emeklilik/ortak mülkiyet/yatırım gibi seçenekleri içeren ayrıntılı bir kayıtlı profil oluşturmasına izin veriyor ve buna göre önerilen ilan ile fiyat düşüşü bildirimleri gönderiyor.
 
-**Değerleme:**
--
+## **İlan Detay:**
 
-**İletişim:**
--
+- **Mülk Özeti (YZ):** **Yok** — İlanlarda uzun, elle yazılmış anlatı tarzında açıklamalar bulunuyor (birinci ağızdan yazılmış bir "Satıcının Hikayesi" bölümü dahil), ancak ayrı bir yapay zeka tarafından oluşturulmuş 2–3 maddelik özet gözlemlenmedi.
+- **Mülk Soru-Cevap:** **Yok** — İlan hakkında serbest biçimde soru sorulabilen yapay zeka destekli Q&A özelliği gözlemlenmedi.
+- **Mülkün Öne Çıkan Özellikleri:** **Yok** — İlanlarda açıklamanın üstünde manuel yazılmış öne çıkan özellikler listesi bulunuyor, ancak yapay zeka tarafından çıkarılmış bir highlights modülü gözlemlenmedi.
+- **Yaşam Tarzı / "... için ideal" Eşleştirmesi:** **Yok** — Açıklamalarda yakın okullar, spor ve boş zaman aktiviteleri gibi yaşam tarzına uygun bilgiler geçiyor (ör. "Mount Kelly in Tavistock... provide strong independent education options"), ancak bu manuel yazılmış editoryal metin, yapay zeka destekli yaşam tarzı eşleştirmesi değil.
+- **Mülk Karşılaştırma:** **Yok** — İki veya daha fazla mülkü yapay zeka ile karşılaştırma özelliği gözlemlenmedi.
+- **Benzer İlanlar (kişiselleştirilmiş):** **Yok** — İncelenen ilan sayfasında "benzer mülkler" veya "bunlar da ilginizi çekebilir" modülü bulunmuyor; sitenin kişiselleştirmesi ilan sayfası düzeyinde değil, arama sonuçlarındaki Eşleşme Skoru üzerinden ifade ediliyor.
+- **Bölge İçgörüleri:** **Kısmi** — İlanlarda okullar, olanaklar, restoranlar ve ulaşımı anlatan elle yazılmış bir "Location" bölümü bulunuyor, ancak bu editoryal metin; demografi, suç oranı gibi verilerle desteklenen yapay zeka destekli bir bölge analizi değil.
+- **Ulaşım İçgörüleri:** **Yok** — Açıklamalarda mesafe/yol erişimi düz metinle belirtiliyor (ör. "7 miles from Ashburton with excellent access to the A38"), ancak özel bir ulaşım süresi hesaplayıcısı veya yapay zeka yorumu bulunmuyor.
+- **Belge Açıklaması (EPC / Kat Planı):** **Yok** — Birden fazla kat planı ve EPC sertifikası görsel/PDF formatında sunuluyor, ancak bunları sade bir dille açıklayan yapay zeka özelliği gözlemlenmedi.
 
-**Teknik/Genel:**
--
+## **Değerleme:**
 
-**Durum:** Yapılmadı
+- **Anlık Değerleme:** **Yok** — Aynı platformdaki diğer sitelerin aksine, Valuation sayfası yalnızca "Yüz Yüze Değerleme" randevu seçeneği sunuyor; sitede anlık/online kendi kendine değerleme aracı bulunamadı.
+- **Yapay Zeka Değerleme Açıklaması:** **Yok** — Anlık değerleme aracı sunulmadığı için bu madde de geçerli değil; sitede yapay zeka destekli bir değerleme açıklaması bulunmuyor.
+- **Mortgage / Damga Vergisi Hesaplayıcısı:** **Yok** — İncelenen ilanda (4,5 milyon £'luk bir malikane) mortgage veya stamp duty hesaplayıcı widget'ı yok; sadece "What's MY property worth?" ve doğrudan arama/e-posta çağrı'ları gösteriliyor.
+
+## **İletişim:**
+
+- **Yapay Zeka Sohbet Asistanı / Chatbot:** **Yok** — Site genelinde veya ilan seviyesinde yapay zeka destekli sohbet asistanı veya canlı sohbet widget'ı gözlemlenmedi.
+- **Müşteri Adayı Nitelendirme:** **Kısmi** — Heads Up Uyarıları kayıt formu; alım nedeni, taşınma zamanlaması, avukat/solicitor durumu, mevcut mülkün satılması gerekip gerekmediği, mortgage/nakit durumu ve By Design'ı nereden duyduğu gibi ayrıntılı bilgiler topluyor; bu, yapılandırılmış müşteri adayı segmentasyonu sağlıyor, ancak yapay zeka destekli müşteri adayı puanlama veya önceliklendirme gözlemlenmedi.
+- **Otomatik Rezervasyon / Görüntüleme Planlama:** **Kısmi** — İlanlarda "ARRANGE A VIEWING" çağrısı ve ilgili danışmanın doğrudan telefon/e-posta bilgisi bulunuyor, ancak yapay zeka destekli randevu planlama veya otomatik ön eleme akışı gözlemlenmedi.
+- **Mesai Dışı Yanıt:** **Yok** — Mesai dışı sohbet botu veya otomatik yanıt sistemi gözlemlenmedi; iletişim doğrudan danışman telefonu/e-postası veya genel bir iletişim formu üzerinden sağlanıyor.
+
+## **Teknik/Genel:**
+
+- **SSR ve CSR:** **Hibrit (SSR + CSR)** — İlk sayfa yüklemesi sunucu tarafında render ediliyor; temel ilan ve içerik bilgileri doğrudan teslim edilen HTML içinde yer alıyor. Ardından etkileşimli öğeler ve sonraki gezinmeler için istemci tarafı hydration devreye giriyor. 
+- **API Çağrıları:** **Var** — Site açıkça Neuron / Iceberg Digital'in "Estate Agentlar için Yapay Zeka İşletim Sistemi" altyapısını kullanıyor. Property search sonuçlarında yapay zeka eşleştirme sistemi yüzde bazlı eşleşme göstergeleriyle görünür durumda. 
+- **Mobil Davranış:** **Var** — Responsive site üzerinden mülk arama, ilanlar, alertler, değerleme ve iletişim özelliklerine mobil erişim sağlanıyor.
+
+**Durum:** Yapıldı
 
 ### Tur 2 — Yasemin
 
