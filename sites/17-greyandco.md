@@ -9,12 +9,12 @@
 
 This site is reviewed independently by 4 people across 4 rounds.
 
-| Round | Reviewer | Status |
-|---|---|---|
-| 1 | Berkay | Not done |
-| 2 | Yasemin | Not done |
-| 3 | Ayselin | Not done |
-| 4 | Görkem | Not done |
+| Round | Reviewer | Status   |
+| ----- | -------- | -------- |
+| 1     | Berkay   | Done     |
+| 2     | Yasemin  | Done     |
+| 3     | Ayselin  | Not done |
+| 4     | Görkem   | Not done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -22,22 +22,44 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 1 — Berkay
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **Absent** — Property search uses structured search controls for buying or renting rather than free-sentence queries.
+- **Smart Suggestions / Query Understanding:** **Partial** — Search results can display a "100% MATCH" indicator against the user's saved criteria, but no natural-language interpretation, typo handling, or intelligent query refinement was observed.
+- **Saved Search / Alerts:** **Present** — Heads Up Property Alerts allow users to receive updates about new properties matching their wish list and criteria.
 
-**Valuation:**
--
+## **Listing Detail:**
 
-**Contact:**
--
+- **Property Summary (AI):** **Absent** — Listings provide manually written descriptions and property information, but no AI-generated 2–3 point summary was observed.
+- **Property Q&A:** **Absent** — No free-form AI Q&A for individual listings was observed.
+- **Property Highlights:** **Absent** — Listings contain a manually written Features section, but no AI-extracted property highlights were observed.
+- **Lifestyle / "Ideal for…" Matching:** **Absent** — Listings may describe suitability for families or other uses, but no AI-powered lifestyle matching was observed.
+- **Property Comparison:** **Absent** — No AI-powered comparison of multiple properties was observed.
+- **Similar Listings (personalised):** **Absent** — No behaviour-based or personalised "you might also like" recommendations were observed.
+- **Area Insights:** **Partial** — Property descriptions can include local information such as nearby stations, schools and amenities, and the site provides local guides, but no AI-generated area commentary was observed.
+- **Commute Insights:** **Absent** — Transport links are sometimes mentioned in property descriptions, but there is no dedicated commute-time analysis with commentary.
+- **Document Explanation (EPC / Floor Plan):** **Absent** — Floor plans and EPC information are provided on listings, but no AI-powered plain-language explanation of these documents was observed.
 
-**Technical / General:**
--
+## **Valuation:**
 
-**Status:** Not done
+- **Instant Valuation:** **Present** — A 60-second online valuation provides an estimated property value using a computer algorithm based on previous sales data.
+- **AI Valuation Explanation:** **Absent** — The valuation does not provide an AI-generated explanation or personalised commentary explaining the estimated value.
+- **Mortgage / Stamp Duty Calculator:** **Partial** — Mortgage guidance and broker recommendations are available, but no dedicated mortgage/stamp-duty calculator with AI financial commentary was observed.
+
+## **Contact:**
+
+- **AI Chat Assistant / Chatbot:** **Absent** — No site-wide or property-level AI chat assistant was observed.
+- **Lead Qualification:** **Absent** — The contact form collects standard information such as name, email, phone number, enquiry type and message, with no AI pre-screening or lead scoring observed.
+- **Automated Booking / Viewing Scheduling:** **Partial** — Properties provide a "BOOK A VIEWING" option, but no AI-driven scheduling or automated qualification was observed.
+- **Out-of-hours Response:** **Absent** — The site displays office opening hours and contact details, but no automated out-of-hours chatbot or response system was observed.
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **Hybrid (SSR + CSR)** — Initial page load is server-side rendered, with core property and content information present directly in the delivered HTML. Client-side hydration then takes over for interactive elements and further navigation. 
+- **API calls:** **Present** — The site is explicitly powered by Neuron / Iceberg Digital's "AI Operating System for Estate Agents". Property search results also expose the AI matching functionality through percentage-based match indicators. This verdict rests on vendor self-identification plus the observable match-% UI element; specific runtime API endpoints were not confirmed through Network-tab inspection.
+- **Mobile behaviour:** **Present** — The responsive site provides access to property search, listings, alerts, valuation and contact functionality on mobile.
+
+**Status:** Done
 
 ### Round 2 — Yasemin
 
@@ -129,35 +151,57 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
-| Tur | İnceleyen | Durum |
-|---|---|---|
-| 1 | Berkay | Yapılmadı |
-| 2 | Yasemin | Yapıldı |
-| 3 | Ayselin | Yapılmadı |
-| 4 | Görkem | Yapılmadı |
-
+| Tur   | İnceleyen| Durum    |
+| ----- | -------- | -------- |
+| 1     | Berkay   | Yapıldı  |
+| 2     | Yasemin  | Yapıldı  |
+| 3     | Ayselin  | Yapılmadı|
+| 4     | Görkem   | Yapılmadı|
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
 > Neye bakılacağı: ../checklist.md · Terimler: ../info/ai-feature-glossary.md
 
 ### Tur 1 — Berkay
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Mülk araması, satın alma/kiralama için yapılandırılmış arama kontrollerini kullanıyor; serbest cümleyle arama gözlemlenmedi.
+- **Akıllı Öneriler / Sorgu Anlama:** **Kısmi** — Arama sonuçlarında kullanıcının kayıtlı kriterleriyle eşleşmeyi gösteren "100% MATCH" ifadesi bulunabiliyor; ancak doğal dil yorumlama, yazım hatası yönetimi veya akıllı sorgu daraltma gözlemlenmedi.
+- **Kayıtlı Arama / Uyarılar:** **Var** — Heads Up Mülk Uyarıları, kullanıcıların istek listelerine ve kriterlerine uyan yeni ilanlar hakkında bildirim almasını sağlıyor.
 
-**Değerleme:**
--
+## **İlan Detay:**
 
-**İletişim:**
--
+- **Mülk Özeti (YZ):** **Yok** — İlanlarda manuel olarak hazırlanmış açıklamalar ve mülk bilgileri bulunuyor; yapay zeka tarafından oluşturulan 2–3 maddelik özet gözlemlenmedi.
+- **Mülk Soru-Cevap:** **Yok** — İlan hakkında serbest biçimde soru sorulabilen yapay zeka destekli bir Q&A özelliği gözlemlenmedi.
+- **Mülkün Öne Çıkan Özellikleri:** **Yok** — İlanlarda manuel olarak hazırlanmış Özellikler bölümü bulunuyor; yapay zeka tarafından çıkarılmış öne çıkan özellikler bulunmuyor.
+- **Yaşam Tarzı / "... için ideal" Eşleştirmesi:** **Yok** — İlan açıklamalarında aileler veya farklı kullanım amaçları için uygunluk ifadeleri bulunabiliyor; ancak yapay zeka destekli yaşam tarzı eşleştirmesi gözlemlenmedi.
+- **Mülk Karşılaştırma:** **Yok** — Birden fazla mülkü yapay zeka ile karşılaştırma özelliği gözlemlenmedi.
+- **Benzer İlanlar (kişiselleştirilmiş):** **Yok** — Kullanıcı davranışına göre kişiselleştirilmiş benzer ilan önerileri gözlemlenmedi.
+- **Bölge İçgörüleri:** **Kısmi** — İlan açıklamalarında istasyon, okul ve çevredeki olanaklar gibi yerel bilgiler bulunabiliyor ve sitede bölgesel rehberler yer alıyor; ancak yapay zeka tarafından oluşturulan bölge yorumu bulunmuyor.
+- **Ulaşım İçgörüleri:** **Yok** — Ulaşım bağlantıları bazı ilanlarda belirtiliyor, ancak ulaşım süresini analiz eden özel bir özellik bulunmuyor.
+- **Belge Açıklaması (EPC / Kat Planı):** **Yok** — Kat planları ve EPC bilgileri sunuluyor, ancak bu belgeleri sade bir dille açıklayan yapay zeka özelliği bulunmuyor.
 
-**Teknik/Genel:**
--
+## **Değerleme:**
 
-**Durum:** Yapılmadı
+- **Anlık Değerleme:** **Var** — 60 saniyelik online değerleme, önceki satış verilerini kullanan bilgisayar algoritmasıyla tahmini mülk değeri sağlıyor.
+- **Yapay Zeka Değerleme Açıklaması:** **Yok** — Tahmini değerin arkasındaki faktörleri açıklayan yapay zeka destekli veya kişiselleştirilmiş bir yorum bulunmuyor.
+- **Mortgage / Damga Vergisi Hesaplayıcısı:** **Kısmi** — Mortgage konusunda yönlendirme ve broker önerileri bulunuyor; ancak yapay zeka destekli finansal yorum içeren özel bir mortgage/stamp duty hesaplayıcısı gözlemlenmedi.
+
+## **İletişim:**
+
+- **Yapay Zeka Sohbet Asistanı / Chatbot:** **Yok** — Site genelinde veya ilan seviyesinde yapay zeka destekli sohbet asistanı gözlemlenmedi.
+- **Müşteri Adayı Nitelendirme:** **Yok** — İletişim formu isim, e-posta, telefon, talep türü ve mesaj gibi standart bilgileri topluyor; yapay zeka destekli ön eleme veya müşteri adayı puanlama bulunmuyor.
+- **Otomatik Rezervasyon / Görüntüleme Planlama:** **Kısmi** — İlanlarda "BOOK A VIEWING" seçeneği bulunuyor; ancak yapay zeka destekli planlama veya otomatik lead değerlendirmesi gözlemlenmedi.
+- **Mesai Dışı Yanıt:** **Yok** — Ofis çalışma saatleri ve iletişim bilgileri sunuluyor, ancak mesai dışı otomatik sohbet botu veya yanıt sistemi gözlemlenmedi.
+
+## **Teknik/Genel:**
+
+- **SSR vs CSR:** **Hybrid (SSR + CSR)** — Initial page load is server-side rendered, with core property and content information present directly in the delivered HTML. Client-side hydration then takes over for interactive elements and further navigation. 
+- **API Çağrıları:** **Var** — Site açıkça Neuron / Iceberg Digital'in "Estate Agentlar için Yapay Zeka İşletim Sistemi" altyapısını kullanıyor. Property search sonuçlarında yapay zeka eşleştirme sistemi yüzde bazlı eşleşme göstergeleriyle görünür durumda. 
+- **Mobil Davranış:** **Var** — Responsive site üzerinden mülk arama, ilanlar, alertler, değerleme ve iletişim özelliklerine mobil erişim sağlanıyor.
+
+
+**Durum:** Yapıldı
 
 ### Tur 2 — Yasemin
 
