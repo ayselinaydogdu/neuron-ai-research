@@ -83,22 +83,46 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 3 — Ayselin
 
-**Search:**
--
+## Search
 
-**Listing Detail:**
--
+- Standard property search is available with filters for price, bedrooms, bathrooms, property type, Must Haves, and distance. There is no map-based search view.
+- Natural Language Search is not available. Free-form queries such as `"family home near schools under £400k"` are not interpreted as property requirements and instead trigger an address-related response.
+- Spelling correction is not reliable. For example, `"Sheilds"` is matched to `"SHEilds Ltd"` in Hull rather than being corrected to South Shields, resulting in an incorrect or empty search.
+- Search criteria are selected manually; there is no system that understands which requirements are more important or automatically interprets the user's intent.
+- The `100% MATCH` badge is presented as a prediction, but it is based on the user's saved search criteria rather than behavioral personalization.
+- When no results are found, the main suggestion is to create a Heads Up Alert. The site does not recommend which filters should be relaxed.
 
-**Valuation:**
--
+## Property Details
 
-**Contact:**
--
+- Property descriptions are manually written and can be lengthy. There is no AI-generated Property Summary or automatically generated Property Highlights.
+- Photos, floor plans, and EPC information are available, but the advertised 3D Digital Twin / Matterport experience is not visible on the individual property pages reviewed.
+- There is no dedicated Similar Properties section, AI-powered property comparison, or behavior-based recommendation system.
+- Stamp Duty and Mortgage Calculators provide numerical results, but there is no financial AI layer that explains or interprets the results.
+- A map shows the property's location, while school and transport information is manually included in the listing content. No AI-powered Area Insights or Commute Insights are provided.
 
-**Technical / General:**
--
+## Valuation
 
-**Status:** Not done
+- The valuation process does not display an estimated value immediately after completing the form; the result is provided later after contact details are submitted.
+- The valuation does not explain which comparable sales, local data, or property factors were used to produce the estimate.
+- Information such as property condition or renovation details is not used to visibly personalize or adjust the valuation.
+- Information entered into free-text fields is not visibly analyzed or carried into the valuation or appointment process.
+- Mortgage and Stamp Duty results are not converted into personalized affordability advice or financial recommendations.
+
+## Contact
+
+- Although chatbot-related styles are present in the source, there is no functioning AI Chat Assistant visible on the site. Users are directed to forms or telephone contact for enquiries.
+- The Buy/Sell/Rent/Let selection and information collected through Heads Up do not appear to feed into AI-powered Lead Qualification; users generally follow the same contact process.
+- Viewing requests do not provide confirmed availability or AI-powered appointment scheduling.
+- No automated out-of-hours response system is provided; enquiries appear to wait until the next working period.
+
+## Technical / General
+
+- Property listings are populated through client-side filter requests, with no visible layer interpreting or transforming the user's search intent through AI.
+- Network traffic shows IcebergTracker, Sentry, and Neuron REST endpoints, but no separate AI service call responsible for generating recommendations or property content was observed.
+- Chatbot-related styles are loaded in the source, but no active assistant is visible in the interface.
+- Visitor or tracking data does not appear to be converted into personalized content or property recommendations.
+
+**Status:** Done
 
 ### Round 4 — Görkem
 
@@ -226,22 +250,46 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 3 — Ayselin
 
-**Arama:**
--
+## Arama
 
-**İlan Detay:**
--
+- Fiyat, oda sayısı, banyo, mülk tipi, Must Haves ve mesafe gibi filtrelerin bulunduğu klasik bir emlak araması mevcut. Harita tabanlı arama görünümü bulunmuyor.
+- Doğal Dil Araması bulunmuyor. `"family home near schools under £400k"` gibi serbest sorgular mülk kriterleri olarak yorumlanmıyor ve adres odaklı bir yanıt oluşturuyor.
+- Yazım hatası düzeltme güvenilir değil. Örneğin `"Sheilds"` araması South Shields yerine Hull'daki `"SHEilds Ltd"` ile eşleştiriliyor ve yanlış veya boş sonuç oluşabiliyor.
+- Arama kriterleri manuel olarak seçiliyor; kullanıcının hangi kriterinin daha önemli olduğunu anlayan veya kullanıcı niyetini otomatik yorumlayan bir sistem bulunmuyor.
+- `100% MATCH` rozeti bir tahmin olarak gösteriliyor ancak kullanıcı davranışına göre kişiselleştirilmiş bir öneri değil, kaydedilen arama kriterleriyle eşleşmeye dayanıyor.
+- Hiçbir sonuç bulunmadığında temel olarak Heads Up Alert oluşturulması öneriliyor. Hangi filtrelerin gevşetilmesi gerektiğine dair akıllı bir öneri sunulmuyor.
 
-**Değerleme:**
--
+## İlan Detay
 
-**İletişim:**
--
+- İlan açıklamaları manuel olarak hazırlanmış ve uzun olabiliyor. AI destekli Property Summary veya otomatik oluşturulan Property Highlights bulunmuyor.
+- Fotoğraflar, kat planları ve EPC bilgileri mevcut ancak sitede tanıtılan 3D Digital Twin / Matterport deneyimi incelenen ilan sayfalarında görünmüyor.
+- Ayrı bir Benzer İlanlar bölümü, AI destekli Property Comparison veya kullanıcı davranışına göre kişiselleştirilmiş öneri sistemi bulunmuyor.
+- Stamp Duty ve Mortgage Calculator yalnızca sayısal sonuçlar veriyor; sonuçları açıklayan veya yorumlayan AI destekli finansal bir katman bulunmuyor.
+- Harita üzerinde mülkün konumu gösteriliyor. Okul ve ulaşım bilgileri ilan açıklamalarında manuel olarak veriliyor ancak AI destekli Area Insights veya Commute Insights sunulmuyor.
 
-**Teknik/Genel:**
--
+## Değerleme
 
-**Durum:** Yapılmadı
+- Değerleme formu tamamlandıktan sonra tahmini değer anında ekranda gösterilmiyor; iletişim bilgileri alındıktan sonra sonuç daha sonra iletiliyor.
+- Değerlemenin hangi karşılaştırmalı satışlara, bölgesel verilere veya mülk özelliklerine dayandığı açıklanmıyor.
+- Mülkün durumu veya yapılan tadilatlar gibi bilgilerin tahmini değeri kişiselleştirmek veya değiştirmek için kullanıldığı görünmüyor.
+- Serbest metin alanlarına girilen bilgilerin analiz edildiğine veya değerleme/randevu sürecine aktarıldığına dair bir kanıt bulunmuyor.
+- Mortgage ve Stamp Duty sonuçları kişiselleştirilmiş ödeme gücü değerlendirmesine veya finansal önerilere dönüştürülmüyor.
+
+## İletişim
+
+- Kaynak kodda chatbot ile ilgili stiller bulunmasına rağmen sitede çalışan bir AI Chat Assistant görünmüyor. Kullanıcılar sorular için formlara veya telefon iletişimine yönlendiriliyor.
+- Buy/Sell/Rent/Let seçimi ve Heads Up üzerinden toplanan bilgiler AI destekli Lead Qualification sistemine dönüşmüyor; kullanıcılar genel olarak aynı iletişim sürecinden ilerliyor.
+- Viewing taleplerinde müsaitlik teyidi veya AI destekli otomatik randevu planlama bulunmuyor.
+- Mesai dışında otomatik yanıt sistemi sunulmuyor; gönderilen taleplerin sonraki çalışma dönemine kadar beklemesi gerekiyor.
+
+## Teknik / Genel
+
+- İlan listeleri client-side filtre istekleri üzerinden yükleniyor; kullanıcı arama niyetini yorumlayan görünür bir AI katmanı bulunmuyor.
+- Network trafiğinde IcebergTracker, Sentry ve Neuron REST uçları görülüyor ancak öneri veya ilan içeriği oluşturan ayrı bir AI servisine yapılan çağrı gözlemlenmiyor.
+- Kaynak kodda chatbot ile ilgili stiller yükleniyor ancak arayüzde aktif bir asistan bulunmuyor.
+- Ziyaretçi veya takip verilerinin kişiselleştirilmiş içerik ya da ilan önerilerine dönüştürüldüğüne dair bir kanıt bulunmuyor.
+
+**Durum:** Yapıldı
 
 ### Tur 4 — Görkem
 
