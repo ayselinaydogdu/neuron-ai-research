@@ -104,22 +104,44 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 3 — Ayselin
 
-**Search:**
--
+## Search
 
-**Listing Detail:**
--
+- A standard property search is available with filters for price, bedrooms, bathrooms, reception rooms, property type, Must Haves, and distance. There is no map-based search view.
+- Natural Language Search is not available. Free-form sentences are not interpreted as property requirements and instead result in an address-related response.
+- Spelling correction is not reliable. For example, entering `"Paultn"` suggests `"Paul Tann Ltd"` in Kings Hill instead of correcting it to Paulton, which can lead to a search in the wrong area.
+- The `Suggested` option and `100% MATCH` badge are available, but these reflect how well properties match the selected filters rather than personalized ranking based on user behavior.
+- When no properties match the selected criteria, the site mainly suggests setting up a Heads Up alert instead of recommending which filters could be relaxed.
 
-**Valuation:**
--
+## Property Details
 
-**Contact:**
--
+- Property descriptions are manually written and divided into separate sections. There is no AI-generated Property Summary or AI-generated Property Highlights.
+- Listings are organized into sections such as Features, Property Info, Floor Plans, Map, and EPC. Photos, floor plans, and EPC information are available, but there is no 360° virtual tour or AI layer explaining these documents in simple language.
+- No Similar Properties section is provided, and there is no AI-powered property comparison or behavior-based recommendation system.
+- The main contact option is an `Arrange a Viewing` form. There is no AI Chat Assistant providing immediate answers to property-related questions.
+- The map shows the property's location. Some transport information, such as access to Bristol and Bath, is manually included in the listing description, but there are no AI-powered Area Insights or Commute Insights.
 
-**Technical / General:**
--
+## Valuation
 
-**Status:** Not done
+- An estimated property value is not displayed immediately. The ValPal valuation flow collects the user's contact information and provides the estimated value afterwards.
+- There is no explanation layer showing what factors the valuation is based on or how the estimated figure was calculated.
+- The Face-to-Face Valuation process does not appear to perform AI-based qualification; the form mainly collects contact details and a preferred date before moving users into the same process.
+- No Mortgage or Stamp Duty Calculator is available, and there are no AI-powered financial comments or recommendations.
+
+## Contact
+
+- There is no AI Chat Assistant providing instant responses; users are directed to forms or phone contact for enquiries.
+- The Buy/Sell/Rent/Let selection and information collected through Heads Up do not appear to result in AI-powered Lead Qualification. Users follow the same general contact flow.
+- Viewing requests do not provide confirmed availability or AI-powered automatic scheduling.
+- There is no automated response system outside business hours, and no automatic routing between the three branches is provided.
+
+## Technical / General
+
+- Property content is loaded client-side through the `filter?search_type=sales` request; there is no visible AI layer involved in generating or interpreting the property content.
+- Data received from the Neuron API, including `property_types`, `property_styles`, and `tenure_types`, is used as standard search/filter parameters rather than being interpreted by an AI system.
+- `ice.js` and Sentry are present for tracking and monitoring, but no evidence was found that this data is used for personalized property recommendations.
+- A `whatsapp-chatbot` definition appears in the source, but no functioning chatbot or AI assistant is visible in the user interface.
+
+**Status:** Done
 
 ### Round 4 — Görkem
 
@@ -246,22 +268,44 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 3 — Ayselin
 
-**Arama:**
--
+## Arama
 
-**İlan Detay:**
--
+- Fiyat, oda sayısı, banyo, salon, mülk tipi, Must Haves ve mesafe gibi filtrelerin bulunduğu klasik bir emlak araması mevcut. Harita tabanlı arama görünümü bulunmuyor.
+- Doğal Dil Araması bulunmuyor. Serbest cümleler mülk kriterleri olarak yorumlanmıyor ve adres odaklı sonuç veriyor.
+- Yazım hatası düzeltme güvenilir değil. Örneğin `"Paultn"` aramasında Paulton yerine Kings Hill'deki `"Paul Tann Ltd"` öneriliyor ve yanlış bölgede arama yapılmasına neden olabiliyor.
+- `Suggested` seçeneği ve `100% MATCH` rozeti bulunuyor ancak bunlar kullanıcı davranışına göre kişiselleştirilmiş sıralama değil, seçilen filtrelerle ilanların ne kadar eşleştiğini gösteriyor.
+- Hiçbir ilan eşleşmediğinde hangi filtrelerin gevşetilebileceğine dair akıllı öneri sunulmuyor; ağırlıklı olarak Heads Up alert oluşturulması öneriliyor.
 
-**Değerleme:**
--
+## İlan Detay
 
-**İletişim:**
--
+- İlan açıklamaları manuel olarak hazırlanmış ve farklı bölümlere ayrılmış. AI destekli Property Summary veya Property Highlights bulunmuyor.
+- İlanlar Features, Property Info, Floor Plans, Map ve EPC gibi bölümlere ayrılmış. Fotoğraflar, kat planları ve EPC bilgileri mevcut ancak 360° sanal tur veya bu belgeleri sade bir dille açıklayan AI özelliği bulunmuyor.
+- Benzer ilanlar bölümü bulunmuyor. AI destekli ilan karşılaştırma veya kullanıcı davranışına göre kişiselleştirilmiş öneri sistemi mevcut değil.
+- Ana iletişim seçeneği `Arrange a Viewing` formu. Kullanıcının ilanla ilgili sorularına anlık cevap veren AI Chat Assistant bulunmuyor.
+- Harita üzerinde mülkün konumu gösteriliyor. Bristol ve Bath'a ulaşım gibi bazı bilgiler ilan açıklamasında manuel olarak veriliyor ancak AI destekli Area Insights veya Commute Insights bulunmuyor.
 
-**Teknik/Genel:**
--
+## Değerleme
 
-**Durum:** Yapılmadı
+- Tahmini mülk değeri anında ekranda gösterilmiyor. ValPal değerleme sürecinde önce kullanıcının iletişim bilgileri alınıyor ve tahmini değer daha sonra iletiliyor.
+- Değerlemenin hangi faktörlere göre hesaplandığını veya tahmini rakamın neden bu seviyede olduğunu açıklayan bir sistem bulunmuyor.
+- Yüz yüze değerleme sürecinde AI destekli bir ön eleme yapılmıyor; form temel olarak iletişim bilgilerini ve tercih edilen tarihi alıyor.
+- Mortgage veya Stamp Duty Calculator bulunmuyor; AI destekli finansal yorum veya öneri sunulmuyor.
+
+## İletişim
+
+- Anlık yanıt veren bir AI Chat Assistant bulunmuyor; kullanıcılar sorular için formlara veya telefon iletişimine yönlendiriliyor.
+- Buy/Sell/Rent/Let seçimi ve Heads Up üzerinden toplanan bilgiler AI destekli Lead Qualification sistemine dönüşmüyor. Kullanıcılar genel olarak aynı iletişim akışından ilerliyor.
+- Viewing taleplerinde müsaitlik doğrulaması veya AI destekli otomatik randevu planlama bulunmuyor.
+- Mesai dışında otomatik yanıt sistemi bulunmuyor ve üç şube arasında otomatik yönlendirme yapılmıyor.
+
+## Teknik / Genel
+
+- İlan içerikleri `filter?search_type=sales` isteği üzerinden client-side olarak yükleniyor; içeriklerin oluşturulması veya yorumlanmasında görünür bir AI katmanı bulunmuyor.
+- Neuron API'den gelen `property_types`, `property_styles` ve `tenure_types` gibi veriler standart arama/filtre parametreleri olarak kullanılıyor; AI tarafından yorumlanmıyor.
+- `ice.js` ve Sentry kullanılıyor ancak bu verilerin kişiselleştirilmiş ilan önerilerine dönüştürüldüğüne dair bir kanıt bulunmuyor.
+- Kaynak kodda `whatsapp-chatbot` tanımı bulunuyor ancak kullanıcı arayüzünde çalışan bir chatbot veya AI asistanı görünmüyor.
+
+**Durum:** Yapıldı
 
 ### Tur 4 — Görkem
 
