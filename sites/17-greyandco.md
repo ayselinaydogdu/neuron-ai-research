@@ -103,22 +103,48 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 3 — Ayselin
 
-**Search:**
--
+## Search
 
-**Listing Detail:**
--
+- A conventional property search is available with standard filters such as price, bedrooms, bathrooms, reception rooms, property type, Must Haves, and distance. There is no map-based search view.
+- Natural Language Search is not supported. When a free-form sentence is entered, it is treated as an address query and returns `"Couldn't find the address"` instead of interpreting the user's intent.
+- Spelling correction is available, but this appears to be part of the address autocomplete functionality rather than AI-powered query interpretation.
+- A `Suggested` sorting option and `100% MATCH` indicator are available. However, these represent matching against the selected filters rather than personalized ranking based on user behavior.
+- Around 30 results are displayed with a `LOAD MORE` option. There is no AI-powered refinement or automatic suggestion of additional search criteria when there are many results.
+- Heads Up Property Alerts are available, allowing users to receive notifications about new properties matching their selected criteria.
 
-**Valuation:**
--
+## Property Details
 
-**Contact:**
--
+- Property descriptions are manually written and vary in length and style between listings. There is no AI-generated Property Summary or automatically generated Property Highlights.
+- Property pages include photo galleries, Floor Plans, and EPC information. However, there is no 360° virtual tour or AI-powered explanation of EPC/Floor Plan documents.
+- Users cannot ask natural-language questions about a property; no AI Property Q&A feature is available.
+- Property Comparison and personalized Similar Property recommendations are not provided. After the main property content, the page mainly directs users to other sections of the website.
+- A map is provided to show the property location, but there are no AI-powered Area Insights or Commute Insights.
+- A `Book a Viewing` form is available, but there is no active AI Chat Assistant providing instant responses on the property page.
 
-**Technical / General:**
--
+## Valuation
 
-**Status:** Not done
+- Instant Valuation is available and operates through ValPal on a separate subdomain.
+- The valuation process first requires the user to select the property address, followed by their name, email, and phone number. The estimated value is not displayed directly on the screen and is provided after the contact details are submitted.
+- The Face-to-Face Valuation form collects additional information such as the reason for moving, expected timeframe, and previous estate agent experience. These answers are not turned into an AI-generated analysis or personalized result.
+- There is no AI-generated explanation of how the estimated property value is calculated.
+- No Mortgage or Stamp Duty Calculator is available; mortgage-related information is provided mainly through informational content and guidance.
+
+## Contact
+
+- There is no active AI Chat Assistant or chatbot across the website or property pages.
+- The contact form contains standard fields such as first name, last name, email, phone number, message, and Buy/Sell/Rent/Let selection. The selected option does not appear to change the form flow, and no AI-powered Lead Qualification is provided.
+- Viewing requests can be submitted by selecting a date and time through a calendar, but real-time availability is not confirmed and there is no AI-powered automatic scheduling.
+- Business hours are provided, but there is no automated AI response system outside working hours.
+- A WhatsApp/msgboxx-based widget is referenced in the source, but it was not observed as an active chatbot in the user interface.
+
+## Technical / General
+
+- The website uses Nuxt-based SSR. Core property content is rendered on the server during the initial page load, while search results are loaded client-side.
+- Network requests to the Neuron API use standard filter parameters such as `property_types`, `property_styles`, and `tenure_types`. `ice.js` and Sentry services are also observed.
+- No separate API request to an AI/LLM service was identified for processing user queries with generative AI.
+- The website is responsive on mobile; filters, property listings, and contact forms remain usable on smaller screens. No mobile-specific AI functionality is provided.
+
+**Status:** Done
 
 ### Round 4 — Görkem
 
@@ -245,22 +271,48 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 3 — Ayselin
 
-**Arama:**
--
+## Arama
 
-**İlan Detay:**
--
+- Klasik property search mevcut; fiyat, bedrooms, bathrooms, reception rooms, property type, Must Haves ve distance gibi standart filtreler kullanılabiliyor. Harita tabanlı arama görünümü bulunmuyor.
+- Natural Language Search desteklenmiyor. Serbest bir cümle girildiğinde sorgu kullanıcı niyeti olarak yorumlanmak yerine `"Couldn't find the address"` şeklinde sonuçlanıyor.
+- Yazım hatası düzeltme mevcut ancak bunun AI tabanlı sorgu yorumlama değil, adres autocomplete özelliği olduğu görülüyor.
+- `Suggested` sıralama seçeneği ve `100% MATCH` göstergesi bulunuyor. Ancak bunlar kullanıcı davranışına göre kişiselleştirilmiş sıralamadan ziyade girilen filtrelerle eşleşme oranını gösteriyor.
+- Yaklaşık 30 sonuç `LOAD MORE` ile yükleniyor; sonuç sayısı fazla olduğunda AI destekli otomatik daraltma veya akıllı kriter önerisi sunulmuyor.
+- Heads Up Property Alerts mevcut; kullanıcı belirlediği kriterlere göre yeni ilanlar için bildirim alabiliyor.
 
-**Değerleme:**
--
+## İlan Detay
 
-**İletişim:**
--
+- İlan açıklamaları manuel olarak hazırlanmış ve ilanlar arasında uzunluk ve anlatım şekli değişiyor. AI-generated Property Summary veya otomatik Property Highlights bulunmuyor.
+- İlan sayfalarında fotoğraf galerisi, Floor Plan ve EPC bilgileri mevcut. Ancak 360° virtual tour veya EPC/Floor Plan belgelerini AI ile sadeleştiren bir özellik bulunmuyor.
+- Kullanıcının ilan hakkında doğal dilde soru sorabileceği AI Property Q&A özelliği bulunmuyor.
+- Property Comparison veya kullanıcı davranışına göre kişiselleştirilmiş Similar Properties önerileri sunulmuyor; ilan içeriğinden sonra doğrudan diğer site bölümlerine geçiliyor.
+- Harita ilan konumunu gösteriyor ancak AI destekli Area Insights veya Commute Insights bulunmuyor.
+- İletişim için `Book a Viewing` formu bulunuyor; ancak ilan sayfasında anlık cevap veren bir AI Chat Assistant mevcut değil.
 
-**Teknik/Genel:**
--
+## Değerleme
 
-**Durum:** Yapılmadı
+- Instant Valuation mevcut ve ValPal üzerinden ayrı bir subdomain'de çalışıyor.
+- Valuation sürecinde önce property adresi seçiliyor, ardından isim, e-posta ve telefon bilgileri isteniyor. Tahmini değer doğrudan ekranda gösterilmiyor; iletişim bilgileri sonrasında iletiliyor.
+- Yüz yüze valuation formunda taşınma nedeni, zaman planı ve önceki estate agent deneyimi gibi ek bilgiler alınıyor. Bu bilgiler kullanıcıya AI destekli bir analiz veya kişiselleştirilmiş sonuç olarak geri sunulmuyor.
+- Tahmini değerin nasıl hesaplandığını açıklayan AI-generated valuation explanation bulunmuyor.
+- Mortgage veya Stamp Duty Calculator bulunmuyor; mortgage ile ilgili içerik yalnızca bilgilendirici metin ve yönlendirmeler şeklinde sunuluyor.
+
+## İletişim
+
+- Site genelinde veya ilan sayfalarında aktif bir AI Chat Assistant / Chatbot bulunmuyor.
+- İletişim formu ad, soyad, e-posta, telefon, mesaj ve Buy/Sell/Rent/Let seçimi gibi standart alanlardan oluşuyor. Seçilen seçenek formun sonraki akışını değiştirmiyor ve AI Lead Qualification yapılmıyor.
+- Viewing talebi için takvim üzerinden gün ve saat seçilebiliyor ancak gerçek zamanlı müsaitlik teyidi sunulmuyor; AI destekli otomatik randevu planlama bulunmuyor.
+- Çalışma saatleri belirtiliyor ancak mesai dışında otomatik AI yanıt sistemi bulunmuyor.
+- Kaynaklarda WhatsApp/msgboxx tabanlı bir widget referansı görülse de aktif kullanıcı arayüzünde çalışan bir chatbot olarak gözlemlenmiyor.
+
+## Teknik / Genel
+
+- Site Nuxt tabanlı SSR kullanıyor; ilk sayfa yüklemesinde temel property içeriği sunucu tarafından render ediliyor, arama sonuçları ise client-side olarak yükleniyor.
+- Network tarafında Neuron API üzerinden `property_types`, `property_styles` ve `tenure_types` gibi klasik filtre parametreleri kullanılıyor. `ice.js` ve Sentry gibi servisler de gözlemleniyor.
+- AI/LLM servisine gönderilen ve kullanıcı sorgusunu generative AI ile işleyen ayrı bir API çağrısı tespit edilmiyor.
+- Mobil görünüm responsive; filtreler, ilanlar ve iletişim formları küçük ekranlarda kullanılabilir durumda. Mobil cihazlara özel AI destekli bir özellik bulunmuyor.
+
+**Durum:** Yapıldı
 
 ### Tur 4 — Görkem
 
