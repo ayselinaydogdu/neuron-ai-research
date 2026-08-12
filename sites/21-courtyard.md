@@ -106,22 +106,58 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 3 — Ayselin
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **No** — Property search relies on structured controls such as sale/rent selection, location, price, bedroom count, and other property filters. There is no free-text search where users can describe their needs in natural language.
+- **Smart Suggestions / Query Understanding:** **Partial** — Search results are filtered based on the entered criteria, and location/address inputs may provide autocomplete-style assistance. However, no AI-based system was observed that understands user intent, automatically interprets requirements, or personalizes search results.
+- **Saved Search / Alerts:** **Yes** — Users can use search and notification features based on specific property criteria. However, there is no clear evidence that alerts are intelligently personalized based on user behavior.
 
-**Valuation:**
--
+## **Property Details:**
 
-**Contact:**
--
+- **AI Property Summary:** **No** — Property pages provide manually written descriptions, room information, and key features. There is no AI-generated short summary of the listing.
+- **Property Q&A:** **No** — Users cannot ask an AI questions about a property, such as “Is this property suitable for a family?” or “How far is it from the nearest train station?”
+- **Property Highlights:** **Partial** — Property pages display key features and descriptions, but there is no AI system that automatically extracts highlights such as “large garden,” “bright living room,” or “close to public transport.”
+- **Lifestyle / “Ideal For” Matching:** **Partial** — Property descriptions may indicate suitability for families, couples, investors, or specific lifestyles. However, there is no AI-powered matching based on the user's personal preferences.
+- **Property Comparison:** **No** — There is no AI-powered feature for comparing multiple properties based on price, location, bedrooms, features, advantages, and disadvantages.
+- **Personalized Similar Properties:** **Partial** — Users may be directed to properties with similar criteria, but personalized recommendations based on browsing history, favorites, or user behavior are not observed.
+- **Area Insights:** **Partial** — Location and basic information about nearby amenities are available. However, there is no AI-generated analysis combining factors such as schools, transport, shops, safety, and lifestyle suitability.
+- **Commute Insights:** **Partial** — Map and location information can provide access to nearby transport points, but there is no personalized commute analysis based on a user's workplace, school, or selected destination.
+- **Document Explanation (EPC / Floor Plan):** **No** — EPC information, floor plans, or other property documents may be available, but there is no AI feature that analyzes these documents and explains them in simple language.
 
-**Technical / General:**
--
+## **Valuation:**
 
-**Status:** Not done
+- **Instant Valuation:** **Yes** — An online valuation process is available, allowing users to provide property information and receive an estimated property value.
+- **AI Valuation Explanation:** **No** — Although an estimated value can be provided, there is no AI-generated explanation showing which property characteristics, local data, or comparable properties contributed to the valuation.
+- **Mortgage / Stamp Duty Calculator:** **Partial** — Mortgage or purchasing-cost calculation tools may be available, but there is no AI-powered financial commentary based on the user's income, budget, or purchasing scenario.
+
+## **Communication:**
+
+- **AI Chat Assistant / Chatbot:** **No** — There is no AI-powered chatbot that allows users to ask questions about the website or properties 24/7.
+- **Lead Qualification:** **Partial** — Contact, valuation, and viewing forms collect user information. However, there is no AI system that analyzes these details, scores lead quality, or prioritizes prospects for the sales team.
+- **Automated Booking / Viewing Scheduling:** **Partial** — Users can request property viewings, but there is no AI-powered system that automatically checks availability, matches preferences, and schedules appointments.
+- **After-Hours Response:** **No** — Contact forms and agent communication channels are available, but there is no AI-based system providing automated responses outside business hours.
+
+## **Technical / General:**
+
+- **SSR and CSR:** **Partial** — Core property and content pages are accessible, but the exact SSR/CSR architecture cannot be conclusively verified through external inspection alone.
+- **API Calls:** **Partial** — Backend services/APIs are used for property and user interactions, but no separate AI API layer responsible for recommendations, NLP, or generative content could be confirmed through page-level inspection.
+- **Mobile Behavior:** **Yes** — The website is responsive and supports property search, property detail viewing, and communication on mobile devices. However, there is no natural-language search or AI-powered quick filtering to reduce the filtering effort on smaller screens.
+
+### **Overall AI Opportunities**
+
+The main AI opportunities identified for Courtyard Homes are:
+
+1. **Natural Language Property Search** — Convert users' natural-language requirements into structured property filters.
+2. **AI Property Summary** — Generate concise summaries from long property descriptions.
+3. **AI Property Q&A** — Answer user questions instantly using property data.
+4. **Lifestyle Matching** — Analyze user requirements and prioritize the most suitable properties.
+5. **AI Area & Commute Insights** — Interpret area and transport data based on the user's destinations and lifestyle.
+6. **AI Valuation Explanation** — Explain the factors behind the estimated property value.
+7. **AI Lead Qualification** — Analyze enquiry forms and prioritize leads for agents.
+8. **AI Viewing Assistant** — Match user and agent availability and automate the viewing process.
+
+
+**Status:** Done
 
 ### Round 4 — Görkem
 
@@ -250,22 +286,57 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 3 — Ayselin
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Mülk araması; satış/kiralama seçimi, konum, fiyat, oda sayısı ve diğer yapılandırılmış filtreler üzerinden ilerliyor. Kullanıcının “şehir merkezine yakın, bahçeli ve aile için uygun bir ev” gibi serbest metinle arama yapmasını sağlayan doğal dil özelliği bulunmuyor.
+- **Akıllı Öneriler / Sorgu Anlama:** **Kısmi** — Arama sonuçları girilen kriterlere göre filtreleniyor ve konum/adres girişinde otomatik tamamlama benzeri yardımcı özellikler bulunabiliyor; ancak kullanıcı niyetini anlayan, kriterleri otomatik yorumlayan veya sonuçları kişiselleştiren AI tabanlı bir sistem gözlemlenmiyor.
+- **Kayıtlı Arama / Uyarılar:** **Var** — Kullanıcıların belirli mülk kriterlerine göre arama ve bildirim özelliklerinden yararlanabildiği görülüyor. Ancak uyarıların kullanıcı davranışını analiz ederek akıllı şekilde kişiselleştirildiğine dair bir AI özelliği bulunmuyor.
 
-**Değerleme:**
--
+## **İlan Detay:**
 
-**İletişim:**
--
+- **Mülk Özeti (YZ):** **Yok** — İlanlarda mülk açıklaması, oda bilgileri ve temel özellikler manuel içerik olarak sunuluyor. Uzun ilan açıklamasını otomatik olarak kısa ve anlaşılır bir AI özetine dönüştüren özellik bulunmuyor.
+- **Mülk Soru-Cevap:** **Yok** — Kullanıcının ilanla ilgili “Bu ev çocuklu aile için uygun mu?” veya “Tren istasyonuna ne kadar uzak?” gibi soruları doğrudan AI'a sorabileceği bir sistem bulunmuyor.
+- **Mülkün Öne Çıkan Özellikleri:** **Kısmi** — İlanlarda temel özellikler ve açıklamalar listeleniyor; ancak AI'ın açıklamadan otomatik olarak “geniş bahçe”, “aydınlık salon”, “ulaşıma yakın” gibi öne çıkan noktaları çıkardığı bir yapı bulunmuyor.
+- **Yaşam Tarzı / "... için ideal" Eşleştirmesi:** **Kısmi** — İlan açıklamalarında aileler, çiftler, yatırımcılar veya belirli kullanıcı profilleri için uygunluk manuel olarak ifade edilebiliyor. Ancak kullanıcı profiline göre AI destekli yaşam tarzı eşleştirmesi bulunmuyor.
+- **Mülk Karşılaştırma:** **Yok** — Kullanıcının birden fazla ilanı seçerek fiyat, konum, oda sayısı, özellikler ve avantaj/dezavantajlar açısından AI destekli karşılaştırabileceği bir özellik gözlemlenmiyor.
+- **Benzer İlanlar (kişiselleştirilmiş):** **Kısmi** — Benzer kriterlere sahip başka ilanlara yönlendirme yapılabiliyor; ancak kullanıcının görüntüleme geçmişi, favorileri veya davranışlarına göre kişiselleştirilmiş AI önerileri bulunmuyor.
+- **Bölge İçgörüleri:** **Kısmi** — İlanlarda konum ve çevredeki olanaklara ilişkin temel bilgiler sunuluyor. Ancak okul, ulaşım, market, güvenlik veya yaşam kalitesi gibi verileri birleştirerek AI tarafından oluşturulan kişiselleştirilmiş bölge analizi bulunmuyor.
+- **Ulaşım İçgörüleri:** **Kısmi** — Harita ve konum bilgileri üzerinden çevredeki ulaşım noktaları görülebiliyor; ancak kullanıcının belirlediği iş yeri, okul veya başka bir hedefe göre otomatik yolculuk süresi ve ulaşım analizi sunulmuyor.
+- **Belge Açıklaması (EPC / Kat Planı):** **Yok** — EPC, kat planı veya benzeri mülk dokümanları mevcut olduğunda kullanıcı bunları inceleyebiliyor; ancak AI'ın bu belgeleri analiz edip sade bir dille açıklaması bulunmuyor.
 
-**Teknik/Genel:**
--
+## **Değerleme:**
 
-**Durum:** Yapılmadı
+- **Anlık Değerleme:** **Var** — Kullanıcıların mülk bilgilerini girerek çevrimiçi değer tahmini alabileceği bir valuation süreci bulunuyor.
+- **Yapay Zeka Değerleme Açıklaması:** **Yok** — Tahmini değer sunulsa da bu değerin hangi özellikler, bölgesel veriler veya benzer satışlar dikkate alınarak oluşturulduğunu açıklayan AI destekli bir analiz bulunmuyor.
+- **Mortgage / Damga Vergisi Hesaplayıcısı:** **Kısmi** — Mortgage veya satın alma maliyetleriyle ilgili hesaplama araçları bulunabiliyor; ancak sonuçları kullanıcının gelirine, bütçesine veya satın alma senaryosuna göre yorumlayan AI destekli finansal danışmanlık bulunmuyor.
+
+## **İletişim:**
+
+- **Yapay Zeka Sohbet Asistanı / Chatbot:** **Yok** — Kullanıcıların site veya ilan hakkında 7/24 soru sorabileceği AI destekli bir sohbet asistanı bulunmuyor.
+- **Müşteri Adayı Nitelendirme:** **Kısmi** — İletişim, valuation ve viewing formları kullanıcıdan çeşitli bilgiler topluyor. Ancak bu bilgileri AI kullanarak analiz eden, lead kalitesini puanlayan veya satış ekibine önceliklendirilmiş adaylar sunan bir sistem bulunmuyor.
+- **Otomatik Rezervasyon / Görüntüleme Planlama:** **Kısmi** — Kullanıcılar ilan üzerinden viewing talebinde bulunabiliyor; ancak müsaitlikleri otomatik kontrol eden, kullanıcı tercihleriyle eşleştiren ve randevuyu AI ile planlayan bir sistem gözlemlenmiyor.
+- **Mesai Dışı Yanıt:** **Yok** — İletişim formları ve danışman iletişim kanalları mevcut; ancak mesai dışında kullanıcı sorularını otomatik olarak yanıtlayan AI tabanlı bir sistem bulunmuyor.
+
+## **Teknik/Genel:**
+
+- **SSR ve CSR:** **Kısmi** — Temel ilan ve içerik sayfaları erişilebilir durumda; ancak sayfaların SSR/CSR mimarisi yalnızca dışarıdan yapılan incelemeyle kesin olarak doğrulanamıyor.
+- **API Çağrıları:** **Kısmi** — İlan ve kullanıcı etkileşimleri için arka planda servis/API kullanımı bulunuyor; ancak sayfa incelemesi üzerinden AI öneri, NLP veya generatif içerik üreten ayrı bir AI API katmanı doğrulanamıyor.
+- **Mobil Davranış:** **Var** — Site responsive yapıda ve mobil cihazlarda ilan arama, ilan detaylarını görüntüleme ve iletişim işlemleri gerçekleştirilebiliyor. Ancak mobil kullanıcı deneyiminde doğal dil araması veya AI destekli hızlı filtreleme bulunmuyor.
+
+### **Genel AI Fırsatları**
+
+Courtyard Homes için en belirgin AI geliştirme alanları:
+
+1. **Natural Language Property Search** — Kullanıcının günlük dilde yazdığı ihtiyaçları filtrelere dönüştürme.
+2. **AI Property Summary** — Uzun ilan açıklamalarından kısa ve anlaşılır özet oluşturma.
+3. **AI Property Q&A** — İlan verileri üzerinden kullanıcı sorularını anlık yanıtlama.
+4. **Lifestyle Matching** — Kullanıcı ihtiyaçlarını analiz ederek uygun ilanları önceliklendirme.
+5. **AI Area & Commute Insights** — Bölge ve ulaşım verilerini kullanıcının hedeflerine göre yorumlama.
+6. **AI Valuation Explanation** — Tahmini mülk değerinin hangi faktörlere dayandığını açıklama.
+7. **AI Lead Qualification** — Formlardan gelen adayları analiz ederek satış ekibi için önceliklendirme.
+8. **AI Viewing Assistant** — Kullanıcı ve danışman müsaitliklerini eşleştirerek görüntüleme sürecini otomatikleştirme.
+
+**Durum:** Yapıldı
 
 ### Tur 4 — Görkem
 
