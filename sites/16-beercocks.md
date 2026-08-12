@@ -103,22 +103,44 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 3 — Ayselin
 
-**Search:**
--
+## Search
 
-**Listing Detail:**
--
+- Conventional property search is available with filters such as price, bedrooms, bathrooms, property type, Must Haves, and distance; there is no map-based search view.
+- Natural Language Search is not supported; entering a free-form sentence returns a `"Couldn't find the address"` response instead of interpreting the user's intent.
+- Spelling correction is available, but this appears to be part of the address autocomplete functionality; no AI-powered query interpretation is provided.
+- `Suggested` is available as the default option and a `100% MATCH` badge is displayed; however, these indicate matching against the selected filters rather than personalized AI ranking.
+- 515 results are displayed using `LOAD MORE`; there is no AI-powered smart refinement or automatic narrowing of criteria for large result sets.
 
-**Valuation:**
--
+## Property Details
 
-**Contact:**
--
+- Property descriptions are manually written and organized under sections such as `What We Love` and `What the Owner Loves`. There is no AI-generated Property Summary.
+- Users cannot ask natural-language questions about a property; no AI Property Q&A feature is available.
+- Photo galleries and full property walkthrough videos are available, but there is no 360° virtual tour.
+- The sidebar displays `Latest Properties`; personalized Similar Property recommendations and AI Property Comparison are not available.
+- Maps, Floor Plans, and Details sections are provided, but there are no AI-powered Area Insights, Commute Insights, or AI explanations of property documents.
+- Mortgage and Stamp Duty Calculators are available, but they only provide calculation results and do not offer AI-powered financial analysis or recommendations.
 
-**Technical / General:**
--
+## Valuation
 
-**Status:** Not done
+- Instant Valuation is available through a two-step form. Users provide details such as postcode, bedrooms, bathrooms, property type, property style, floor area, and tenure before entering their contact information.
+- The estimated value is displayed directly on the screen. The page states that the calculation uses `recent local sales + property data`, but there is no AI-generated explanation showing which property characteristics influence the estimate.
+- A Face-to-Face Valuation option is also available. The form asks for information such as the user's estimated property value, but there is no real-time calendar or AI-powered appointment scheduling.
+- Mortgage and Stamp Duty Calculators are available, but they only provide numerical results and do not provide AI-powered financial analysis or personalized recommendations.
+
+## Contact
+
+- There is no active AI Chat Assistant or chatbot.
+- The `Book a Viewing` form requests title, first name, last name, email, phone number, address, property status (for sale/to let), and message. Users can provide a preferred date and time, but actual availability is not shown and there is no AI-powered automatic scheduling.
+- Contact information for 11 branches is provided separately. Users have to select the appropriate branch themselves; there is no AI-powered routing or lead qualification.
+- No automated AI chatbot or conversational response system is available outside business hours.
+
+## Technical / General
+
+- The website uses Nuxt-based SSR. Search results and filter options are retrieved client-side through Neuron's REST API.
+- API requests use standard filter parameters such as `property_types`, `property_styles`, and `tenure_types`. No requests to an AI or LLM service were identified.
+- The mobile version is responsive; filters, search results, property listings, and contact forms remain usable on smaller screens. No mobile-specific AI assistant or enhancement is provided.
+
+**Status:** Done
 
 ### Round 4 — Görkem
 
@@ -245,22 +267,44 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 3 — Ayselin
 
-**Arama:**
--
+## Arama
 
-**İlan Detay:**
--
+- Klasik filtre tabanlı arama mevcut (fiyat, oda, banyo, mülk tipi, Must Haves, mesafe); harita görünümü bulunmuyor.
+- Doğal dil araması bulunmuyor; serbest cümle girildiğinde `"Couldn't find the address"` yanıtı dönüyor.
+- Yazım hatası düzeltme mevcut ancak bunun adres otomatik tamamlama özelliği olduğu görülüyor; AI destekli sorgu yorumlama bulunmuyor.
+- `Suggested` varsayılan olarak sunuluyor ve `100% MATCH` rozeti mevcut; ancak bunlar kişiselleştirilmiş AI sıralaması yerine girilen filtrelerle eşleşmeyi gösteriyor.
+- 515 sonuç `LOAD MORE` ile listeleniyor; bu kadar fazla sonuçta AI destekli akıllı daraltma veya otomatik kriter önerisi sunulmuyor.
 
-**Değerleme:**
--
+## İlan Detay
 
-**İletişim:**
--
+- İlan açıklamaları manuel hazırlanmış ve `What We Love` ile `What the Owner Loves` gibi bölümlere ayrılmış. AI destekli Property Summary bulunmuyor.
+- Kullanıcılar ilan hakkında doğal dilde soru soramıyor; AI Property Q&A özelliği bulunmuyor.
+- Fotoğraf galerisi ve tam property walkthrough videosu mevcut ancak 360° virtual tour bulunmuyor.
+- Sağ sütunda `Latest Properties` listeleniyor; kişiselleştirilmiş Similar Properties önerileri veya AI Property Comparison bulunmuyor.
+- Harita, Floor Plan ve Details bölümleri mevcut ancak AI destekli Area Insights, Commute Insights veya belge açıklaması sunulmuyor.
+- Mortgage ve Stamp Duty Calculator mevcut; ancak araçlar yalnızca hesaplama sonucu veriyor ve AI destekli finansal yorum veya öneri üretmiyor.
 
-**Teknik/Genel:**
--
+## Değerleme
 
-**Durum:** Yapılmadı
+- Instant Valuation iki aşamalı bir form üzerinden ilerliyor. Postcode, bedrooms, bathrooms, property type, property style, floor area ve tenure gibi bilgiler alındıktan sonra iletişim bilgileri isteniyor.
+- Tahmini değer doğrudan ekranda gösteriliyor. Sayfa hesaplamada `recent local sales + property data` kullandığını belirtiyor ancak tahminin hangi property özelliklerine göre değiştiğine dair AI destekli açıklama sunulmuyor.
+- Face-to-Face Valuation seçeneği de mevcut. Formda kullanıcıdan mülkün tahmini değeri gibi bilgiler isteniyor; gerçek zamanlı takvim veya AI destekli randevu planlama bulunmuyor.
+- Mortgage ve Stamp Duty Calculator mevcut ancak yalnızca sayısal sonuç sağlıyor; AI finansal analiz veya kişiselleştirilmiş öneri sunulmuyor.
+
+## İletişim
+
+- Aktif bir AI Chat Assistant veya chatbot bulunmuyor.
+- `Book a Viewing` formunda unvan, ad, soyad, e-posta, telefon, adres, mülkün satılık/kiralık durumu ve mesaj bilgileri isteniyor. Kullanıcı tercih ettiği tarih ve saati belirtebiliyor ancak gerçek müsaitlik gösterilmiyor ve AI destekli otomatik randevu planlama yapılmıyor.
+- Site 11 farklı şubenin iletişim bilgilerini ayrı ayrı sunuyor. Kullanıcının doğru şubeyi kendisinin seçmesi gerekiyor; AI destekli yönlendirme veya lead qualification bulunmuyor.
+- Mesai dışında otomatik yanıt veren bir AI chatbot veya konuşma tabanlı sistem bulunmuyor.
+
+## Teknik / Genel
+
+- Site Nuxt tabanlı SSR kullanıyor. Arama sonuçları ve filtre seçenekleri client-side olarak Neuron'un REST API'sinden alınıyor.
+- API isteklerinde `property_types`, `property_styles` ve `tenure_types` gibi standart filtre parametreleri kullanılıyor. AI veya LLM servisine gönderilen herhangi bir istek tespit edilmiyor.
+- Mobil görünüm responsive çalışıyor; filtreler, arama sonuçları, ilanlar ve iletişim formları küçük ekranlarda kullanılabilir durumda. Mobil cihazlara özel bir AI kolaylaştırıcı bulunmuyor.
+
+**Durum:** Yapıldı
 
 ### Tur 4 — Görkem
 
