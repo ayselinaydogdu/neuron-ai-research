@@ -356,7 +356,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ---
 
-**Status:** Yapıldı
+**Durum:** Yapıldı
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
