@@ -13,7 +13,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | ----- | -------- | -------- |
 | 1     | Berkay   | Done     |
 | 2     | Yasemin  | Done     |
-| 3     | Ayselin  | Not done |
+| 3     | Ayselin  | Done |
 | 4     | Görkem   | Not done |
 
 > Fill in only your own round block; don't edit anyone else's.
@@ -159,7 +159,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | ----- | -------- | -------- |
 | 1     | Berkay   | Yapıldı  |
 | 2     | Yasemin  | Yapıldı  |
-| 3     | Ayselin  | Yapılmadı|
+| 3     | Ayselin  | Yapıldı|
 | 4     | Görkem   | Yapılmadı|
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
