@@ -13,7 +13,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 |---|---|---|
 | 1 | Yasemin | Done |
 | 2 | Ayselin | Done |
-| 3 | Görkem | Not done |
+| 3 | Görkem | Done |
 | 4 | Berkay | Not done |
 
 > Fill in only your own round block; don't edit anyone else's.
@@ -105,21 +105,28 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 3 — Görkem
 
 **Search:**
--
+- Standard platform search again (price / beds / baths / type, no map). One thing genuinely annoyed me as a shopper: the default sort is **"Highest Price"**. So a first-time buyer lands on the most expensive homes first — exactly backwards for most people's budgets. That's a one-line config choice hurting real users, not an AI problem.
+- "family home near schools" is read as an address, not intent. 58 results dumped behind "LOAD MORE" with no way to narrow smartly.
+- **AI opportunity (platform-level):** the free-text → filter layer I keep flagging; every site in this group shares the identical filter set, so it's write-once. But before that, just flip the default sort to something sane.
 
 **Listing Detail:**
--
+- Hand-written descriptions whose tone/detail swing wildly from listing to listing — the quality-floor problem I've seen on every tenant. Photo gallery, floor plan on-page, EPC linked out to gov.uk; no 360 tour.
+- Right column is only "newest properties" — not personalised, not related. No summary, no Q&A.
+- **AI opportunity:** a summary would paper over the uneven human copy (some listings are three lines, some three paragraphs); grounded Q&A would answer the questions the thinner descriptions leave open.
 
 **Valuation:**
--
+- Instant Valuation runs two steps and, per the platform pattern, hands the figure over **by email in exchange for contact details** — nothing on screen. Runs on **ValPal**, same as Cope & Co.
+- A **Mortgage Calculator is present** here, which not every site has — but it only spits a number, no commentary. **AI opportunity:** turn that raw number into "what this means for your budget" (an explanation layer, the same idea as AI valuation explanation).
 
 **Contact:**
--
+- Form takes name/phone/email/message + Buy/Sell/Rent/Let; the selection changes nothing. Viewings/valuations are booked by **typing a preferred day/time as free text** — no calendar, no availability.
+- Opening hours are listed (wkdays 9–17:30, Sat 9–16, Sun closed) but nothing answers out of hours. An out-of-hours qualifier grounded in their own stock is the obvious platform-level fill.
 
 **Technical / General:**
--
+- Nuxt SSR; content in the HTML. Fetch/XHR shows only Sentry + Google — **no separate Neuron content API call** here either (matches Cope & Co, differs from Group D). `whatsapp-chatbot` present-but-inactive again — the dormant chatbot slot is clearly a platform-wide default.
+- Responsive; forms not submitted, no real-device test.
 
-**Status:** Not done
+**Status:** Done
 
 ### Round 4 — Berkay
 
@@ -156,7 +163,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 |---|---|---|
 | 1 | Yasemin | Yapıldı |
 | 2 | Ayselin | Yapıldı |
-| 3 | Görkem | Yapılmadı |
+| 3 | Görkem | Yapıldı |
 | 4 | Berkay | Yapılmadı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
@@ -248,21 +255,28 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 3 — Görkem
 
 **Arama:**
--
+- Yine standart platform araması (fiyat / oda / banyo / tip, harita yok). Alıcı olarak gerçekten sinir bozan bir şey: varsayılan sıralama **"Highest Price"**. Yani ilk kez ev alan biri en pahalı evlerle karşılaşıyor — çoğu bütçe için tam ters. Bu, gerçek kullanıcıyı zorlayan tek satırlık bir config tercihi, AI problemi değil.
+- "family home near schools" niyet değil adres olarak okunuyor. 58 sonuç "LOAD MORE" arkasına yığılmış, akıllıca daraltma yolu yok.
+- **AI fırsatı (platform seviyesi):** sürekli işaret ettiğim serbest metin → filtre katmanı; bu gruptaki her site aynı filtre setini paylaştığı için bir kez yazılır. Ama ondan önce, varsayılan sıralamayı mantıklı bir şeye çevirin.
 
 **İlan Detay:**
--
+- Ton/detayı ilandan ilana savrulan elle yazılmış açıklamalar — her tenant'ta gördüğüm kalite-tabanı problemi. Foto galeri, sayfada kat planı, EPC gov.uk'e link; 360 tur yok.
+- Sağ sütun sadece "en yeni ilanlar" — kişiselleştirilmiş değil, ilişkili değil. Özet yok, Q&A yok.
+- **AI fırsatı:** özet, dengesiz insan metnini örter (bazı ilanlar üç satır, bazıları üç paragraf); veriye dayalı Q&A ise zayıf açıklamaların bıraktığı soruları cevaplar.
 
 **Değerleme:**
--
+- Instant Valuation iki adım ve platform kalıbına uygun olarak rakamı **iletişim bilgisi karşılığında e-posta ile** veriyor — ekranda hiçbir şey yok. **ValPal** ile çalışıyor, Cope & Co gibi.
+- Burada bir **Mortgage Calculator var**, ki her sitede yok — ama sadece rakam üretiyor, yorum yok. **AI fırsatı:** o çıplak rakamı "bunun bütçen için anlamı" haline getirmek (açıklama katmanı, AI valuation explanation ile aynı fikir).
 
 **İletişim:**
--
+- Form ad/telefon/e-posta/mesaj + Buy/Sell/Rent/Let alıyor; seçim hiçbir şey değiştirmiyor. Viewing/değerleme **tercih edilen gün/saati serbest metinle yazarak** ayarlanıyor — takvim yok, müsaitlik yok.
+- Çalışma saatleri listeli (hafta içi 9–17:30, Cmt 9–16, Paz kapalı) ama mesai dışı hiçbir şey yanıtlamıyor. Kendi stoklarına dayalı mesai-dışı bir qualifier bariz platform seviyesi dolgusu.
 
 **Teknik/Genel:**
--
+- Nuxt SSR; içerik HTML'de. Fetch/XHR yalnızca Sentry + Google — burada da **ayrı Neuron içerik API çağrısı yok** (Cope & Co ile aynı, Grup D'den farklı). `whatsapp-chatbot` yine mevcut-ama-inaktif — uykudaki chatbot yuvası açıkça platform geneli varsayılan.
+- Responsive; form gönderilmedi, gerçek cihaz testi yok.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Tur 4 — Berkay
 

@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1     | Berkay   | Done     |
 | 2     | Yasemin  | Done     |
 | 3     | Ayselin  | Done |
-| 4     | Görkem   | Not done |
+| 4     | Görkem   | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -146,21 +146,28 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 4 — Görkem
 
 **Search:**
--
+- Standard platform filters, no map, no natural language. What stood out to me is a concrete **failure**, not just an absence: the location box's autocomplete is unreliable — typing **"Paultn" suggests "Paul Tann Ltd" in Kings Hill** instead of Paulton, and quietly launches a search in the wrong area. So the one bit of "smart" input actively misleads.
+- That's the sharpest example in my whole review of why intent-understanding matters: a human instantly knows "Paultn" means Paulton; the address matcher doesn't. **AI opportunity:** a query-understanding layer would fix exactly this class of typo/intent error — and it's genuinely AI-shaped, not a plain UI tweak.
+- On empty results the only prompt is "set up a Heads Up alert" — no "relax this filter" suggestion.
 
 **Listing Detail:**
--
+- Copy split into Features / Property Info / Floor Plans / Map / EPC tabs; ~10 photos, floor plan, EPC, no 360. No similar-properties, no comparison, no summary/Q&A.
+- Travel to **Bristol and Bath is written by hand into the description** — the commute info buyers want, trapped in prose. Same structured-area-data opportunity I flagged on Keys & Lee.
 
-**Valuation:**
--
+**Valuation — another disagreement to verify:**
+- In my pass the valuation was the **ValPal contact-first flow: it collects details and sends the figure afterwards, nothing on screen** (matches Yasemin's and Ayselin's notes).
+- ⚠️ Round 1 (Berkay) recorded an **"Instant Valuation that provides an automated estimate after postcode/beds/type."** As with Grey & Co, the two accounts disagree on whether a number ever appears. **Re-verify live.** I won't assert one version as fact.
+- No mortgage/stamp-duty calculator; no explanation layer either way.
 
 **Contact:**
--
+- Only route is the **Arrange a Viewing** form; every question goes to a form or the phone. Buy/Sell/Rent/Let and Heads Up answers collected but never turned into qualification.
+- **Three branches with no routing** — user self-selects. No out-of-hours answer.
 
 **Technical / General:**
--
+- Hybrid SSR + CSR; listings via client-side `filter?search_type=sales`. Notable: **Berkay flagged that, unlike other Group-D sites, Allen does *not* explicitly self-identify as Neuron/Iceberg in its footer.** The filter schema and behaviour are identical to the platform, so I'm confident it's the same stack — but the missing footer signature is worth a note.
+- `ice.js` + Sentry collect behaviour that becomes no personalisation; `whatsapp-chatbot` present-but-inactive. Responsive; forms not submitted.
 
-**Status:** Not done
+**Status:** Done
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
@@ -179,7 +186,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | 1     | Berkay   | Yapıldı  |
 | 2     | Yasemin  | Yapıldı  |
 | 3     | Ayselin  | Yapıldı|
-| 4     | Görkem   | Yapılmadı|
+| 4     | Görkem   | Yapıldı|
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
@@ -310,21 +317,28 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 4 — Görkem
 
 **Arama:**
--
+- Standart platform filtreleri, harita yok, doğal dil yok. Beni çarpan şey somut bir **hata**, sadece bir eksiklik değil: konum kutusunun otomatik tamamlaması güvenilmez — **"Paultn" yazınca Paulton yerine Kings Hill'deki "Paul Tann Ltd"** öneriliyor ve sessizce yanlış bölgede arama başlatıyor. Yani tek "akıllı" girdi aktif olarak yanıltıyor.
+- Bu, tüm incelememde niyet-anlamanın neden önemli olduğunun en keskin örneği: bir insan "Paultn"un Paulton olduğunu anında bilir; adres eşleştirici bilmez. **AI fırsatı:** bir sorgu-anlama katmanı tam da bu yazım/niyet hatası sınıfını çözer — ve düz bir UI ince ayarı değil, gerçekten AI-biçimli.
+- Boş sonuçta tek öneri "Heads Up alert kur" — "şu filtreyi gevşet" önerisi yok.
 
 **İlan Detay:**
--
+- Metin Features / Property Info / Floor Plans / Map / EPC sekmelerine bölünmüş; ~10 fotoğraf, kat planı, EPC, 360 yok. Benzer-ilan yok, karşılaştırma yok, özet/Q&A yok.
+- **Bristol ve Bath'a ulaşım açıklamaya elle yazılmış** — alıcının istediği commute bilgisi, prose içinde hapis. Keys & Lee'de işaret ettiğim aynı yapılandırılmış-bölge-verisi fırsatı.
 
-**Değerleme:**
--
+**Değerleme — doğrulanması gereken bir başka görüş ayrılığı:**
+- Benim gezimde değerleme **ValPal iletişim-önce akışıydı: detay topluyor ve rakamı sonradan gönderiyor, ekranda hiçbir şey yok** (Yasemin ve Ayselin'in notlarıyla uyumlu).
+- ⚠️ Round 1 (Berkay) **"postcode/oda/tip sonrası otomatik tahmin veren Instant Valuation"** kaydetmiş. Grey & Co gibi, iki anlatı rakamın çıkıp çıkmadığında ayrışıyor. **Canlı yeniden doğrula.** Bir versiyonu gerçek diye öne sürmeyeceğim.
+- Mortgage/stamp-duty hesaplayıcı yok; her iki durumda da açıklama katmanı yok.
 
 **İletişim:**
--
+- Tek yol **Arrange a Viewing** formu; her soru forma veya telefona gidiyor. Buy/Sell/Rent/Let ve Heads Up yanıtları toplanıyor ama hiç nitelendirmeye dönüşmüyor.
+- **Yönlendirmesiz üç şube** — kullanıcı kendi seçiyor. Mesai dışı yanıt yok.
 
 **Teknik/Genel:**
--
+- Hibrit SSR + CSR; ilanlar client-side `filter?search_type=sales` ile. Dikkat çekici: **Berkay, diğer Grup-D sitelerinin aksine Allen'ın footer'ında Neuron/Iceberg olarak açıkça kendini tanıtmadığını belirtmiş.** Filtre şeması ve davranış platformla birebir aynı, o yüzden aynı yığın olduğundan eminim — ama eksik footer imzası not düşmeye değer.
+- `ice.js` + Sentry, kişiselleştirmeye dönüşmeyen davranış topluyor; `whatsapp-chatbot` mevcut-ama-inaktif. Responsive; form gönderilmedi.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 

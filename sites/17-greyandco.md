@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1     | Berkay   | Done     |
 | 2     | Yasemin  | Done     |
 | 3     | Ayselin  | Done |
-| 4     | Görkem   | Not done |
+| 4     | Görkem   | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -149,21 +149,26 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 4 — Görkem
 
 **Search:**
--
+- Full platform filter set (price/beds/baths/receptions/type/Must-Haves/radius, no map). Free sentence → "Couldn't find the address". ~30 results behind "LOAD MORE".
+- The "100% MATCH"/"Suggested" indicators are the platform's built-in match badge — filter-compliance, not behavioural ranking, same as every Group-D tenant. The site does have decent **local area guides**, which are static today but would make ideal grounding for an area-Q&A or a natural-language layer later.
 
 **Listing Detail:**
--
+- Manually written copy varying in length/tone; a listing I looked at had ~26 photos, floor plan and EPC image but **no similar-properties block at all** — the page drops from EPC straight to the footer. No summary, no Q&A, no 360.
+- Standard ceiling; nothing here escapes the group pattern.
 
-**Valuation:**
--
+**Valuation — flagging a disagreement to verify:**
+- Instant Valuation runs on **ValPal on a separate subdomain.** In my walk-through it behaved like the platform norm: select address, then name/email/phone, with **no figure shown on screen** (matches Yasemin's and Ayselin's Round 2/3 notes).
+- ⚠️ But Round 1 (Berkay) recorded this as a **"60-second online valuation that returns an estimated value via algorithm on previous sales."** That's a real contradiction — either the tool shows a number or it gates it. It may vary by entry path or have changed. **This one should be re-checked live before we cite it either way.** I'm noting it rather than papering over it.
+- The face-to-face form asks reason-for-moving / timescale / previous-agency, and none of those answers feed any output — captured, unused. No mortgage/stamp-duty calculator, just broker guidance text.
 
 **Contact:**
--
+- No working chatbot; a **msgboxx WhatsApp widget is referenced in the source but I didn't see it running** in the UI (another dormant platform hook). Contact form + Buy/Sell/Rent/Let that changes nothing; viewing via calendar with no confirmed availability. No out-of-hours answer.
 
 **Technical / General:**
--
+- **Hybrid SSR + CSR**: core content server-rendered, listings loaded client-side via the `filter?search_type=sales` call to the Neuron API (`property_types` etc.), with `ice.js` + Sentry. The behavioural data `ice.js` collects **is not turned into any personalisation** — it's gathered and wasted, which is a recurring theme.
+- Responsive; forms not submitted; no real-device test.
 
-**Status:** Not done
+**Status:** Done
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
@@ -182,7 +187,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | 1     | Berkay   | Yapıldı  |
 | 2     | Yasemin  | Yapıldı  |
 | 3     | Ayselin  | Yapıldı|
-| 4     | Görkem   | Yapılmadı|
+| 4     | Görkem   | Yapıldı|
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
 > Neye bakılacağı: ../checklist.md · Terimler: ../info/ai-feature-glossary.md
@@ -317,21 +322,26 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 4 — Görkem
 
 **Arama:**
--
+- Tam platform filtre seti (fiyat/oda/banyo/salon/tip/Must-Haves/yarıçap, harita yok). Serbest cümle → "Couldn't find the address". ~30 sonuç "LOAD MORE" arkasında.
+- "100% MATCH"/"Suggested" göstergeleri platformun yerleşik eşleşme rozeti — filtre-uyumu, davranışsal sıralama değil, her Grup-D tenant'ıyla aynı. Sitenin düzgün **yerel bölge rehberleri** var, bugün statik ama sonradan bir bölge-Q&A veya doğal dil katmanı için ideal grounding olur.
 
 **İlan Detay:**
--
+- Uzunluğu/tonu değişen elle yazılmış metin; baktığım bir ilanda ~26 fotoğraf, kat planı ve EPC görseli vardı ama **hiç benzer-ilan bloğu yok** — sayfa EPC'den doğrudan footer'a düşüyor. Özet yok, Q&A yok, 360 yok.
+- Standart tavan; burada grup kalıbından kaçan bir şey yok.
 
-**Değerleme:**
--
+**Değerleme — doğrulanması gereken bir görüş ayrılığı:**
+- Instant Valuation **ayrı bir subdomain'de ValPal** üzerinde çalışıyor. Benim gezimde platform normu gibi davrandı: adres seç, sonra ad/e-posta/telefon, **ekranda rakam yok** (Yasemin ve Ayselin'in Round 2/3 notlarıyla uyumlu).
+- ⚠️ Ama Round 1 (Berkay) bunu **"önceki satışlara dayalı algoritmayla tahmini değer veren 60 saniyelik online değerleme"** olarak kaydetmiş. Bu gerçek bir çelişki — ya araç rakam gösteriyor ya da kapı tutuyor. Giriş yoluna göre değişebilir ya da değişmiş olabilir. **Bunu ikimizden birini alıntılamadan önce canlı olarak yeniden kontrol etmeli.** Üstünü örtmek yerine not düşüyorum.
+- Yüz yüze form taşınma-nedeni / zaman-planı / önceki-ajans soruyor ve bu yanıtların hiçbiri bir çıktıya beslenmiyor — toplanıyor, kullanılmıyor. Mortgage/stamp-duty hesaplayıcı yok, sadece broker yönlendirme metni.
 
 **İletişim:**
--
+- Çalışan chatbot yok; **kaynakta msgboxx WhatsApp widget'ı geçiyor ama arayüzde çalıştığını görmedim** (başka bir uykudaki platform kancası). İletişim formu + hiçbir şeyi değiştirmeyen Buy/Sell/Rent/Let; viewing takvimle ama teyitli müsaitlik yok. Mesai dışı yanıt yok.
 
 **Teknik/Genel:**
--
+- **Hibrit SSR + CSR**: temel içerik sunucuda render, ilanlar client-side olarak Neuron API'ye `filter?search_type=sales` çağrısıyla yükleniyor (`property_types` vb.), `ice.js` + Sentry ile. `ice.js`'in topladığı davranış verisi **hiçbir kişiselleştirmeye dönüşmüyor** — toplanıp ziyan ediliyor, tekrar eden bir tema.
+- Responsive; form gönderilmedi; gerçek cihaz testi yok.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 

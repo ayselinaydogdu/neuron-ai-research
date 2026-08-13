@@ -42,12 +42,12 @@ For the full rotation see ../site-assignments.md.
 
 ### Görkem — Group D (16–21)
 
-- [ ] 16 · beercocks.com → ../sites/16-beercocks.md
-- [ ] 17 · greyandco.co.uk → ../sites/17-greyandco.md
-- [ ] 18 · allen-residential.co.uk → ../sites/18-allen.md
-- [ ] 19 · brownsestateagents.co.uk → ../sites/19-browns.md
-- [ ] 20 · bydesignhomes.com → ../sites/20-bydesign.md
-- [ ] 21 · courtyardhomes.co.uk → ../sites/21-courtyard.md
+- [x] 16 · beercocks.com → ../sites/16-beercocks.md
+- [x] 17 · greyandco.co.uk → ../sites/17-greyandco.md
+- [x] 18 · allen-residential.co.uk → ../sites/18-allen.md
+- [x] 19 · brownsestateagents.co.uk → ../sites/19-browns.md
+- [x] 20 · bydesignhomes.com → ../sites/20-bydesign.md
+- [x] 21 · courtyardhomes.co.uk → ../sites/21-courtyard.md
 
 ---
 
@@ -93,9 +93,9 @@ dosyasında **Tur 4** bloğunu doldurun, bitirince buradaki kutucuğu işaretley
 
 ### Görkem — Grup D (16–21)
 
-- [ ] 16 · beercocks.com → ../sites/16-beercocks.md
-- [ ] 17 · greyandco.co.uk → ../sites/17-greyandco.md
-- [ ] 18 · allen-residential.co.uk → ../sites/18-allen.md
-- [ ] 19 · brownsestateagents.co.uk → ../sites/19-browns.md
-- [ ] 20 · bydesignhomes.com → ../sites/20-bydesign.md
-- [ ] 21 · courtyardhomes.co.uk → ../sites/21-courtyard.md
+- [x] 16 · beercocks.com → ../sites/16-beercocks.md
+- [x] 17 · greyandco.co.uk → ../sites/17-greyandco.md
+- [x] 18 · allen-residential.co.uk → ../sites/18-allen.md
+- [x] 19 · brownsestateagents.co.uk → ../sites/19-browns.md
+- [x] 20 · bydesignhomes.com → ../sites/20-bydesign.md
+- [x] 21 · courtyardhomes.co.uk → ../sites/21-courtyard.md

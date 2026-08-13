@@ -34,11 +34,11 @@ For the full rotation see ../site-assignments.md.
 
 ### Görkem — Group C (11–15)
 
-- [ ] 11 · copeandco.co.uk → ../sites/11-copeandco.md
-- [ ] 12 · priceestateagents.uk → ../sites/12-price.md
-- [ ] 13 · keysandlee.co.uk → ../sites/13-keysandlee.md
-- [ ] 14 · nicholsonsestateagents.co.uk → ../sites/14-nicholsons.md
-- [ ] 15 · no86estateagency.co.uk → ../sites/15-no86.md
+- [x] 11 · copeandco.co.uk → ../sites/11-copeandco.md
+- [x] 12 · priceestateagents.uk → ../sites/12-price.md
+- [x] 13 · keysandlee.co.uk → ../sites/13-keysandlee.md
+- [x] 14 · nicholsonsestateagents.co.uk → ../sites/14-nicholsons.md
+- [x] 15 · no86estateagency.co.uk → ../sites/15-no86.md
 
 ### Ayselin — Group D (16–21)
 
@@ -85,11 +85,11 @@ dosyasında **Tur 3** bloğunu doldurun, bitirince buradaki kutucuğu işaretley
 
 ### Görkem — Grup C (11–15)
 
-- [ ] 11 · copeandco.co.uk → ../sites/11-copeandco.md
-- [ ] 12 · priceestateagents.uk → ../sites/12-price.md
-- [ ] 13 · keysandlee.co.uk → ../sites/13-keysandlee.md
-- [ ] 14 · nicholsonsestateagents.co.uk → ../sites/14-nicholsons.md
-- [ ] 15 · no86estateagency.co.uk → ../sites/15-no86.md
+- [x] 11 · copeandco.co.uk → ../sites/11-copeandco.md
+- [x] 12 · priceestateagents.uk → ../sites/12-price.md
+- [x] 13 · keysandlee.co.uk → ../sites/13-keysandlee.md
+- [x] 14 · nicholsonsestateagents.co.uk → ../sites/14-nicholsons.md
+- [x] 15 · no86estateagency.co.uk → ../sites/15-no86.md
 
 ### Ayselin — Grup D (16–21)
 

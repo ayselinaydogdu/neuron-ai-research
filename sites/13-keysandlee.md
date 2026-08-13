@@ -13,7 +13,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 |---|---|---|
 | 1 | Yasemin | Not done |
 | 2 | Ayselin | Done |
-| 3 | Görkem | Not done |
+| 3 | Görkem | Done |
 | 4 | Berkay | Not done |
 
 > Fill in only your own round block; don't edit anyone else's.
@@ -107,21 +107,28 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 3 — Görkem
 
 **Search:**
--
+- Same filter set, no map, no natural language ("family home near schools under £400k" is treated as an address). What's new here is a **"100% MATCH" badge** on cards — and it's important not to be fooled: it only means the listing satisfies the exact filters I typed. It's a *filter-compliance* label dressed up as personalisation, not AI ranking.
+- I flag it because the same badge reappears (and gets called "AI" by the vendor) on the Group-D sites — so it's worth being precise: this is the platform's built-in match indicator, and at this tenant it's plainly just exact-match.
+- 49-odd results behind "LOAD MORE", "Suggested" default unexplained. Real gap is still expressing intent + a way to say "close to *my* school/work".
 
 **Listing Detail:**
--
+- A relative highlight: proper **walk-through video and a Video Tour** are present (no 360). Descriptions are long and structured room-by-room — good raw material, badly digestible.
+- The Features list carries hand-typed distances like **"0.8 miles to Clockhouse primary school"** — exactly the commute/area info buyers want, but it's manual, unstructured and only as good as the agent who typed it. **AI opportunity:** structure this consistently (and, later, verify it against a maps API) instead of leaving it to prose.
+- No AI summary, no ask-a-question; right column is "Latest Properties", not related. The room-by-room copy is the perfect thing for a summary to compress.
 
 **Valuation:**
--
+- Instant Valuation, two steps, **ValPal** — postcode/beds/type/valuation-type then name/email/phone, and **the figure never shows on screen**. Face-to-face form asks for suitable times as free text. No mortgage/stamp-duty calculator.
+- Same instant-labelled lead capture I've now confirmed as the platform norm.
 
 **Contact:**
--
+- No chatbot. The viewing form actually **has a calendar and time picker**, but available slots aren't shown and a notice admits the pick **"does not confirm the viewing"** — so it looks like scheduling without being scheduling. That mismatch is its own small trust hit.
+- Heads Up registration asks moving timescale / solicitor / mortgage status, but the form never branches on the answers — data collected, never used. That's a **ready-made lead-qualification input sitting idle.**
 
 **Technical / General:**
--
+- Nuxt SSR, but here I did see a **`filter` request** for the search results in Fetch/XHR (alongside Sentry/Google) — so this tenant *does* hit the REST search endpoint, unlike Cope & Co / Price where content came inline. Same platform, differing render/fetch config per tenant.
+- Responsive; forms not submitted; no real-device test.
 
-**Status:** Not done
+**Status:** Done
 
 ### Round 4 — Berkay
 
@@ -158,7 +165,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 |---|---|---|
 | 1 | Yasemin | Yapıldı |
 | 2 | Ayselin | Yapıldı |
-| 3 | Görkem | Yapılmadı |
+| 3 | Görkem | Yapıldı |
 | 4 | Berkay | Yapılmadı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
@@ -253,21 +260,28 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 3 — Görkem
 
 **Arama:**
--
+- Aynı filtre seti, harita yok, doğal dil yok ("family home near schools under £400k" adres sanılıyor). Buradaki yenilik kartlardaki **"100% MATCH" rozeti** — ve aldanmamak önemli: yalnızca ilanın yazdığım kesin filtrelere uyduğunu gösteriyor. Bu, kişiselleştirme kılığına sokulmuş bir *filtre-uyumu* etiketi, AI sıralaması değil.
+- Bunu vurguluyorum çünkü aynı rozet (ve satıcının "AI" dediği hali) Grup-D sitelerinde tekrar çıkıyor — o yüzden net olmakta fayda var: bu platformun yerleşik eşleşme göstergesi ve bu tenant'ta düpedüz kesin-eşleşme.
+- 49 civarı sonuç "LOAD MORE" arkasında, "Suggested" açıklanmıyor. Gerçek açık hâlâ niyeti ifade etmek + "*benim* okuluma/işime yakın" diyebilmek.
 
 **İlan Detay:**
--
+- Göreli bir artı: düzgün **walk-through video ve Video Tour** var (360 yok). Açıklamalar uzun ve oda-oda yapılandırılmış — iyi ham malzeme, kötü sindirilebilir.
+- Features listesi **"0.8 miles to Clockhouse primary school"** gibi elle yazılmış mesafeler taşıyor — tam da alıcının istediği commute/bölge bilgisi, ama manuel, yapısız ve yazan danışman kadar iyi. **AI fırsatı:** bunu prose'a bırakmak yerine tutarlı biçimde yapılandır (ve sonra bir harita API'siyle doğrula).
+- AI özet yok, soru sorma yok; sağ sütun "Latest Properties", ilişkili değil. Oda-oda metin, bir özetin sıkıştıracağı ideal içerik.
 
 **Değerleme:**
--
+- Instant Valuation, iki adım, **ValPal** — postcode/oda/tip/değerleme-türü sonra ad/e-posta/telefon ve **rakam asla ekranda çıkmıyor**. Yüz yüze form uygun saatleri serbest metinle soruyor. Mortgage/stamp-duty hesaplayıcı yok.
+- Artık platform normu olarak doğruladığım instant-etiketli lead toplama.
 
 **İletişim:**
--
+- Chatbot yok. Viewing formunun aslında **takvim ve saat seçici var**, ama müsait saatler gösterilmiyor ve bir uyarı seçimin **"bu görüşmeyi onaylamaz"** olduğunu itiraf ediyor — yani planlama gibi görünüp planlama olmuyor. Bu uyumsuzluk kendi başına küçük bir güven kaybı.
+- Heads Up kaydı taşınma zamanı / avukat / mortgage durumu soruyor ama form yanıtlara göre dallanmıyor — veri toplanıyor, hiç kullanılmıyor. Bu, **atıl duran hazır bir lead-qualification girdisi.**
 
 **Teknik/Genel:**
--
+- Nuxt SSR ama burada arama sonuçları için Fetch/XHR'de bir **`filter` isteği** gördüm (Sentry/Google yanında) — yani bu tenant REST arama ucuna *vuruyor*, içeriğin inline geldiği Cope & Co / Price'ın aksine. Aynı platform, tenant başına farklı render/fetch config.
+- Responsive; form gönderilmedi; gerçek cihaz testi yok.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Tur 4 — Berkay
 

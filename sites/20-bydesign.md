@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1     | Berkay   | Done     |
 | 2     | Yasemin  | Done     |
 | 3     | Ayselin  | Done |
-| 4     | Görkem   | Not done |
+| 4     | Görkem   | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -150,21 +150,25 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 4 — Görkem
 
 **Search:**
--
+- Structured filters (buy/rent, radius, price, beds), no map, free sentence → "Couldn't find the address". It carries the same **"100% MATCH" badge**, but here it exposes how hollow the badge is: **every listing shows 100% even when I've entered no criteria at all.** So the "match score" isn't per-user — it's decorative until you save a search.
+- That's worth stating plainly: a badge that always reads 100% teaches users to ignore it. A real (semantic) match score would earn attention; the current one erodes it.
 
 **Listing Detail:**
--
+- A distinctive editorial voice — long narrative descriptions including a first-person **"Seller's Story"** and a hand-written **"Location"** section (schools, A38 access near Tavistock/Ashburton). Genuinely nice copy, but it's editorial, not structured: the commute/area facts are buried in prose again.
+- I looked at a **£4.5m estate** listing — top-of-market, and *still* no AI summary, no Q&A, no similar-homes, YouTube tour but no 360. Even the most premium listing on my most premium tenant hits the same ceiling. **AI opportunity:** the "Seller's Story" + "Location" prose is exactly the rich source a grounded summary and Q&A should draw on.
 
-**Valuation:**
--
+**Valuation — the second no-instant-tool site:**
+- **No instant valuation at all** — the Valuation page offers only a **Face-to-Face booking** (the £4.5m listing shows just "What's MY property worth?" + call/email). This mirrors Kinetic in Round 1: a deliberately human-only, premium stance.
+- Defensible for the brand, but it's the same dead-end for a seller who wants a 11pm ballpark. And notably, an **InstantValuation component is loaded in the source but switched off** — the platform tool exists; this tenant has chosen not to enable it.
 
 **Contact:**
--
+- No working chatbot (chatbot component present-but-inactive). Heads Up collects detailed circumstances (reason, timeframe, solicitor, need-to-sell, mortgage/cash, how-heard) — rich lead data, never scored. Arrange-a-viewing + named agent phone/email; no availability confirmation, no branch routing, no out-of-hours.
 
 **Technical / General:**
--
+- Hybrid SSR + CSR; listings via client-side `filter?search_type=sales`; IcebergTracker + Sentry + Neuron REST, no AI/LLM call. The clearest illustration of my platform thesis: **Chatbot, InstantValuation and StampDutyCalculator components are all loaded in the source and all left un-activated.** The AI/tooling shelf ships with every tenant; By Design just hasn't switched these on.
+- On mobile the filters compress into dropdown panels — a narrow screen is exactly where a natural-language box would cut the filtering burden. Responsive; forms not submitted.
 
-**Status:** Not done
+**Status:** Done
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
@@ -183,7 +187,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | 1     | Berkay   | Yapıldı  |
 | 2     | Yasemin  | Yapıldı  |
 | 3     | Ayselin  | Yapıldı|
-| 4     | Görkem   | Yapılmadı|
+| 4     | Görkem   | Yapıldı|
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
@@ -323,21 +327,25 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 4 — Görkem
 
 **Arama:**
--
+- Yapılandırılmış filtreler (buy/rent, yarıçap, fiyat, oda), harita yok, serbest cümle → "Couldn't find the address". Aynı **"100% MATCH" rozetini** taşıyor ama burada rozetin ne kadar boş olduğunu açığa çıkarıyor: **hiç kriter girmemişken bile her ilan 100% gösteriyor.** Yani "eşleşme skoru" kişiye özel değil — bir arama kaydedene kadar dekoratif.
+- Bunu açıkça söylemek gerek: hep 100% okuyan bir rozet kullanıcıya onu görmezden gelmeyi öğretir. Gerçek (anlamsal) bir eşleşme skoru ilgi kazanır; mevcut olan onu aşındırıyor.
 
 **İlan Detay:**
--
+- Ayırt edici bir editoryal ses — birinci ağızdan bir **"Seller's Story"** ve elle yazılmış bir **"Location"** bölümü (okullar, Tavistock/Ashburton yakını A38 erişimi) içeren uzun anlatı açıklamalar. Gerçekten güzel metin ama editoryal, yapısal değil: commute/bölge bilgileri yine prose içinde gömülü.
+- Bir **4,5 milyon £'luk malikane** ilanına baktım — piyasanın tepesi ve *hâlâ* AI özet yok, Q&A yok, benzer-ev yok, YouTube tur var ama 360 yok. En premium tenant'ımdaki en premium ilan bile aynı tavana çarpıyor. **AI fırsatı:** "Seller's Story" + "Location" metni, veriye dayalı bir özet ve Q&A'in çekeceği tam da o zengin kaynak.
 
-**Değerleme:**
--
+**Değerleme — instant-aracı-olmayan ikinci site:**
+- **Hiç anlık değerleme yok** — Valuation sayfası yalnızca **Yüz Yüze rezervasyon** sunuyor (4,5M £ ilanı sadece "What's MY property worth?" + arama/e-posta gösteriyor). Bu, Round 1'deki Kinetic'i yansıtıyor: bilinçli insan-öncelikli, premium duruş.
+- Marka için savunulabilir ama gece 11'de kabaca rakam isteyen satıcı için aynı çıkmaz. Ve dikkat: kaynakta bir **InstantValuation bileşeni yüklü ama kapalı** — platform aracı var; bu tenant açmamayı seçmiş.
 
 **İletişim:**
--
+- Çalışan chatbot yok (chatbot bileşeni mevcut-ama-inaktif). Heads Up detaylı durum topluyor (neden, zaman, avukat, satma-ihtiyacı, mortgage/nakit, nereden-duydu) — zengin lead verisi, hiç puanlanmıyor. Arrange-a-viewing + isimli danışman telefon/e-posta; müsaitlik teyidi yok, şube yönlendirme yok, mesai dışı yok.
 
 **Teknik/Genel:**
--
+- Hibrit SSR + CSR; ilanlar client-side `filter?search_type=sales` ile; IcebergTracker + Sentry + Neuron REST, AI/LLM çağrısı yok. Platform tezimin en net örneği: **Chatbot, InstantValuation ve StampDutyCalculator bileşenlerinin hepsi kaynakta yüklü ve hepsi devreye alınmamış.** AI/araç rafı her tenant'la geliyor; By Design bunları açmamış.
+- Mobilde filtreler açılır panellere sıkışıyor — dar ekran, tam da doğal dil kutusunun filtre yükünü keseceği yer. Responsive; form gönderilmedi.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 

@@ -13,7 +13,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 |---|---|---|
 | 1 | Yasemin | Done |
 | 2 | Ayselin | Done |
-| 3 | Görkem | Not done |
+| 3 | Görkem | Done |
 | 4 | Berkay | Not done |
 
 > Fill in only your own round block; don't edit anyone else's.
@@ -108,21 +108,27 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 3 — Görkem
 
 **Search:**
--
+- Same platform search (price/beds/baths/type, no map, no NL). 64 results behind "LOAD MORE"; sort limited to price/date.
+- The distinctive move here: **pre-market listings are blurred and locked behind registration.** As a user this is pure friction dressed as exclusivity — I'm shown a house I can't see unless I hand over my details. It's an access gate, not a recommendation layer, and it makes the already-thin discovery feel adversarial.
+- **AI opportunity vs UI fix:** natural-language search still applies platform-wide, but the blur-gate is a product/marketing decision, not something AI fixes.
 
 **Listing Detail:**
--
+- Hand-written descriptions, gallery, no 360. Right column is static promo blocks — no similar homes, no comparison. Floor plan + EPC as tabs, unexplained.
+- Same ceiling: no summary, no Q&A. Nothing here breaks the group pattern; the listing page is the platform default with this agent's copy poured in.
 
 **Valuation:**
--
+- Instant Valuation, two steps, **ValPal**, figure withheld until contact details given. No mortgage/stamp-duty calculator. The now-familiar instant-in-name-only flow.
 
 **Contact:**
--
+- No AI chat, but there's a genuinely live channel: a **msgboxx-based WhatsApp widget** that forwards messages **straight to the team** — human, not AI, but at least it's real-time and out-of-the-form. Worth noting because it shows the platform *can* host a messaging surface; today it just relays to staff.
+- Valuation appointments use a **real Cal.com calendar** (date/time) — the first proper booking calendar I've hit, versus the free-text "type a time" on other tenants. Still no AI qualification: Buy/Sell/Rent/Let changes nothing.
+- No out-of-hours answer — and this is exactly where the existing WhatsApp widget + an AI qualifier grounded in their stock/FAQs would slot in cheaply.
 
 **Technical / General:**
--
+- Nuxt SSR, and here search results/filters **are fetched client-side from Neuron's own REST API** (`property_types`, `property_styles`, `tenure_types`) — no AI/LLM endpoint. So I can now see the shared filter schema on the wire; that schema is precisely what a natural-language layer would target.
+- Third parties: ValPal (valuation), Cal.com (booking), msgboxx (WhatsApp), Sentry, YouTube — a bolt-on stack, no AI layer among them. Responsive; forms not submitted.
 
-**Status:** Not done
+**Status:** Done
 
 ### Round 4 — Berkay
 
@@ -159,7 +165,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 |---|---|---|
 | 1 | Yasemin | Yapıldı |
 | 2 | Ayselin | Yapıldı |
-| 3 | Görkem | Yapılmadı |
+| 3 | Görkem | Yapıldı |
 | 4 | Berkay | Yapılmadı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
@@ -253,21 +259,27 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 3 — Görkem
 
 **Arama:**
--
+- Aynı platform araması (fiyat/oda/banyo/tip, harita yok, NL yok). 64 sonuç "LOAD MORE" arkasında; sıralama fiyat/tarihle sınırlı.
+- Buradaki ayırt edici hamle: **pre-market ilanlar bulanıklaştırılıp kayıt arkasına kilitlenmiş.** Kullanıcı olarak bu, ayrıcalık kılığına girmiş saf sürtünme — bilgilerimi vermezsem göremeyeceğim bir ev gösteriliyor. Bir erişim kapısı, öneri katmanı değil ve zaten zayıf keşfi düşmanca hissettiriyor.
+- **AI fırsatı vs UI düzeltmesi:** doğal dil araması hâlâ platform geneli geçerli, ama blur-kapısı bir ürün/pazarlama kararı, AI'nin çözdüğü bir şey değil.
 
 **İlan Detay:**
--
+- Elle yazılmış açıklamalar, galeri, 360 yok. Sağ sütun sabit tanıtım blokları — benzer ev yok, karşılaştırma yok. Kat planı + EPC sekme olarak, açıklanmıyor.
+- Aynı tavan: özet yok, Q&A yok. Burada grup kalıbını bozan hiçbir şey yok; ilan sayfası bu acentenin metniyle doldurulmuş platform varsayılanı.
 
 **Değerleme:**
--
+- Instant Valuation, iki adım, **ValPal**, rakam iletişim bilgisi verilene kadar tutuluyor. Mortgage/stamp-duty hesaplayıcı yok. Artık tanıdık "sadece isimde instant" akışı.
 
 **İletişim:**
--
+- AI chat yok ama gerçekten canlı bir kanal var: mesajları **doğrudan ekibe** ileten **msgboxx tabanlı WhatsApp widget'ı** — insan, AI değil, ama en azından gerçek-zamanlı ve form-dışı. Not düşmeye değer çünkü platformun bir mesajlaşma yüzeyi *barındırabildiğini* gösteriyor; bugün sadece personele aktarıyor.
+- Değerleme randevuları **gerçek bir Cal.com takvimi** kullanıyor (tarih/saat) — diğer tenant'lardaki serbest-metin "saat yaz"a karşı çarptığım ilk düzgün rezervasyon takvimi. Yine de AI nitelendirme yok: Buy/Sell/Rent/Let hiçbir şeyi değiştirmiyor.
+- Mesai dışı yanıt yok — ve mevcut WhatsApp widget'ı + stok/FAQ'lara dayalı bir AI qualifier tam da buraya ucuza otururdu.
 
 **Teknik/Genel:**
--
+- Nuxt SSR ve burada arama sonuçları/filtreler **client-side olarak Neuron'un kendi REST API'sinden çekiliyor** (`property_types`, `property_styles`, `tenure_types`) — AI/LLM ucu yok. Yani paylaşılan filtre şemasını artık hat üzerinde görebiliyorum; o şema, doğal dil katmanının tam olarak hedefleyeceği şey.
+- Üçüncü taraflar: ValPal (değerleme), Cal.com (rezervasyon), msgboxx (WhatsApp), Sentry, YouTube — bolt-on bir yığın, aralarında AI katmanı yok. Responsive; form gönderilmedi.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Tur 4 — Berkay
 

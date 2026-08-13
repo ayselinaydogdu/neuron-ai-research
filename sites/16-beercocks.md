@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1     | Berkay   | Done     |
 | 2     | Yasemin  | Not done |
 | 3     | Ayselin  | Done |
-| 4     | Görkem   | Not done |
+| 4     | Görkem   | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -145,21 +145,27 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 4 — Görkem
 
 **Search:**
--
+- The biggest agency I've reviewed — **515 results, 11 branches** — which makes the platform's search weakness hurt the most. All 515 sit behind "LOAD MORE" with no smart narrowing; at this volume the missing map, property-type nuance and natural-language input aren't nice-to-haves, they're the difference between browsing and drowning.
+- Same "Couldn't find the address" on a free sentence; "Suggested"/"100% MATCH" are filter-compliance. **AI opportunity is at its strongest at scale:** the NL layer earns the most on the tenant with the most stock.
 
 **Listing Detail:**
--
+- Nice human touch in the copy — descriptions split into **"What We Love" and "What the Owner Loves"** headings — plus a full walk-through video (no 360). But it's still hand-written and un-digested: no AI summary, no Q&A, right column is just newest listings.
+- **Mortgage + Stamp Duty calculators** are on the page but return figures only, no commentary. Consistent with the group: the tools compute, nothing explains.
 
-**Valuation:**
--
+**Valuation — the important exception:**
+- Unlike almost every site I've seen, Beercocks' Instant Valuation **actually shows the estimate on screen.** It takes postcode/beds/baths/type/style/floor-area/tenure then contact details, and the page says it uses **"recent local sales + property data"** — but it **never explains which characteristics moved the number.**
+- This is the cleanest proof of my central valuation point: the platform *can* surface a real figure; what's missing is the **explanation layer**. A number with no "why" is exactly what Lloyds' team distrusted back in Round 1. **AI opportunity:** explain this existing figure — comparables, £/sqft, beds — and it becomes defensible.
+- Face-to-face form oddly asks the user for **their own** estimate; no calendar.
 
 **Contact:**
--
+- No chatbot. Book-a-viewing captures date/time but "does not confirm", no availability shown.
+- **11 branches listed separately and the user must pick the right one** — with this many offices that's real friction. The light-touch fix is a postcode→branch router (barely AI); the fuller version qualifies and routes the lead. No out-of-hours answer.
 
 **Technical / General:**
--
+- Nuxt SSR; results fetched client-side from **Neuron's REST API** (`property_types`, `property_styles`, `tenure_types`), no AI/LLM endpoint. Same shared filter schema as Nicholsons.
+- Responsive; forms not submitted; no real-device test.
 
-**Status:** Not done
+**Status:** Done
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
@@ -178,7 +184,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | 1     | Berkay   | Yapıldı  |
 | 2     | Yasemin  | Yapıldı  |
 | 3     | Ayselin  | Yapıldı|
-| 4     | Görkem   | Yapılmadı|
+| 4     | Görkem   | Yapıldı|
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
@@ -309,21 +315,27 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 4 — Görkem
 
 **Arama:**
--
+- İncelediğim en büyük acente — **515 sonuç, 11 şube** — ki bu platformun arama zayıflığını en çok acıtan durum. 515'in tümü akıllı daraltma olmadan "LOAD MORE" arkasında; bu hacimde eksik harita, ev-tipi nüansı ve doğal dil girişi lüks değil, gezinmekle boğulmak arasındaki fark.
+- Serbest cümlede yine "Couldn't find the address"; "Suggested"/"100% MATCH" filtre-uyumu. **AI fırsatı ölçekte en güçlü halinde:** NL katmanı en çok stoğa sahip tenant'ta en çok kazandırır.
 
 **İlan Detay:**
--
+- Metinde hoş bir insani dokunuş — açıklamalar **"What We Love" ve "What the Owner Loves"** başlıklarına ayrılmış — artı tam gezinti videosu (360 yok). Ama yine elle yazılmış ve sindirilmemiş: AI özet yok, Q&A yok, sağ sütun sadece en yeni ilanlar.
+- Sayfada **Mortgage + Stamp Duty hesaplayıcıları** var ama yalnızca rakam veriyor, yorum yok. Grupla tutarlı: araçlar hesaplıyor, hiçbir şey açıklamıyor.
 
-**Değerleme:**
--
+**Değerleme — önemli istisna:**
+- Gördüğüm neredeyse her sitenin aksine, Beercocks'un Instant Valuation'ı **tahmini gerçekten ekranda gösteriyor.** postcode/oda/banyo/tip/stil/zemin-alanı/tenure sonra iletişim alıyor ve sayfa **"recent local sales + property data"** kullandığını söylüyor — ama **hangi özelliğin rakamı oynattığını hiç açıklamıyor.**
+- Bu, merkezi değerleme tezimin en temiz kanıtı: platform gerçek bir rakamı *çıkarabiliyor*; eksik olan **açıklama katmanı**. "Neden"i olmayan bir rakam, tam da Lloyds ekibinin Round 1'de güvenmediği şey. **AI fırsatı:** bu mevcut rakamı açıkla — comparables, £/sqft, oda — ve savunulabilir hale gelsin.
+- Yüz yüze form tuhaf biçimde kullanıcıya **kendi** tahminini soruyor; takvim yok.
 
 **İletişim:**
--
+- Chatbot yok. Book-a-viewing tarih/saat alıyor ama "onaylamaz", müsaitlik gösterilmiyor.
+- **11 şube ayrı ayrı listeli ve kullanıcı doğrusunu seçmek zorunda** — bu kadar ofisle bu gerçek bir sürtünme. Hafif çözüm postcode→şube yönlendirici (neredeyse AI değil); daha dolu versiyon lead'i niteler ve yönlendirir. Mesai dışı yanıt yok.
 
 **Teknik/Genel:**
--
+- Nuxt SSR; sonuçlar client-side olarak **Neuron REST API'sinden** çekiliyor (`property_types`, `property_styles`, `tenure_types`), AI/LLM ucu yok. Nicholsons ile aynı paylaşılan filtre şeması.
+- Responsive; form gönderilmedi; gerçek cihaz testi yok.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 

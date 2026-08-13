@@ -13,7 +13,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 |---|---|---|
 | 1 | Yasemin | Not done |
 | 2 | Ayselin | Done |
-| 3 | Görkem | Not done |
+| 3 | Görkem | Done |
 | 4 | Berkay | Not done |
 
 > Fill in only your own round block; don't edit anyone else's.
@@ -134,21 +134,29 @@ Network tab.
 ### Round 3 — Görkem
 
 **Search:**
--
+- Same platform default I've now met eleven times, but two things bit me as a real user. The default radius is **0.25 miles** — absurdly tight; I searched a town and got a near-empty page until I widened it by hand, and nothing prompted me to. Typing "big house" was read as an address, not intent.
+- Worse, it's flaky: switching tabs and coming back reset my criteria and briefly threw a false "0 results". That's a **plain state/URL-sync bug, not an AI gap** — fix it in the front-end before anything clever goes on top.
+- SSTC / Let Agreed listings sit in results by default, padding the page with things I can't actually buy; there's no "hide sold" toggle.
+- Sort is Suggested / price / date with "Suggested" unexplained. A natural-language layer would help here as everywhere, but the honest first fixes are the radius default, the refresh bug and a property-type-aware "still available" filter.
 
 **Listing Detail:**
--
+- One genuine bright spot versus my earlier groups: a **Giraffe360 360° virtual tour** is actually present — the first real immersive media I've hit across all my sites. Credit where due.
+- But it sits there raw. No AI summary, no ask-a-question, and after the description the page runs straight into the footer — no "similar homes" at all. So even the most media-rich listing I've seen hits the exact same understanding ceiling.
+- EPC and floor plan are embedded but unexplained. **AI opportunity:** summary + grounded Q&A would finally let a buyer skim; the 360 tour is wasted if I still can't ask "does the garden face south?".
 
 **Valuation:**
--
+- "Instant Valuation" is the familiar bait — it's **ValPal on a subdomain**, collects name/email/phone and shows **no number on screen**. This is the same instant-labelled lead form I documented first-hand on Town & City back in Round 1.
+- No mortgage/stamp-duty calculator. The pattern holds: the platform promises "instant", delivers a call-back.
 
 **Contact:**
--
+- Contact form asks 7+ fields and the viewing calendar shows no real availability; intent is a single Buy/Sell/Rent/Let checkbox that changes nothing downstream.
+- Telling detail: a `whatsapp-chatbot` component is **loaded in the source but switched off**. The platform ships a chatbot slot nobody has turned on — the AI hooks exist and sit dormant.
 
 **Technical / General:**
--
+- Nuxt SSR; interestingly the listing content arrives in the HTML and I saw **no separate Neuron content-API call** in the Network tab here (only tracking) — this differs from the Group-D sites where I later watched a REST `filter` call fire. Noting it, not overclaiming.
+- `BlendedFeeCalculator` is another component present-but-inactive. Mobile layout is fine; I didn't submit any form and couldn't test touch gestures on a real device.
 
-**Status:** Not done
+**Status:** Done
 
 ### Round 4 — Berkay
 
@@ -185,7 +193,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 |---|---|---|
 | 1 | Yasemin | Yapıldı |
 | 2 | Ayselin | Yapıldı |
-| 3 | Görkem | Yapılmadı |
+| 3 | Görkem | Yapıldı |
 | 4 | Berkay | Yapılmadı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
@@ -297,21 +305,29 @@ sonuçlara dahil ediliyor.
 ### Tur 3 — Görkem
 
 **Arama:**
--
+- Artık on birinci kez gördüğüm platform varsayılanı, ama gerçek kullanıcı olarak iki şey canımı yaktı. Varsayılan yarıçap **0.25 mil** — saçma derecede dar; bir kasabayı arayınca elle genişletene kadar neredeyse boş sayfa geldi ve beni uyaran hiçbir şey yoktu. "big house" yazınca niyet değil adres olarak yorumlandı.
+- Dahası kırılgan: sekme değiştirip döndüğümde kriterler sıfırlandı ve kısa süre yanlış "0 results" gösterdi. Bu **düz bir durum/URL-senkron hatası, AI açığı değil** — akıllı bir şey eklenmeden önce arayüzde düzeltilmeli.
+- SSTC / Let Agreed ilanları varsayılan olarak sonuçlarda; satın alamayacağım şeylerle sayfayı dolduruyor, "satılanı gizle" seçeneği yok.
+- Sıralama Suggested / fiyat / tarih, "Suggested" açıklanmıyor. Doğal dil katmanı burada da yardım eder ama dürüst ilk düzeltmeler yarıçap varsayılanı, yenileme hatası ve ev-tipine duyarlı "hâlâ müsait" filtresi.
 
 **İlan Detay:**
--
+- Önceki gruplarıma göre gerçek bir parlak nokta: **Giraffe360 360° sanal tur** gerçekten var — tüm sitelerim içinde çarptığım ilk gerçek immersive medya. Hakkını vereyim.
+- Ama ham duruyor. AI özet yok, soru sorma yok ve açıklamadan sonra sayfa doğrudan footer'a iniyor — hiç "benzer evler" yok. Yani gördüğüm en medya-zengini ilan bile tam olarak aynı anlama tavanına çarpıyor.
+- EPC ve kat planı gömülü ama açıklanmıyor. **AI fırsatı:** özet + veriye dayalı Q&A nihayet alıcının taramasını sağlar; "bahçe güneye mi bakıyor?" diye soramıyorsam 360 tur boşa gidiyor.
 
 **Değerleme:**
--
+- "Instant Valuation" tanıdık yem — **subdomain'de ValPal**, ad/e-posta/telefon topluyor ve **ekranda rakam göstermiyor**. Bu, Round 1'de Town & City'de bizzat belgelediğim instant-etiketli lead formunun aynısı.
+- Mortgage/stamp-duty hesaplayıcı yok. Kalıp tutuyor: platform "instant" vaat ediyor, geri-arama veriyor.
 
 **İletişim:**
--
+- İletişim formu 7+ alan istiyor, viewing takvimi gerçek müsaitlik göstermiyor; niyet tek bir Buy/Sell/Rent/Let checkbox'ı, sonrasında hiçbir şeyi değiştirmiyor.
+- Anlamlı detay: bir `whatsapp-chatbot` bileşeni **kaynakta yüklü ama kapalı**. Platform kimsenin açmadığı bir chatbot yuvası taşıyor — AI kancaları var, uykuda bekliyor.
 
 **Teknik/Genel:**
--
+- Nuxt SSR; ilginç şekilde ilan içeriği HTML ile geliyor ve burada Network'te **ayrı bir Neuron içerik-API çağrısı görmedim** (yalnızca tracking) — bu, sonradan REST `filter` çağrısının çalıştığını izlediğim Grup-D sitelerinden farklı. Not düşüyorum, abartmıyorum.
+- `BlendedFeeCalculator` da mevcut-ama-inaktif başka bir bileşen. Mobil düzen iyi; hiçbir form göndermedim ve gerçek cihazda dokunmatik test edemedim.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Tur 4 — Berkay
 

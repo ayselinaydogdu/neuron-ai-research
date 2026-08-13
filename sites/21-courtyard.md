@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1     | Berkay   | Done     |
 | 2     | Yasemin  | Done     |
 | 3     | Ayselin  | Done |
-| 4     | Görkem   | Not done |
+| 4     | Görkem   | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -162,21 +162,25 @@ The main AI opportunities identified for Courtyard Homes are:
 ### Round 4 — Görkem
 
 **Search:**
--
+- My 21st and final site, and it lands exactly on the platform pattern: structured Buy/Rent controls, no map, no natural language ("Couldn't find the address" on a sentence). A 0.25-mile default radius returns ~27 results with **no prompt to widen it** — the same tight-radius friction I opened Round 3 with on Cope & Co, book-ending my two rounds neatly.
+- Results only via "Load more"; "Suggested" is filter-compliance. Nothing new in the mechanics — which is itself the finding.
 
 **Listing Detail:**
--
+- Hand-written descriptions, key features, map with nearby amenities; gallery can be as thin as a single image on some listings; no 360. No summary, no Q&A, no personalised similar-homes.
+- Worth highlighting: Courtyard has a proper **Advice Hub** with local area/market content — the same kind of static, high-quality corpus I singled out on Jacksons in Round 2. It's the ready-made **grounding** for an area-Q&A or listing assistant, sitting there feeding nothing interactive.
 
 **Valuation:**
--
+- A **"Quick Online Estimate" gives a guide price in under 60 seconds** using local property data — so, like Beercocks and Browns, this tenant does surface a figure. But there's **no explanation** of what drove it. Same story every time: the number is achievable; the "why" is missing.
+- No mortgage/stamp-duty calculator with commentary. **AI opportunity:** explanation layer on the existing guide price.
 
 **Contact:**
--
+- No chatbot. Contact/valuation/viewing forms collect structured info; Heads-Up captures buyer preferences and, nicely, promises alerts **before properties hit Rightmove or Zoopla** — a real hook that's still just criteria-matching underneath. No lead scoring, no out-of-hours answer, no AI scheduling.
 
 **Technical / General:**
--
+- Ayselin's Round 3 pass couldn't fully confirm the SSR/API architecture from the outside and marked it "Partial." Having now seen the identical filter behaviour, Heads-Up, valuation flow and "Couldn't find the address" response across all six Group-D sites, I'm confident this is **the same Neuron/Iceberg stack** — the footer signature and shared patterns line up. I'm adding that context, not contradicting her caution.
+- **Closing reflection (end of all four of my rounds):** across 21 sites and 4 groups, I've now seen the whole spectrum on one platform — from By Design switching *everything* off to Browns switching the match-engine, valuation and out-of-hours *on*. Same components, different toggles. That's the strongest possible proof that the AI work belongs **once in Neuron**, rolled out by config, not rebuilt per agency.
 
-**Status:** Not done
+**Status:** Done
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
@@ -195,7 +199,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | 1     | Berkay   | Yapıldı  |
 | 2     | Yasemin  | Yapıldı  |
 | 3     | Ayselin  | Yapıldı|
-| 4     | Görkem   | Yapılmadı|
+| 4     | Görkem   | Yapıldı|
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
@@ -341,21 +345,25 @@ Courtyard Homes için en belirgin AI geliştirme alanları:
 ### Tur 4 — Görkem
 
 **Arama:**
--
+- 21. ve son sitem ve tam da platform kalıbına oturuyor: yapılandırılmış Buy/Rent kontrolleri, harita yok, doğal dil yok (cümlede "Couldn't find the address"). 0.25 millik varsayılan yarıçap ~27 sonuç veriyor ve **genişletme önerisi yok** — Round 3'e Cope & Co'da başladığım aynı dar-yarıçap sürtünmesi, iki turumu düzgünce çerçeveliyor.
+- Sonuçlar yalnızca "Load more" ile; "Suggested" filtre-uyumu. Mekanikte yeni hiçbir şey yok — ki bu başlı başına bulgu.
 
 **İlan Detay:**
--
+- Elle yazılmış açıklamalar, key features, çevredeki olanaklarla harita; galeri bazı ilanlarda tek görsel kadar ince olabiliyor; 360 yok. Özet yok, Q&A yok, kişiselleştirilmiş benzer-ev yok.
+- Vurgulamaya değer: Courtyard'ın düzgün bir **Advice Hub'ı** var, yerel bölge/piyasa içeriğiyle — Round 2'de Jacksons'ta öne çıkardığım aynı türden statik, yüksek kaliteli korpus. Bir bölge-Q&A veya ilan asistanı için hazır **grounding**, orada durup hiçbir interaktif şeyi beslemiyor.
 
 **Değerleme:**
--
+- Bir **"Quick Online Estimate", yerel mülk verisiyle 60 saniyeden kısa sürede guide price** veriyor — yani Beercocks ve Browns gibi bu tenant da bir rakam çıkarıyor. Ama neyin sürdüğüne dair **açıklama yok**. Her seferinde aynı hikâye: rakam ulaşılabilir; "neden" eksik.
+- Yorumlu mortgage/stamp-duty hesaplayıcı yok. **AI fırsatı:** mevcut guide price üstünde açıklama katmanı.
 
 **İletişim:**
--
+- Chatbot yok. İletişim/değerleme/viewing formları yapılandırılmış bilgi topluyor; Heads-Up alıcı tercihlerini alıyor ve güzel biçimde **mülkler Rightmove veya Zoopla'ya düşmeden önce** uyarı vaat ediyor — gerçek bir kanca ama altında hâlâ sadece kriter-eşleştirme. Lead puanlama yok, mesai dışı yanıt yok, AI planlama yok.
 
 **Teknik/Genel:**
--
+- Ayselin'in Round 3 gezişi SSR/API mimarisini dışarıdan tam doğrulayamayıp "Partial" işaretlemiş. Altı Grup-D sitesinin hepsinde aynı filtre davranışı, Heads-Up, değerleme akışı ve "Couldn't find the address" yanıtını gördükten sonra bunun **aynı Neuron/Iceberg yığını** olduğundan eminim — footer imzası ve paylaşılan kalıplar örtüşüyor. Onun ihtiyatına karşı çıkmıyorum, bağlam ekliyorum.
+- **Kapanış yansıması (dört turumun sonu):** 21 site ve 4 grup boyunca artık tüm yelpazeyi tek platformda gördüm — By Design'ın *her şeyi* kapatmasından Browns'un match-motorunu, değerlemeyi ve mesai-dışını *açmasına*. Aynı bileşenler, farklı anahtarlar. Bu, AI işinin **bir kez Neuron'da** yapılıp acente başına yeniden inşa edilmeden config ile açılması gerektiğinin en güçlü kanıtı.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 

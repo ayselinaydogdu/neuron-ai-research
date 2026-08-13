@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1     | Berkay   | Done     |
 | 2     | Yasemin  | Done     |
 | 3     | Ayselin  | Done |
-| 4     | Görkem   | Not done |
+| 4     | Görkem   | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -127,21 +127,27 @@ This site is reviewed independently by 4 people across 4 rounds.
 ### Round 4 — Görkem
 
 **Search:**
--
+- This is the one tenant where the platform's "AI" claim actually surfaces in the UI. Listings carry a **percentage match score with a tooltip: "a prediction of what our software thinks you may find an interesting property, based on the unique search criteria that you gave us."** So Browns exposes the Neuron matching engine that every other site hides.
+- But read it carefully: it's driven by **your saved search criteria**, not your behaviour or a semantic read of listings — so it's a smarter saved-search, not personalisation. And the same autocomplete weakness bites: **"Sheilds" matches "SHEilds Ltd" in Hull** instead of South Shields. The label says "AI"; the depth is still filter-matching.
+- Still no natural language ("family home near schools under £400k" fails). The genuine AI upgrade is to make that match score semantic, not just criteria-based.
 
 **Listing Detail:**
--
+- Hand-written descriptions, photos, floor plan, EPC. A **3D Digital Twin / Matterport tour is advertised on the site but was not present on the listing pages reviewed** (Ayselin flagged the same) — a promise-vs-page gap that's itself a data-quality issue an AI check could catch.
+- **Stamp Duty + Mortgage calculators are present** and return instant figures — but no commentary, no affordability read. No AI summary/Q&A, no real similar-homes on the page (the "similar" is the criteria match, not on-listing).
 
-**Valuation:**
--
+**Valuation — the clearest case for my central idea:**
+- The instant valuation **actually generates a figure automatically from Land Registry + local listing data**, and the Valuations page is refreshingly honest: it says the figure **"doesn't take your property's uniqueness into account."**
+- That single sentence is the entire argument for **AI valuation *explanation*.** The number exists; the platform itself admits it's blind to specifics. An explanation layer that says *why* (comparables, £/sqft) and flags what it can't see is exactly the missing piece — and here it'd bolt onto a figure that's already real.
 
 **Contact:**
--
+- Browns is unusually far along on service automation: FAQs/tenant/landlord pages describe **24/7 self-service booking** (book/change viewings, landlords accept offers 24/7) and the Buyers page advertises a **"unique out-of-hours service."** Important nuance: this is **rule-based self-service, not AI** — no chatbot, no lead scoring. Heads Up collects rich circumstances (timeframe, income, affordability) but doesn't score them.
+- So the infrastructure (booking, out-of-hours intake) is the furthest ahead of my 21 sites — which makes it the best place to *add* an AI qualifier on top, not build one from scratch.
 
 **Technical / General:**
--
+- Hybrid SSR + CSR; explicitly Neuron/Iceberg powered. Network shows **IcebergTracker**, Sentry and Neuron REST — **no AI/LLM service call**, so even the "AI match" badge is served without a generative backend; it's the platform's own matching logic. Chatbot styles loaded, no active assistant.
+- Responsive; forms not submitted; no real-device test.
 
-**Status:** Not done
+**Status:** Done
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
@@ -160,7 +166,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | 1     | Berkay   | Yapıldı  |
 | 2     | Yasemin  | Yapıldı  |
 | 3     | Ayselin  | Yapıldı|
-| 4     | Görkem   | Yapılmadı|
+| 4     | Görkem   | Yapıldı|
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
@@ -294,21 +300,27 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 ### Tur 4 — Görkem
 
 **Arama:**
--
+- Bu, platformun "AI" iddiasının arayüzde gerçekten göründüğü tek tenant. İlanlarda **yüzde eşleşme skoru ve şu tooltip var: "a prediction of what our software thinks you may find an interesting property, based on the unique search criteria that you gave us."** Yani Browns, her diğer sitenin sakladığı Neuron eşleştirme motorunu açığa çıkarıyor.
+- Ama dikkatli oku: bunu süren şey **kayıtlı arama kriterlerin**, davranışın veya ilanların anlamsal okuması değil — yani daha akıllı bir kayıtlı-arama, kişiselleştirme değil. Ve aynı autocomplete zaafı ısırıyor: **"Sheilds", South Shields yerine Hull'daki "SHEilds Ltd"** ile eşleşiyor. Etiket "AI" diyor; derinlik hâlâ filtre-eşleştirme.
+- Yine doğal dil yok ("family home near schools under £400k" başarısız). Gerçek AI yükseltmesi o eşleşme skorunu sadece kritere değil anlamsal hale getirmek.
 
 **İlan Detay:**
--
+- Elle yazılmış açıklamalar, fotoğraflar, kat planı, EPC. Sitede **3D Digital Twin / Matterport turu tanıtılıyor ama incelenen ilan sayfalarında yoktu** (Ayselin aynısını işaretledi) — vaat-vs-sayfa açığı, kendi başına bir AI kontrolünün yakalayabileceği veri-kalitesi sorunu.
+- **Stamp Duty + Mortgage hesaplayıcıları var** ve anlık rakam veriyor — ama yorum yok, karşılanabilirlik okuması yok. AI özet/Q&A yok, sayfada gerçek benzer-ev yok ("similar" kriter eşleşmesi, ilan-içi değil).
 
-**Değerleme:**
--
+**Değerleme — merkezi fikrimin en net örneği:**
+- Anlık değerleme **rakamı Land Registry + yerel ilan verisinden otomatik üretiyor** ve Valuations sayfası ferahlatıcı derecede dürüst: rakamın **"mülkünüzün özgünlüğünü hesaba katmadığını"** söylüyor.
+- Bu tek cümle, **AI değerleme *açıklamasının*** tüm argümanı. Rakam var; platformun kendisi özelliklere kör olduğunu itiraf ediyor. *Neden*ini söyleyen (comparables, £/sqft) ve göremediğini bayrak eden bir açıklama katmanı tam da eksik parça — burada zaten gerçek olan bir rakama oturur.
 
 **İletişim:**
--
+- Browns servis otomasyonunda alışılmadık derecede ileride: FAQ/kiracı/ev-sahibi sayfaları **7/24 self-service rezervasyon** tarif ediyor (viewing rezerve et/değiştir, ev sahipleri 7/24 teklif kabul eder) ve Buyers sayfası **"unique out-of-hours service"** duyuruyor. Önemli nüans: bu **kural-tabanlı self-service, AI değil** — chatbot yok, lead puanlama yok. Heads Up zengin durum topluyor (zaman, gelir, karşılanabilirlik) ama puanlamıyor.
+- Yani altyapı (rezervasyon, mesai-dışı alım) 21 sitem içinde en ileride — bu da onu sıfırdan kurmak yerine üstüne AI qualifier *eklemek* için en iyi yer yapıyor.
 
 **Teknik/Genel:**
--
+- Hibrit SSR + CSR; açıkça Neuron/Iceberg destekli. Network **IcebergTracker**, Sentry ve Neuron REST gösteriyor — **AI/LLM servis çağrısı yok**, yani "AI match" rozeti bile generatif backend olmadan sunuluyor; platformun kendi eşleştirme mantığı. Chatbot stilleri yüklü, aktif asistan yok.
+- Responsive; form gönderilmedi; gerçek cihaz testi yok.
 
-**Durum:** Yapılmadı
+**Durum:** Yapıldı
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
