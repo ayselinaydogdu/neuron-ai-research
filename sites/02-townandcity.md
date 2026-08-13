@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1 | Görkem | Done |
 | 2 | Berkay | Done |
 | 3 | Yasemin | Not done |
-| 4 | Ayselin | Not done |
+| 4 | Ayselin | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -105,22 +105,77 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 4 — Ayselin
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **Absent** — The homepage uses a Buy/Rent toggle with a basic search field, while the main filtering options are available on the properties page. Users can filter by price, bedrooms and location radius, but there is no property-type filter, keyword search, map-based search or natural-language input. A query such as “2-bed house near Gravesend under £300k” cannot be entered directly.
 
-**Valuation:**
--
+- **Smart Suggestions / Query Understanding:** **Absent** — The website strongly promotes its Heads-Up Alerts feature, which notifies users about properties matching their saved requirements. However, the current system appears to rely on predefined criteria rather than understanding the meaning or context of a user's request. The “100% MATCH” indicator was also displayed consistently across listings, including when browsing anonymously without saved criteria, suggesting that it is not currently providing meaningful personalised AI matching.  
+  **AI opportunity:** Heads-Up could become a genuinely intelligent recommendation system by combining saved requirements with user behaviour, property interactions and free-text preferences. New properties could then be ranked according to overall suitability rather than simple filter matches. As this functionality is part of the shared Neuron infrastructure, the improvement could potentially benefit multiple agencies.
 
-**Contact:**
--
+- **Saved Search / Alerts:** **Present** — Heads-Up Property Alerts allow buyers and renters to register their requirements and receive notifications when matching properties become available. Alerts can be delivered through email or WhatsApp, including notifications for properties before they appear on major property portals.
 
-**Technical / General:**
--
+---
 
-**Status:** Not done
+## **Listing Detail:**
+
+- **Property Summary (AI):** **Absent** — Property pages contain manually prepared descriptions and feature lists, but no AI-generated summary was observed to help users quickly understand the most important aspects of a listing.
+
+- **Property Q&A:** **Absent** — There is no property-specific AI assistant that allows users to ask questions and receive answers based on the listing's available information.
+
+- **Property Highlights:** **Partial** — Listings include short feature descriptions and key points, but these appear to be manually entered by the agency rather than dynamically generated or personalised by AI.
+
+- **Lifestyle / "Ideal for…" Matching:** **Partial** — Property descriptions sometimes explain who a property could suit and provide local lifestyle information. However, there is no dedicated AI system that analyses a user's preferences and explains why a particular property may be suitable for them.
+
+- **Property Comparison:** **Absent** — No AI-powered tool was observed for comparing multiple properties based on price, bedrooms, location, features or suitability.
+
+- **Similar Listings (personalised):** **Absent** — A “Latest Properties” section is displayed on property pages, but the properties shown do not appear to be specifically selected based on the current listing. They seem to represent general recent listings rather than personalised recommendations. No similarity score or property-specific recommendation logic was observed.
+
+- **Area Insights:** **Partial** — The website provides local information about areas such as Gravesend and Dartford, including community and property-related information. However, there is no AI-generated neighbourhood analysis covering factors such as schools, demographics, crime, amenities or lifestyle suitability.
+
+- **Commute Insights:** **Partial** — Transport links and nearby stations may be mentioned within property or area information, but there is no personalised commute analysis based on a user's workplace, school or preferred destination.
+
+- **Document Explanation (EPC / Floor Plan):** **Absent** — EPC information and floor plans are available where provided, but there is no AI-powered feature that explains these documents in simple language or highlights important information for the user.
+
+---
+
+## **Valuation:**
+
+- **Instant Valuation:** **Present** — The website provides an online valuation tool where users enter information such as postcode, bedroom count, property type and whether they are interested in selling or letting. However, the process requests personal contact details before providing the result, and no valuation figure is immediately displayed on the screen. As a result, the “instant” valuation functions partly as a lead-generation process rather than a fully instant valuation experience.
+
+- **AI Valuation Explanation:** **Absent** — No AI-generated explanation of the estimated property value or the factors influencing it was observed. The website instead highlights the additional value of a face-to-face valuation, including local knowledge, pricing strategy and property presentation.  
+  **AI opportunity:** The online tool could provide an indicative price range immediately and explain the main factors behind the estimate, while still encouraging users to arrange a professional valuation with an agent.
+
+- **Mortgage / Stamp Duty Calculator:** **Absent** — The website provides access to mortgage-related services and independent brokers, but no dedicated mortgage or Stamp Duty calculator with AI-generated financial guidance was observed.
+
+---
+
+## **Contact:**
+
+- **AI Chat Assistant / Chatbot:** **Absent** — No AI-powered chatbot was observed on either the main website or individual property pages.
+
+- **Lead Qualification:** **Partial** — The Heads-Up registration process collects useful information about buyers and renters, including moving timeframe, financial situation and other requirements. Rental enquiries can also include information such as income, affordability, pets, children and current tenancy status. However, there is no evidence of AI-powered lead scoring or automatic prioritisation.
+
+- **Automated Booking / Viewing Scheduling:** **Partial** — Users can request property viewings through the website, but there is no conversational AI assistant or fully automated scheduling system managing the process.
+
+- **Out-of-hours Response:** **Absent** — Although the agency promotes direct communication and WhatsApp updates, no AI-powered out-of-hours assistant was observed that could answer questions or qualify leads automatically.
+
+---
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **Hybrid (SSR + CSR)** — The initial page content is server-rendered, with important property and website information available in the delivered HTML. Client-side JavaScript is then used for interactive components and navigation.
+
+- **API calls:** **Present** — The website is built on the Neuron / Iceberg Digital platform and uses its property, matching and alert infrastructure. The visible “100% MATCH” element suggests that matching information is integrated into the property interface, although the exact underlying API logic was not independently verified.
+
+- **Mobile behaviour:** **Partial** — The website is responsive and provides access to property search, alerts, valuation and contact features on mobile devices. However, the usability of the more detailed filters and forms should be validated through testing on a physical mobile device.
+
+- **Overall UX:** **Good** — The website has a warm and human-oriented identity, supported by a visible team, customer reviews and industry/compliance badges. Trust and brand presentation are strong. The main weakness is the relatively basic property discovery and listing experience.
+
+- **AI Opportunity:** **High** — The site already has a strong foundation through Neuron's matching and alert infrastructure, but most of the customer-facing experience remains rule-based. The biggest opportunities are improving Heads-Up with intelligent matching, introducing natural-language search, adding property Q&A and summaries, providing personalised recommendations and making the valuation process more transparent.
+
+---
+
+**Status:** Done
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
@@ -231,22 +286,77 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 4 — Ayselin
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Ana sayfada Buy/Rent seçimi ve temel bir arama alanı bulunuyor; asıl filtreleme seçenekleri ise properties sayfasında yer alıyor. Kullanıcılar fiyat, yatak odası ve konum yarıçapına göre filtreleme yapabiliyor ancak mülk tipi, anahtar kelime, harita tabanlı arama veya doğal dil ile arama seçenekleri bulunmuyor. Örneğin “Gravesend yakınında 300 bin £ altı 2 yatak odalı ev” gibi bir sorgu doğrudan girilemiyor.
 
-**Değerleme:**
--
+- **Akıllı Öneriler / Sorgu Anlama:** **Yok** — Web sitesi Heads-Up Alerts özelliğini güçlü şekilde öne çıkarıyor. Bu özellik, kullanıcıların kaydettiği kriterlere uygun mülkler hakkında bildirim gönderiyor. Ancak mevcut sistem, kullanıcının sorgusunun anlamını veya bağlamını anlamaktan ziyade önceden belirlenmiş kriterlere göre çalışıyor gibi görünüyor. Ayrıca “100% MATCH” göstergesinin kayıtlı kriterleri olmayan anonim kullanıcılarda da ilanlar arasında sürekli gösterilmesi, bunun gerçek anlamda kişiselleştirilmiş bir AI eşleştirme sistemi olmadığını düşündürüyor.  
+  **AI fırsatı:** Heads-Up, kayıtlı kriterlerin yanı sıra kullanıcının davranışlarını, ilanlarla etkileşimlerini ve serbest metinle belirttiği tercihleri analiz ederek gerçekten akıllı bir öneri sistemine dönüştürülebilir. Yeni ilanlar yalnızca filtrelerin eşleşmesine göre değil, kullanıcının genel ihtiyaçlarına ne kadar uygun olduğuna göre sıralanabilir. Bu özellik Neuron altyapısının ortak bir parçası olduğu için yapılacak geliştirme birden fazla emlak sitesine uygulanabilir.
 
-**İletişim:**
--
+- **Kayıtlı Arama / Uyarılar:** **Mevcut** — Heads-Up Property Alerts, alıcı ve kiracıların ihtiyaçlarını kaydetmesine ve uygun yeni mülkler hakkında bildirim almasına olanak sağlıyor. Bildirimler e-posta veya WhatsApp üzerinden gönderilebiliyor. Ayrıca bazı mülkler büyük emlak portallarında yayınlanmadan önce kullanıcılara bildirilebiliyor.
 
-**Teknik/Genel:**
--
+---
 
-**Durum:** Yapılmadı
+## **İlan Detayı:**
+
+- **Mülk Özeti (AI):** **Yok** — İlan sayfalarında manuel olarak hazırlanmış açıklamalar ve özellik listeleri bulunuyor ancak kullanıcının ilanı hızlıca anlamasını sağlayacak AI tarafından oluşturulmuş bir özet bulunmuyor.
+
+- **Mülk Soru-Cevap:** **Yok** — Kullanıcıların belirli bir mülk hakkında soru sorarak ilan bilgilerinden cevap alabileceği mülke özel bir AI asistanı bulunmuyor.
+
+- **Mülk Öne Çıkan Özellikleri:** **Kısmi** — İlanlarda kısa özellik açıklamaları ve önemli noktalar bulunuyor ancak bunların AI tarafından dinamik olarak oluşturulduğuna veya kişiselleştirildiğine dair bir kanıt bulunmuyor.
+
+- **Yaşam Tarzı / "Kimler İçin Uygun?" Eşleştirmesi:** **Kısmi** — İlan açıklamalarında mülkün kimler için uygun olabileceği ve bölgedeki yaşam hakkında bilgiler verilebiliyor. Ancak kullanıcının tercihlerini analiz ederek belirli bir mülkün neden kullanıcıya uygun olduğunu açıklayan özel bir AI sistemi bulunmuyor.
+
+- **Mülk Karşılaştırma:** **Yok** — Birden fazla mülkü fiyat, yatak odası, konum, özellikler veya kullanıcıya uygunluk açısından karşılaştıran AI destekli bir araç gözlemlenmedi.
+
+- **Benzer İlanlar (kişiselleştirilmiş):** **Yok** — İlan sayfalarında “Latest Properties” bölümü bulunuyor ancak burada gösterilen mülklerin mevcut ilanla özel olarak eşleştirildiğine dair bir kanıt yok. Bölüm daha çok genel olarak en son eklenen ilanları gösteriyor gibi görünüyor. Kişiselleştirilmiş öneri veya benzerlik skoru bulunmuyor.
+
+- **Bölge İçgörüleri:** **Kısmi** — Web sitesi Gravesend ve Dartford gibi bölgeler hakkında topluluk ve emlak bilgileri sunuyor. Ancak okullar, demografi, suç oranları, olanaklar veya yaşam tarzına uygunluk gibi faktörleri analiz eden AI destekli bir bölge analizi bulunmuyor.
+
+- **Ulaşım / İşe Gidiş İçgörüleri:** **Kısmi** — İlan veya bölge açıklamalarında ulaşım bağlantıları ve yakın istasyonlardan bahsedilebiliyor ancak kullanıcının iş yeri, okulu veya belirlediği hedef noktaya göre kişiselleştirilmiş ulaşım süresi analizi bulunmuyor.
+
+- **Belge Açıklama (EPC / Kat Planı):** **Yok** — EPC bilgileri ve kat planları mevcut olduğunda ilanlarda sunuluyor ancak bu belgeleri basit bir dille açıklayan veya önemli noktaları öne çıkaran AI destekli bir özellik bulunmuyor.
+
+---
+
+## **Değerleme:**
+
+- **Anlık Değerleme:** **Mevcut** — Web sitesinde kullanıcıların posta kodu, yatak odası sayısı, mülk tipi ve satış/kiralama tercihi gibi bilgileri girdiği online bir değerleme aracı bulunuyor. Ancak sonuç aşamasından önce kullanıcıdan iletişim bilgileri isteniyor ve değerleme sonucu ekranda anında gösterilmiyor. Bu nedenle “instant valuation” özelliği tamamen anlık bir değerleme deneyiminden ziyade kısmen lead toplama süreci olarak çalışıyor.
+
+- **AI Değerleme Açıklaması:** **Yok** — Tahmini mülk değerini veya bu değeri etkileyen faktörleri açıklayan AI destekli bir sistem gözlemlenmedi. Bunun yerine web sitesi yüz yüze değerlemenin yerel bilgi, fiyatlandırma stratejisi ve mülk sunumu gibi ek avantajlarını öne çıkarıyor.  
+  **AI fırsatı:** Online araç, kullanıcıya anında tahmini bir fiyat aralığı gösterebilir ve bu tahminin arkasındaki temel faktörleri açıklayabilir. Aynı zamanda profesyonel değerleme için emlak danışmanıyla görüşmeye yönlendirme yapılabilir.
+
+- **Mortgage / Stamp Duty Calculator:** **Yok** — Web sitesinde mortgage ile ilgili hizmetler ve bağımsız brokerlara erişim bulunuyor ancak AI destekli finansal yönlendirme sağlayan özel bir mortgage veya Stamp Duty hesaplayıcısı gözlemlenmedi.
+
+---
+
+## **İletişim:**
+
+- **AI Chat Assistant / Chatbot:** **Yok** — Ana web sitesinde veya bireysel ilan sayfalarında AI destekli chatbot bulunmuyor.
+
+- **Lead Qualification:** **Kısmi** — Heads-Up kayıt süreci alıcı ve kiracılar hakkında taşınma zamanı, finansal durum ve diğer ihtiyaçlar gibi faydalı bilgiler topluyor. Kiralama sürecinde gelir, bütçe, evcil hayvan, çocuk ve mevcut kira sözleşmesi gibi bilgiler de alınabiliyor. Ancak AI destekli lead scoring veya otomatik önceliklendirme sistemi bulunmuyor.
+
+- **Otomatik Rezervasyon / Viewing Scheduling:** **Kısmi** — Kullanıcılar web sitesi üzerinden mülk görüntüleme talebinde bulunabiliyor ancak süreci yöneten konuşma tabanlı bir AI asistanı veya tamamen otomatik bir randevu planlama sistemi bulunmuyor.
+
+- **Mesai Dışı Yanıt:** **Yok** — Web sitesi doğrudan iletişimi ve WhatsApp üzerinden güncellemeleri desteklese de, mesai saatleri dışında kullanıcı sorularını otomatik olarak cevaplayan veya lead bilgilerini toplayan AI destekli bir asistan gözlemlenmedi.
+
+---
+
+## **Teknik / Genel:**
+
+- **SSR vs CSR:** **Hibrit (SSR + CSR)** — Sayfanın ilk yüklenmesinde temel içerikler server-side olarak oluşturuluyor ve önemli mülk bilgileri doğrudan HTML içerisinde bulunuyor. Daha sonra client-side JavaScript etkileşimli bileşenleri ve navigasyonu yönetiyor.
+
+- **API çağrıları:** **Mevcut** — Web sitesi Neuron / Iceberg Digital platformu üzerinde çalışıyor ve mülk, eşleştirme ve alert altyapısını kullanıyor. Arayüzde görülen “100% MATCH” göstergesi, eşleştirme bilgilerinin ilan deneyimine entegre edildiğini gösteriyor; ancak bu sistemin arkasındaki kesin API mantığı bağımsız olarak doğrulanmadı.
+
+- **Mobil davranış:** **Kısmi** — Web sitesi responsive yapıya sahip ve mobil cihazlarda mülk arama, uyarılar, değerleme ve iletişim özelliklerine erişim sağlıyor. Ancak detaylı filtrelerin ve formların kullanım kolaylığının gerçek bir mobil cihaz üzerinde ayrıca test edilmesi gerekiyor.
+
+- **Genel UX:** **İyi** — Web sitesi sıcak ve insan odaklı bir marka kimliğine sahip. Gerçek ekip üyeleri, müşteri yorumları ve sektör/uyumluluk rozetleri güven duygusunu destekliyor. Temel problem güven veya marka algısı değil, mülk keşif ve ilan deneyiminin nispeten basit kalması.
+
+- **AI Fırsatı:** **Yüksek** — Site, Neuron'un eşleştirme ve alert altyapısı sayesinde güçlü bir temel oluşturmuş durumda ancak kullanıcıya sunulan deneyimin büyük bölümü hâlâ kural tabanlı çalışıyor. En önemli fırsatlar Heads-Up sisteminin akıllı eşleştirmeye dönüştürülmesi, doğal dil aramasının eklenmesi, mülk Q&A ve özetlerinin sunulması, kişiselleştirilmiş önerilerin geliştirilmesi ve değerleme sürecinin daha şeffaf hale getirilmesi.
+
+---
+
+**Status:** Yapıldı
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
