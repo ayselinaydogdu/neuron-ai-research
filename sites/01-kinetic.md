@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1 | Görkem | Done |
 | 2 | Berkay | Done |
 | 3 | Yasemin | Not done |
-| 4 | Ayselin | Not done |
+| 4 | Ayselin | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
