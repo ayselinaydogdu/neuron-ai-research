@@ -128,7 +128,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 | Tur | İnceleyen | Durum |
 |---|---|---|
-| 1 | Ayselin | Yapılmadı |
+| 1 | Ayselin | Yapıldı |
 | 2 | Görkem | Yapıldı |
 | 3 | Berkay | Yapılmadı |
 | 4 | Yasemin | Yapılmadı |
