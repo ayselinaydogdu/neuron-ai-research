@@ -12,7 +12,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | Round | Reviewer | Status |
 |---|---|---|
 | 1 | Yasemin | Done |
-| 2 | Ayselin | Not done |
+| 2 | Ayselin | Done |
 | 3 | Görkem | Not done |
 | 4 | Berkay | Not done |
 
@@ -155,7 +155,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | Tur | İnceleyen | Durum |
 |---|---|---|
 | 1 | Yasemin | Yapıldı |
-| 2 | Ayselin | Yapılmadı |
+| 2 | Ayselin | Yapıldı |
 | 3 | Görkem | Yapılmadı |
 | 4 | Berkay | Yapılmadı |
 
