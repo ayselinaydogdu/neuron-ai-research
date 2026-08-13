@@ -193,7 +193,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | 1 | Görkem | Yapıldı |
 | 2 | Berkay | Yapıldı |
 | 3 | Yasemin | Yapılmadı |
-| 4 | Ayselin | Yapılmadı |
+| 4 | Ayselin | Yapıldı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
