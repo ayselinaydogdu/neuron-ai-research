@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1 | Görkem | Done |
 | 2 | Berkay | Done |
 | 3 | Yasemin | Not done |
-| 4 | Ayselin | Not done |
+| 4 | Ayselin | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -104,22 +104,78 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 4 — Ayselin
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **Absent** — The website follows the same Buy/Rent and basic-filter structure used across the platform. Users can search using price and bedroom criteria, but there is no free-text search, keyword input, property-type filter or map-based discovery. The agency positions itself around “Property Marketing, Done Properly,” with a strong emphasis on photography and video rather than search functionality, so the discovery experience remains largely unchanged from the platform default.
 
-**Valuation:**
--
+- **Smart Suggestions / Query Understanding:** **Absent** — Every listing displays a “100% MATCH” badge, with no meaningful variation across price, bedroom count or listing status for an anonymous visitor without saved criteria. This strongly suggests a static or rule-based UI element rather than genuine AI-powered matching. The presence of Neuron/Iceberg Digital branding alone does not confirm that the visible match percentage is AI-driven.
 
-**Contact:**
--
+- **Saved Search / Alerts:** **Present** — Property Alerts allow buyers and tenants to register their requirements and receive updates when suitable properties become available. The service also promotes access to properties before they appear on major property portals.
 
-**Technical / General:**
--
+---
 
-**Status:** Not done
+## **Listing Detail:**
+
+- **Property Summary (AI):** **Absent** — Listings contain manually written descriptions and structured property information, but no AI-generated 2–3 point summary was observed.
+
+- **Property Q&A:** **Absent** — No free-form AI assistant for answering questions about individual properties was observed.
+
+- **Property Highlights:** **Partial** — Listings include concise features and descriptive titles, but these appear to be manually created rather than AI-generated.
+
+- **Lifestyle / "Ideal for…" Matching:** **Partial** — Some listings include suitability statements such as “Ideal First Time Purchase” and mention schools, transport and local amenities. However, there is no AI-generated personalised lifestyle analysis.
+
+- **Property Comparison:** **Absent** — No AI-powered comparison feature was observed for comparing multiple listings.
+
+- **Similar Listings (personalised):** **Present** — The matching system connects registered buyer requirements with suitable properties and exposes match percentages in property results. However, as with Smart Suggestions, the visible match percentage was not verified through backend inspection and appears to rely on the same platform-level matching infrastructure.
+
+- **Area Insights:** **Partial** — Property descriptions provide information about nearby schools, shops, transport and local amenities. Local guides are also available, but there is no AI-generated neighbourhood analysis covering factors such as demographics, crime, amenities or lifestyle suitability.
+
+- **Commute Insights:** **Partial** — Listings mention nearby stations and transport connections, including DLR and Elizabeth Line links, but there is no personalised commute-time analysis based on the user's workplace or school.
+
+- **Document Explanation (EPC / Floor Plan):** **Absent** — EPCs and floor plans may be included with listings, but there is no AI-powered feature that explains these documents in plain language.
+
+- **AI / Media Opportunity:** **Partial** — The agency's strongest differentiator is the quality of its photography and video marketing. An image-aware AI feature could automatically identify and highlight visual characteristics such as large gardens, renovated kitchens, period features or natural light. This could turn existing media investment into additional searchable and summarised property data. However, this would be a secondary opportunity rather than a core priority.
+
+---
+
+## **Valuation:**
+
+- **Instant Valuation:** **Present** — The website provides a 24/7 instant online valuation tool that gives users a quick estimate of what their property may be worth. The site states that the instant valuation can be up to 60% accurate.
+
+- **AI Valuation Explanation:** **Absent** — The instant valuation provides an estimated figure but does not explain the result through an AI-generated narrative or personalised breakdown of the factors behind the estimate.  
+  **AI opportunity:** The valuation could be made more useful by explaining comparable properties, local market conditions and property characteristics instead of presenting the estimate as a standalone number.
+
+- **Mortgage / Stamp Duty Calculator:** **Absent** — No dedicated mortgage or Stamp Duty calculator with AI-generated financial commentary was observed.
+
+---
+
+## **Contact:**
+
+- **AI Chat Assistant / Chatbot:** **Absent** — No site-wide or property-level AI chat assistant was observed.
+
+- **Lead Qualification:** **Partial** — Property Alerts collect buyer and tenant requirements and search preferences, giving the agency structured information about what each lead is looking for. However, there is no AI-powered lead scoring, qualification or prioritisation.
+
+- **Automated Booking / Viewing Scheduling:** **Partial** — Property pages provide viewing and contact options, and the agency promotes flexible viewing arrangements. However, no AI-driven booking system or conversational scheduling assistant was observed.
+
+- **Out-of-hours Response:** **Partial** — The instant valuation is available 24/7 and Property Alerts operate continuously, but there is no AI-powered conversational system handling customer questions outside business hours.
+
+---
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **Hybrid (SSR + CSR)** — The initial page load is server-side rendered, with core property and content information available directly in the delivered HTML. Client-side JavaScript then handles interactive elements and further navigation.
+
+- **API calls:** **Partial** — Property search and matching functionality clearly relies on external or property-platform infrastructure. However, the specific runtime API endpoints were not confirmed through Network-tab inspection, and the website does not explicitly identify the platform as Neuron/Iceberg Digital in the same way as some other sites in the group.
+
+- **Mobile behaviour:** **Present** — The responsive website provides access to property search, listings, alerts, valuation and contact functionality on mobile devices.
+
+- **Overall UX:** **Good** — The website's main strength is its visual presentation and property marketing quality. Photography, video and professionally presented listings create a strong first impression. However, the underlying property discovery experience remains relatively basic and does not fully benefit from the quality of the media content.
+
+- **AI Opportunity:** **Medium–High** — The strongest opportunities are not necessarily generic AI features but improvements that build on the agency's existing strengths. Image-aware property highlights, AI-generated summaries, natural-language search and smarter matching could turn high-quality property media into richer and more useful discovery data. AI valuation explanations would also improve transparency without replacing the human valuation service.
+
+---
+
+**Status:** Done
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
@@ -227,22 +283,78 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 4 — Ayselin
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Web sitesi platformdaki diğer sitelerle aynı Buy/Rent ve temel filtreleme yapısını kullanıyor. Kullanıcılar fiyat ve yatak odası gibi kriterlerle arama yapabiliyor ancak serbest metin, anahtar kelime, mülk tipi filtresi veya harita tabanlı arama bulunmuyor. Ajans kendisini “Property Marketing, Done Properly” söylemiyle konumlandırıyor ve fotoğraf/video kalitesine güçlü şekilde odaklanıyor. Bu nedenle arama deneyimi platformun varsayılan yapısından büyük ölçüde farklılaşmıyor.
 
-**Değerleme:**
--
+- **Akıllı Öneriler / Sorgu Anlama:** **Yok** — Anonim ve kayıtlı kriterleri olmayan kullanıcıyla yapılan kontrolde tüm ilanlarda “100% MATCH” rozeti görülüyor ve fiyat, yatak odası sayısı veya ilan durumuna göre anlamlı bir değişiklik göstermiyor. Bu durum göstergenin gerçek AI tabanlı eşleştirme yerine statik veya kural tabanlı bir UI öğesi olduğunu düşündürüyor. Neuron/Iceberg Digital altyapısının kullanılması tek başına bu eşleşme yüzdesinin AI tarafından üretildiğini doğrulamıyor.
 
-**İletişim:**
--
+- **Kayıtlı Arama / Uyarılar:** **Mevcut** — Property Alerts, alıcı ve kiracıların arama kriterlerini kaydetmesine ve uygun mülkler geldiğinde bildirim almasına olanak sağlıyor. Sistem ayrıca bazı mülkleri büyük emlak portallarında yayınlanmadan önce kullanıcılara sunmayı öne çıkarıyor.
 
-**Teknik/Genel:**
--
+---
 
-**Durum:** Yapılmadı
+## **İlan Detayı:**
+
+- **Mülk Özeti (AI):** **Yok** — İlanlarda manuel hazırlanmış açıklamalar ve yapılandırılmış mülk bilgileri bulunuyor ancak AI tarafından oluşturulmuş 2–3 maddelik kısa bir özet bulunmuyor.
+
+- **Mülk Soru-Cevap:** **Yok** — Kullanıcıların belirli bir mülk hakkında soru sorabileceği serbest metin tabanlı AI asistanı bulunmuyor.
+
+- **Mülk Öne Çıkan Özellikleri:** **Kısmi** — İlanlarda kısa özellikler ve açıklayıcı başlıklar bulunuyor ancak bunların AI tarafından oluşturulduğuna dair bir kanıt yok; içerikler manuel hazırlanıyor.
+
+- **Yaşam Tarzı / "Kimler İçin Uygun?" Eşleştirmesi:** **Kısmi** — Bazı ilanlarda “Ideal First Time Purchase” gibi uygunluk ifadeleri ve okul, ulaşım, yerel olanaklar hakkında bilgiler bulunuyor. Ancak kullanıcı profiline göre AI tarafından oluşturulmuş kişiselleştirilmiş bir yaşam tarzı analizi bulunmuyor.
+
+- **Mülk Karşılaştırma:** **Yok** — Birden fazla ilanı karşılaştıran AI destekli bir özellik gözlemlenmedi.
+
+- **Benzer İlanlar (kişiselleştirilmiş):** **Mevcut** — Eşleştirme sistemi kayıtlı alıcı kriterlerini uygun mülklerle ilişkilendiriyor ve sonuçlarda eşleşme yüzdeleri gösteriyor. Ancak Smart Suggestions bölümünde olduğu gibi bu eşleşmenin backend tarafındaki gerçek çalışma mantığı doğrulanmadı ve görünen sistemin platform seviyesindeki eşleştirme altyapısına dayandığı düşünülüyor.
+
+- **Bölge İçgörüleri:** **Kısmi** — İlan açıklamalarında yakın okullar, mağazalar, ulaşım bağlantıları ve yerel olanaklar hakkında bilgiler bulunuyor. Ayrıca yerel rehberler mevcut ancak demografi, suç oranı, olanaklar veya yaşam tarzına uygunluk gibi faktörleri bir araya getiren AI destekli bir bölge analizi bulunmuyor.
+
+- **Ulaşım / İşe Gidiş İçgörüleri:** **Kısmi** — İlanlarda yakın istasyonlardan ve DLR ile Elizabeth Line gibi ulaşım bağlantılarından bahsediliyor. Ancak kullanıcının iş yeri veya okuluna göre kişiselleştirilmiş ulaşım süresi analizi bulunmuyor.
+
+- **Belge Açıklama (EPC / Kat Planı):** **Yok** — EPC ve kat planları ilanlarda mevcut olabiliyor ancak bu belgeleri sade bir dille açıklayan AI destekli bir özellik bulunmuyor.
+
+- **AI / Görsel Medya Fırsatı:** **Kısmi** — Ajansın en güçlü farklılaştırıcı özelliği fotoğraf ve video kalitesi. Görsel analiz kullanan bir AI sistemi; geniş bahçe, yenilenmiş mutfak, dönemsel mimari özellikler veya doğal ışık gibi görsel özellikleri otomatik olarak tespit edip öne çıkarabilir. Böylece mevcut fotoğraf/video yatırımı ek bir veri kaynağına dönüştürülebilir. Ancak bu, temel öncelikten ziyade ikincil bir fırsat olarak değerlendirilmeli.
+
+---
+
+## **Değerleme:**
+
+- **Anlık Değerleme:** **Mevcut** — Web sitesi 7/24 çalışan bir online değerleme aracı sunuyor. Kullanıcılara mülklerinin yaklaşık değerini hızlı bir şekilde gösteren bir tahmin sağlanıyor. Site, anlık değerlemenin %60'a kadar doğru olabileceğini belirtiyor.
+
+- **AI Değerleme Açıklaması:** **Yok** — Anlık değerleme tahmini bir rakam sunuyor ancak bu tahminin nedenlerini açıklayan AI destekli bir anlatım veya kişiselleştirilmiş faktör analizi bulunmuyor.  
+  **AI fırsatı:** Sistem yalnızca tahmini bir rakam göstermek yerine benzer mülkler, bölgesel piyasa koşulları ve mülk özelliklerinin tahmini nasıl etkilediğini açıklayabilir.
+
+- **Mortgage / Stamp Duty Calculator:** **Yok** — AI destekli finansal yorum içeren özel bir mortgage veya Stamp Duty hesaplayıcısı gözlemlenmedi.
+
+---
+
+## **İletişim:**
+
+- **AI Chat Assistant / Chatbot:** **Yok** — Site genelinde veya mülk sayfalarında AI destekli chatbot bulunmuyor.
+
+- **Lead Qualification:** **Kısmi** — Property Alerts sistemi alıcı ve kiracıların ihtiyaçlarını ve arama tercihlerini topluyor. Böylece ajans, lead'in ne tür bir mülk aradığını yapılandırılmış şekilde görebiliyor. Ancak AI destekli lead scoring, otomatik nitelendirme veya önceliklendirme bulunmuyor.
+
+- **Otomatik Rezervasyon / Viewing Scheduling:** **Kısmi** — İlan sayfalarında viewing ve iletişim seçenekleri bulunuyor ve esnek viewing hizmetleri sunuluyor. Ancak AI destekli otomatik rezervasyon veya konuşma tabanlı randevu planlama sistemi bulunmuyor.
+
+- **Mesai Dışı Yanıt:** **Kısmi** — Anlık değerleme 7/24 kullanılabiliyor ve Property Alerts sürekli çalışıyor. Ancak mesai dışında müşteri sorularını yanıtlayan AI destekli konuşma tabanlı bir sistem bulunmuyor.
+
+---
+
+## **Teknik / Genel:**
+
+- **SSR vs CSR:** **Hibrit (SSR + CSR)** — İlk sayfa yüklemesi server-side olarak gerçekleştiriliyor ve temel mülk/içerik bilgileri doğrudan HTML içerisinde bulunuyor. Daha sonra client-side JavaScript etkileşimli bölümleri ve navigasyonu yönetiyor.
+
+- **API çağrıları:** **Kısmi** — Mülk arama ve eşleştirme özelliklerinin harici veya emlak platformu altyapısına dayandığı görülüyor. Ancak spesifik runtime API endpoint'leri Network-tab incelemesiyle doğrulanmadı ve web sitesi bazı diğer grup sitelerindeki gibi platformu açık şekilde Neuron/Iceberg Digital olarak tanımlamıyor.
+
+- **Mobil davranış:** **Mevcut** — Responsive web sitesi mobil cihazlarda mülk arama, ilanlar, uyarılar, değerleme ve iletişim özelliklerine erişim sağlıyor.
+
+- **Genel UX:** **İyi** — Web sitesinin en güçlü tarafı görsel sunum ve mülk pazarlama kalitesi. Fotoğraf, video ve profesyonel ilan sunumu güçlü bir ilk izlenim oluşturuyor. Ancak temel mülk keşif deneyimi oldukça standart kalıyor ve yüksek kaliteli medya içeriklerinden yeterince faydalanmıyor.
+
+- **AI Fırsatı:** **Orta–Yüksek** — En güçlü fırsatlar genel amaçlı AI özelliklerinden ziyade ajansın mevcut güçlü yönlerini destekleyen özellikler. Görsel analiz tabanlı mülk öne çıkarma, AI mülk özetleri, doğal dil araması ve daha akıllı eşleştirme, kaliteli fotoğraf ve videoları daha zengin arama verilerine dönüştürebilir. AI destekli değerleme açıklamaları da insan danışmanlığının yerine geçmeden şeffaflığı artırabilir.
+
+---
+
+**Durum:** Yapıldı
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
