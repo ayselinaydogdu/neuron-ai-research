@@ -147,35 +147,40 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ## Arama
 
-- Konum, fiyat, oda sayısı ve diğer klasik filtreler mevcut.
-- Arama kutusu yalnızca adres/konum odaklı çalışıyor.
-- Doğal dil araması (Natural Language Search) desteklenmiyor. "3 bedroom family" veya "house under £300k" gibi serbest metin sorguları adres olarak algılanıyor.
-- AI destekli akıllı arama ve sorgu yorumlama bulunmuyor.
+- Web sitesinde fiyat, yatak odası sayısı, konum ve arama yarıçapı gibi standart mülk arama filtreleri bulunmaktadır.
+- Arama işlevi ağırlıklı olarak konum veya adres üzerinden mülk bulmaya odaklanmaktadır.
+- Doğal Dil Araması desteklenmemektedir. Arama sistemi, açıklayıcı kullanıcı taleplerini veya kullanıcı niyetini standart konum tabanlı sorguların ötesinde yorumlamamaktadır.
+- Yapay zeka destekli arama, anlamsal sorgu anlama ve akıllı mülk eşleştirme özellikleri bulunmamaktadır.
+- Kullanıcıların ilgili ilanlardan haberdar olabilmesi için Property Alerts ve Heads Up Alerts özellikleri bulunmaktadır.
 
-## İlan Detay
+## Mülk Detayları
 
-- AI Chat Assistant mevcut ve ilan hakkında temel soruları yanıtlayabiliyor.
-- AI destekli Property Summary (ilan özeti) bulunmuyor.
-- AI Property Comparison özelliği bulunmuyor.
-- Floor Plan ve EPC belgeleri mevcut ancak AI tarafından özetlenmiyor veya açıklanmıyor.
-- Google Maps gösteriliyor ancak AI destekli Area Insights veya Commute Insights sunulmuyor.
+- Mülk ilanlarında fotoğraflar, açıklamalar, temel mülk özellikleri, kat planları, EPC derecelendirmeleri ve diğer önemli mülk bilgileri sunulmaktadır.
+- Yapay zeka tarafından oluşturulan mülk özetleri bulunmamaktadır; kullanıcıların ilan bilgilerini kendilerinin incelemesi gerekmektedir.
+- Mülk ilanı üzerinde doğrudan kullanılabilen yapay zeka destekli soru-cevap özelliği bulunmamaktadır.
+- Mülkler yapay zeka destekli bir karşılaştırma özelliğiyle otomatik olarak karşılaştırılamamaktadır.
+- Kat planları ve EPC bilgileri standart belgeler olarak sunulmakta, yapay zeka tarafından açıklanmamaktadır.
+- Google Maps/konum bilgisi sunulmaktadır ancak çevre veya ulaşım hakkında yapay zeka tarafından oluşturulan içgörüler bulunmamaktadır.
+- İlgili mülkler kişiselleştirilmiş öneriler yerine standart listeleme mantığına göre gösterilmektedir.
 
 ## Değerleme
 
-- Online Valuation hizmeti mevcut.
-- Stamp Duty Calculator ve Mortgage Calculator bulunuyor.
-- Hesaplayıcılar yalnızca sonuç gösteriyor; AI destekli maliyet analizi veya finansal öneri sunmuyor.
+- Kullanıcıların ek destek talep edebileceği çevrim içi bir mülk değerleme/tahmin hizmeti bulunmaktadır.
+- Web sitesinde Mortgage Calculator ve Stamp Duty Calculator araçları bulunmaktadır.
+- Bu araçlar yalnızca sayısal hesaplama sonuçları sunmakta; kişiselleştirilmiş yapay zeka açıklamaları, ödeme gücü analizi veya öneriler sağlamamaktadır.
 
 ## İletişim
 
-- AI Chat Assistant mevcut.
-- İletişim formu ve viewing talebi oluşturulabiliyor.
-- Karmaşık veya detaylı sorularda kullanıcı emlak danışmanına yönlendiriliyor.
+- Kullanıcılar mülk sayfalarında bulunan iletişim formları üzerinden acenteyle iletişime geçebilmektedir.
+- Mülk görüntüleme talepleri de web sitesi üzerinden gönderilebilmektedir.
+- Web sitesi, etkileşimli bir yapay zeka sohbet deneyiminden ziyade telefon ve iletişim formlarına dayalı bir iletişim yapısı kullanmaktadır.
+- Belirgin bir yapay zeka destekli müşteri adayı nitelendirme veya mesai dışı iletişim desteği bulunmamaktadır.
 
 ## Teknik / Genel
 
-- Modern ve kullanıcı dostu bir arayüze sahip.
-- AI chatbot platforma entegre edilmiş.
+- Web sitesi, modern bir Neuron yapısı üzerinde geliştirilmiş, profesyonel ve kullanıcı dostu bir arayüze sahiptir.
+- Platformda mülk rehberleri, SSS içerikleri ve bölge rehberleri gibi destekleyici içerikler bulunmaktadır. Bu içerikler gelecekte geliştirilecek bir yapay zeka asistanı için bilgi kaynağı olarak kullanılabilir.
+- Web sitesi mevcut destekleyici içeriklerini etkileşimli yapay zeka özellikleriyle aktif şekilde kullanmamaktadır.
 
 **Durum:** Yapıldı
 
