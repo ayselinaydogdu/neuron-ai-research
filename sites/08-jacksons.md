@@ -24,38 +24,40 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ## Search
 
-- Traditional filter-based search is available, including location, price, bedrooms, and other standard filters.
-- The search bar is focused on address/location-based searches.
-- Natural Language Search is not supported. Queries such as "3 bedroom family" or "house under £300k" are treated as location searches rather than search intent.
-- AI-powered smart search and query interpretation are not available.
+- The website provides standard property search filters, including price, bedroom count, location, and search radius.
+- Search functionality is primarily designed for finding properties by location or address.
+- Natural Language Search is not supported. The search does not interpret descriptive requests or understand user intent beyond standard location-based queries.
+- AI-powered search, semantic query understanding, and intelligent property matching are not available.
+- Property Alerts and Heads Up Alerts are available for users who want to receive notifications about relevant listings.
 
 ## Property Details
 
-- An AI Chat Assistant is available and can answer basic questions about a property.
-- An AI-generated Property Summary is not available.
-- AI-powered Property Comparison is not available.
-- Floor Plans and EPC certificates are available but are not summarized or explained by AI.
-- Google Maps is provided, but AI-powered Area Insights and Commute Insights are not available.
+- Property listing pages provide detailed information such as photographs, descriptions, key property features, floor plans, EPC ratings, and other essential property data.
+- AI-generated summaries are not provided, so users need to review the listing information themselves.
+- There is no AI-powered question-and-answer functionality available directly on the property listing.
+- Properties cannot be automatically compared using an AI-powered comparison feature.
+- Floor plans and EPC information are displayed as standard property documents without AI-generated explanations.
+- Google Maps/location information is available, but there are no AI-generated insights about the surrounding area or commuting options.
+- Related properties are displayed based on standard listing logic rather than personalized recommendations.
 
 ## Valuation
 
-- An Online Valuation service is available.
-- Stamp Duty Calculator and Mortgage Calculator are available.
-- The calculators provide calculation results only and do not offer AI-powered financial analysis or recommendations.
+- An online property valuation/estimate service is available, with the option for users to request further assistance.
+- Mortgage and Stamp Duty calculators are available on the website.
+- These tools provide numerical calculations but do not provide personalized AI explanations, affordability analysis, or recommendations based on the results.
 
 ## Contact
 
-- An AI Chat Assistant is available.
-- Users can submit contact forms and request property viewings.
-- For complex or detailed enquiries, the AI assistant directs users to an estate agent.
+- Users can contact the agency through enquiry forms available on property pages.
+- Property viewing requests can also be submitted through the website.
+- The website primarily relies on direct contact methods such as phone and enquiry forms rather than an interactive AI chat experience.
+- There is no clear AI-based lead qualification or out-of-hours conversational support.
 
 ## Technical / General
 
-- The website has a modern and user-friendly interface.
-- An AI chatbot is integrated into the platform.
-
-**Status:** Done
-
+- The website uses a modern Neuron-based structure with a clear and professional interface.
+- The platform includes supporting content such as property guides, FAQs, and area information, which could provide useful knowledge sources for a future AI assistant.
+- The website does not currently make significant use of this content through interactive AI features.
 ### Round 2 — Görkem
 
 **Search:**
