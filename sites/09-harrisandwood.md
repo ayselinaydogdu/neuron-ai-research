@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1 | Ayselin | Done |
 | 2 | Görkem | Done |
 | 3 | Berkay | Not done |
-| 4 | Yasemin | Not done |
+| 4 | Yasemin | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -103,22 +103,61 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 4 — Yasemin
 
-**Search:**
--
+## Search
 
-**Listing Detail:**
--
+- **Natural Language Search — No.** `2 bed flat near Gilberd School under £200k` → **"Couldn't find the address"**. The box isn't a search engine, it's a Google Places address autocomplete. The "Find Your Dream Home" heading sets the wrong expectation.
+- **Smart Suggestions / Query Interpretation — Partial.** `Colchster` returns a Colchester suggestion, but that comes from Google Places. Typo tolerance exists only in the location field; the property query itself is never interpreted.
+- **Saved Search / Alerts — Yes.** "Heads Up Alerts". Criteria-based (location + radius, type, beds, price); no AI matching claimed.
+- **Sorting — Unclear.** A `SUGGESTED` option exists, but nothing on the site explains what it sorts by.
 
-**Valuation:**
--
+Filters are extensive but entirely dropdowns and checkboxes.
 
-**Contact:**
--
+---
 
-**Technical / General:**
--
+## Property Detail
 
-**Status:** Not done
+Example: `/properties/6-bedroom-house-...-co2/538132` (£900,000)
+
+- **Property Summary (AI Summary) — No.** Description sits inside an accordion, 8–10 hand-written paragraphs.
+- **Property Q&A — No.** No way to ask a question; the only channel is the 255-character message box in the viewing form.
+- **Property Highlights — No.** The "Features" list is manually entered by the agent.
+- **Lifestyle Matching — No.** "Ideal for first-time buyers, professionals, investors" is written into the copy by hand.
+- **Property Comparison — No.**
+- **Similar Property Suggestions — No.** The "Latest Properties" block at the bottom is identical for everyone — not even similarity-based.
+- **Area Insights — No.** School, hospital, A12 and Park & Ride details are buried in the description text. A textbook "could be done with AI, done manually instead" case.
+- **Commute Insights — No.**
+- **Document Explanation (EPC / Floor Plan) — No.** Both are images only.
+
+**Note:** Some listings are blurred as "Pre-Market Property" and require registration to view. A registration wall instead of personalisation.
+
+---
+
+## Valuation
+
+- **Instant Valuation — Yes.** `/instant-valuation`, "Takes about 60 seconds". ⚠️ Result screen not verified — is the figure shown on screen or held behind an email capture?
+- **AI Valuation Explanation — No (likely).** The only justification is a generic line: "We use recent local sales + property data."
+- **Mortgage / Stamp Duty Calculator — No.**
+
+The in-person valuation form is fully manual; no availability display.
+
+---
+
+## Contact / Lead
+
+- **AI Chat Assistant — Partial (key finding).** No chat bubble on the page, **but** view-source shows `.whatsapp-chatbot` CSS and the `cdn.msgboxx.io` bundle loaded. The infrastructure ships with the theme; it just isn't switched on for this site.
+- **Lead Qualification — Partial (not AI).** The alerts registration asks a serious set of questions: moving timeline, solicitors arranged, property to sell, how they heard about the agency. Rich data, but a rule-based form — no scoring or prioritisation.
+- **Automated Booking — No.** The form lets you pick a date and time but states plainly: *"This does not confirm the viewing."* It's a request, not a real slot.
+- **Out-of-Hours Response — No.** Closed Sundays; reviewed on a Sunday evening and got no automated reply, banner or chat of any kind.
+
+---
+
+## Technical
+
+- **SSR.** Nuxt 3 + Vercel; content present in the HTML source.
+- **API:** Very little XHR traffic (6 of 105 requests), data arrives via SSR. No visible Neuron REST API traffic.
+- **Traces:** `neuron.css`, `theme7`, `window.IcebergTracker`, images served from the Lifesycle CRM CDN.
+
+**Status:** Done
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
@@ -137,7 +176,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | 1 | Ayselin | Yapıldı |
 | 2 | Görkem | Yapıldı |
 | 3 | Berkay | Yapılmadı |
-| 4 | Yasemin | Yapılmadı |
+| 4 | Yasemin | Yapıldı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
@@ -226,22 +265,61 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 4 — Yasemin
 
-**Arama:**
--
+## Arama
 
-**İlan Detay:**
--
+- **Doğal Dil Araması — Yok.** `2 bed flat near Gilberd School under £200k` → **"Couldn't find the address"**. Kutu arama motoru değil, Google Places adres autocomplete'i. Başlık "Find Your Dream Home" olduğu için kullanıcıda yanlış beklenti yaratıyor.
+- **Akıllı Öneri / Sorgu Yorumlama — Kısmen var.** `Colchster` → Colchester önerisi geliyor, ama bu Google Places'ten. Yazım hatası toleransı sadece konum alanında; ilan sorgusu yorumlanmıyor.
+- **Kayıtlı Arama / Alerts — Var.** "Heads Up Alerts". Kriter tabanlı (konum + yarıçap, tip, oda, fiyat); AI eşleştirme iddiası yok.
+- **Sıralama — Belirsiz.** `SUGGESTED` seçeneği var ama neye göre sıraladığı hiçbir yerde yazmıyor.
 
-**Değerleme:**
--
+Filtreler zengin ama tamamı dropdown + checkbox.
 
-**İletişim:**
--
+---
 
-**Teknik/Genel:**
--
+## İlan Detay
 
-**Durum:** Yapılmadı
+Örnek: `/properties/6-bedroom-house-...-co2/538132` (£900,000)
+
+- **Property Summary (AI Özet) — Yok.** Açıklama akordeon içinde, elle yazılmış 8-10 paragraf.
+- **Property Q&A — Yok.** Soru sorulacak alan yok; tek yol viewing formundaki 255 karakterlik mesaj kutusu.
+- **Property Highlights — Yok.** "Features" listesi emlakçının elle girdiği maddeler.
+- **Lifestyle Eşleştirme — Yok.** "Ideal for first-time buyers, professionals, investors" metne elle yazılmış.
+- **Property Comparison — Yok.**
+- **Benzer İlan Önerisi — Yok.** Alttaki "Latest Properties" herkese aynı; benzerlik bazlı bile değil.
+- **Area Insights — Yok.** Okul, hastane, A12, Park & Ride bilgisi açıklama metnine gömülü. Klasik "AI ile yapılabilir ama elle yapılmış" örneği.
+- **Commute Insights — Yok.**
+- **Belge Açıklama (EPC / Floor Plan) — Yok.** İkisi de sadece görsel.
+
+**Not:** Bazı ilanlar "Pre-Market Property" olarak bulanık; görmek için kayıt zorunlu. Kişiselleştirme yerine kayıt duvarı.
+
+---
+
+## Değerleme
+
+- **Instant Valuation — Var.** `/instant-valuation`, "Takes about 60 seconds". ⚠️ Sonuç ekranı doğrulanmadı — rakam ekranda mı, e-posta arkasında mı?
+- **AI Valuation Açıklaması — Yok (muhtemelen).** Tek dayanak ifadesi genel bir cümle: "We use recent local sales + property data."
+- **Mortgage / Stamp Duty Calculator — Yok.**
+
+In-person valuation formu tamamen manuel; müsaitlik gösterimi yok.
+
+---
+
+## İletişim / Lead
+
+- **AI Chat Assistant — Kısmen (kritik bulgu).** Sayfada chat balonu yok, **ama** view-source'ta `.whatsapp-chatbot` CSS'i ve `cdn.msgboxx.io` bundle'ı yüklü. Altyapı temada var, bu sitede devrede değil.
+- **Lead Qualification — Kısmen var (AI değil).** Alerts kaydında ciddi soru seti: taşınma zamanı, avukat durumu, satılacak mülk var mı, bizi nereden duydunuz. Veri zengin ama kural tabanlı form; skorlama/önceliklendirme yok.
+- **Otomatik Randevu — Yok.** Takvim + saat seçtiriyor ama açıkça yazıyor: *"This does not confirm the viewing"*. Gerçek slot değil, talep.
+- **Mesai Dışı Yanıt — Yok.** Pazar kapalı, Pazar akşamı incelendi; hiçbir otomatik yanıt/banner/chat yok.
+
+---
+
+## Teknik
+
+- **SSR.** Nuxt 3 + Vercel; içerik HTML kaynağında mevcut.
+- **API:** XHR trafiği çok az (6/105 request), veri SSR ile geliyor. Açık bir Neuron REST API trafiği görünmüyor.
+- **İzler:** `neuron.css`, `theme7`, `window.IcebergTracker`, görseller Lifesycle CRM CDN'inden.
+
+**Durum:** Yapıldı
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 

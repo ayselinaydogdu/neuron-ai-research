@@ -91,22 +91,45 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 3 — Yasemin
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **No** — The search box only matches addresses ("Search by address"). Typing a sentence like "3 bed house near a school under £300k" returns nothing. A layer that translates user intent into criteria could be added; the search box and results infrastructure are already in place.
+- **Smart Suggestions / Query Interpretation:** **Partial** — Typo tolerance exists but comes from Google Places, with no property context; typing "lin" suggests places in Scotland. Sorting is labelled "SUGGESTED" but the basis is unclear and identical for everyone. Suggestions could be narrowed to the service area, and sorting personalised to user criteria.
+- **Saved Search / Alerts:** **Partial** — A criteria-based registration form exists (`/heads-up-alerts/register/buy`), collecting location and property type in detail. However, matching runs on fixed criteria; there is no layer that broadens those criteria based on the listings a user clicks or views, or that says "you might also want to look at this".
 
-**Valuation:**
--
+## **Listing Detail:**
 
-**Contact:**
--
+- **Property Summary (AI Summary):** **No** — Descriptions are hand-written, very long, with room dimensions buried in the text. Generating a 2–3 bullet summary from the existing text requires no additional data.
+- **Property Q&A:** **No** — Only "Book a Viewing" is available. Users cannot ask "does it have a garden" or "how far is the school"; the answers already sit in the description text.
+- **Property Highlights:** **Partial** — A features list and staff comments exist but are entered entirely by hand. Key points could be extracted automatically from the description, removing the per-listing effort.
+- **Lifestyle / "Ideal for..." Matching:** **Partial** — Phrases like "family home" appear manually in the text. These could be matched against the user profile from the alert registration to generate a "matches your search" label.
+- **Property Comparison:** **No** — There is no feature that places two listings side by side and explains the differences; there is no favourites/save function either.
+- **Similar Listing Suggestions:** **No** — No similar-listings block at the bottom of the page; users are directed to the general list instead. Recommendations could be generated from viewing history.
+- **Area Insights:** **No** — A map is present, but the points shown are Google's own data. School, transport and demographic information could be interpreted by AI and turned into a neighbourhood summary.
+- **Commute Insights:** **No** — Travel time is never calculated. Duration and commentary could be added based on the user's work or school address.
+- **Document Explanation (EPC / Floor Plan):** **No** — The EPC (D | 56, potential C | 79) and floor plan sit on the page purely as images. This data could be read and explained in plain language, e.g. "insulation could lift this to C, saving roughly X per year".
 
-**Technical / General:**
--
+## **Valuation:**
 
-**Status:** Not done
+- **Instant Valuation:** **No** — The only route is the appointment form. The homepage states explicitly that auto-generated numbers aren't trusted, so this is a deliberate choice. The recommendation should not be "give an instant price" but "a preparation tool ahead of the appointment".
+- **AI Valuation Explanation:** **No** — Since no figure is produced, there is no explanation of its basis either. A preliminary briefing fed by local sales data could be added without undermining the brand position.
+- **Mortgage / Stamp Duty Calculator:** **No** — There is no calculator at all. Mortgage requirement is asked in the alert form but nothing is returned to the user; at minimum a stamp duty calculation with a short commentary could be added.
+
+## **Contact / Lead:**
+
+- **AI Chat Assistant / Chatbot:** **No** — There is no chat assistant on any page. Questions arriving outside business hours go entirely unanswered.
+- **Lead Qualification:** **Partial** — The alert form does solid pre-screening with six questions (reason, timing, solicitor, current home, mortgage). However, the questions are fixed dropdowns; the flow doesn't branch based on answers, and the collected information feeds neither sorting nor recommendations.
+- **Automated Booking / Viewing Scheduling:** **No** — "Book a Viewing" doesn't open a calendar; a manual response is expected. Suggested time slots and automated scheduling could be added.
+- **Out-of-Hours Response:** **No** — Closed Sunday, closing at 17:00 on weekdays; requests arriving after those hours wait until morning. Simple questions could be answered automatically.
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **SSR** — Nuxt-based, content present in the HTML.
+- **API calls:** 6 requests under Fetch/XHR: IcebergTracker, Sentry, `view`. Listing data does not arrive via XHR. 101 requests, 14.2 MB, 2.19 s.
+- **Mobile behaviour:** Responsive; filters collapse into a vertical panel.
+- **Key finding:** The source contains `.whatsapp-chatbot` and `.live-search-container` class definitions, but neither is active on the site. These components exist on the platform and simply haven't been switched on for this client.
+
+**Status:** Done
 
 ### Round 4 — Ayselin
 
@@ -200,7 +223,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 |---|---|---|
 | 1 | Görkem | Yapıldı |
 | 2 | Berkay | Yapıldı |
-| 3 | Yasemin | Yapılmadı |
+| 3 | Yasemin | Yapıldı |
 | 4 | Ayselin | Yapıldı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
@@ -278,22 +301,47 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 3 — Yasemin
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Arama kutusu sadece adres eşleştiriyor ("Search by address"). "Okula yakın, £300k altı 3 yatak odalı" gibi bir cümle yazıldığında sonuç dönmüyor. Kullanıcı niyetini kriterlere çeviren katman eklenebilir; arama kutusu ve sonuç altyapısı hazır.
+- **Akıllı Öneri / Sorgu Yorumlama:** **Kısmen** — Yazım hatası toleransı var ama Google Places'ten geliyor, emlak bağlamı yok; "lin" yazınca İskoçya'daki yerler öneriliyor. Sıralama "SUGGESTED" diyor ama neye göre olduğu belirsiz ve herkese aynı. Öneriler hizmet alanına daraltılabilir, sıralama kullanıcı kriterlerine göre kişiselleştirilebilir.
+- **Kayıtlı Arama / Alerts:** **Kısmen** — Kriterli kayıt formu var (`/heads-up-alerts/register/buy`), konum ve mülk tipi detaylı alınıyor. Ancak eşleştirme sabit kriterle çalışıyor; kullanıcının tıkladığı/görüntülediği ilanlara göre kriterleri genişleten veya "buna da bakmak ister misiniz" diyen bir katman yok.
 
-**Değerleme:**
--
+## **İlan Detay:**
 
-**İletişim:**
--
+- **Property Summary (AI Özet):** **Yok** — Açıklamalar elle yazılmış, çok uzun, oda ölçüleri metne gömülü. Mevcut metinden 2-3 maddelik özet üretmek ek veri gerektirmiyor.
+- **Property Q&A:** **Yok** — Sadece "Book a Viewing" var. Kullanıcı "bahçesi var mı", "okula ne kadar uzak" diye soramıyor; cevaplar zaten açıklama metninde duruyor.
+- **Property Highlights:** **Kısmen** — Features listesi ve personel yorumları var ama tamamen elle giriliyor. Açıklamadan otomatik öne çıkan nokta çıkarımı yapılabilir, her ilan için ayrı emek gerekmez.
+- **Lifestyle / "Ideal for..." Eşleştirme:** **Kısmen** — Metinde "family home" gibi ifadeler elle geçiyor. Alert kaydındaki kullanıcı profiliyle eşleştirilerek "sizin aramanıza uygun" etiketi üretilebilir.
+- **Property Comparison:** **Yok** — İki ilanı yan yana koyup farkını anlatan bir özellik yok; favori kaydetme de yok.
+- **Benzer İlan Önerisi:** **Yok** — Sayfa altında benzer ilan bloğu yok, genel listeye yönlendiriliyor. Görüntüleme geçmişine göre öneri üretilebilir.
+- **Area Insights:** **Yok** — Harita var ama gösterilen noktalar Google'ın kendi verisi. Okul, ulaşım, demografi bilgisi AI ile yorumlanıp mahalle özeti haline getirilebilir.
+- **Commute Insights:** **Yok** — Ulaşım süresi hiç hesaplanmıyor. Kullanıcının iş/okul adresine göre süre ve yorum eklenebilir.
+- **Belge Açıklama (EPC / Floor Plan):** **Yok** — EPC (D | 56, potansiyel C | 79) ve kat planı sadece görsel olarak duruyor. Bu veriler okunup "yalıtımla C'ye çıkabilir, yıllık şu kadar tasarruf" gibi sade dille açıklanabilir.
 
-**Teknik/Genel:**
--
+## **Değerleme:**
 
-**Durum:** Yapılmadı
+- **Instant Valuation:** **Yok** — Tek yol randevu formu. Ana sayfada otomatik üretilmiş sayılara inanılmadığı açıkça yazıyor, yani bu bilinçli bir tercih. Öneri "anlık fiyat verin" değil, "randevu öncesi hazırlık aracı" olarak kurulmalı.
+- **AI Valuation Açıklaması:** **Yok** — Rakam üretilmediği için dayanak açıklaması da yok. Bölgedeki satış verisiyle beslenen bir ön bilgilendirme, marka duruşunu bozmadan eklenebilir.
+- **Mortgage / Stamp Duty Calculator:** **Yok** — Hesaplayıcı hiç yok. Mortgage ihtiyacı alert formunda soruluyor ama kullanıcıya hiçbir şey dönmüyor; en azından stamp duty hesabı + kısa yorum eklenebilir.
+
+## **İletişim / Lead:**
+
+- **AI Chat Assistant / Chatbot:** **Yok** — Hiçbir sayfada sohbet asistanı yok. Mesai dışı gelen sorular tamamen karşılıksız kalıyor.
+- **Lead Qualification:** **Kısmen** — Alert formu altı soruyla iyi bir ön eleme yapıyor (neden, zamanlama, avukat, mevcut ev, mortgage). Ancak sorular sabit dropdown; cevaba göre akış dallanmıyor ve toplanan bilgi ne sıralamaya ne öneriye yansıyor.
+- **Otomatik Randevu / Viewing Planlama:** **Yok** — "Book a Viewing" takvim açmıyor, manuel geri dönüş bekleniyor. Uygun saat önerisi ve otomatik planlama eklenebilir.
+- **Mesai Dışı Yanıt:** **Yok** — Pazar kapalı, hafta içi 17.00'de kapanıyor; bu saatlerden sonra gelen talep sabaha kadar bekliyor. Basit sorular otomatik yanıtlanabilir.
+
+## **Teknik/Genel:**
+
+- **SSR vs CSR:** **SSR** — Nuxt tabanlı, içerik HTML'de mevcut.
+- **API çağrıları:** Fetch/XHR'da 6 istek: IcebergTracker, Sentry, `view`. İlan verisi XHR ile gelmiyor. 101 istek, 14.2 MB, 2.19 s.
+- **Mobil davranış:** Responsive, filtreler dikey panele dönüşüyor.
+- **Önemli bulgu:** Kaynak kodda `.whatsapp-chatbot` ve `.live-search-container` sınıfları tanımlı ama sitede aktif değil. Bu bileşenler platformda var, bu müşteride açılmamış.
+
+
+
+**Durum:** Yapıldı
 
 ### Tur 4 — Ayselin
 

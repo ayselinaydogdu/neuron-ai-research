@@ -13,7 +13,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 |---|---|---|
 | 1 | Görkem | Done |
 | 2 | Berkay | Done |
-| 3 | Yasemin | Not done |
+| 3 | Yasemin | Done |
 | 4 | Ayselin | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
@@ -84,24 +84,66 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 **Status:** Done
 
+
 ### Round 3 — Yasemin
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **No** — Typing a free-form sentence returns a "Couldn't find the address" error. The box only matches addresses.
+- **Smart Suggestions / Query Interpretation:** **Partial** — Typo tolerance works ("Woodfrd" → Woodford). It comes from Google Places; typing "wood" suggests places outside the service area such as Woodbridge, Woodhall Spa and Woodstock. The default sort is "Suggested" (visible in the URL as `sort=suggested`) with no stated basis.
+- **Saved Search / Alerts:** **Yes** — A criteria-based registration flow exists (Contact / Property Type / Circumstances), collecting multiple locations, radius and property type. Price-reduction notifications are promised. There is no layer that learns from behaviour.
+- **Additional note:** The no-results page is well constructed — it states that no properties match the search criteria and directs the user to set up a Heads Up alert. An empty result is turned into a lead opportunity rather than a dead end. Still, nothing is recommended; the user only gets a link to a form.
 
-**Valuation:**
--
+## **Listing Detail:**
 
-**Contact:**
--
+- **Property Summary (AI Summary):** **No** — The description is fluent and sales-oriented but there is no summary block. Campaign information such as "OPEN DAY - SATURDAY 15TH AUGUST" is added manually at the top of the text.
+- **Property Q&A:** **No** — No channel for asking free-form questions.
+- **Property Highlights:** **Partial** — A Features tab exists, entered by hand.
+- **Lifestyle / "Ideal for..." Matching:** **Partial** — Phrases like "room to grow and adapt to your lifestyle" and "busy households" appear manually in the description. There is no profile-based matching.
+- **Property Comparison:** **No** — No comparison or favourites function.
+- **Similar Listing Suggestions:** **No** — No similar-listings block at the bottom of the page.
+- **Area Insights:** **No** — A Map tab exists, but the points are Google's own data. No school, crime or demographic commentary.
+- **Commute Insights:** **No** — Travel time is never calculated. Location advantages such as "Near Broadway Market" and "Near Clapton Station" are written by hand into listing titles.
+- **Document Explanation (EPC / Floor Plan):** **No** — The EPC (current C 75, potential C 77) and floor plans sit on the page as images and are never explained.
+- **Additional note:** The listing detail includes **Property Video as a separate tab**. The tab structure is: Features / Property Info / Property Video / Floor Plans / Map / EPC.
 
-**Technical / General:**
--
+## **Valuation:**
 
-**Status:** Not done
+- **Instant Valuation:** **Yes** — Hosted on the `valuation.lloydsestates.com` subdomain and provided by **ValPal Network**. It asks for postcode, number of bedrooms and property type. A third-party integration.
+- **AI Valuation Explanation:** **No** — The basis of the figure isn't explained. The homepage states plainly that the tool is only ever a guide and that real accuracy comes from experience rather than algorithms.
+- **Mortgage / Stamp Duty Calculator:** **No** — No calculator anywhere on the site.
+- **Additional note:** Valuation is presented as three separate routes: Instant Valuation, On Site Valuation and **Instruct Us Now**. The third is a flow not seen on the other sites — it invites the user to instruct the agency directly without a valuation first. On `/valuations`, On Site and Instruct Us appear as two separate forms side by side.
+
+## **Contact / Lead:**
+
+- **AI Chat Assistant / Chatbot:** **No** — No chat widget or WhatsApp button on any page.
+- **Lead Qualification:** **Yes** — It works at two points: the Circumstances section of the alert form (5 questions) and the viewing modal ("do I have a property to sell", "a property to let", "would I like it valued"). The questions are fixed with no branching.
+- **Automated Booking / Viewing Scheduling:** **Partial** — "Arrange a Viewing" opens a calendar and time picker, but the modal states that this does not confirm the viewing. Preferences are collected; the booking is left to a human.
+- **Out-of-Hours Response:** **Partial** — All three offices are closed Sunday and shut at 18:00 on weekdays. The Management Office lists a separate **"Out of Hours Emergency Repair Line"** — a genuine after-hours channel, but a phone line rather than automation.
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **SSR** — Nuxt-based, content present in the HTML. Hosted on Vercel, files served from a `neuronwebsites.co.uk` subdomain. Theme layer `/theme4/`.
+- **API calls:** 7 requests under Fetch/XHR: IcebergTracker (`ice.js`), four Sentry envelopes, a `view` call and a UUID fetch. Listing data does not arrive via XHR. 95 requests, 8.5 MB, 5.96 s — noticeably slower than the other sites.
+- **Mobile behaviour:** Responsive; filters collapse into a vertical panel.
+- **Key finding 1:** The source defines `.whatsapp-chatbot` and `.live-search-container` classes, but neither is active on the site. These components exist on the platform and haven't been switched on for this client.
+- **Key finding 2:** The privacy policy link in the footer points to `lloydsestates.lifesycle.co.uk` — a separate Iceberg product or infrastructure layer.
+
+## **Distinguishing feature: Multi-office structure**
+
+The agency operates three locations: Woodford Green, Bethnal Green and a Management Office, with separate phone numbers for sales and lettings.
+
+None of this reaches the site experience, however: search results aren't split by office, the contact form doesn't ask which office the enquiry concerns, and listing pages carry no responsible-office information. The user is left to work out which office is relevant to them.
+
+### **Overall AI Opportunities**
+
+Conventional estate agency functionality is in place: clean SSR, a broad filter set, a video tab, complete floor plans / map / EPC, and an instant valuation. None of it involves generative AI, however — the instant valuation is third-party, the viewing calendar only collects preferences, and the data sits unprocessed.
+
+1. **The multi-office structure goes unused** — Three locations, two business lines (sales and lettings) and separate phone lines exist, yet the site behaves as a single undifferentiated agency. Users could be routed to the right office based on their location or search area.
+2. **Collected data goes nowhere** — Location, property type and urgency are captured in the alert registration, seller status in the viewing modal, and property details in ValPal. Sorting still reads "Suggested" for everyone and no recommendations appear.
+3. **The empty-result moment is well framed but incomplete** — When nothing matches, a dedicated page directs the user to alert registration. This is precisely where AI belongs: criteria could be relaxed to surface near alternatives, showing results immediately instead of asking for another form.
+
+**Status:** Done
 
 ### Round 4 — Ayselin
 
@@ -195,7 +237,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 |---|---|---|
 | 1 | Görkem | Yapıldı |
 | 2 | Berkay | Yapıldı |
-| 3 | Yasemin | Yapılmadı |
+| 3 | Yasemin | Yapıldı |
 | 4 | Ayselin | Yapıldı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
@@ -268,22 +310,63 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 3 — Yasemin
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Serbest cümle yazıldığında "Couldn't find the address" hatası dönüyor. Kutu sadece adres eşleştiriyor.
+- **Akıllı Öneri / Sorgu Yorumlama:** **Kısmen** — Yazım hatası toleransı çalışıyor ("Woodfrd" → Woodford). Google Places kaynaklı; "wood" yazınca Woodbridge, Woodhall Spa, Woodstock gibi hizmet alanı dışı yerler öneriliyor. Sıralama varsayılanı "Suggested" (URL'de `sort=suggested`), dayanağı açıklanmıyor.
+- **Kayıtlı Arama / Alerts:** **Var** — Kriterli kayıt akışı mevcut (Contact / Property Type / Circumstances). Çoklu konum, yarıçap ve mülk tipi alınıyor. Fiyat düşüşü bildirimi vaat ediliyor. Davranışa göre öğrenen katman yok.
+- **Ek not:** Sonuç bulunamayan sayfa iyi kurgulanmış — "no properties matching your search criteria" mesajıyla birlikte Heads Up alert kurmaya yönlendiriyor. Yani boş sonuç bir kayıp değil, lead fırsatına çevriliyor. Ancak öneri üretilmiyor, sadece form linki veriliyor.
 
-**Değerleme:**
--
+## **İlan Detay:**
 
-**İletişim:**
--
+- **Property Summary (AI Özet):** **Yok** — Açıklama akıcı ve satış odaklı yazılmış ama özet bloğu yok. Metnin başında "OPEN DAY - SATURDAY 15TH AUGUST" gibi kampanya bilgisi elle eklenmiş.
+- **Property Q&A:** **Yok** — Serbest soru sorma kanalı yok.
+- **Property Highlights:** **Kısmen** — Features sekmesi var, elle girilmiş.
+- **Lifestyle / "Ideal for..." Eşleştirme:** **Kısmen** — Açıklamada "room to grow and adapt to your lifestyle", "busy households" gibi ifadeler elle geçiyor. Profil bazlı eşleştirme yok.
+- **Property Comparison:** **Yok** — Karşılaştırma ve favori özelliği yok.
+- **Benzer İlan Önerisi:** **Yok** — Sayfa altında benzer ilan bloğu yok.
+- **Area Insights:** **Yok** — Map sekmesi var, POI'ler Google'ın verisi. Okul, suç, demografi yorumu yok.
+- **Commute Insights:** **Yok** — Ulaşım süresi hesaplanmıyor. İlan başlıklarında "Near Broadway Market", "Near Clapton Station" gibi konum avantajları elle yazılmış.
+- **Belge Açıklama (EPC / Floor Plan):** **Yok** — EPC (mevcut C 75, potansiyel C 77) ve kat planları görsel olarak duruyor, açıklanmıyor.
+- **Ek not:** İlan detayında **Property Video ayrı bir sekme** olarak yer alıyor. Sekme yapısı: Features / Property Info / Property Video / Floor Plans / Map / EPC.
 
-**Teknik/Genel:**
--
+## **Değerleme:**
 
-**Durum:** Yapılmadı
+- **Instant Valuation:** **Var** — `valuation.lloydsestates.com` alt alan adında, **ValPal Network** sağlıyor. Posta kodu, oda sayısı ve mülk tipi soruyor. Üçüncü parti entegrasyon.
+- **AI Valuation Açıklaması:** **Yok** — Rakamın dayanağı açıklanmıyor. Ana sayfada aracın "yalnızca bir rehber" olduğu, gerçek doğruluğun "algoritmalardan değil deneyimden" geldiği açıkça yazıyor.
+- **Mortgage / Stamp Duty Calculator:** **Yok** — Hesaplayıcı bulunmuyor.
+- **Ek not:** Değerleme üç ayrı yol olarak sunuluyor: Instant Valuation, On Site Valuation ve **Instruct Us Now**. Üçüncüsü diğer sitelerde görülmeyen bir akış — değerleme almadan doğrudan satış yetkisi vermeye yönlendiriyor. `/valuations` sayfasında On Site ve Instruct Us iki ayrı form olarak yan yana duruyor.
+
+## **İletişim / Lead:**
+
+- **AI Chat Assistant / Chatbot:** **Yok** — Hiçbir sayfada chat widget'ı veya WhatsApp butonu yok.
+- **Lead Qualification:** **Var** — İki noktada çalışıyor: alert formundaki Circumstances (5 soru) ve viewing modalı ("satılacak mülküm var mı", "kiralanacak mülküm var mı", "değerlensin mi"). Sorular sabit, dallanma yok.
+- **Otomatik Randevu / Viewing Planlama:** **Kısmen** — "Arrange a Viewing" takvim ve saat seçimi açıyor, ancak modalda "bu görüntülemeyi onaylamaz" yazıyor. Tercih toplanıyor, rezervasyon insana bırakılıyor.
+- **Mesai Dışı Yanıt:** **Kısmen** — Üç ofis de Pazar kapalı, hafta içi 18.00'de kapanıyor. Management Office'te **"Out of Hours Emergency Repair Line"** adında ayrı bir telefon hattı var — gerçek bir mesai dışı kanal, ancak otomasyon değil, telefon.
+
+## **Teknik/Genel:**
+
+- **SSR vs CSR:** **SSR** — Nuxt tabanlı, içerik HTML'de mevcut. Vercel'de barındırılıyor, dosyalar `neuronwebsites.co.uk` alt alan adında. Tema katmanı `/theme4/`.
+- **API çağrıları:** Fetch/XHR'da 7 istek: IcebergTracker (`ice.js`), dört Sentry envelope, `view` çağrısı ve bir UUID fetch. İlan verisi XHR ile gelmiyor. 95 istek, 8.5 MB, 5.96 s (diğer sitelerden belirgin yavaş).
+- **Mobil davranış:** Responsive, filtreler dikey panele dönüşüyor.
+- **Önemli bulgu 1:** Kaynak kodda `.whatsapp-chatbot` ve `.live-search-container` sınıfları tanımlı ama sitede aktif değil. Bu bileşenler platformda mevcut, bu müşteride açılmamış.
+- **Önemli bulgu 2:** Footer'daki privacy policy bağlantısı `lloydsestates.lifesycle.co.uk` adresine gidiyor — Iceberg'in ayrı bir ürün/altyapı katmanı.
+
+## **Ayırt edici özellik: Çok ofisli yapı**
+
+Ajansın üç lokasyonu var: Woodford Green, Bethnal Green ve Management Office. Satış ve kiralama için ayrı telefon numaraları kullanılıyor.
+
+Ancak bu yapı site deneyimine hiç yansımıyor: arama sonuçları ofise göre ayrılmıyor, iletişim formu hangi ofisle ilgilenildiğini sormuyor, ilan sayfasında sorumlu ofis bilgisi yok. Kullanıcı hangi ofisin kendisine yakın olduğunu kendisi çözmek zorunda.
+
+### **Overall AI Opportunities**
+
+Klasik emlak işlevleri yerinde: temiz SSR, geniş filtre seti, video sekmesi, kat planı / harita / EPC tam, anlık değerleme mevcut. Buna karşılık hiçbir noktada üretken AI yok — anlık değerleme üçüncü parti, viewing takvimi sadece tercih topluyor, veriler ham halde duruyor.
+
+1. **Çok ofisli yapı kullanılmıyor** — Üç lokasyon, iki ayrı iş kolu (sales/lettings) ve ayrı telefon hatları var, ama site tek bir ajans gibi davranıyor. Kullanıcının konumuna veya aradığı bölgeye göre doğru ofise yönlendirme yapılabilir.
+2. **Toplanan veri hiçbir yere akmıyor** — Alert kaydında bölge/tip/aciliyet, viewing modalında satıcı durumu, ValPal'de mülk detayı toplanıyor. Sıralama hâlâ herkes için "Suggested", öneri yok.
+3. **Boş sonuç anı iyi kurgulanmış ama eksik** — Sonuç bulunamadığında kullanıcıyı alert kaydına yönlendiren bir sayfa var. Bu tam da AI'ın devreye gireceği an: kriterleri gevşeterek yakın alternatifler önerilebilir, form doldurtmak yerine anında sonuç gösterilebilir.
+
+**Durum:** Yapıldı
 
 ### Tur 4 — Ayselin
 

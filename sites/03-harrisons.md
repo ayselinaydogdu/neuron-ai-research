@@ -13,7 +13,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 |---|---|---|
 | 1 | Görkem | Done |
 | 2 | Berkay | Done |
-| 3 | Yasemin | Not done |
+| 3 | Yasemin | Done |
 | 4 | Ayselin | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
@@ -85,22 +85,55 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 3 — Yasemin
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **No** — Typing a free-form sentence returns a "Couldn't find the address" error. The box only matches addresses.
+- **Smart Suggestions / Query Interpretation:** **Partial** — Typo tolerance works ("Sittingborne" → Sittingbourne). It comes from Google Places; typing "Sitt" also suggests POIs such as Sittingbourne Golf Centre. The default sort is "SUGGESTED" with no stated basis.
+- **Saved Search / Alerts:** **Yes** — A criteria-based registration flow exists (Contact / Property Type / Circumstances), collecting multiple locations, radius and property type. Price-reduction notifications are also promised. There is no layer that learns from behaviour.
 
-**Valuation:**
--
+## **Listing Detail:**
 
-**Contact:**
--
+- **Property Summary (AI Summary):** **No** — The description is fluent and well written but there is no summary block. The text is long and never condensed.
+- **Property Q&A:** **No** — No channel for asking free-form questions.
+- **Property Highlights:** **Partial** — A Features tab exists, entered by hand.
+- **Lifestyle / "Ideal for..." Matching:** **Partial** — Target-audience phrases like "first-time buyers" and "busy professionals" appear manually in the description. There is no profile-based matching.
+- **Property Comparison:** **No** — No comparison or favourites function.
+- **Similar Listing Suggestions:** **No** — "Our Latest Homes" appears in the sidebar but shows the newest listings, unrelated to the current property or the user.
+- **Area Insights:** **No** — A Map tab exists, but the points are Google's own data. No school, crime or demographic commentary.
+- **Commute Insights:** **No** — Travel time is never calculated. Phrases like "reducing travel time" are written by hand in the description.
+- **Document Explanation (EPC / Floor Plan):** **Partial** — The Floor Plans tab holds images only. However, the description does interpret the EPC: "EPC rating of B highlights the property's efficiency, which can lead to lower utility costs". This is the manual version of the glossary item.
+- **Additional note:** A structured Property Info block exists (tenure, age, council tax, sewerage, water, **condition**). The condition field wasn't present on the other sites.
 
-**Technical / General:**
--
+## **Valuation:**
 
-**Status:** Not done
+- **Instant Valuation:** **Yes** — Provided by **Propalt** at `harrisonshomes.propalt.io/seller`. Positioned on the homepage as an "instant report" — described as fast, simple and pressure-free. A third-party integration.
+- **AI Valuation Explanation:** **No** — The basis of the figure isn't explained on the site; the instant report is framed as a starting point, with the real number coming from the face-to-face meeting.
+- **Mortgage / Stamp Duty Calculator:** **No** — No calculator anywhere on the site.
+
+## **Contact / Lead:**
+
+- **AI Chat Assistant / Chatbot:** **Partial** — A fixed **WhatsApp button** appears on every page (bottom right). It isn't a bot, however — just a direct link to WhatsApp with no automated replies.
+- **Lead Qualification:** **Yes** — It works at two points: the Circumstances section of the alert form (5 questions) and the viewing modal ("do I have a property to sell", "a property to let", "would I like it valued"). The questions are fixed with no branching.
+- **Automated Booking / Viewing Scheduling:** **Yes** — Valuation appointments run through **Cal.com** as a genuine booking: consultant-specific (Sales Market Appraisal – Ben), one-hour slots, real availability. The viewing modal opens a calendar but states that it does not confirm the viewing, so it only collects preferences.
+- **Out-of-Hours Response:** **Partial** — Closed Sunday, closing at 17:30 on weekdays. The WhatsApp button remains reachable outside hours but returns no automated reply; the message simply waits for a human.
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **SSR** — Content present in the HTML. Theme layer `/theme6/`, shared layer `/common/css/neuron.css`.
+- **Different build:** This theme loads jQuery-based vendor scripts (jquery, slick, jarallax, odometer, magnific-popup, wow) — an older and heavier approach than the other themes.
+- **API calls:** 6 requests under Fetch/XHR: IcebergTracker (`ice.js`), three Sentry envelopes, a `view` call. Listing data does not arrive via XHR. 109 requests, 9.5 MB, 1.99 s.
+- **Analytics:** IcebergTracker + Sentry + a **Metricool** tracker.
+- **Mobile behaviour:** Responsive; filters collapse into a vertical panel.
+- **Key finding 1:** The source defines a `.whatsapp-chatbot` class. The site does show a WhatsApp button, but it is a plain redirect link rather than that chatbot component — so the component remains switched off.
+- **Key finding 2:** The statistics band on the homepage (£0, 0 days, 0%) reads zero because the counter animation never fires. The same figures render correctly on `/sellers` (£17,805, 68 days, 118 days, 100.04%). It is broken on the homepage only.
+
+## **Distinguishing feature: Pre-market listings**
+
+The homepage and listings carry blurred "Coming Soon" entries. These are released only to registered users before reaching the portals. Access requires **email login via magic link** (passwordless, reCAPTCHA-protected).
+
+This is the site's strongest asset: a genuinely working user account system with a content-gating mechanism. Yet nothing changes for a logged-in user — sorting, recommendations and personalisation stay the same. The account system functions purely as a gate.
+
+**Status:** Done
 
 ### Round 4 — Ayselin
 
@@ -192,7 +225,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 |---|---|---|
 | 1 | Görkem | Yapıldı |
 | 2 | Berkay | Yapıldı |
-| 3 | Yasemin | Yapılmadı |
+| 3 | Yasemin | Yapıldı |
 | 4 | Ayselin | Yapıldı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
@@ -264,22 +297,53 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 3 — Yasemin
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Serbest cümle yazıldığında "Couldn't find the address" hatası dönüyor. Kutu sadece adres eşleştiriyor.
+- **Akıllı Öneri / Sorgu Yorumlama:** **Kısmen** — Yazım hatası toleransı çalışıyor ("Sittingborne" → Sittingbourne). Google Places kaynaklı; "Sitt" yazınca Sittingbourne Golf Centre gibi POI'ler de öneriliyor. Sıralama varsayılanı "SUGGESTED", dayanağı belirsiz.
+- **Kayıtlı Arama / Alerts:** **Var** — Kriterli kayıt akışı mevcut (Contact / Property Type / Circumstances). Çoklu konum, yarıçap ve mülk tipi alınıyor. Fiyat düşüşü bildirimi de vaat ediliyor. Davranışa göre öğrenen katman yok.
 
-**Değerleme:**
--
+## **İlan Detay:**
 
-**İletişim:**
--
+- **Property Summary (AI Özet):** **Yok** — Açıklama akıcı ve iyi yazılmış ama özet bloğu yok. Metin uzun, kısaltma yapılmıyor.
+- **Property Q&A:** **Yok** — Serbest soru sorma kanalı yok.
+- **Property Highlights:** **Kısmen** — Features sekmesi var, elle girilmiş.
+- **Lifestyle / "Ideal for..." Eşleştirme:** **Kısmen** — Açıklamada "first-time buyers", "busy professionals" gibi hedef kitle ifadeleri elle geçiyor. Profil bazlı eşleştirme yok.
+- **Property Comparison:** **Yok** — Karşılaştırma ve favori özelliği yok.
+- **Benzer İlan Önerisi:** **Yok** — Sağ sütunda "Our Latest Homes" var ama en yeni ilanlar; ilanla veya kullanıcıyla ilgisi yok.
+- **Area Insights:** **Yok** — Harita sekmesi var, POI'ler Google'ın verisi. Okul, suç, demografi yorumu yok.
+- **Commute Insights:** **Yok** — Ulaşım süresi hesaplanmıyor. Açıklamada "reducing travel time" gibi ifadeler elle yazılmış.
+- **Belge Açıklama (EPC / Floor Plan):** **Kısmen** — Floor Plans sekmesi görsel olarak duruyor. Ancak açıklama metninde EPC yorumlanmış: "EPC rating of B highlights the property's efficiency, which can lead to lower utility costs". Bu, glossary'deki maddenin elle yapılmış hali.
+- **Ek not:** Yapılandırılmış Property Info bloğu var (tenure, age, council tax, sewerage, water, **condition**). Condition alanı diğer sitelerde yoktu.
 
-**Teknik/Genel:**
--
+## **Değerleme:**
 
-**Durum:** Yapılmadı
+- **Instant Valuation:** **Var** — `harrisonshomes.propalt.io/seller` üzerinden **Propalt** sağlıyor. Ana sayfada "instant report" olarak konumlanmış, "hızlı, basit, baskı yok" deniyor. Üçüncü parti entegrasyon.
+- **AI Valuation Açıklaması:** **Yok** — Sitede rakamın dayanağı açıklanmıyor; anlık raporun "başlangıç noktası" olduğu, gerçek değerin yüz yüze görüşmede verileceği belirtiliyor.
+- **Mortgage / Stamp Duty Calculator:** **Yok** — Hesaplayıcı bulunmuyor.
+
+## **İletişim / Lead:**
+
+- **AI Chat Assistant / Chatbot:** **Kısmen** — Tüm sayfalarda sabit bir **WhatsApp butonu** var (sağ alt köşe). Ancak bu bir bot değil, doğrudan WhatsApp'a yönlendiren bir bağlantı; otomatik yanıt üretmiyor.
+- **Lead Qualification:** **Var** — İki noktada çalışıyor: alert formundaki Circumstances (5 soru) ve viewing modalı ("satılacak mülküm var mı", "kiralanacak mülküm var mı", "değerlensin mi"). Sorular sabit, dallanma yok.
+- **Otomatik Randevu / Viewing Planlama:** **Var** — Değerleme randevusu **Cal.com** ile gerçek rezervasyon yapıyor: danışman bazlı (Sales Market Appraisal – Ben), 1 saatlik slot, gerçek müsaitlik gösteriyor. Viewing modalı ise takvim açıyor ama "bu görüntülemeyi onaylamaz" diyor, yani sadece tercih topluyor.
+- **Mesai Dışı Yanıt:** **Kısmen** — Pazar kapalı, hafta içi 17.30'da kapanıyor. WhatsApp butonu mesai dışında da erişilebilir ancak otomatik yanıt vermiyor, mesaj insana düşüyor.
+
+## **Teknik/Genel:**
+
+- **SSR vs CSR:** **SSR** — İçerik HTML'de mevcut. Tema katmanı `/theme6/`, ortak katman `/common/css/neuron.css`.
+- **Farklı yapı:** Bu temada jQuery tabanlı vendor script'ler var (jquery, slick, jarallax, odometer, magnific-popup, wow). Diğer temalara göre daha eski/ağır bir yaklaşım.
+- **API çağrıları:** Fetch/XHR'da 6 istek: IcebergTracker (`ice.js`), üç Sentry envelope, `view` çağrısı. İlan verisi XHR ile gelmiyor. 109 istek, 9.5 MB, 1.99 s.
+- **Mobil davranış:** Responsive, filtreler dikey panele dönüşüyor.
+
+## **Ayırt edici özellik: Pre-market ilanlar**
+
+Ana sayfa ve listelerde "Coming Soon" etiketli, bulanıklaştırılmış ilanlar var. Bunlar portallara çıkmadan önce sadece kayıtlı kullanıcılara açılıyor. Erişim için **magic link ile e-posta girişi** gerekiyor (şifresiz, reCAPTCHA korumalı).
+
+Bu, sitenin en güçlü tarafı: gerçek çalışan bir kullanıcı hesabı sistemi ve içerik kilitleme mekanizması mevcut. Ancak giriş yapan kullanıcı için sıralama, öneri veya kişiselleştirme değişmiyor — hesap sistemi sadece kapı görevi görüyor.
+
+**Durum:** Yapıldı
+
 
 ### Tur 4 — Ayselin
 
