@@ -13,7 +13,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 |---|---|---|
 | 1 | Görkem | Done |
 | 2 | Berkay | Done |
-| 3 | Yasemin | Not done |
+| 3 | Yasemin | Done |
 | 4 | Ayselin | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
@@ -85,22 +85,52 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 3 — Yasemin
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **No** — Typing a free-form sentence ("3 bed near a station under £450k chain free") returns "Couldn't find the address". The box is an address field, not a property-intent field.
+- **Smart Suggestions / Query Interpretation:** **Partial** — Typo tolerance works ("bexlyheath" → "Bexleyheath"), but this is Google Places autocomplete, not Neuron AI. The URL carries `place_id: ChIJM4rYYiWu2EcRUiodCtnqA5Q` and the dropdown returns POIs like "Bexleyheath Clock Tower" and "Bexleyheath Police Station".
+- **Saved Search / Alerts:** **Yes** — "Heads Up Property Alerts" offers criteria-based registration. The page promises alerts on suggested properties and price reductions, but matching is rule-based; no evidence of AI interpretation or behavioural learning.
+- **Additional note:** The default sort is labelled **"Suggested"** and cards carry a **"100% MATCH"** badge, but every card shows 100% while logged out — with a "HAVE YOU LOGGED IN?" button sitting next to it. The personalisation promise exists in the UI with nothing behind it for anonymous users.
+- **Additional note:** Filters are entirely conventional dropdowns — Bathrooms, Reception, Include SSTC, New Homes, Retirement Homes, Shared Ownership, Investment Property, Must Haves, Property Type (Detached / Semi-Detached / Terraced / Flats / Bungalow / Land / Park Home).
 
-**Valuation:**
--
+## **Listing Detail:**
 
-**Contact:**
--
+- **Property Summary (AI Summary):** **No** — Property Info is one long hand-written block of prose. No 2–3 bullet summary at the top.
+- **Property Q&A:** **No** — No channel for asking free-form questions. The only routes are "Book a viewing" or the contact form.
+- **Property Highlights:** **Partial** — A Features tab exists, entered by hand at listing creation. Not AI-extracted.
+- **Lifestyle / "Ideal for..." Matching:** **Partial** — Phrases like "young family" and "first purchase" appear inside the free text, but there is no structured lifestyle matching.
+- **Property Comparison:** **No** — No comparison or favourites function on cards or detail pages.
+- **Similar Listing Suggestions:** **No** — No similar-listings block at the bottom; the space is used for "Why buy with us" and an alerts CTA instead.
+- **Area Insights:** **Partial** — School names, walking distances, Council Tax band and high street info are present but hand-written as prose. No structured neighbourhood data (crime, demographics, school ratings) and no AI commentary.
+- **Commute Insights:** **Partial** — Station walk times and the "301 bus to Abbey Wood for the Elizabeth Line" are written into the description as fixed text. Travel time is never calculated against the user's own destination.
+- **Document Explanation (EPC / Floor Plan):** **No** — Floor Plans are images only; the EPC tab exists but loads empty. No plain-language explanation.
+- **Additional note:** The listing detail includes **Property Video and Virtual Tour as separate tabs** alongside Features, Property Info, Floor Plans, Map and EPC — rich media is there, the AI layer over it is not.
+- **Additional note:** The right-hand sidebar card renders a broken-image icon across multiple tabs (Property Info, Virtual Tour) — a live rendering fault.
+- **Additional note:** The same listing's Instagram post (@jordanevans_thepropertycloud) is written from scratch a second time. Site copy, social copy and portal copy are all produced manually from the same source data.
 
-**Technical / General:**
--
+## **Valuation:**
 
-**Status:** Not done
+- **Instant Valuation:** **Yes — but third-party** — Hosted on the `valuation.thepropertycloud.uk` subdomain and marked **"Powered by The ValPal Network"**. Visually disconnected from the main site. Inputs: postcode → Find Address, Number of Bedrooms, Property Type, Type of Valuation. The homepage itself advertises it as "Up to 60% accurate".
+- **AI Valuation Explanation:** **No** — No reasoning behind the figure, no comparable sales, no personalisation.
+- **Mortgage / Stamp Duty Calculator:** **No** — Not present on listing details or the buyer pages.
+- **Additional note:** The face-to-face route (`/valuations/book-a-face-to-face-valuation`) is a plain lead form — name, postcode lookup, phone, email, consent checkbox. No calendar or slot selection, so it submits a request rather than booking anything.
+
+## **Contact / Lead:**
+
+- **AI Chat Assistant / Chatbot:** **No** — No chat widget on any page; the bottom-right corner is empty on home, search, listing detail and contact. **However**, the page source defines a `.whatsapp-chatbot` class with `--wa-green`, `--wa-header-bg`, `--wa-bubble-bg`, `--wa-chat-bg` and `--wa-input-bg` variables. The Neuron platform ships a WhatsApp chatbot component that this agency has not switched on.
+- **Lead Qualification:** **Partial** — The Heads Up Alerts registration has a "Circumstances" section (reason for buying, moving timeline, solicitors arranged, how you heard about us). Qualification data is collected, but the form is identical for everyone — no branching, prioritisation or AI pre-screening.
+- **Automated Appointment / Viewing Scheduling:** **No** — "Book a viewing" and the valuation forms show no availability; they submit a request.
+- **Out-of-Hours Response:** **No (as far as observable)** — There is no channel capable of an automatic reply: no chat, WhatsApp not enabled. Outside working hours the only option is to submit a form and wait.
+- **Additional note:** The contact form is single-type — first name, last name, mobile, email, a Buy/Sell/Rent/Let checkbox row and a free-text message. The form does not change based on that selection.
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **SSR** — `/_nuxt/` bundles in the source confirm **Nuxt (Vue)**, deployed on Vercel (`/_vercel/image` for image optimisation). The property list arrives inside the HTML rather than via a separate XHR.
+- **API calls:** No visible Neuron data API in Fetch/XHR. What appears: an `anonymous` call from `ice.js` (Iceberg tracker), three `envelope/?sentry_version=7...` requests (Sentry error tracking), plus `log_event?alt=json` and `id` (analytics). **No request to any AI/LLM service.**
+- **Iceberg traces:** The source defines `window.IcebergTracker` and `__akyaCookieStarted`; assets are served from `files.thepropertycloud.neuronwebsites.co.uk` and `lifesycle-cdn.s3.eu-west-2.amazonaws.com` — Iceberg/Lifesycle CRM infrastructure.
+- **Mobile behaviour:** **Fine** — At 400px the filters stack vertically and search and buttons remain usable. Page finishes in 4.60s, ~295 kB transferred.
+
+**Status:** Done
 
 ### Round 4 — Ayselin
 
@@ -193,7 +223,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 |---|---|---|
 | 1 | Görkem | Yapıldı |
 | 2 | Berkay | Yapıldı |
-| 3 | Yasemin | Yapılmadı |
+| 3 | Yasemin | Yapıldı |
 | 4 | Ayselin | Yapıldı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
@@ -264,22 +294,52 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 3 — Yasemin
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Serbest cümle ("3 bed near a station under £450k chain free") yazıldığında "Couldn't find the address" hatası dönüyor. Kutu bir adres alanı, emlak niyeti alanı değil.
+- **Akıllı Öneri / Sorgu Yorumlama:** **Kısmen** — Yazım hatası toleransı çalışıyor ("bexlyheath" → "Bexleyheath"), ama bu Neuron'un AI'ı değil Google Places autocomplete. URL'de `place_id: ChIJM4rYYiWu2EcRUiodCtnqA5Q` taşınıyor ve önerilerde "Bexleyheath Clock Tower", "Bexleyheath Police Station" gibi POI'ler çıkıyor.
+- **Kayıtlı Arama / Alerts:** **Var** — "Heads Up Property Alerts" kriter bazlı kayıt sunuyor. Sayfa, önerilen ilanlar ve fiyat düşüşleri için bildirim vaat ediyor; ancak eşleşme kural tabanlı, AI yorumu veya davranışa göre öğrenme kanıtı yok.
+- **Ek not:** Varsayılan sıralama **"Suggested"** ve kartlarda **"100% MATCH"** rozeti var, ama giriş yapılmadan tüm kartlar %100 gösteriyor — yanında da "HAVE YOU LOGGED IN?" butonu duruyor. Kişiselleştirme vaadi arayüzde var, anonim kullanıcıda arkasında bir şey yok.
+- **Ek not:** Filtreler tamamen klasik dropdown — Bathrooms, Reception, Include SSTC, New Homes, Retirement Homes, Shared Ownership, Investment Property, Must Haves, Property Type (Detached / Semi-Detached / Terraced / Flats / Bungalow / Land / Park Home).
 
-**Değerleme:**
--
+## **İlan Detay:**
 
-**İletişim:**
--
+- **Property Summary (AI Özet):** **Yok** — Property Info tek parça, elle yazılmış uzun düz metin. Üstte 2–3 maddelik özet yok.
+- **Property Q&A:** **Yok** — Serbest soru sorulabilecek hiçbir kanal yok. Tek yol "Book a viewing" veya iletişim formu.
+- **Property Highlights:** **Kısmen** — Features sekmesi var ama ilan girişinde elle dolduruluyor. AI çıkarımı değil.
+- **Lifestyle / "Ideal for..." Eşleştirme:** **Kısmen** — Serbest metnin içinde "young family", "first purchase" gibi ifadeler geçiyor ama yapılandırılmış yaşam tarzı eşleştirmesi yok.
+- **Property Comparison:** **Yok** — Kartlarda ve detayda karşılaştırma veya favori fonksiyonu yok.
+- **Benzer İlan Önerisi:** **Yok** — Sayfanın altında benzer ilan bloğu yok; o alan "Why buy with us" ve alert CTA'sı ile dolduruluyor.
+- **Area Insights:** **Kısmen** — Okul isimleri, yürüme mesafeleri, Council Tax bandı ve high street bilgisi var ama elle yazılmış paragraf hâlinde. Yapılandırılmış mahalle verisi (suç, demografi, okul reytingi) ve AI yorumu yok.
+- **Commute Insights:** **Kısmen** — İstasyona yürüme süresi ve "301 bus to Abbey Wood for the Elizabeth Line" bilgisi açıklamaya sabit metin olarak gömülü. Kullanıcının kendi hedefine göre süre hiçbir zaman hesaplanmıyor.
+- **Belge Açıklama (EPC / Floor Plan):** **Yok** — Floor Plans sadece görsel; EPC sekmesi var ama boş yükleniyor. Sade dille açıklama yok.
+- **Ek not:** İlan detayında Features, Property Info, Floor Plans, Map ve EPC'nin yanında **Property Video ve Virtual Tour ayrı sekmeler olarak** duruyor — zengin medya mevcut, üzerindeki AI katmanı yok.
+- **Ek not:** Sağ sütundaki kart birden fazla sekmede (Property Info, Virtual Tour) bozuk görsel ikonu gösteriyor — canlıda duran bir render hatası.
+- **Ek not:** Aynı ilanın Instagram gönderisi (@jordanevans_thepropertycloud) sıfırdan ikinci kez yazılmış. Site metni, sosyal metin ve portal metni aynı veriden tamamen elle üretiliyor.
 
-**Teknik/Genel:**
--
+## **Değerleme:**
 
-**Durum:** Yapılmadı
+- **Instant Valuation:** **Var — ama 3. parti** — `valuation.thepropertycloud.uk` subdomain'inde barınıyor ve **"Powered by The ValPal Network"** ibaresi taşıyor. Ana sitenin tasarımından tamamen kopuk. Girdiler: postcode → Find Address, Number of Bedrooms, Property Type, Type of Valuation. Ana sayfa bunu kendi ağzıyla "Up to 60% accurate" diye tanıtıyor.
+- **AI Valuation Açıklaması:** **Yok** — Rakamın gerekçesi, karşılaştırılabilir satışlar veya kişiselleştirme yok.
+- **Mortgage / Stamp Duty Calculator:** **Yok** — Ne ilan detayında ne de alıcı sayfalarında var.
+- **Ek not:** Yüz yüze değerleme yolu (`/valuations/book-a-face-to-face-valuation`) düz bir lead formu — isim, postcode araması, telefon, e-posta, onay kutusu. Takvim veya slot seçimi yok; randevu almıyor, talep gönderiyor.
+
+## **İletişim / Lead:**
+
+- **AI Chat Assistant / Chatbot:** **Yok** — Hiçbir sayfada chat widget'ı yok; ana sayfa, arama, ilan detay ve iletişimde sağ alt köşe boş. **Ancak** sayfa kaynağında `.whatsapp-chatbot` sınıfı ve `--wa-green`, `--wa-header-bg`, `--wa-bubble-bg`, `--wa-chat-bg`, `--wa-input-bg` değişkenleri tanımlı. Neuron platformu bir WhatsApp chatbot bileşeni ile geliyor, bu acente açmamış.
+- **Lead Qualification:** **Kısmen** — Heads Up Alerts kaydında "Circumstances" bölümü var (alma sebebi, taşınma zamanı, avukat ayarlandı mı, bizi nereden duydunuz). Nitelendirme verisi toplanıyor ama form herkese aynı — dallanma, önceliklendirme veya AI ön elemesi yok.
+- **Otomatik Randevu / Viewing Planlama:** **Yok** — "Book a viewing" ve değerleme formları müsaitlik göstermiyor, talep gönderiyor.
+- **Mesai Dışı Yanıt:** **Yok (gözlemlenebildiği kadarıyla)** — Otomatik yanıt verebilecek hiçbir kanal yok: chat yok, WhatsApp aktif değil. Mesai dışında tek seçenek form doldurup beklemek.
+- **Ek not:** İletişim formu tek tip — ad, soyad, telefon, e-posta, Buy/Sell/Rent/Let checkbox satırı ve serbest mesaj. Form bu seçime göre değişmiyor.
+
+## **Teknik / Genel:**
+
+- **SSR vs CSR:** **SSR** — Kaynaktaki `/_nuxt/` bundle'ları **Nuxt (Vue)** olduğunu doğruluyor, Vercel üzerinde deploy edilmiş (`/_vercel/image` ile görsel optimizasyonu). İlan listesi ayrı bir XHR ile değil, HTML'in içinde geliyor.
+- **API çağrıları:** Fetch/XHR'da görünür bir Neuron veri API'si yok. Görülenler: `ice.js` kaynaklı `anonymous` çağrısı (Iceberg tracker), üç adet `envelope/?sentry_version=7...` (Sentry hata takibi), ayrıca `log_event?alt=json` ve `id` (analytics). **Hiçbir AI/LLM servisine istek yok.**
+- **Iceberg izleri:** Kaynakta `window.IcebergTracker` ve `__akyaCookieStarted` tanımlı; varlıklar `files.thepropertycloud.neuronwebsites.co.uk` ve `lifesycle-cdn.s3.eu-west-2.amazonaws.com` üzerinden geliyor — Iceberg/Lifesycle CRM altyapısı.
+- **Mobil davranış:** **Sorunsuz** — 400px'te filtreler dikey yığılıyor, arama ve butonlar kullanılabilir kalıyor. Sayfa 4.60 sn'de tamamlanıyor, ~295 kB transfer.
+
+**Durum:** Yapıldı
 
 ### Tur 4 — Ayselin
 

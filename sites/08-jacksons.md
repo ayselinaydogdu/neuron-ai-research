@@ -14,7 +14,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | 1 | Ayselin | Done |
 | 2 | Görkem | Done |
 | 3 | Berkay | Not done |
-| 4 | Yasemin | Not done |
+| 4 | Yasemin | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
 > Write short, concrete sentences (not "yes/no" — say what it is).
@@ -103,22 +103,61 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 4 — Yasemin
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **No** — "3 bed with a garage under £400k in Rainham" → "Couldn't find the address". **Fifth site, fifth time.**
+- **Smart Suggestions / Query Interpretation:** **Partial — not AI** — "rainam" resolves correctly; suggestions are Rainham Station, Rainham Mark Grammar School, Rainham (Kent) Station Car Park. Google Places, with a `place_id` in the URL.
+- **Saved Search / Alerts:** **Yes** — "Setup Heads Up Alert" in the results header. Rule-based.
+- **"100% MATCH" badge:** Not seen on the result cards — like Keystone, unlike Property Connections. "SUGGESTED" and "HAVE YOU LOGGED IN?" remain.
+- Filters are the same set as the other sites.
 
-**Valuation:**
--
+## **Listing Detail:**
 
-**Contact:**
--
+Reviewed: `/properties/3-bedroom-house-.../535188` (Whitehorse Hill, Chatham)
 
-**Technical / General:**
--
+- **Property Summary (AI Summary):** **No** — Hand-written prose.
+- **Property Q&A:** **No**
+- **Property Highlights:** **Partial — manual** — The Features list is entered by hand, but **EPC Rating E (50)** and **Medway Council Tax B** appear as bullets; directly useful to a buyer.
+- **Lifestyle Matching:** **Partial** — "ideally suited for a growing family or as an investment" sits in the free text.
+- **Property Comparison:** **No**
+- **Similar Listing Suggestions:** **No** — The sidebar has a **"latest properties" carousel** navigated by arrows — chronology, not similarity. ⚠️ In at least one listing (Grain Road), the carousel lists **the property you're currently viewing as its first card**.
+- **Area Insights:** **Partial** — The site has a separate **Area Guides** section, but **no link to it from the listing detail**. *(Guide content not tested.)*
+- **Commute Insights:** **Partial — manual** — "Close to Chatham mainline station" appears as a bullet; no travel time calculated.
+- **Document Explanation:** **No** — Floor Plan and EPC are images only.
+- **Stamp Duty Calculator:** **Yes** — Correct tax for England, with a "Buying my first home" selector.
+- **Mortgage Calculator:** **Yes** — Pre-filled with the price, 10% deposit, 6.01% interest, 25 years. Pure arithmetic, no commentary.
+- **Additional note:** Sections are **tabs**, not accordions (Description / Video / Floor Plan / Map / EPC) — better than Keystone's hidden accordions.
+- **Additional note:** Video hosted on Vimeo, agent-narrated ("Mark Jackson"). The homepage promotes "Jacqui B Videos" as a signature format.
 
-**Status:** Not done
+## **Valuation:**
+
+- **Instant Valuation:** **Yes — third-party, ValPal for the fourth time.** At `valuation.jacksonsproperty.co.uk/home/2488`, marked "Powered by The ValPal Network". Separate subdomain, separate cookie banner. A **Type of Valuation** dropdown also offers a lettings valuation.
+- **AI Valuation Explanation:** **No**
+- ⚠️ **Additional note — the agency admits the tool is inadequate:** The homepage says of the instant valuation: *"it's just a starting point. We'll follow up with a friendly call to understand your plans and offer real, tailored advice."* The tool is deliberately left incomplete and routed into a phone call. The clearest evidence yet for the AI-explained valuation gap.
+- **Additional note:** The face-to-face form **distinguishes sales from lettings**: "I am looking to sell / to let / considering both" plus bedroom count. The only valuation form in the study with lettings awareness. Still no calendar or slot.
+
+## **Contact / Lead:**
+
+- **Chatbot:** **No (visibly)** — No widget on any screen. But the source carries **two separate traces**:
+  - The `.whatsapp-chatbot` class — **fourth site, fourth time**, still switched off.
+  - ⚠️ **`https://cdn.msgboxx.io/static/css/bundle.min.css`** — a third-party messaging platform's CSS. **First appearance in this study.** No widget surfaced on screen; whether it's loaded-but-dormant or triggered under certain conditions needs confirming.
+- **Lead Qualification:** **Partial — manual** — The Heads Up registration uses the same Circumstances set as the other sites. No branching.
+- **Automated Appointment:** **No** — The "MAKE AN ENQUIRY" modal has a calendar and time picker, but above it reads *"We'll confirm availability for you. (This does not confirm the viewing)"*. The same pattern as Keystone, except availability isn't asked for a second time in writing here.
+- **Out-of-Hours Response:** **No** — No automated channel. Opening hours are published: Mon–Fri 9:00–18:00, Sat 9:00–17:00, **Sunday "BY APPOINTMENT"**.
+- **Additional note:** The enquiry modal doubles as a lead form — the user's own address, "property to sell", "property to let", "my property valued".
+- **Additional note:** Two separate phone numbers (Sales …37 / Lettings …38) sit at the top of every page. The user has to decide which to call; no guidance.
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **SSR** — No `filter?search_type=` call; the list is in the HTML. Nuxt (`/_nuxt/`).
+- **API calls:** `ice.js` (Iceberg tracker), 3× Sentry, `view`. **No AI/LLM call.** 6/107 requests, 246 kB, **2.07 s — the fastest site in the study.**
+- **Theme / third-party:** `neuron.css` + `theme3` + Bootstrap/Owl/FontAwesome, plus **msgboxx.io**.
+- **Mobile:** **Fine** — At 400px search, price, beds and filters stack cleanly.
+- ✅ **The contact map is correct** — it shows the Rainham branch accurately (Property Connections pointed to the wrong end of the country).
+- ✅ **The footer is clean** — one block, correct Company Number (040 158 04), no NaN. Only the copyright reads **© 2025** while the site is live in 2026.
+
+
+**Status:** Done
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
@@ -137,7 +176,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 | 1 | Ayselin | Yapıldı |
 | 2 | Görkem | Yapıldı |
 | 3 | Berkay | Yapılmadı |
-| 4 | Yasemin | Yapılmadı |
+| 4 | Yasemin | Yapıldı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
 > Kısa, somut cümleler yazın ("Var/Yok" değil, ne olduğunu yazın).
@@ -229,20 +268,59 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 4 — Yasemin
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — "3 bed with a garage under £400k in Rainham" → "Couldn't find the address". **Beş sitede beşinci kez.** (SS-02)
+- **Akıllı Öneri / Sorgu Yorumlama:** **Kısmen — AI değil** — "rainam" doğru çözülüyor; öneriler Rainham Station, Rainham Mark Grammar School, Rainham (Kent) Station Car Park. Google Places, URL'de `place_id`. (SS-01, SS-03)
+- **Kayıtlı Arama / Alerts:** **Var** — "Setup Heads Up Alert" sonuç başlığında. Kural tabanlı. (SS-03)
+- **"100% MATCH" rozeti:** Sonuç kartlarında görülmedi — Keystone gibi, Property Connections'ın aksine. "SUGGESTED" ve "HAVE YOU LOGGED IN?" duruyor. (SS-03)
+- Filtreler diğer sitelerle aynı set. (SS-05)
 
-**Değerleme:**
--
+## **İlan Detay:**
 
-**İletişim:**
--
+İncelenen: `/properties/3-bedroom-house-.../535188` (Whitehorse Hill, Chatham)
 
-**Teknik/Genel:**
--
+- **Property Summary (AI Özet):** **Yok** — Elle yazılmış düz metin. (SS-07)
+- **Property Q&A:** **Yok**
+- **Property Highlights:** **Kısmen — manuel** — Features listesi elle girilmiş ama **EPC Rating E (50)** ve **Medway Council Tax B** madde olarak veriliyor; alıcı için doğrudan kullanışlı. (SS-07)
+- **Lifestyle Eşleştirme:** **Kısmen** — "ideally suited for a growing family or as an investment" serbest metinde.
+- **Property Comparison:** **Yok**
+- **Benzer İlan Önerisi:** **Yok** — Kenar çubuğunda oklarla gezilen bir **"son ilanlar" karuseli** var, benzerlik değil kronoloji. ⚠️ Kaynak koddan bakıldığında en az bir ilanda (Grain Road) karusel **o an açık olan ilanı ilk kart olarak** listeliyor. (SS-08)
+- **Area Insights:** **Kısmen** — Sitede ayrı bir **Area Guides** bölümü var ama **ilan detayından oraya link yok**. *(Rehberlerin içeriği test edilmedi.)*
+- **Commute Insights:** **Kısmen — manuel** — "Close to Chatham mainline station" madde olarak var, süre hesabı yok.
+- **Belge Açıklama:** **Yok** — Floor Plan ve EPC sadece görsel.
+- **Stamp Duty Calculator:** **Var** — İngiltere'de doğru vergi, "Buying my first home" seçicisi ile. (SS-08)
+- **Mortgage Calculator:** **Var** — Fiyatla önceden doldurulmuş, %10 depozito, %6,01 faiz, 25 yıl. Salt aritmetik, yorum yok. (SS-08)
+- **Ek not:** Bölümler akordeon değil **sekme** (Description / Video / Floor Plan / Map / EPC) — Keystone'un gizlenen akordeonundan iyi. (SS-07)
+- **Ek not:** Video Vimeo'da, danışman anlatımlı ("Mark Jackson"). Ana sayfada "Jacqui B Videos" imza formatı olarak tanıtılıyor.
+
+## **Değerleme:**
+
+- **Instant Valuation:** **Var — 3. parti, dördüncü kez ValPal.** `valuation.jacksonsproperty.co.uk/home/2488`, altında "Powered by The ValPal Network". Ayrı subdomain, ayrı çerez banner'ı. **Type of Valuation** dropdown'ı ile kiralama değerlemesi de sunuyor. (SS-11)
+- **AI Valuation Açıklaması:** **Yok**
+- ⚠️ **Ek not — acente aracın yetersizliğini kendi kabul ediyor:** Ana sayfa instant valuation için *"it's just a starting point. We'll follow up with a friendly call to understand your plans and offer real, tailored advice"* diyor. Yani araç bilinçli olarak eksik bırakılmış ve telefon aramasına bağlanmış. AI destekli, gerekçeli değerleme gap'i için en net kanıt.
+- **Ek not:** Face-to-face formu **satış/kiralama ayrımı yapıyor**: "I am looking to sell / to let / considering both" + oda sayısı. Kiralama farkındalığı olan tek değerleme formu. Yine de takvim/slot yok. (SS-10)
+
+## **İletişim / Lead:**
+
+- **Chatbot:** **Yok (görünürde)** — Hiçbir ekranda widget yok. Ancak kaynak kodda **iki ayrı iz** var:
+  - `.whatsapp-chatbot` sınıfı — **dört sitede dördüncü kez**, yine kapalı.
+  - ⚠️ **`https://cdn.msgboxx.io/static/css/bundle.min.css`** — üçüncü parti bir mesajlaşma platformunun CSS'i. **Bu çalışmada ilk kez görülüyor.** Widget ekranlarda çıkmadı; yüklü ama pasif mi, yoksa belirli koşullarda mı açılıyor, doğrulanmalı. (SS-17)
+- **Lead Qualification:** **Kısmen — manuel** — Heads Up kaydı diğer sitelerle aynı Circumstances seti. Dallanma yok. (SS-04)
+- **Otomatik Randevu:** **Yok** — "MAKE AN ENQUIRY" modalında takvim ve saat seçici var, ama üstünde *"We'll confirm availability for you. (This does not confirm the viewing)"* yazıyor. Keystone'daki desenin aynısı; tek farkı burada müsaitlik ikinci kez yazıyla sorulmuyor. (SS-14)
+- **Mesai Dışı Yanıt:** **Yok** — Otomatik yanıt kanalı yok. Açılış saatleri yayınlanmış: Pzt–Cum 9:00–18:00, Cmt 9:00–17:00, **Pazar "BY APPOINTMENT"**. (SS-12)
+- **Ek not:** Enquiry modalı aynı zamanda lead formu — kendi adresi, "property to sell", "property to let", "my property valued". (SS-15)
+- **Ek not:** İki ayrı telefon (Sales …37 / Lettings …38) her sayfanın üstünde. Hangisini arayacağına kullanıcı karar veriyor, yönlendirme yok.
+
+## **Teknik / Genel:**
+
+- **SSR vs CSR:** **SSR** — `filter?search_type=` çağrısı yok, liste HTML'de. Nuxt (`/_nuxt/`). 
+- **API çağrıları:** `ice.js` (Iceberg tracker), 3× Sentry, `view`. **AI/LLM çağrısı yok.** 6/107 istek, 246 kB, **2,07 sn — çalışmadaki en hızlı site.** 
+- **Tema / 3. parti:** `neuron.css` + `theme3` + Bootstrap/Owl/FontAwesome, ayrıca **msgboxx.io**. 
+- **Mobil:** **Sorunsuz** — 400px'te arama, fiyat, oda ve filtreler düzgün yığılıyor. 
+- ✅ **İletişim haritası doğru** — Rainham'daki şubeyi doğru gösteriyor (Property Connections'ta yanlış ülkeydi). 
+- ✅ **Footer temiz** — tek blok, Company Number doğru (040 158 04), NaN yok. Yalnızca telif **© 2025** (site 2026'da canlı). 
+
 
 **Durum:** Yapılmadı
 

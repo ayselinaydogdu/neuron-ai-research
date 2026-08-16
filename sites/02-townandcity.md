@@ -13,7 +13,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 |---|---|---|
 | 1 | Görkem | Done |
 | 2 | Berkay | Done |
-| 3 | Yasemin | Not done |
+| 3 | Yasemin | Done |
 | 4 | Ayselin | Done |
 
 > Fill in only your own round block; don't edit anyone else's.
@@ -86,22 +86,45 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Round 3 — Yasemin
 
-**Search:**
--
+## **Search:**
 
-**Listing Detail:**
--
+- **Natural Language Search:** **No** — Typing a free-form sentence returns a "Couldn't find the address" error. The box only matches addresses.
+- **Smart Suggestions / Query Interpretation:** **Partial** — Typo tolerance works ("Dartfrd" → Dartford) but comes from Google Places; typing "dart" suggests places outside the service area such as Dartmoor. The default sort is labelled "SUGGESTED" but the basis is unclear and identical for everyone.
+- **Saved Search / Alerts:** **Yes** — A criteria-based registration flow exists (multiple locations, radius, property type). Price-reduction notifications are also promised. There is no layer that learns from user behaviour.
 
-**Valuation:**
--
+## **Listing Detail:**
 
-**Contact:**
--
+- **Property Summary (AI Summary):** **No** — The description is long with no summary block. The text embeds the Features bullets into sentences, expanding rather than condensing.
+- **Property Q&A:** **No** — No channel for asking free-form questions.
+- **Property Highlights:** **Partial** — A features list exists but is entered entirely by hand and in capitals.
+- **Lifestyle / "Ideal for..." Matching:** **Partial** — Phrases like "growing family" are written manually; there is no profile-based matching.
+- **Property Comparison:** **No** — No comparison or favourites function.
+- **Similar Listing Suggestions:** **No** — "Latest Properties" appears but shows the newest listings, unrelated to the current property or the user.
+- **Area Insights:** **No** — A map is present, but the points shown are Google's own data. No school, crime or demographic commentary.
+- **Commute Insights:** **No** — Travel time is never calculated. Details like "easy access to M25" are written by hand in the Features list.
+- **Document Explanation (EPC / Floor Plan):** **No** — The EPC (B 85 → A 94) and floor plans sit on the page as images and are never explained.
+- **Additional note:** A structured Property Info block exists (tenure, year built, council tax, water). The data is available but no interpretation is generated from it.
 
-**Technical / General:**
--
+## **Valuation:**
 
-**Status:** Not done
+- **Instant Valuation:** **Yes** — Hosted on a separate subdomain (`valuation.townandcityhomes.com`) and provided by **ValPal Network**. It asks for postcode, number of bedrooms and property type. A third-party integration.
+- **AI Valuation Explanation:** **No** — The basis of the figure isn't explained. The site itself states that online tools are "handy but often off", and that the real number comes after a face-to-face visit.
+- **Mortgage / Stamp Duty Calculator:** **No** — No calculator anywhere on the site.
+
+## **Contact / Lead:**
+
+- **AI Chat Assistant / Chatbot:** **No** — No chat widget. The brand heavily emphasises WhatsApp, yet there isn't even a WhatsApp button on the site.
+- **Lead Qualification:** **Yes** — It works at two points: the Circumstances section of the alert form (5 questions) and the viewing modal ("do I have a property to sell", "would I like it valued"). A viewing request simultaneously collects a seller lead. The questions are fixed with no branching.
+- **Automated Booking / Viewing Scheduling:** **Partial** — "Book a Viewing" opens a calendar and time picker, but the modal states explicitly that this does not confirm the viewing. Preferences are collected; the actual booking is left to a human. The valuation form uses a fixed slot list rather than a calendar.
+- **Out-of-Hours Response:** **No** — Closed Sunday, closing at 18:00 on weekdays. No automated response mechanism.
+
+## **Technical / General:**
+
+- **SSR vs CSR:** **SSR** — Nuxt-based, content present in the HTML. Hosted on Vercel, files served from a `neuronwebsites.co.uk` subdomain. Theme layer `/theme5/`.
+- **API calls:** 6 requests under Fetch/XHR: IcebergTracker (`ice.js`), three Sentry envelopes, a `view` call. Listing data does not arrive via XHR. 90 requests, 8.2 MB, 1.89 s.
+- **Mobile behaviour:** Responsive; filters collapse into a vertical panel.
+
+**Status:** Done
 
 ### Round 4 — Ayselin
 
@@ -193,7 +216,7 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 |---|---|---|
 | 1 | Görkem | Yapıldı |
 | 2 | Berkay | Yapıldı |
-| 3 | Yasemin | Yapılmadı |
+| 3 | Yasemin | Yapıldı |
 | 4 | Ayselin | Yapıldı |
 
 > Sadece kendi tur bloğunuzu doldurun; başkasının bloğunu değiştirmeyin.
@@ -267,22 +290,45 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Tur 3 — Yasemin
 
-**Arama:**
--
+## **Arama:**
 
-**İlan Detay:**
--
+- **Doğal Dil Araması:** **Yok** — Serbest cümle yazıldığında "Couldn't find the address" hatası dönüyor. Kutu sadece adres eşleştiriyor.
+- **Akıllı Öneri / Sorgu Yorumlama:** **Kısmen** — Yazım hatası toleransı var ("Dartfrd" → Dartford) ama Google Places'ten geliyor; "dart" yazınca Dartmoor gibi hizmet alanı dışı yerler öneriliyor. Sıralama varsayılanı "SUGGESTED", dayanağı belirsiz ve herkese aynı.
+- **Kayıtlı Arama / Alerts:** **Var** — Kriterli kayıt akışı mevcut (çoklu konum, yarıçap, mülk tipi). Fiyat düşüşü bildirimi de vaat ediliyor. Davranışa göre öğrenen bir katman yok.
 
-**Değerleme:**
--
+## **İlan Detay:**
 
-**İletişim:**
--
+- **Property Summary (AI Özet):** **Yok** — Açıklama uzun, özet bloğu yok. Metin Features maddelerini cümle içine gömerek uzatıyor, kısaltmıyor.
+- **Property Q&A:** **Yok** — Serbest soru sorma kanalı yok.
+- **Property Highlights:** **Kısmen** — Features listesi var, tamamen elle girilmiş ve büyük harf.
+- **Lifestyle / "Ideal for..." Eşleştirme:** **Kısmen** — "growing family" gibi ifadeler elle yazılmış, profil bazlı eşleştirme yok.
+- **Property Comparison:** **Yok** — Karşılaştırma ve favori özelliği yok.
+- **Benzer İlan Önerisi:** **Yok** — "Latest Properties" var ama en yeni ilanlar; ilanla veya kullanıcıyla ilgisi yok.
+- **Area Insights:** **Yok** — Harita var, POI'ler Google'ın kendi verisi. Okul, suç, demografi yorumu yok.
+- **Commute Insights:** **Yok** — Ulaşım süresi hesaplanmıyor. Features'ta "easy access to M25" gibi bilgiler elle yazılmış.
+- **Belge Açıklama (EPC / Floor Plan):** **Yok** — EPC (B 85 → A 94) ve kat planları görsel olarak duruyor, açıklanmıyor.
+- **Ek not:** Yapılandırılmış Property Info bloğu var (tenure, year built, council tax, water). Veri hazır, üzerine yorum üretilmiyor.
 
-**Teknik/Genel:**
--
+## **Değerleme:**
 
-**Durum:** Yapılmadı
+- **Instant Valuation:** **Var** — Ayrı alt alan adında (`valuation.townandcityhomes.com`), **ValPal Network** sağlıyor. Posta kodu, oda sayısı ve mülk tipi soruyor. Üçüncü parti entegrasyon.
+- **AI Valuation Açıklaması:** **Yok** — Rakamın dayanağı açıklanmıyor. Site zaten online araçların "handy ama sıklıkla hatalı" olduğunu, gerçek rakamın yüz yüze görüşmeden sonra verileceğini söylüyor.
+- **Mortgage / Stamp Duty Calculator:** **Yok** — Hesaplayıcı bulunmuyor.
+
+## **İletişim / Lead:**
+
+- **AI Chat Assistant / Chatbot:** **Yok** — Chat widget'ı yok. Marka WhatsApp'ı çok vurguluyor ama sitede WhatsApp butonu bile bulunmuyor.
+- **Lead Qualification:** **Var** — İki noktada çalışıyor: alert formundaki Circumstances (5 soru) ve viewing modalı ("satılacak mülküm var mı", "değerlensin mi"). Görüntüleme talebi aynı anda satıcı lead'i topluyor. Sorular sabit, dallanma yok.
+- **Otomatik Randevu / Viewing Planlama:** **Kısmen** — "Book a Viewing" takvim ve saat seçimi açıyor, ancak modalda "bu görüntülemeyi onaylamaz" yazıyor. Tercih toplanıyor, rezervasyon insana bırakılıyor. Değerleme formunda takvim yerine sabit slot listesi var.
+- **Mesai Dışı Yanıt:** **Yok** — Pazar kapalı, hafta içi 18.00'de kapanıyor. Otomatik yanıt mekanizması yok.
+
+## **Teknik/Genel:**
+
+- **SSR vs CSR:** **SSR** — Nuxt tabanlı, içerik HTML'de mevcut. Vercel'de barındırılıyor, dosyalar `neuronwebsites.co.uk` alt alan adında. Tema katmanı `/theme5/`.
+- **API çağrıları:** Fetch/XHR'da 6 istek: IcebergTracker (`ice.js`), üç Sentry envelope, `view` çağrısı. İlan verisi XHR ile gelmiyor. 90 istek, 8.2 MB, 1.89 s.
+- **Mobil davranış:** Responsive, filtreler dikey panele dönüşüyor.
+
+**Durum:** Yapıldı
 
 ### Tur 4 — Ayselin
 
