@@ -209,9 +209,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, AI lead scoring, out-of-hours automated response, EPC/floor plan explanation.
+- Standout opportunities: (1) Strong investment in photography/video (Giraffe360 tours, drone video) — an image-aware AI layer could auto-extract standout features (garden, renovated kitchen, etc.). (2) The same content (site copy, social media, portal listing) is written from scratch three times — a clear automation opportunity to generate multiple formats from one source.
+- Disagreements / to verify: A live rendering fault was found (broken-image icon across multiple tabs) — worth re-checking. The "100% MATCH" badge shows the same fake-100% pattern here too — confirmed as a platform-wide issue.
 
 ---
 
@@ -418,6 +418,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, AI lead scoring, mesai dışı otomatik yanıt, EPC/floor plan açıklaması.
+- Öne çıkan fırsatlar: (1) Görsel/video kalitesine güçlü yatırım (Giraffe360 tur, drone video) — görüntü-farkında AI ile otomatik özellik çıkarımı (bahçe, yenilenmiş mutfak vb.). (2) Aynı içerik (site metni, sosyal medya, portal) elden 3 kez yazılıyor — tek kaynaktan çoklu format üretimi net bir otomasyon fırsatı.
+- Görüş ayrılıkları / doğrulanması gerekenler: Sitede canlı görsel render hatası var (kırık resim ikonu, birden fazla sekmede) — tekrar kontrol edilmeli. "100% MATCH" rozeti burada da herkese aynı gösteriliyor — platform geneli sorun olarak doğrulandı.
