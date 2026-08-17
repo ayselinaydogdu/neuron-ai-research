@@ -172,9 +172,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, personalised similar-listing recommendations, AI-powered area/commute insight, EPC/floor plan explanation, AI lead scoring, out-of-hours automated response, instant valuation (deliberately absent), mortgage/stamp-duty calculator.
+- Standout opportunities: (1) The clearest single piece of evidence in the entire study for the "platform ships dormant AI/tooling, tenants just haven't switched it on" thesis: source code loads Chatbot, InstantValuation, AND StampDutyCalculator components, and all three are confirmed inactive by three independent reviewers. (2) The "100% MATCH" badge is exposed as purely decorative here — it shows 100% even with zero criteria entered — a concrete, reproducible demonstration that this platform-wide badge needs either real personalisation behind it or removal, not just on this site. (3) Rich, well-written editorial content exists on every listing ("Seller's Story," hand-written "Location" section) — even on premium/high-value properties — and is exactly the grounded source material an AI summary and Q&A feature should draw from; this tenant's writing quality makes it an ideal pilot candidate.
+- Disagreements / to verify: No instant valuation tool is offered at all — the Valuation page only provides Face-to-Face booking, a deliberate human-only stance similar to 01 · Kinetic. This should be treated as a considered brand choice (confirmed consistently across all 4 rounds, no contradiction), not a platform gap — any valuation AI proposal for this tenant should be framed as a "pre-appointment prep tool," not an instant number, consistent with the Kinetic recommendation.
 
 ---
 
@@ -349,6 +349,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, kişiselleştirilmiş benzer ilan önerisi, AI destekli alan/commute analizi, EPC/floor plan açıklaması, AI lead scoring, mesai dışı otomatik yanıt, instant valuation (bilinçli olarak yok), mortgage/stamp-duty hesaplayıcı.
+- Öne çıkan fırsatlar: (1) Tüm çalışmadaki "platform kapalı AI/araç altyapısıyla geliyor, tenant'lar sadece açmamış" tezinin en net tek kanıtı: kaynak kodda Chatbot, InstantValuation VE StampDutyCalculator bileşenleri yükleniyor, ve üçü de üç bağımsız incelemeci tarafından pasif olarak doğrulandı. (2) "100% MATCH" rozeti burada tamamen dekoratif olduğu ortaya çıkıyor — hiç kriter girilmemişken bile %100 gösteriyor — bu platform genelindeki rozetin ya arkasında gerçek bir kişiselleştirme olması ya da kaldırılması gerektiğinin somut, tekrarlanabilir bir kanıtı, sadece bu siteye özgü değil. (3) Her ilanda zengin, iyi yazılmış editoryal içerik var ("Seller's Story", elle yazılmış "Location" bölümü) — premium/yüksek değerli mülklerde bile — ve bu tam olarak bir AI özeti ve Q&A özelliğinin yararlanması gereken temellendirilmiş kaynak materyal; bu tenant'ın yazı kalitesi onu ideal bir pilot aday yapıyor.
+- Görüş ayrılıkları / doğrulanması gerekenler: Hiçbir instant valuation aracı sunulmuyor — Değerleme sayfası sadece Face-to-Face rezervasyonu sunuyor, 01 · Kinetic'e benzer, bilinçli olarak insan-odaklı bir duruş. Bu, 4 turun tamamında tutarlı şekilde doğrulandığından (çelişki yok) bir platform boşluğu değil, düşünülmüş bir marka kararı olarak ele alınmalı — bu tenant için herhangi bir değerleme AI önerisi, Kinetic önerisiyle tutarlı şekilde "randevu öncesi hazırlık aracı" olarak çerçevelenmeli, anlık rakam değil.
