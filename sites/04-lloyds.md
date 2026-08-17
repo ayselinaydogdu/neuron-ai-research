@@ -223,9 +223,9 @@ Conventional estate agency functionality is in place: clean SSR, a broad filter 
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, AI lead scoring, out-of-hours automated response, commute calculation.
+- Standout opportunities: (1) The strongest opportunity for a London-based tenant: commute-time/transport-based search and area insight instead of radius-based search. (2) The empty-results page is well designed but static — AI could relax the criteria and surface near alternatives immediately. (3) The multi-office structure (3 locations, separate sales/lettings lines) goes entirely unused on the site — location-based automatic routing could be added.
+- Disagreements / to verify: The site says "real accuracy comes from experience, not algorithms," yet still offers its own instant valuation tool — this tension may show the value of an AI explanation layer. Page load time is noticeably slower than the other sites (5.96s) — a performance issue worth confirming.
 
 ---
 
@@ -446,6 +446,6 @@ Klasik emlak işlevleri yerinde: temiz SSR, geniş filtre seti, video sekmesi, k
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, AI lead scoring, mesai dışı otomatik yanıt, commute hesabı.
+- Öne çıkan fırsatlar: (1) Londra'ya özgü en güçlü fırsat: radius-tabanlı arama yerine commute-time/ulaşım tabanlı arama ve alan analizi. (2) Boş sonuç sayfası iyi tasarlanmış ama statik — AI ile kriterleri gevşetip yakın alternatifleri anlık gösterebilir. (3) Çok şubeli yapı (3 ofis, satış/kiralama ayrı hatlar) sitede hiç kullanılmıyor — konum bazlı otomatik yönlendirme yapılabilir.
+- Görüş ayrılıkları / doğrulanması gerekenler: Site "algoritmaya değil deneyime güvenin" diyor ama kendi instant valuation aracını sunuyor — bu çelişki AI açıklama katmanının değerini gösterebilir. Sayfa yükleme süresi diğer sitelere göre belirgin şekilde yavaş (5.96s) — performans sorunu doğrulanmalı.
