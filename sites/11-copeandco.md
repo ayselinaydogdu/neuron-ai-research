@@ -179,10 +179,9 @@ Network tab.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
-
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, personalised similar-listing recommendations, AI-powered area/commute insight, EPC/floor plan explanation, AI lead scoring, out-of-hours automated response.
+- Standout opportunities: (1) The default search radius is absurdly tight (0.25 miles), producing near-empty results with no prompt to widen — a UX bug, but a natural-language search layer would sidestep the radius mental model entirely. (2) A genuine Giraffe360 360° virtual tour is present — the richest media found in the study so far — yet sits completely unexplained, with no AI summary or Q&A layered on top and no "similar homes" section at all after it. (3) SSTC/Let Agreed listings are included in results by default with no "hide sold" toggle — a filtering fix, but relevant context for any AI-ranking feature built later.
+- Disagreements / to verify: Switching tabs and returning resets search criteria and can trigger a false "0 results" state — a state/URL-sync bug that should be fixed before any AI layer is added on top, needs confirming as reproducible. Source code loads `whatsapp-chatbot` and `BlendedFeeCalculator` components but neither is active — consistent with the pattern seen on other sites where platform-level AI hooks exist but are switched off. One reviewer (Round 3) found no separate Neuron content-API call in the Network tab (only tracking calls), differing from Group D sites where a REST `filter` call was observed — worth confirming whether this is a genuine platform/build difference or a one-off observation gap.
 ---
 
 ## Türkçe
@@ -350,6 +349,6 @@ sonuçlara dahil ediliyor.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, kişiselleştirilmiş benzer ilan önerisi, AI destekli alan/commute analizi, EPC/floor plan açıklaması, AI lead scoring, mesai dışı otomatik yanıt.
+- Öne çıkan fırsatlar: (1) Varsayılan arama yarıçapı absürt derecede dar (0.25 mil), neredeyse boş sonuç veriyor ve kullanıcıyı genişletmeye yönlendiren hiçbir uyarı yok — bir UX hatası, ama doğal dil arama katmanı bu yarıçap zihinsel modelini tamamen atlayabilir. (2) Gerçek bir Giraffe360 360° sanal tur mevcut — bu çalışmada şimdiye kadar bulunan en zengin medya — ama tamamen ham halde duruyor, üstüne AI özeti veya soru-cevap yok, ve ardından hiçbir "benzer evler" bölümü de yok. (3) SSTC/Let Agreed (satılmış/kiralanmış) ilanlar varsayılan olarak sonuçlara dahil ediliyor, "satılanları gizle" seçeneği yok — bir filtreleme düzeltmesi, ama ileride kurulacak herhangi bir AI sıralama özelliği için önemli bir bağlam.
+- Görüş ayrılıkları / doğrulanması gerekenler: Sekme değiştirip geri dönmek arama kriterlerini sıfırlıyor ve bazen sahte bir "0 sonuç" durumu tetikliyor — herhangi bir AI katmanı eklenmeden önce düzeltilmesi gereken bir state/URL-senkronizasyon hatası, tekrarlanabilir olduğu doğrulanmalı. Kaynak kodda `whatsapp-chatbot` ve `BlendedFeeCalculator` bileşenleri yükleniyor ama ikisi de aktif değil — diğer sitelerde görülen "platform seviyesinde AI altyapısı var ama kapalı" örüntüsüyle tutarlı. Bir incelemeci (Round 3) Network sekmesinde ayrı bir Neuron content-API çağrısı görmemiş (sadece tracking çağrıları), bu Group D sitelerinde gözlemlenen REST `filter` çağrısından farklı — bunun gerçek bir platform/build farkı mı yoksa tek seferlik bir gözlem eksikliği mi olduğu doğrulanmalı.
