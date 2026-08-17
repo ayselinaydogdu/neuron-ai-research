@@ -149,9 +149,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, personalised similar-listing recommendations, AI-powered area/commute insight, EPC/floor plan explanation, AI lead scoring, out-of-hours automated response.
+- Standout opportunities: (1) Default sort is "Highest Price," putting the most expensive homes in front of first-time buyers — a one-line config fix, not an AI problem, but worth flagging alongside the natural-language search opportunity. (2) A Mortgage Calculator is present (not every tenant has one) but returns a bare number with no commentary — an explanation layer ("what this means for your budget") would pair naturally with an AI valuation-explanation feature. (3) Listing description quality swings wildly between listings (some three lines, some three paragraphs) — an AI summary would normalise this inconsistency for buyers skimming multiple listings.
+- Disagreements / to verify: No separate Neuron content-API call was observed in the Network tab (only Sentry + Google tracking) — consistent with 11 · Cope & Co, but differs from Group D sites where a REST `filter` call was seen; worth confirming whether this is a genuine platform/build difference between groups. Source loads a `whatsapp-chatbot` style definition but it's inactive — same dormant-component pattern seen across nearly every site so far.
 
 ---
 
@@ -299,6 +299,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, kişiselleştirilmiş benzer ilan önerisi, AI destekli alan/commute analizi, EPC/floor plan açıklaması, AI lead scoring, mesai dışı otomatik yanıt.
+- Öne çıkan fırsatlar: (1) Varsayılan sıralama "Highest Price" (en pahalıdan) — ilk kez ev alacak birini en pahalı evlerle karşılaştırıyor; bu bir AI sorunu değil, tek satırlık bir config düzeltmesi, ama doğal dil arama fırsatının yanında not edilmeye değer. (2) Bir Mortgage Calculator mevcut (her sitede yok) ama sadece çıplak bir rakam veriyor, yorum yok — bir açıklama katmanı ("bu senin bütçen için ne anlama geliyor") AI değerleme-açıklama özelliğiyle doğal olarak eşleşir. (3) İlan açıklama kalitesi ilandan ilana çok değişken (kimi 3 satır, kimi 3 paragraf) — bir AI özeti bu tutarsızlığı, birden fazla ilana göz gezdiren alıcılar için dengeleyebilir.
+- Görüş ayrılıkları / doğrulanması gerekenler: Network sekmesinde ayrı bir Neuron content-API çağrısı gözlenmemiş (sadece Sentry + Google tracking) — bu, 11 · Cope & Co ile tutarlı, ama Group D sitelerinde görülen REST `filter` çağrısından farklı; bunun gruplar arası gerçek bir platform/build farkı mı olduğu doğrulanmalı. Kaynakta `whatsapp-chatbot` stil tanımı yükleniyor ama pasif — şimdiye kadar neredeyse her sitede görülen aynı "kapalı bileşen" örüntüsü.
