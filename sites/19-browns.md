@@ -151,9 +151,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, EPC/floor plan explanation, AI-powered area/commute insight, AI lead scoring, AI financial commentary on calculators.
+- Standout opportunities: (1) This is the only tenant in the study where the platform's "AI matching" claim actually surfaces in the UI — a percentage match score with a tooltip explicitly calling it a "prediction." But it's driven purely by saved search criteria, not behaviour or semantic listing understanding — the real opportunity is upgrading this existing, user-visible feature to genuine semantic/behavioural matching rather than building a new one from scratch. (2) The Valuations page states outright that the automated figure "doesn't take your property's uniqueness into account" — the single clearest, most explicit admission in the whole study of the exact gap an AI valuation-explanation layer would fill. (3) This tenant has the most advanced self-service infrastructure found in the study (24/7 viewing booking/rescheduling, landlords accepting offers 24/7, an advertised "out-of-hours service") — all rule-based, no AI. This makes it the best candidate site to pilot an AI qualifier/chatbot layered on top of existing infrastructure rather than building booking/out-of-hours capability from zero.
+- Disagreements / to verify: The location autocomplete actively misleads here too — "Sheilds" matches "SHEilds Ltd" in Hull instead of correcting to South Shields — the same class of failure documented on 18 · Allen Residential ("Paultn" → "Paul Tann Ltd"), now confirmed as a repeating pattern across at least two tenants and worth flagging to the platform team as a systemic autocomplete issue, not a one-off. The advertised 3D Digital Twin/Matterport tour was not found on the specific listing pages reviewed by two independent reviewers (Ayselin, Görkem) — a promise-vs-page gap worth confirming: is it available on some listings only, or is the marketing ahead of the actual rollout?
 
 ---
 
@@ -324,6 +324,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, EPC/floor plan açıklaması, AI destekli alan/commute analizi, AI lead scoring, hesaplayıcılarda AI finansal yorum.
+- Öne çıkan fırsatlar: (1) Bu, platformun "AI matching" iddiasının UI'da gerçekten göründüğü çalışmadaki tek tenant — bir yüzde eşleşme skoru ve bunu açıkça bir "tahmin" olarak adlandıran bir tooltip var. Ama bu tamamen kayıtlı arama kriterlerine dayanıyor, davranışa veya ilanın anlamsal okumasına değil — asıl fırsat bu mevcut, kullanıcıya görünen özelliği sıfırdan yenisini kurmak yerine gerçek anlamsal/davranışsal eşleştirmeye yükseltmek. (2) Değerleme sayfası, otomatik rakamın "mülkünüzün benzersizliğini hesaba katmadığını" açıkça belirtiyor — tüm çalışmadaki, bir AI değerleme-açıklama katmanının tam olarak dolduracağı boşluğun en net, en açık itirafı. (3) Bu tenant, çalışmada bulunan en gelişmiş self-servis altyapısına sahip (7/24 görüntüleme rezervasyonu/yeniden planlama, ev sahiplerinin 7/24 teklif kabul etmesi, reklamı yapılan bir "mesai dışı hizmet") — hepsi kural tabanlı, AI yok. Bu, sıfırdan rezervasyon/mesai dışı yeteneği inşa etmek yerine mevcut altyapının üzerine bir AI qualifier/chatbot pilot olarak denemek için en iyi aday site yapıyor.
+- Görüş ayrılıkları / doğrulanması gerekenler: Konum autocomplete'i burada da aktif olarak yanlış yönlendiriyor — "Sheilds" yazıldığında South Shields'e düzeltilmek yerine Hull'daki "SHEilds Ltd"e eşleşiyor — 18 · Allen Residential'da belgelenen aynı hata türü ("Paultn" → "Paul Tann Ltd"), artık en az iki tenant'ta tekrar eden bir örüntü olarak doğrulandı ve platform ekibine tek seferlik değil sistemik bir autocomplete sorunu olarak bildirilmeye değer. Reklamı yapılan 3D Digital Twin/Matterport turu, iki bağımsız incelemeci (Ayselin, Görkem) tarafından incelenen belirli ilan sayfalarında bulunamadı — bir vaat-sayfa uyuşmazlığı, doğrulanmalı: sadece bazı ilanlarda mı mevcut, yoksa pazarlama gerçek dağıtımın önünde mi gidiyor?
