@@ -151,9 +151,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, personalised similar-listing recommendations, AI-powered area/commute insight, EPC/floor plan explanation, AI lead scoring, out-of-hours automated response, mortgage/stamp-duty calculator.
+- Standout opportunities: (1) The Neuron REST API's filter schema is directly visible on the wire (`property_types`, `property_styles`, `tenure_types`) — this is precisely the target schema a platform-level natural-language search layer would map free text onto, and it's confirmed to be shared/reusable. (2) A genuine Cal.com booking calendar is used for valuation appointments — the first real (non-"request only") scheduling flow found in the study; a good technical reference point to extend to viewings and to pair with AI-assisted qualification. (3) A live msgboxx-based WhatsApp widget already forwards messages to the team in real time — the messaging surface exists and works, it's just human-only; an AI qualifier/FAQ layer could sit on top of this existing channel cheaply.
+- Disagreements / to verify: Pre-market listings are blurred and locked behind registration — flagged as a friction/access-gate pattern (not a recommendation layer) rather than a positive personalisation feature; worth discussing whether this UX pattern should be reframed platform-wide. No AI/LLM service was contacted anywhere in the API traffic — confirms, across all reviewers, that zero generative AI currently touches this tenant's live experience despite Neuron's own "AI Operating System" branding.
 
 ---
 
@@ -302,6 +302,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, kişiselleştirilmiş benzer ilan önerisi, AI destekli alan/commute analizi, EPC/floor plan açıklaması, AI lead scoring, mesai dışı otomatik yanıt, mortgage/stamp-duty hesaplayıcı.
+- Öne çıkan fırsatlar: (1) Neuron REST API'sinin filtre şeması ağ trafiğinde doğrudan görülüyor (`property_types`, `property_styles`, `tenure_types`) — bu, platform seviyesinde bir doğal dil arama katmanının serbest metni eşleştireceği tam hedef şema, ve paylaşılabilir/tekrar kullanılabilir olduğu doğrulandı. (2) Değerleme randevuları için gerçek bir Cal.com rezervasyon takvimi kullanılıyor — bu çalışmada bulunan ilk gerçek (sadece "talep" olmayan) randevu akışı; görüntülemelere (viewing) genişletilebilecek ve AI destekli qualification ile eşleştirilebilecek iyi bir teknik referans noktası. (3) Canlı, msgboxx tabanlı bir WhatsApp widget'ı zaten mesajları gerçek zamanlı olarak ekibe iletiyor — mesajlaşma altyapısı var ve çalışıyor, sadece insan-tabanlı; mevcut bu kanalın üzerine düşük maliyetle bir AI qualifier/SSS katmanı eklenebilir.
+- Görüş ayrılıkları / doğrulanması gerekenler: Pre-market (piyasa öncesi) ilanlar bulanıklaştırılmış ve kayıt arkasında kilitli — bu bir sürtünme/erişim kapısı örüntüsü olarak işaretlendi (olumlu bir kişiselleştirme özelliği değil); bu UX örüntüsünün platform genelinde yeniden çerçevelenip çerçevelenmemesi gerektiği tartışılmalı. API trafiğinde hiçbir yerde bir AI/LLM servisine bağlanılmamış — tüm incelemeciler tarafından doğrulandı, Neuron'un kendi "AI Operating System" markalamasına rağmen bu tenant'ın canlı deneyiminde şu anda sıfır üretken AI olduğunu teyit ediyor.
