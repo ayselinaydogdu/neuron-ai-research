@@ -161,9 +161,9 @@ The in-person valuation form is fully manual; no availability display.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, AI lead scoring, out-of-hours automated response, area/commute insight.
+- Standout opportunities: (1) A strong social-media presence (TikTok, YouTube, Instagram) is never reflected in on-site search — the biggest gap between brand energy and product experience seen in the study. (2) Four separate department phone lines require the user to guess which to call — postcode-based automatic routing could resolve this. (3) Some listings are blurred as "Pre-Market Property" and require registration — a registration wall rather than personalisation.
+- Disagreements / to verify: Whether the instant valuation result screen actually displays a figure was not verified (flagged as "not verified" in round 4) — needs live testing.
 
 ---
 
@@ -323,6 +323,6 @@ In-person valuation formu tamamen manuel; müsaitlik gösterimi yok.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, AI lead scoring, mesai dışı otomatik yanıt, area/commute insight.
+- Öne çıkan fırsatlar: (1) Güçlü sosyal medya varlığı (TikTok, YouTube, Instagram) var ama site aramasına hiç yansımamış — marka enerjisi ile ürün deneyimi arasında en büyük kopukluk. (2) 4 farklı departman telefon hattı var, kullanıcı hangisini arayacağını kendi bulmak zorunda — postal kod bazlı otomatik yönlendirme yapılabilir. (3) Bazı ilanlar "Pre-Market" olarak bulanıklaştırılmış, kayıt gerektiriyor — kişiselleştirme yerine sadece bir kayıt duvarı.
+- Görüş ayrılıkları / doğrulanması gerekenler: Instant valuation sonucunun ekranda gösterilip gösterilmediği doğrulanmadı (round 4'te "not verified" işaretlendi) — canlı test gerekiyor.
