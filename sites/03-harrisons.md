@@ -211,9 +211,9 @@ This is the site's strongest asset: a genuinely working user account system with
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, AI lead scoring, out-of-hours automated response.
+- Standout opportunities: (1) The homepage's strong statistics (sale rate, extra proceeds) never reach the listing pages — persuasive trust data disconnected from the product experience. (2) A genuinely working account system (magic-link login, pre-market "Coming Soon" listings) exists, but nothing changes for a logged-in user. (3) Cal.com powers real appointment booking (for valuation) — none of the other sites have this; a good technical reference point.
+- Disagreements / to verify: The instant valuation is not the platform's own tool but a third-party Propalt integration — may be evidence that the platform's own "instant valuation" isn't satisfying that need, needs confirming. The homepage stats counter animation is broken (shows 0), while the same figures render correctly on `/sellers` — a live bug, worth re-checking.
 
 ---
 
@@ -422,6 +422,6 @@ Bu, sitenin en güçlü tarafı: gerçek çalışan bir kullanıcı hesabı sist
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, AI lead scoring, mesai dışı otomatik yanıt.
+- Öne çıkan fırsatlar: (1) Homepage'deki güçlü istatistikler (satış oranı, ek kazanç) ilan sayfalarına hiç yansımıyor — güven verisi ile ürün deneyimi kopuk. (2) Gerçek çalışan hesap sistemi (magic-link login, pre-market "Coming Soon" ilanlar) var ama giriş yapmış kullanıcı için hiçbir kişiselleştirme yok. (3) Cal.com üzerinden gerçek randevu rezervasyonu çalışıyor — diğer sitelerde bu bile yok, iyi bir teknik referans noktası.
+- Görüş ayrılıkları / doğrulanması gerekenler: Değerleme, platformun kendi aracı değil, 3. parti Propalt entegrasyonu — platformun kendi "instant valuation"ının yetersiz kaldığının kanıtı olabilir, doğrulanmalı. Ana sayfadaki istatistik sayaç animasyonu bozuk (0 gösteriyor), `/sellers` sayfasında doğru çalışıyor — canlı hata, tekrar kontrol edilmeli.
