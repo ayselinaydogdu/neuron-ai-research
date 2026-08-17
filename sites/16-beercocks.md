@@ -169,9 +169,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, personalised similar-listing recommendations, AI-powered area/commute insight, EPC/floor plan explanation, AI lead scoring, out-of-hours automated response, AI financial commentary on the mortgage/stamp-duty calculators.
+- Standout opportunities: (1) Unlike almost every other site in the study, the Instant Valuation here actually displays the estimated figure on screen (based on "recent local sales + property data") — but never explains which property characteristics drove the number. This is the cleanest proof point in the whole study for an AI valuation-explanation layer: the number already exists, only the "why" is missing. (2) With 515 listings and 11 branches — the largest agency reviewed — the natural-language search / smart-narrowing gap causes the most real user pain at this scale; the ROI on a platform-level NL search layer is highest here. (3) With 11 separately-listed branches, users must self-select the correct office with no guidance — a postcode-to-branch router (light-touch, near-zero AI) or a fuller AI-qualified lead-routing feature would remove real friction.
+- Disagreements / to verify: Round 1 (Berkay) and Round 2 (Yasemin/Ayselin) differ on the on-screen valuation result: Berkay's summary focuses on the absence of an AI explanation without noting whether a figure displays, while later rounds confirm the estimate does show on screen — worth aligning language across rounds so the synthesis reflects the confirmed behaviour. Same shared Neuron REST filter schema (`property_types`, `property_styles`, `tenure_types`) observed here as on 14 · Nicholsons — reinforces that this is a genuine platform-wide, reusable API surface.
 
 ---
 
@@ -339,6 +339,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, kişiselleştirilmiş benzer ilan önerisi, AI destekli alan/commute analizi, EPC/floor plan açıklaması, AI lead scoring, mesai dışı otomatik yanıt, mortgage/stamp-duty hesaplayıcılarında AI finansal yorumu.
+- Öne çıkan fırsatlar: (1) Çalışmadaki neredeyse tüm diğer sitelerin aksine, buradaki Instant Valuation tahmini rakamı gerçekten ekranda gösteriyor ("recent local sales + property data"e dayanarak) — ama hangi mülk özelliklerinin bu rakamı belirlediğini hiç açıklamıyor. Bu, tüm çalışmadaki AI değerleme-açıklama katmanı için en net kanıt: rakam zaten var, sadece "neden" eksik. (2) 515 ilan ve 11 şube ile — incelenen en büyük acente — doğal dil arama/akıllı daraltma eksikliği bu ölçekte en fazla gerçek kullanıcı acısına neden oluyor; platform seviyesinde bir NL arama katmanının getirisi burada en yüksek. (3) 11 ayrı şube listelendiğinden, kullanıcılar hiçbir rehberlik olmadan doğru ofisi kendileri seçmek zorunda — bir posta kodu-şube yönlendiricisi (hafif dokunuş, neredeyse hiç AI gerektirmez) veya daha kapsamlı bir AI-destekli lead yönlendirme özelliği gerçek bir sürtünmeyi ortadan kaldırır.
+- Görüş ayrılıkları / doğrulanması gerekenler: Round 1 (Berkay) ve Round 2/3 (Yasemin/Ayselin) ekrandaki değerleme sonucu konusunda farklılaşıyor: Berkay'ın özeti bir rakamın gösterilip gösterilmediğini belirtmeden AI açıklamasının eksikliğine odaklanıyor, sonraki turlar ise tahminin ekranda gösterildiğini doğruluyor — sentez raporunun doğrulanmış davranışı yansıtması için turlar arası dilin hizalanması gerekiyor. Burada, 14 · Nicholsons'ta gözlemlenenle aynı paylaşılan Neuron REST filtre şeması (`property_types`, `property_styles`, `tenure_types`) görüldü — bunun platform genelinde gerçek, tekrar kullanılabilir bir API yüzeyi olduğunu güçlendiriyor.
