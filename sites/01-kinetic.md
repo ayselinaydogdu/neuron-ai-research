@@ -209,9 +209,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, personalised similar-listing recommendations, EPC/floor plan explanation, AI-powered lead scoring, out-of-hours automated response.
+- Standout opportunities: (1) Natural-language search layer — platform-level, reusable across every tenant. (2) Data-quality checking — 3 independent reviewers found a bedroom-count contradiction on the same listing (2 vs 3); an AI layer could flag such inconsistencies to the agent automatically. (3) Listing summary + Q&A assistant.
+- Disagreements / to verify: The source contains `.whatsapp-chatbot` and `.live-search-container` classes but neither is active — these components exist on the platform and appear to be switched off for this client; needs confirming. Kinetic deliberately does not offer instant valuation (a brand choice); the recommended fix is not "instant price" but a "pre-appointment prep tool."
 
 ---
 
@@ -421,6 +421,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, kişiselleştirilmiş benzer ilan önerisi, EPC/floor plan açıklaması, AI destekli lead scoring, mesai dışı otomatik yanıt.
+- Öne çıkan fırsatlar: (1) Doğal dil arama katmanı — platform seviyesinde, tüm tenant'larda tekrar kullanılabilir. (2) Veri kalitesi kontrolü — 3 bağımsız incelemeci aynı ilanda yatak odası sayısı çelişkisi (2 vs 3) bulmuş; AI ile otomatik tutarlılık denetimi + agent'a uyarı. (3) İlan özeti + soru-cevap asistanı.
+- Görüş ayrılıkları / doğrulanması gerekenler: Kaynak kodda `.whatsapp-chatbot` ve `.live-search-container` class'ları var ama aktif değil — platformda geliştirilmiş, bu client için kapalı, doğrulanmalı. Kinetic bilinçli olarak anlık değerleme sunmuyor (marka kararı); önerilecek çözüm "anlık fiyat" değil "randevu öncesi hazırlık aracı" olmalı.
