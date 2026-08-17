@@ -172,9 +172,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, personalised similar-listing recommendations, AI-powered area/commute insight, EPC/floor plan explanation, AI lead scoring, out-of-hours automated response, mortgage/stamp-duty calculator.
+- Standout opportunities: (1) The site already has solid static local area guides — good grounding material for a future area-Q&A or natural-language search layer, similar to Jacksons' "Advice Hub" pattern. (2) `ice.js` actively collects behavioural tracking data, but it is confirmed (across rounds) to feed zero personalisation anywhere on the site — a recurring platform-wide theme of "data gathered, never used," and a concrete integration target. (3) No similar-listings block exists at all on listing pages (page goes straight from EPC to footer) — even a simple recently-viewed/criteria-based "similar homes" block would close an obvious gap.
+- Disagreements / to verify: **Direct contradiction on the instant valuation flow.** Round 1 (Berkay) describes a "60-second online valuation that returns an estimated value via algorithm based on previous sales" (i.e., a figure is shown). Rounds 2–4 (Yasemin, Ayselin, Görkem) independently describe the same ValPal tool as gating the figure behind contact-detail submission, with no number shown on screen. This needs live re-verification before being cited either way — it may depend on entry path, or may have changed between reviews. A msgboxx-based WhatsApp widget is referenced in source across multiple rounds but never observed running in the UI — consistent with the dormant-component pattern seen elsewhere in the study.
 
 ---
 
@@ -345,6 +345,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, kişiselleştirilmiş benzer ilan önerisi, AI destekli alan/commute analizi, EPC/floor plan açıklaması, AI lead scoring, mesai dışı otomatik yanıt, mortgage/stamp-duty hesaplayıcı.
+- Öne çıkan fırsatlar: (1) Sitede zaten sağlam, statik yerel alan rehberleri var — Jacksons'ın "Advice Hub" örüntüsüne benzer şekilde, ileride bir alan-soru-cevap veya doğal dil arama katmanı için iyi bir temel oluşturuyor. (2) `ice.js` aktif olarak davranışsal takip verisi topluyor, ama bunun sitede hiçbir yerde kişiselleştirmeye dönüşmediği turlar arasında doğrulandı — "veri toplanıyor ama hiç kullanılmıyor" temasının platform genelinde tekrar eden bir örneği, somut bir entegrasyon hedefi. (3) İlan sayfalarında hiç benzer-ilan bloğu yok (sayfa EPC'den doğrudan footer'a düşüyor) — basit bir "son görüntülenenler/kriter bazlı benzer evler" bloğu bile bariz bir boşluğu kapatır.
+- Görüş ayrılıkları / doğrulanması gerekenler: **Instant valuation akışında doğrudan bir çelişki var.** Round 1 (Berkay), "önceki satışlara dayalı algoritma ile tahmini değer döndüren 60 saniyelik bir çevrimiçi değerleme" tanımlıyor (yani bir rakam gösteriliyor). Round 2-4 (Yasemin, Ayselin, Görkem) ise aynı ValPal aracını bağımsız olarak, rakamı iletişim bilgisi gönderilene kadar gizleyen, ekranda hiç sayı göstermeyen bir araç olarak tanımlıyor. Bu, hangi yönde alıntılanırsa alıntılansın canlı olarak yeniden doğrulanmalı — giriş yoluna bağlı olabilir ya da incelemeler arasında değişmiş olabilir. Msgboxx tabanlı bir WhatsApp widget'ı birden fazla turda kaynak kodda referans alınıyor ama hiçbir zaman UI'da çalışır halde gözlemlenmedi — çalışmanın başka yerlerinde görülen
