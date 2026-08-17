@@ -161,9 +161,9 @@ On the contact form the user picks the branch themselves (Castle Cary / Somerton
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, AI lead scoring, out-of-hours automated response; there isn't even an EPC tab (energy rating appears as a single line of text).
+- Standout opportunities: (1) A 50-year, local-knowledge-driven brand positioning exists, yet the site offers zero structured area data — the biggest gap between brand promise and product experience found in the study. (2) Commute/distance information is hand-typed into every listing ("Glastonbury 8 miles… Paddington 1.5 hours") — the clearest, most automatable example found. (3) The blog covers mortgage rate content but there's no calculator on the site.
+- Disagreements / to verify: Confirmed technically to share the same platform build as site 09 (Harris & Wood) — identical file names and the same UUID — same underlying infrastructure, differences are branding-level only.
 
 ---
 
@@ -323,6 +323,6 @@ Contact formunda şubeyi (Castle Cary / Somerton / Wells) kullanıcı seçiyor; 
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, AI lead scoring, mesai dışı otomatik yanıt; EPC sekmesi bile yok (sadece Features metninde tek satır).
+- Öne çıkan fırsatlar: (1) 50 yıllık, yerel bilgiye dayalı marka konumlandırması var ama site sıfır yapılandırılmış alan verisi sunuyor — marka vaadi ile ürün deneyimi arasındaki en büyük uçurum bu sitede görüldü. (2) Commute/mesafe bilgisi ilanlarda elle yazılıyor ("Glastonbury 8 miles… Paddington 1.5 hours") — otomatikleştirmeye en uygun, en açık örnek. (3) Blog'da mortgage/faiz oranı içeriği var ama hesap makinesi yok.
+- Görüş ayrılıkları / doğrulanması gerekenler: 09 (Harris & Wood) ile aynı platform build'ini paylaştığı teknik olarak doğrulandı (aynı dosya adları, aynı UUID) — iki site aynı temel altyapıda, farklar sadece markalama düzeyinde.
