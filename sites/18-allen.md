@@ -171,9 +171,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, personalised similar-listing recommendations, AI-powered area/commute insight, EPC/floor plan explanation, AI lead scoring, out-of-hours automated response, mortgage/stamp-duty calculator.
+- Standout opportunities: (1) A concrete, documented failure rather than just an absence: the location autocomplete actively misleads — typing "Paultn" suggests "Paul Tann Ltd" in Kings Hill instead of Paulton, silently launching a search in the wrong area. This is the sharpest evidence in the whole study that query-understanding is genuinely AI-shaped, not just a UI nicety. (2) Travel information to Bristol and Bath is hand-written into listing descriptions — the same structured-commute-data opportunity seen on 13 · Keys & Lee, now confirmed as a recurring pattern across tenants. (3) On empty search results, the only prompt is "set up a Heads Up alert" — no filter-relaxation suggestion; a low-effort AI/rules feature could suggest which criteria to loosen instead of dead-ending the user.
+- Disagreements / to verify: **Recurring valuation-figure contradiction (same pattern as 17 · Grey & Co).** Round 1 (Berkay) describes an "Instant Valuation that provides an automated estimate after postcode/beds/type" (a figure is shown). Rounds 2–4 (Yasemin, Ayselin, Görkem) independently describe the ValPal flow as contact-first, with the figure sent afterwards and nothing shown on screen. Given this is now the second site with the identical discrepancy, it's worth checking whether early-round reviewers (Berkay) may have tested the flow before it fully loaded, or whether the tool's behaviour genuinely varies by tenant/config — needs live re-verification and a note back to the team about this pattern specifically. Round 1 (Berkay) also noted this site does not self-identify as Neuron/Iceberg Digital in the footer, unlike other Group D sites — filter schema and behaviour match the platform exactly, so likely the same stack, but the missing footer signature is worth a note.
 
 ---
 
@@ -342,6 +342,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, kişiselleştirilmiş benzer ilan önerisi, AI destekli alan/commute analizi, EPC/floor plan açıklaması, AI lead scoring, mesai dışı otomatik yanıt, mortgage/stamp-duty hesaplayıcı.
+- Öne çıkan fırsatlar: (1) Sadece bir eksiklik değil, somut ve belgelenmiş bir hata: konum autocomplete'i aktif olarak yanlış yönlendiriyor — "Paultn" yazıldığında Paulton yerine Kings Hill'deki "Paul Tann Ltd" öneriliyor ve kullanıcı sessizce yanlış bölgede arama yapmış oluyor. Bu, tüm çalışmadaki, query-understanding'in gerçekten AI-şeklinde bir sorun olduğunun (sadece bir UI inceliği değil) en keskin kanıtı. (2) Bristol ve Bath'a ulaşım bilgisi ilan açıklamalarına elle yazılmış — 13 · Keys & Lee'de görülen aynı yapılandırılmış-commute-verisi fırsatı, artık tenant'lar arasında tekrar eden bir örüntü olarak doğrulandı. (3) Boş arama sonuçlarında tek yönlendirme "Heads Up alert kur" — hiçbir filtre gevşetme önerisi yok; düşük efor gerektiren bir AI/kural tabanlı özellik, kullanıcıyı çıkmaz sokağa sokmak yerine hangi kriterin gevşetilmesi gerektiğini önerebilir.
+- Görüş ayrılıkları / doğrulanması gerekenler: **Tekrar eden değerleme rakamı çelişkisi (17 · Grey & Co ile aynı örüntü).** Round 1 (Berkay), "postcode/beds/type sonrası otomatik tahmin veren bir Instant Valuation" tanımlıyor (rakam gösteriliyor). Round 2-4 (Yasemin, Ayselin, Görkem) ise ValPal akışını bağımsız olarak, önce iletişim bilgisi isteyen, rakamı sonradan gönderen, ekranda hiçbir şey göstermeyen bir akış olarak tanımlıyor. Bu artık aynı tutarsızlığa sahip ikinci site olduğundan, erken tur incelemecilerinin (Berkay) akışı tam yüklenmeden test
