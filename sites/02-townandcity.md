@@ -202,9 +202,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, genuine (personalised) similar-listing recommendations, AI lead scoring, out-of-hours automated response.
+- Standout opportunities: (1) "Heads-Up Alerts" could become genuinely intelligent — ranking by behavioural data + free-text preference rather than criteria equality. (2) Connect the "100% MATCH" badge to a real matching engine (currently shows 100% on 44/44 listings even for anonymous visitors with no saved criteria — fake personalisation, a trust risk).
+- Disagreements / to verify: "Instant Valuation" never shows a figure on screen, it only collects contact details — a lead-capture form wearing an instant-valuation label; flagged as a trust/marketing risk, should be verified live.
 
 ---
 
@@ -406,6 +406,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, gerçek (kişiselleştirilmiş) benzer ilan önerisi, AI lead scoring, mesai dışı otomatik yanıt.
+- Öne çıkan fırsatlar: (1) "Heads-Up Alerts" gerçek anlamda akıllı hale getirilebilir — davranışsal veri + serbest metinle sıralama. (2) "100% MATCH" rozetinin gerçek bir eşleştirme motoruna bağlanması (şu an 44/44 ilanda, kayıtsız kullanıcıda bile %100 gösteriyor — sahte kişiselleştirme, güven riski).
+- Görüş ayrılıkları / doğrulanması gerekenler: "Instant Valuation" ekranda rakam göstermiyor, sadece iletişim bilgisi topluyor — lead-capture formu "anlık değerleme" etiketiyle sunuluyor; bu bir güven/pazarlama riski olarak işaretlendi, canlı doğrulanmalı.
