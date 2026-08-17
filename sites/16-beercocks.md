@@ -12,7 +12,7 @@ This site is reviewed independently by 4 people across 4 rounds.
 | Round | Reviewer | Status   |
 | ----- | -------- | -------- |
 | 1     | Berkay   | Done     |
-| 2     | Yasemin  | Not done |
+| 2     | Yasemin  | Done |
 | 3     | Ayselin  | Done |
 | 4     | Görkem   | Done |
 
