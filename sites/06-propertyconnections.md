@@ -159,9 +159,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, AI lead scoring, out-of-hours automated response. (Round 3/Berkay not done, but the 3 independent reviews provide sufficient data.)
+- Standout opportunities: (1) The Scotland-specific Home Report (a 20–40 page PDF) is downloaded completely unsummarised — the strongest document-summarisation opportunity found. (2) No guidance is given to buyers under the "Offers Over" pricing model — AI-powered market/comparable insight could be added. (3) The same ValPal tool is marketed as "quick and accurate" here but as "up to 60% accurate" on Property Cloud — a platform-wide messaging inconsistency.
+- Disagreements / to verify: The "Stamp Duty Calculator" is mislabelled for Scotland (LBTT applies there, not SDLT) — needs confirming. The contact-page map points ~600km away from the actual office (Kent) — whether this is a transient or persistent fault needs confirming. This site's results list loads via client-side XHR, while other sites load it inside SSR/HTML — same platform, different rendering path.
 
 ---
 
@@ -318,6 +318,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, AI lead scoring, mesai dışı otomatik yanıt. (Round 3/Berkay eksik, ancak 3 bağımsız inceleme yeterli veri sağlıyor.)
+- Öne çıkan fırsatlar: (1) İskoçya'ya özgü Home Report (20-40 sayfalık PDF) hiç özetlenmeden indiriliyor — belge özetleme için en güçlü örnek. (2) "Offers Over" fiyatlama modelinde alıcıya rehberlik yok — AI destekli pazar/emsal içgörüsü eklenebilir. (3) Aynı ValPal aracı bu sitede "hızlı ve doğru" diye pazarlanırken Property Cloud'da "%60 doğru" deniyor — platform genelinde mesajlaşma tutarsızlığı.
+- Görüş ayrılıkları / doğrulanması gerekenler: "Stamp Duty Calculator" İskoçya'da yanlış etiketlenmiş (orada LBTT geçerli, SDLT değil) — doğrulanmalı. İletişim sayfasındaki harita gerçek ofisten ~600km uzakta (Kent) gösteriyor — geçici mi kalıcı mı doğrulanmalı. Bu sitede sonuç listesi client-side XHR ile geliyor, diğer sitelerde SSR/HTML içinde geliyordu — aynı platformda farklı render yolu.
