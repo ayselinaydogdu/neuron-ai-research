@@ -151,9 +151,9 @@ This site is reviewed independently by 4 people across 4 rounds.
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, personalised similar-listing recommendations, AI-powered area/commute insight, EPC/floor plan explanation, AI lead scoring, out-of-hours automated response, mortgage/stamp-duty calculator.
+- Standout opportunities: (1) A "100% MATCH" badge appears on cards, but it only reflects exact filter compliance, not real personalisation — important to flag since the same badge is marketed as "AI" on Group D sites; worth correcting the framing platform-wide. (2) Listing features contain hand-typed distance data ("0.8 miles to Clockhouse primary school") — exactly the commute/area info buyers want, but manual and only as reliable as the agent who typed it; a strong candidate for a structured, maps-API-verified AI layer. (3) The Heads Up Alerts form collects rich qualification data (moving timescale, solicitor status, mortgage status) but never branches on the answers — a ready-made lead-qualification input sitting completely idle.
+- Disagreements / to verify: The viewing form has a real calendar and time picker, but a notice states the selection "does not confirm the viewing" — functionally not a booking despite the booking-like UI; worth flagging as a trust/expectation mismatch across the platform, not unique to this site. This tenant's search does fire a `filter` REST request (visible in Fetch/XHR), unlike 11 · Cope & Co and 12 · Price Estate Agents where listing content arrived inline in the HTML — confirms per-tenant technical/config variation on the same platform, worth investigating why.
 
 ---
 
@@ -304,6 +304,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, kişiselleştirilmiş benzer ilan önerisi, AI destekli alan/commute analizi, EPC/floor plan açıklaması, AI lead scoring, mesai dışı otomatik yanıt, mortgage/stamp-duty hesaplayıcı.
+- Öne çıkan fırsatlar: (1) Kartlarda "100% MATCH" rozeti görünüyor ama bu sadece girilen filtrelerle tam eşleşmeyi yansıtıyor, gerçek kişiselleştirme değil — bu önemli çünkü aynı rozet Group D sitelerinde "AI" diye pazarlanıyor; platform genelinde bu çerçevelemenin düzeltilmesi gerekiyor. (2) İlan özelliklerinde elle yazılmış mesafe verisi var ("0.8 miles to Clockhouse primary school") — alıcıların tam istediği commute/alan bilgisi, ama manuel ve sadece yazan agent kadar güvenilir; yapılandırılmış, maps-API ile doğrulanan bir AI katmanı için güçlü bir aday. (3) Heads Up Alerts formu zengin qualification verisi topluyor (taşınma zamanı, avukat durumu, mortgage durumu) ama cevaplara göre hiç dallanmıyor — hazır bekleyen, hiç kullanılmayan bir lead-qualification girdisi.
+- Görüş ayrılıkları / doğrulanması gerekenler: Görüntüleme (viewing) formunda gerçek bir takvim ve saat seçici var, ama bir uyarı seçimin "görüntülemeyi onaylamadığını" belirtiyor — rezervasyon gibi görünen bir arayüz olsa da fonksiyonel olarak rezervasyon değil; bu platform genelinde bir güven/beklenti uyuşmazlığı olarak işaretlenmeli, sadece bu siteye özgü değil. Bu tenant'ın aramasında gerçekten bir `filter` REST çağrısı tetikleniyor (Fetch/XHR'da görülüyor), 11 · Cope & Co ve 12 · Price Estate Agents'ta ilan içeriği HTML içinde geliyordu — aynı platformda tenant bazlı teknik/config farkını doğruluyor, nedeni araştırılmalı.
