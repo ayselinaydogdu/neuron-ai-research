@@ -158,9 +158,9 @@ Three separate routes (two on the other sites).
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A, AI lead scoring, out-of-hours automated response; opening hours are not published anywhere.
+- Standout opportunities: (1) A Sprift "Key Facts for Buyers" report exists but is buried inside the "Media Links" accordion, effectively invisible — could add value with even a small UI change. (2) The face-to-face valuation form is the richest in the study (property condition, room counts, etc.) but only submits a request — this data could generate an instant estimate.
+- Disagreements / to verify: The "100% MATCH" badge has been removed on this site (theme7) — compared with theme versions on 03, 04, 05, 06, this may indicate the platform is aware of the issue and has disabled it for some tenants; needs confirming. The footer shows "Company Number: NaN" — needs confirming with a screenshot. The booking modal asks for availability both via calendar and in writing — a double-data-entry issue.
 
 ---
 
@@ -317,6 +317,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A, AI lead scoring, mesai dışı otomatik yanıt; opening hours hiçbir yerde yayınlanmamış.
+- Öne çıkan fırsatlar: (1) Sprift "Key Facts for Buyers" raporu var ama "Media Links" akordeonunda gömülü, pratikte görünmez — küçük bir UI değişikliğiyle bile değer katılabilir. (2) Yüz yüze değerleme formu bu çalışmadaki en zengin form (mülk durumu, oda sayıları vb.) ama sadece talep gönderiyor — bu veriden anlık tahmini bir rakam üretilebilir.
+- Görüş ayrılıkları / doğrulanması gerekenler: "100% MATCH" rozeti bu sitede (theme7) kaldırılmış — diğer temalarla (03, 04, 05, 06) karşılaştırıldığında platformun bu sorunun farkında olup bazı tenant'larda kapattığı anlamına gelebilir, doğrulanmalı. Footer'da "Company Number: NaN" görülmüş — ekran görüntüsüyle doğrulanmalı. Rezervasyon modalında hem takvim var hem de yazılı olarak müsaitlik soruluyor — çifte veri toplama sorunu.
