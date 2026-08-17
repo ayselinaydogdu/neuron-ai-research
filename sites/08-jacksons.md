@@ -161,9 +161,9 @@ Reviewed: `/properties/3-bedroom-house-.../535188` (Whitehorse Hill, Chatham)
 
 ### Findings / Synthesis (filled once all 4 rounds are done)
 
-- Commonly missing AI features:
-- Standout opportunities:
-- Disagreements / to verify:
+- Commonly missing AI features: Natural-language search, AI listing summaries, Property Q&A (see disagreement), AI lead scoring.
+- Standout opportunities: (1) The "Advice Hub" (guides, FAQs, area guides) is the richest supporting content in the study — exactly the grounding an AI assistant would need, and it currently feeds no interactive feature. (2) Mortgage + Stamp Duty calculators exist but are purely numerical — adding plain-language commentary on top would be low effort, medium impact. (3) The agency itself describes its valuation tool as "just a starting point" — the clearest evidence yet for the value of an AI explanation layer.
+- Disagreements / to verify: Round 1 (Ayselin) reported seeing an AI chat assistant; Round 2 (Görkem) did not — may be page-specific/conditional, needs live re-checking. The source contains both the `.whatsapp-chatbot` class and, for the first time in the study, a `cdn.msgboxx.io` (third-party messaging) trace — not visible on screen, unclear whether dormant or active under certain conditions.
 
 ---
 
@@ -326,6 +326,6 @@ Bu siteyi 4 tur boyunca 4 farklı kişi bağımsız inceler.
 
 ### Ortak Bulgular / Sentez (4 tur bitince doldurulur)
 
-- Ortak eksik AI özellikleri:
-- Öne çıkan fırsatlar:
-- Görüş ayrılıkları / doğrulanması gerekenler:
+- Ortak eksik AI özellikleri: Doğal dil arama, AI ilan özeti, Property Q&A (bkz. görüş ayrılığı), AI lead scoring.
+- Öne çıkan fırsatlar: (1) "Advice Hub" (rehberler, SSS, alan rehberleri) bu çalışmadaki en zengin destekleyici içerik — bir AI asistanının besleneceği hazır kaynak, hiçbir interaktif özellikte kullanılmıyor. (2) Mortgage + Stamp Duty hesaplayıcıları var ama sadece sayısal — üstüne sade dilde yorum eklenebilir (düşük efor, orta etki). (3) Değerleme aracını acentenin kendisi "sadece başlangıç noktası" diye tanımlaması — AI açıklama katmanı için en net kanıt.
+- Görüş ayrılıkları / doğrulanması gerekenler: Round 1 (Ayselin) bir AI chat asistanı gördüğünü yazmış, Round 2 (Görkem) görmemiş — sayfaya özgü/koşullu olabilir, canlı tekrar kontrol edilmeli. Kaynak kodda hem `.whatsapp-chatbot` hem de ilk kez görülen `cdn.msgboxx.io` (3. parti mesajlaşma) izi var — ekranda görünmüyor, dormant mı aktif mi belirsiz.
