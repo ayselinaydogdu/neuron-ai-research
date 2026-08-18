@@ -1,0 +1,1065 @@
+<title>Neuron Kernel</title>
+<style>
+/* ─────────────────────────── tokens ─────────────────────────── */
+:root{
+  color-scheme: light;
+  --paper:      #f4f6f2;
+  --surface:    #ffffff;
+  --surface-2:  #eef1ec;
+  --ink:        #131e1a;
+  --ink-2:      #58635f;
+  --ink-3:      #8b948f;
+  --rule:       #dce1da;
+  --rule-2:     #c6cec6;
+  --accent:     #0d5c48;
+  --accent-2:   #0a4638;
+  --accent-soft:#e2eee8;
+  --good:       #0a7c30;
+  --warn:       #a06b00;
+  --serious:    #b4552a;
+  --crit:       #b9302f;
+  --good-bg:    #e4f2e5;
+  --warn-bg:    #f8eed6;
+  --crit-bg:    #f7e3e2;
+  --shadow:     0 1px 2px rgba(19,30,26,.05), 0 8px 28px -18px rgba(19,30,26,.28);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --paper:      #0d1210;
+    --surface:    #161d1a;
+    --surface-2:  #1d2622;
+    --ink:        #eaf0ed;
+    --ink-2:      #a4afaa;
+    --ink-3:      #77837d;
+    --rule:       #28322d;
+    --rule-2:     #36423c;
+    --accent:     #52bb96;
+    --accent-2:   #7fd0b3;
+    --accent-soft:#152e27;
+    --good:       #4cc46a;
+    --warn:       #e2ab3c;
+    --serious:    #e79267;
+    --crit:       #e56d6c;
+    --good-bg:    #14301c;
+    --warn-bg:    #33280e;
+    --crit-bg:    #341a1a;
+    --shadow:     0 1px 2px rgba(0,0,0,.4), 0 8px 28px -18px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:      #0d1210;
+  --surface:    #161d1a;
+  --surface-2:  #1d2622;
+  --ink:        #eaf0ed;
+  --ink-2:      #a4afaa;
+  --ink-3:      #77837d;
+  --rule:       #28322d;
+  --rule-2:     #36423c;
+  --accent:     #52bb96;
+  --accent-2:   #7fd0b3;
+  --accent-soft:#152e27;
+  --good:       #4cc46a;
+  --warn:       #e2ab3c;
+  --serious:    #e79267;
+  --crit:       #e56d6c;
+  --good-bg:    #14301c;
+  --warn-bg:    #33280e;
+  --crit-bg:    #341a1a;
+  --shadow:     0 1px 2px rgba(0,0,0,.4), 0 8px 28px -18px rgba(0,0,0,.9);
+}
+
+/* ─────────────────────────── base ─────────────────────────── */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  overflow:hidden;
+}
+.disp{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;font-weight:700;letter-spacing:-.025em;text-wrap:balance}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace}
+.lbl{
+  font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);
+}
+a{color:var(--accent);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+/* ─────────────────────────── chrome ─────────────────────────── */
+#top{
+  position:fixed;top:0;left:0;right:0;height:46px;z-index:40;
+  display:flex;align-items:center;gap:16px;padding:0 20px;
+  background:var(--paper);
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+#top .brand{display:flex;align-items:baseline;gap:10px;min-width:0}
+#top .brand b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+#top .brand span{font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#top .sec{margin-left:auto;display:flex;align-items:center;gap:14px}
+#counter{font-variant-numeric:tabular-nums;font-size:11px;letter-spacing:.1em;color:var(--ink-2)}
+#progress{position:fixed;top:45px;left:0;height:2px;background:var(--accent);z-index:41;transition:width .28s cubic-bezier(.4,0,.2,1)}
+
+#bot{
+  position:fixed;bottom:0;left:0;right:0;height:52px;z-index:40;
+  display:flex;align-items:center;gap:10px;padding:0 20px;
+  background:var(--paper);
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border-top:1px solid var(--rule);
+}
+.nav-btn{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--surface);color:var(--ink);border:1px solid var(--rule-2);
+  padding:7px 13px;border-radius:2px;cursor:pointer;transition:background .15s,border-color .15s;
+}
+.nav-btn:hover{background:var(--accent-soft);border-color:var(--accent)}
+.nav-btn[disabled]{opacity:.35;cursor:default}
+#rail{margin-left:auto;display:flex;gap:3px;align-items:center;flex-wrap:nowrap;overflow-x:auto;max-width:62vw;padding:6px 0}
+#rail button{
+  width:9px;height:9px;padding:0;flex:0 0 auto;border:0;border-radius:0;
+  background:var(--rule-2);cursor:pointer;transition:background .15s,transform .15s;
+}
+#rail button:hover{background:var(--ink-3)}
+#rail button[aria-current="true"]{background:var(--accent);transform:scaleY(1.9)}
+#rail .gap{width:12px;flex:0 0 auto}
+
+/* ─────────────────────────── deck ─────────────────────────── */
+#deck{position:absolute;inset:46px 0 52px 0;overflow:hidden}
+.slide{
+  position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;
+  padding:44px 28px 64px;
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .3s ease,transform .3s ease,visibility 0s .3s;
+}
+.slide[data-active="true"]{opacity:1;visibility:visible;transform:none;transition:opacity .34s ease,transform .34s ease}
+@media (prefers-reduced-motion:reduce){
+  .slide,#progress{transition:none}
+}
+.wrap{max-width:1080px;margin:0 auto}
+.wrap.narrow{max-width:820px}
+
+h1.disp{font-size:clamp(34px,6.2vw,62px);line-height:1.03;margin:0 0 20px}
+h2.disp{font-size:clamp(24px,3.4vw,38px);line-height:1.1;margin:0 0 10px}
+h3.disp{font-size:17px;line-height:1.3;margin:0 0 6px;letter-spacing:-.012em}
+p{margin:0 0 14px;max-width:66ch}
+.lede{font-size:18.5px;line-height:1.62;color:var(--ink-2);max-width:62ch}
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+/* cover */
+.cover{display:flex;flex-direction:column;justify-content:center;min-height:100%}
+.cover .rule{height:3px;background:var(--accent);width:88px;margin:0 0 26px}
+.cover .meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:38px;padding-top:22px;border-top:1px solid var(--rule)}
+.cover .meta div{min-width:120px}
+.cover .meta .v{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:700;font-size:15px;letter-spacing:-.01em;margin-top:3px}
+
+/* generic cards */
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{
+  background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+  padding:17px 18px;box-shadow:var(--shadow);
+}
+.card .lbl{margin-bottom:7px;display:block}
+.card p{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:0}
+.card p + p{margin-top:9px}
+
+/* stat tiles */
+.stat{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:16px 17px;box-shadow:var(--shadow)}
+.stat .n{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:700;font-size:38px;line-height:1;letter-spacing:-.035em;font-variant-numeric:tabular-nums;color:var(--accent)}
+.stat .n small{font-size:19px;letter-spacing:-.01em;color:var(--ink-3);font-weight:700}
+.stat .c{font-size:13.5px;line-height:1.45;color:var(--ink-2);margin-top:9px}
+
+/* site header block — "particulars sheet" */
+.sheet{border-top:3px solid var(--accent);padding-top:16px;margin-bottom:22px}
+.sheet .row1{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.sheet .code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:38px;font-weight:700;letter-spacing:-.03em;color:var(--accent);line-height:1}
+.sheet .dom{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:700;font-size:clamp(21px,3vw,31px);letter-spacing:-.026em;line-height:1.05}
+.sheet .grp{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--rule-2);color:var(--ink-3);padding:3px 7px;border-radius:2px;align-self:center;
+}
+.sheet .tag{font-size:15px;color:var(--ink-2);margin-top:8px;max-width:70ch}
+
+/* two-column site body */
+.cols{display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:start}
+@media (max-width:900px){.cols{grid-template-columns:1fr;gap:24px}}
+.colhead{display:flex;align-items:center;gap:9px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.colhead .lbl{color:var(--ink-2)}
+
+/* findings list */
+ul.finds{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px}
+ul.finds li{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:start;font-size:15px;line-height:1.55}
+.sev{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 6px;border-radius:2px;white-space:nowrap;margin-top:3px;font-weight:700;border:1px solid transparent;
+}
+.sev.bug{background:var(--crit-bg);color:var(--crit);border-color:color-mix(in srgb,var(--crit) 34%,transparent)}
+.sev.risk{background:var(--warn-bg);color:var(--warn);border-color:color-mix(in srgb,var(--warn) 40%,transparent)}
+.sev.gap{background:var(--surface-2);color:var(--ink-3);border-color:var(--rule)}
+.sev.win{background:var(--good-bg);color:var(--good);border-color:color-mix(in srgb,var(--good) 34%,transparent)}
+
+/* fixes */
+.fix{border-left:2px solid var(--accent);padding:2px 0 2px 14px;margin-bottom:15px}
+.fix .m{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:.12em;font-weight:700;
+  color:var(--accent);display:block;margin-bottom:3px;
+}
+.fix p{font-size:14.5px;line-height:1.55;margin:0;color:var(--ink)}
+
+.note{
+  margin-top:20px;padding:13px 15px;background:var(--surface-2);border:1px solid var(--rule);border-radius:3px;
+  font-size:13.5px;line-height:1.55;color:var(--ink-2);
+}
+.note b{color:var(--ink)}
+
+/* coverage matrix */
+.matrix-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:3px;background:var(--surface);box-shadow:var(--shadow)}
+table.mx{border-collapse:separate;border-spacing:0;width:100%;min-width:660px;font-size:12px}
+table.mx th,table.mx td{padding:0;text-align:center;border-bottom:1px solid var(--rule)}
+table.mx thead th{
+  position:sticky;top:0;background:var(--surface);z-index:2;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:700;padding:11px 4px;border-bottom:1px solid var(--rule-2);
+}
+table.mx th.site{text-align:left;padding-left:13px;min-width:172px}
+table.mx td.site{
+  text-align:left;padding:7px 13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11.5px;color:var(--ink-2);white-space:nowrap;
+}
+table.mx td.site b{color:var(--ink);font-weight:700}
+table.mx tbody tr:hover td{background:var(--surface-2)}
+.cell{display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;border-radius:2px;font-size:12px;font-weight:700;font-family:ui-monospace,Menlo,monospace}
+.cell.s0{color:var(--crit);background:var(--crit-bg)}
+.cell.s1{color:var(--warn);background:var(--warn-bg)}
+.cell.s2{color:var(--good);background:var(--good-bg)}
+.legend{display:flex;flex-wrap:wrap;gap:20px;margin-top:14px;font-size:13px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+
+/* architecture stack */
+.stack{display:flex;flex-direction:column;gap:9px;margin:6px 0 4px}
+.layer{
+  display:grid;grid-template-columns:118px 1fr;gap:18px;align-items:start;
+  background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);
+  border-radius:3px;padding:14px 17px;box-shadow:var(--shadow);
+}
+@media (max-width:700px){.layer{grid-template-columns:1fr;gap:6px}}
+.layer .who{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--accent);padding-top:3px}
+.layer .who em{display:block;font-style:normal;color:var(--ink-3);font-weight:400;letter-spacing:.06em;margin-top:3px}
+.layer h4{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:700;font-size:15.5px;letter-spacing:-.012em;margin:0 0 4px}
+.layer p{font-size:14px;line-height:1.53;color:var(--ink-2);margin:0}
+
+/* verdict blocks */
+.verdict{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:15px 0;border-bottom:1px solid var(--rule)}
+.verdict:last-child{border-bottom:0}
+.vmark{
+  font-family:ui-monospace,Menlo,monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 9px;border-radius:2px;white-space:nowrap;margin-top:2px;
+}
+.vmark.yes{background:var(--good-bg);color:var(--good)}
+.vmark.no{background:var(--crit-bg);color:var(--crit)}
+.vmark.later{background:var(--warn-bg);color:var(--warn)}
+.verdict h4{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:700;font-size:16px;margin:0 0 5px;letter-spacing:-.012em}
+.verdict p{font-size:14.5px;line-height:1.57;color:var(--ink-2);margin:0}
+.verdict p + p{margin-top:8px}
+
+/* pricing */
+.tier{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.tier.hi{border-color:var(--accent);border-width:1.5px}
+.tier .t{font-family:system-ui,-apple-system,sans-serif;font-weight:700;font-size:17px;letter-spacing:-.015em}
+.tier .meter{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.tier ul{margin:0;padding-left:17px;font-size:14px;line-height:1.55;color:var(--ink-2)}
+.tier ul li{margin-bottom:5px}
+.tier .why{font-size:13px;line-height:1.5;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:10px;margin-top:auto}
+
+/* roadmap */
+.road{display:flex;flex-direction:column;gap:0}
+.phase{display:grid;grid-template-columns:104px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--rule);align-items:start}
+@media (max-width:640px){.phase{grid-template-columns:1fr;gap:5px}}
+.phase .wk{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.09em;font-weight:700;color:var(--accent);padding-top:2px;font-variant-numeric:tabular-nums}
+.phase h4{font-family:system-ui,-apple-system,sans-serif;font-weight:700;font-size:15.5px;margin:0 0 4px;letter-spacing:-.012em}
+.phase p{font-size:14px;line-height:1.53;color:var(--ink-2);margin:0}
+
+/* tool list */
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px}
+@media (max-width:760px){.tools{grid-template-columns:1fr}}
+.tool{display:grid;grid-template-columns:auto 1fr;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.tool code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--accent);background:var(--accent-soft);padding:2px 6px;border-radius:2px;white-space:nowrap}
+.tool span{font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+
+/* index list */
+.idx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 22px}
+@media (max-width:820px){.idx{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.idx{grid-template-columns:1fr}}
+.idx button{
+  display:grid;grid-template-columns:26px 1fr;gap:9px;align-items:baseline;text-align:left;
+  background:none;border:0;border-bottom:1px solid var(--rule);padding:7px 2px;cursor:pointer;width:100%;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--ink-2);
+}
+.idx button:hover{color:var(--accent);background:var(--accent-soft)}
+.idx button b{color:var(--accent);font-weight:700}
+
+.big-quote{
+  font-size:clamp(20px,2.7vw,29px);line-height:1.35;letter-spacing:-.012em;
+  border-left:3px solid var(--accent);padding-left:22px;margin:0 0 22px;max-width:26ch;
+}
+.kicker{font-size:16px;line-height:1.6;color:var(--ink-2);max-width:64ch}
+hr.sep{border:0;border-top:1px solid var(--rule);margin:28px 0}
+</style>
+
+<div id="top">
+  <div class="brand"><b>Neuron Kernel</b><span>21 emlak sitesi · gap analizi &amp; ürün önerisi</span></div>
+  <div class="sec"><span id="counter" class="mono">01 / 36</span></div>
+</div>
+<div id="progress" style="width:0"></div>
+
+<div id="deck"></div>
+
+<div id="bot">
+  <button class="nav-btn" id="prev" aria-label="Önceki sayfa">← Geri</button>
+  <button class="nav-btn" id="next" aria-label="Sonraki sayfa">İleri →</button>
+  <nav id="rail" aria-label="Sayfa listesi"></nav>
+</div>
+
+<script>
+/* ══════════════════ VERİ ══════════════════ */
+
+/* 0 = yok · 1 = var ama elle/kural tabanlı · 2 = gerçekten otomatik */
+const COLS = [
+  ["NLS","Doğal dil arama"],
+  ["ÖZT","AI ilan özeti"],
+  ["Q&amp;A","İlan soru-cevap"],
+  ["BNZ","Kişiselleştirilmiş benzer ilan"],
+  ["DĞR","Anlık değerleme (rakam ekranda)"],
+  ["AÇK","Değerleme açıklaması"],
+  ["BÖL","Bölge / ulaşım bilgisi"],
+  ["SHB","Chatbot / mesai dışı yanıt"],
+  ["LED","AI lead skorlama"]
+];
+
+const sites = [
+{
+  n:"01", dom:"kineticestateagents.co.uk", name:"Kinetic Estate Agents", grp:"Grup A",
+  tag:"Enerjik, anti-kurumsal marka. Değerlemede bilinçli olarak insan-only duruş: “valuations start with a conversation, no script”.",
+  cov:[0,0,0,0,0,0,0,0,0],
+  finds:[
+    ["gap","Aramada <b>property-type filtresi bile yok</b>. Sadece fiyat / yatak odası / yarıçap. Bu AI problemi değil, düz bir UX açığı — önce arayüzde çözülmeli."],
+    ["bug","Bir ilanda başlık “2 yatak odası” derken material information bloğu “3” diyor. <b>3 bağımsız incelemeci</b> aynı çelişkiyi buldu."],
+    ["bug","Footer sayfada iki kez render ediliyor; ikinci blokta “Company Number: <b>NaN</b>”. Aynı hata 07 Keystone'da da doğrulandı → tema sürümüne bağlı."],
+    ["risk","Kaynak kodda <code>.whatsapp-chatbot</code> ve <code>.live-search-container</code> tanımlı ama <b>ikisi de kapalı</b>. Bileşen platformda var, bu müşteride açılmamış."],
+    ["gap","Footer “AI Operating System for Estate Agents” yazıyor; sitede kullanıcıya dönük sıfır AI var."]
+  ],
+  fixes:[
+    ["M1","Serbest metin kutusu → mevcut filtre API'sine çeviri. Her tenant aynı filtre setini paylaştığı için tek bileşen 21+ ajansa hizmet eder."],
+    ["M3","Veri kalitesi denetçisi: yayın öncesi başlık / material info / açıklama çelişkilerini yakala ve danışmanı uyar. Alıcı fark ettiğinde güven sessizce gidiyor."],
+    ["M6","Değerlemede “anlık fiyat” <i>önerilmemeli</i> — marka duruşuna aykırı. Doğru çerçeve: <b>randevu öncesi hazırlık brifingi</b>."]
+  ],
+  note:"Bu site, çalışmanın tezinin ilk kanıtı: sorun teknoloji eksikliği değil, <b>kapalı duran bileşenler</b> ve kullanılmayan veri."
+},
+{
+  n:"02", dom:"townandcityhomes.com", name:"Town &amp; City Homes", grp:"Grup A",
+  tag:"Sıcak, insan odaklı marka; maskot, isimli ekip, güçlü Google yorumları, TPO/Money Shield rozetleri. Güven tarafı çözülmüş.",
+  cov:[0,0,0,1,2,0,0,0,0],
+  finds:[
+    ["bug","Her ilanda “<b>100% MATCH</b>” rozeti — 44/44 ilan, anonim ziyaretçi, kayıtlı kriter yok. Sahte kişiselleştirme; en somut güven riski."],
+    ["risk","Aynı sayfada <b>iki değerleme girişi iki farklı deneyim</b> üretiyor: “In a hurry?” kısayolu rakam vermeden lead topluyor, tam akış gerçek aralık veriyor (£174.000 / £237.287 / £301.000)."],
+    ["gap","İlan altındaki “Latest Properties” benzer ilan gibi sunuluyor ama fiyat, oda, konum ve tip olarak alakasız — ana sayfadaki statik blok."],
+    ["gap","Marka WhatsApp'ı güçlü pazarlıyor ama sitede WhatsApp butonu bile yok."],
+    ["gap","Heads-Up Alerts “Rightmove'a çıkmadan önce” diye pazarlanıyor; altında saf kriter eşitliği var, semantik eşleştirme yok."]
+  ],
+  fixes:[
+    ["M0","Rozeti ya gerçek eşleştirme motoruna bağlayın ya da kaldırın. Sahte %100 üstüne AI koymak, çürük temele kat çıkmaktır."],
+    ["M1","Heads-Up'ı gerçekten akıllı hale getirin: kayıtlı kriter + tıklama davranışı + serbest metin tercih → gelen stoku uygunluğa göre sırala."],
+    ["M6","Gerçek rakam zaten üretiliyor; eksik olan tek şey “neden bu rakam”. Tek akış + açıklama katmanı."]
+  ],
+  note:"Bu sitede bir tur bulgusu <b>düzeltildi</b>: “araç hiç rakam göstermiyor” iddiası, tam akış uçtan uca denenince yanlış çıktı. Sonuç kullanıcının girdiği yola bağlı."
+},
+{
+  n:"03", dom:"harrisonshomes.co.uk", name:"Harrisons Homes", grp:"Grup A",
+  tag:"İstatistikle güven inşa eden tenant: “ilanların %81'i satılıyor (bölge ortalaması %50)”, “satıcılar ~£13k fazla alıyor”.",
+  cov:[0,0,0,1,2,0,1,1,0],
+  finds:[
+    ["risk","“Find your dream home” vaadi ile mekanik dropdown arasındaki uçurum. Emotif söz, mekanik ürün."],
+    ["bug","“100% MATCH” rozeti burada da sahte: 8/8 ilan, anonim ziyaretçi, kayıtlı kriter yok."],
+    ["risk","Anlık değerleme Neuron'un <b>dışına</b> çıkarılmış: <code>harrisonshomes.propalt.io</code>. Bir tenant'ın 3. parti araç bağlaması, platformun kendi aracının ihtiyacı karşılamadığının kanıtı."],
+    ["win","Magic-link (şifresiz) hesap sistemi <b>gerçekten çalışıyor</b> ve pre-market “Coming Soon” ilanlarını kilitliyor — ama giriş yapan kullanıcı için hiçbir şey değişmiyor. Hesap sadece bir kapı."],
+    ["win","Değerleme randevuları <b>Cal.com</b> üzerinden gerçekten rezerve ediliyor (danışman bazlı, 1 saatlik gerçek müsaitlik) — çalışmadaki en net çalışan booking akışı."]
+  ],
+  fixes:[
+    ["M5","Cal.com akışını viewing'lere de yayın; “bu görüşmeyi onaylamaz” uyarısıyla biten sahte takvimlerin yerini alsın."],
+    ["M1","Oturum açmış kullanıcıya kişiselleştirilmiş sıralama — hesap altyapısı hazır, sadece kullanılmıyor."],
+    ["M2","Ana sayfadaki güçlü istatistikler ilan sayfalarına hiç ulaşmıyor; ilan özeti bunu taşıyabilir."]
+  ],
+  note:"Ana sayfadaki sayaç animasyonu hatası (£0 / 0 gün / %0) <b>düzelmiş</b> — canlı kontrolde sayaçlar doğru çalışıyor."
+},
+{
+  n:"04", dom:"lloydsestates.com", name:"Lloyds Estates", grp:"Grup A",
+  tag:"Londra: Woodford Green, Bethnal Green ve bir Management Office. Propertymark + TPO, 15 yıllık müşteri referansları.",
+  cov:[0,0,0,1,1,0,0,0,0],
+  finds:[
+    ["gap","Londra'da <b>yarıçap filtresi yanlış zihinsel model</b>. İnsanlar “Central line'a yürüme mesafesi” diye arar, “3 mil çember” diye değil."],
+    ["risk","Sitenin kendi metni: “<i>Real accuracy comes from experience, not algorithms</i>”. Ajans sunduğu aracı açıkça baltalıyor."],
+    ["gap","3 ofis, 2 iş kolu, ayrı telefon hatları — <b>sitede hiç yansımıyor</b>. Sonuçlar ofise göre ayrılmıyor, form hangi ofis olduğunu sormuyor."],
+    ["gap","Boş sonuç sayfası iyi kurgulanmış (Heads-Up'a yönlendiriyor) ama tamamen statik — hiçbir alternatif önerilmiyor."],
+    ["bug","95 istek, 8,5 MB, <b>5,96 s</b> yükleme — ölçülen en yavaş site."]
+  ],
+  fixes:[
+    ["M4","Yarıçap yerine <b>ulaşım süresi</b>: “Liverpool Street'e 35 dk” Londra alıcısının gerçek sorusu. Londra tenant'ları için en yüksek değerli modül."],
+    ["M1","Boş sonuçta otomatik kriter gevşetme + neyin gevşetildiğini söyleme. Form yerine sonuç göster."],
+    ["M5","Postcode → doğru ofis yönlendirmesi; kullanıcı hangi ofisin kendisiyle ilgili olduğunu tahmin etmesin."]
+  ],
+  note:"Ajansın algoritmaya güvensizliği bir engel değil, <b>ürün brief'i</b>: eksik olan rakam değil, rakamın savunulabilir gerekçesi."
+},
+{
+  n:"05", dom:"thepropertycloud.uk", name:"The Property Cloud", grp:"Grup A",
+  tag:"Konumlandırma tamamen prodüksiyon kalitesi: “Property Marketing, Done Properly” — Giraffe360 turları, drone videosu, profesyonel fotoğraf.",
+  cov:[0,0,0,0,1,0,0,0,0],
+  finds:[
+    ["gap","Arama dokunulmamış platform varsayılanı — pazarlamaya yapılan yatırımın hiçbiri keşif akışına girmemiş."],
+    ["risk","Aynı ValPal aracı burada “<b>up to 60% accurate</b>”, 06 Property Connections'ta “<b>quick and accurate</b>” diye pazarlanıyor. Tenant'lar arası tutarsız doğruluk iddiası."],
+    ["gap","Ana sayfada telefon yok, sadece <code>sales@</code> / <code>lettings@</code> — yüksek duygulu bir satın alma için fazla mesafeli."],
+    ["gap","Aynı içerik <b>üç kez elle yazılıyor</b>: site metni, sosyal medya, portal ilanı."],
+    ["gap","Zengin medya (360 tur, drone) hiç yorumlanmıyor; fotoğraf yatırımı tek iş yapıyor."]
+  ],
+  fixes:[
+    ["M7","Danışman içerik stüdyosu: tek girdi → site metni + portal ilanı + 3 sosyal post + alt-text. Bu tenant'ın en somut zaman kazancı."],
+    ["M2","Görsel-farkında highlight çıkarımı: yenilenmiş mutfak, bahçe, ışık — medya yatırımı çift iş yapsın."],
+    ["M0","Değerleme doğruluk iddialarını platform genelinde standartlaştırın; aynı araç iki farklı vaatle satılamaz."]
+  ]
+},
+{
+  n:"06", dom:"propertyconnections.uk.com", name:"Property Connections", grp:"Grup B",
+  tag:"İskoçya — Bathgate, West Lothian. Farklı hukuk sistemi: Home Report zorunluluğu ve “Offers Over” fiyatlama modeli.",
+  cov:[0,0,0,0,1,0,0,0,0],
+  finds:[
+    ["bug","<b>Stamp duty hesaplayıcı İskoçya'da İngiliz SDLT mantığı çalıştırıyor.</b> £424.000'lik mülkte “16 Aralık 2024'ten itibaren £15.150” — bu bir İngiliz SDLT eşik tarihi, İskoç LBTT bandı değil. İskoç alıcıya <b>maddi olarak yanlış rakam</b> gösteriliyor."],
+    ["bug","İletişim sayfasındaki “Visit Us” haritası Folkestone / Dymchurch / New Romney (Kent, İngiltere) gösteriyor — gerçek adresten <b>~600 km</b> uzakta. Kalıcı, düzeltilmemiş hata."],
+    ["gap","20–40 sayfalık <b>Home Report PDF</b>'i hiç özetlenmeden indiriliyor. Çalışmanın en net AI-şekilli boşluğu."],
+    ["gap","“Offers Over” modelinde alıcıya <b>ne teklif etmesi gerektiğine dair sıfır rehberlik</b> var."],
+    ["gap","Kayıtlı arama / property alert hiç yok — diğer tenant'ların hepsinde var."]
+  ],
+  fixes:[
+    ["M0","Ülke-farkında <code>calc_stamp_duty</code> aracı (İngiltere SDLT / İskoçya LBTT / Galler LTT). Bu bir AI özelliği değil, hukuki bir düzeltme."],
+    ["M2","Home Report özetleyici: 40 sayfayı alıcının anlayacağı 6 maddeye indir + kaynak sayfayı göster."],
+    ["M6","“Offers Over” için comparables tabanlı teklif rehberi: bölgede benzer mülkler asking'in ne kadar üstünde kapanmış?"]
+  ],
+  note:"Bu site tek başına gösteriyor ki AI katmanından önce <b>doğruluk katmanı</b> gerekiyor: yanlış vergi hesabı, yanlış harita ve özetlenmemiş 40 sayfa aynı sayfada duruyor."
+},
+{
+  n:"07", dom:"keystoneestateagents.co.uk", name:"Keystone Estate Agents", grp:"Grup B",
+  tag:"Sprift “Key Facts for Buyers” raporuna erişimi olan tek tenant'lardan biri — ama rapor “Media Links” akordeonunun içine gömülü.",
+  cov:[0,0,0,0,1,0,1,0,0],
+  finds:[
+    ["bug","Footer <b>iki kez render ediliyor</b>; ilk blok “Company Number: 09267819”, ikinci blok “Company Number: <b>NaN</b>”. 01 Kinetic ile birebir aynı hata."],
+    ["gap","<b>Çalışma saatleri hiçbir yerde yayınlanmıyor</b> — kullanıcı ne zaman yanıt bekleyeceğini bilmiyor."],
+    ["gap","Sprift raporu (okullar, ulaşım, sel riski, geniş bant) akordeon içinde saklı — alıcının en çok istediği veri en zor bulunan yerde."],
+    ["gap","Yüz yüze değerleme formu çalışmanın <b>en zengin formu</b> ama tek yaptığı bir talep göndermek; toplanan hiçbir alan işlenmiyor."],
+    ["risk","“100% MATCH” rozeti burada <b>yok</b> — 03/04/05/06'nın aksine. Farklı bir tema kuşağı çalıştığının işareti."]
+  ],
+  fixes:[
+    ["M2","Sprift verisini yüzeye çıkar ve sade dille yorumla: “bu ev sel riski düşük bölgede, en yakın ortaokul 1,2 km”."],
+    ["M6","Formdaki zengin veriyi anlık ön-brifinge çevir: talep göndermek yerine kullanıcı ekranda bir şey görsün."],
+    ["M0","Tema sürümü envanteri: hangi tenant hangi build'de? Çift footer / NaN hatası ve rozetin varlığı bu haritayla açıklanıyor."]
+  ]
+},
+{
+  n:"08", dom:"jacksonsproperty.co.uk", name:"Jacksons Property", grp:"Grup B",
+  tag:"“Advice Hub”: rehberler, SSS'ler, bölge rehberleri — çalışmadaki <b>en zengin destek içeriği</b>.",
+  cov:[0,0,0,0,1,0,1,1,0],
+  finds:[
+    ["win","Advice Hub tam olarak bir AI asistanının ihtiyaç duyduğu <b>grounding korpusu</b> — ve şu anda hiçbir etkileşimli özelliği beslemiyor."],
+    ["gap","Mortgage + stamp duty hesaplayıcıları var ama <b>çıplak rakam</b> veriyor: “ne demek bu” yorumu yok."],
+    ["risk","Ajans kendi değerleme aracını “<i>just a starting point</i>” diye tanımlıyor — açıklama katmanının değerinin en net kanıtı."],
+    ["risk","Kaynakta <code>whatsapp-chatbot</code> ve çalışmada ilk kez <code>cdn.msgboxx.io</code> izi var; ekranda görünmüyor. Uykuda mı, koşullu mu belirsiz."],
+    ["gap","Bir turda AI chat asistanı görüldüğü raporlandı, diğerinde görülmedi — <b>canlı doğrulama gerekiyor</b>."]
+  ],
+  fixes:[
+    ["M2","Advice Hub'ı RAG korpusu yapın: “ilk kez ev alıyorum, ne kadar depozito gerekir?” sorusunun cevabı zaten sitede yazıyor, sadece aranabilir değil."],
+    ["M6","Hesaplayıcılara sade dille yorum katmanı — düşük efor, orta etki, hızlı kazanç."],
+    ["M5","msgboxx kanalı zaten var; üstüne AI ön-eleme koymak sıfırdan chatbot kurmaktan çok daha ucuz."]
+  ],
+  note:"Grounding malzemesi hazır olan tenant'lar (08, 17, 21) <b>M2 pilotu için ilk sırada</b>: içerik üretmeniz gerekmiyor, sadece bağlamanız gerekiyor."
+},
+{
+  n:"09", dom:"harrisandwood.co.uk", name:"Harris &amp; Wood", grp:"Grup B",
+  tag:"TikTok, YouTube ve Instagram'da güçlü sosyal varlık — çalışmadaki en enerjik marka iletişimlerinden biri.",
+  cov:[0,0,0,0,1,0,0,0,0],
+  finds:[
+    ["risk","<b>Marka enerjisi ile ürün deneyimi arasındaki en büyük uçurum.</b> Sosyal medyadaki içeriğin hiçbiri site içi keşfe yansımıyor."],
+    ["gap","<b>Dört ayrı departman telefonu</b> — kullanıcı hangisini arayacağını tahmin etmek zorunda."],
+    ["risk","Bazı ilanlar “Pre-Market Property” diye bulanıklaştırılıp kayıt duvarının arkasına konuyor. Bu kişiselleştirme değil, <b>kayıt duvarı</b>."],
+    ["gap","Anlık değerlemenin ekranda rakam gösterip göstermediği <b>doğrulanamadı</b> — canlı test gerekiyor."],
+    ["gap","Bölge ve ulaşım bilgisi yok; mortgage / stamp duty hesaplayıcısı da yok."]
+  ],
+  fixes:[
+    ["M5","Postcode → departman yönlendirme. Dört numaradan hangisi olduğunu sistem bilsin, kullanıcı değil."],
+    ["M2","Sosyal video içeriğini ilan sayfasına ve AI özetine bağlayın — üretilmiş içerik boşa gitmesin."],
+    ["M1","Pre-market duvarını <b>kişiselleştirilmiş erken erişime</b> çevirin: “kriterlerine uyan 3 ilan yarın yayına giriyor”."]
+  ]
+},
+{
+  n:"10", dom:"roderickthomas.co.uk", name:"Roderick Thomas", grp:"Grup B",
+  tag:"Somerset. 50 yıllık yerel bilgi üzerine kurulu konumlandırma — kırsal ve köy pazarı.",
+  cov:[0,0,0,0,1,0,0,0,0],
+  finds:[
+    ["risk","<b>50 yıllık “yerel bilgi” vaadi vs sıfır yapılandırılmış bölge verisi</b> — çalışmadaki en büyük vaat/ürün uçurumu."],
+    ["gap","Mesafe bilgisi her ilana <b>elle yazılıyor</b>: “Glastonbury 8 miles… Paddington 1.5 hours”. Çalışmada bulunan en otomatikleştirilebilir örnek."],
+    ["bug","<b>EPC sekmesi bile yok</b>; enerji notu tek satır düz metin olarak duruyor."],
+    ["gap","Blog mortgage faizlerini işliyor ama sitede hesaplayıcı yok."],
+    ["win","09 Harris &amp; Wood ile <b>teknik olarak aynı build</b>: aynı dosya adları, aynı UUID. Tek düzeltme iki tenant'ı birden kapsıyor."]
+  ],
+  fixes:[
+    ["M4","Elle yazılan mesafeleri Maps API ile doğrulanmış yapılandırılmış veriye çevirin. Danışmanın işini azaltır, veriyi güvenilir kılar."],
+    ["M2","Bölge zekâsı bu markanın <b>tam da sattığı şeyin</b> dijital karşılığı: okul, ulaşım, köy karakteri, sel riski."],
+    ["M0","EPC alanını veri modeline geri koyun — açıklama katmanının önkoşulu."]
+  ]
+},
+{
+  n:"11", dom:"copeandco.co.uk", name:"Cope &amp; Co", grp:"Grup C",
+  tag:"Gerçek Giraffe360 360° sanal tur — çalışmada bulunan en zengin ilan medyası.",
+  cov:[0,0,0,0,1,0,0,0,0],
+  finds:[
+    ["bug","<b>Varsayılan arama yarıçapı 0,25 mil</b> — neredeyse boş sonuç üretiyor ve genişletme önerisi hiç çıkmıyor."],
+    ["bug","Sekme değiştirip geri dönünce arama kriterleri sıfırlanıyor ve sahte “0 sonuç” durumu oluşabiliyor. URL ile senkron yok."],
+    ["risk","SSTC / Let Agreed ilanlar varsayılan olarak sonuçlarda; “satılanları gizle” seçeneği yok."],
+    ["gap","360° tur tamamen açıklamasız duruyor — üstünde özet yok, altında benzer ilan bloğu <b>hiç yok</b>, sayfa doğrudan footer'a giriyor."],
+    ["gap","İletişim formu 10'dan fazla alan istiyor ve takvim müsait saatleri göstermiyor."]
+  ],
+  fixes:[
+    ["M0","Önce state/URL senkron hatası. Sahte “0 sonuç” gösteren bir arama üstüne AI katmanı kurulmaz."],
+    ["M1","Doğal dil arama yarıçap zihinsel modelini tamamen atlar — kullanıcı “Derby merkeze yakın 3+1” der, sistem çeviriyi yapar."],
+    ["M2","Zengin medyanın üstüne özet + soru-cevap: 360 tur zaten var, yorumlanmıyor."]
+  ]
+},
+{
+  n:"12", dom:"priceestateagents.uk", name:"Price Estate Agents", grp:"Grup C",
+  tag:"58 ilanlık orta ölçekli tenant; sade yapı, standart platform kurulumu.",
+  cov:[0,0,0,0,1,0,0,0,0],
+  finds:[
+    ["bug","<b>Varsayılan sıralama “Highest Price”</b> — ilk kez ev alacak kullanıcıya en pahalı evler önce gösteriliyor. Tek satırlık config hatası."],
+    ["risk","İlan açıklama kalitesi ilandan ilana savruluyor: kimi 3 satır, kimi 3 paragraf. Kalite tamamen yazan danışmana bağlı."],
+    ["gap","Mortgage hesaplayıcı var ama <b>çıplak rakam</b> dönüyor; bütçe yorumu yok."],
+    ["gap","Anlık değerleme rakamı ekranda göstermiyor; iletişim bilgisi karşılığında e-postayla yolluyor."],
+    ["gap","Randevu talebi <b>serbest metinle</b> alınıyor (“uygun gün ve saatinizi yazın”) — takvim yok."]
+  ],
+  fixes:[
+    ["M0","Varsayılan sıralamayı “Suggested” veya “Newest” yapın. Maliyeti sıfır, etkisi anında."],
+    ["M2","AI özet, açıklama kalitesindeki dalgalanmayı alıcı tarafında <b>normalize eder</b> — birden fazla ilanı tarayan kullanıcı için en somut fayda."],
+    ["M6","Hesaplayıcıya yorum katmanı: “bu ödeme, £45k gelirle bankaların tipik oranının üstünde”."]
+  ]
+},
+{
+  n:"13", dom:"keysandlee.co.uk", name:"Keys &amp; Lee", grp:"Grup C",
+  tag:"Beckenham / Croydon çevresi. Yürüyüş videosu ve Video Tour'u olan az sayıdaki tenant'tan biri.",
+  cov:[0,0,0,1,1,0,1,0,0],
+  finds:[
+    ["risk","“100% MATCH” rozeti burada da <b>sadece filtre uyumunu</b> yansıtıyor — ama D grubu sitelerde aynı rozet “AI” diye pazarlanıyor. Çerçeve platform genelinde düzeltilmeli."],
+    ["gap","Features listesinde elle yazılmış mesafe verisi: “<b>0.8 miles to Clockhouse primary school</b>”. Tam da alıcının istediği bilgi — ama sadece yazan danışman kadar güvenilir."],
+    ["gap","Heads-Up formu zengin kalifikasyon verisi topluyor (taşınma zamanı, solicitor, mortgage durumu) ama <b>form cevaplara göre hiç dallanmıyor</b> ve veri hiçbir yere gitmiyor."],
+    ["risk","Viewing formunda <b>gerçek takvim ve saat seçici var</b>, ama altında “bu seçim görüşmeyi onaylamaz” yazıyor. Booking gibi görünen ama booking olmayan arayüz."],
+    ["gap","Mortgage / stamp duty hesaplayıcısı hiç yok."]
+  ],
+  fixes:[
+    ["M4","Elle yazılan mesafeleri Maps API ile doğrulayın ve yapılandırın — hem güvenilirlik hem de filtrelenebilirlik kazanılır."],
+    ["M5","Lead skorlama için girdi <b>zaten toplanıyor</b>; sadece okunmuyor. Skorla, sırala, yönlendir."],
+    ["M0","Ya gerçek booking (Cal.com — 03 ve 14'te çalışıyor) ya da takvim UI'ını kaldırın. Beklenti uyuşmazlığı güven maliyeti yaratıyor."]
+  ]
+},
+{
+  n:"14", dom:"nicholsonsestateagents.co.uk", name:"Nicholsons", grp:"Grup C",
+  tag:"Çalışmanın <b>teknik referans tenant'ı</b>: Neuron REST API'sinin filtre şeması burada telde açıkça görülüyor.",
+  cov:[0,0,0,0,1,0,0,1,0],
+  finds:[
+    ["win","Filtre şeması ağ trafiğinde açık: <code>property_types</code>, <code>property_styles</code>, <code>tenure_types</code>. Doğal dil aramanın <b>hedef şeması hazır ve paylaşımlı</b>."],
+    ["win","Değerleme randevuları için <b>gerçek Cal.com takvimi</b> — çalışmada bulunan gerçek (talep değil) ilk scheduling akışı."],
+    ["win","<b>Canlı msgboxx WhatsApp widget'ı</b> mesajları ekibe anlık iletiyor. Mesajlaşma yüzeyi çalışıyor — sadece tamamen insan."],
+    ["bug","API trafiğinin tamamında <b>tek bir AI/LLM servisi çağrısı yok</b> — “AI Operating System” markasına rağmen sıfır generative AI."],
+    ["risk","Pre-market ilanlar bulanık ve kayıt duvarının arkasında; öneri katmanı değil, erişim kısıtı."]
+  ],
+  fixes:[
+    ["M1","NL arama şemasını burada doğrulayın: hedef JSON zaten görünür, tek iş cümleyi bu şemaya çevirmek."],
+    ["M5","Çalışan WhatsApp kanalının üstüne AI ön-eleme/SSS koyun — sıfırdan chatbot kurmaktan çok daha ucuz ve hızlı."],
+    ["M5","Cal.com'u viewing'lere yayın; mesai dışı asistan gerçek slot rezerve edebilsin."]
+  ],
+  note:"Bu tenant, mimarinin <b>her parçasının ayrı ayrı çalıştığını</b> ama hiçbirinin birbirine bağlanmadığını kanıtlıyor: API şeması var, takvim var, mesajlaşma var, zekâ yok."
+},
+{
+  n:"15", dom:"no86estateagency.co.uk", name:"No.86 Estate Agency", grp:"Grup C",
+  tag:"Üç ayrı değerleme rotası (Instant / Virtual / Face-to-Face) — çalışmadaki en dolu değerleme menüsü.",
+  cov:[0,0,0,1,1,0,0,0,0],
+  finds:[
+    ["win","“Virtual Valuation” akışı <b>zengin yapılandırılmış girdi</b> topluyor: fotoğraflar, tadilat detayları, satış noktaları."],
+    ["bug","…ve sonra bir insan raporu <b>24 saat içinde tamamen elle</b> yazıyor. Toplanan veriyi hiçbir sistem okumuyor. Çalışmanın en net AI-şekilli deliği."],
+    ["gap","Heads-Up kalifikasyon verisi (taşınma zamanı, satılacak ev var mı) sıralamaya ve önceliğe <b>sıfır etki</b> ediyor — iki bağımsız incelemeci doğruladı."],
+    ["win","Filtre seti diğer tenant'lardan zengin: receptions, “Must Haves”, distance. Platform zaten daha zengin kriterlere doğru gidiyor."],
+    ["gap","Anlık değerleme rakamı ekranda göstermiyor; ValPal altyapısı üzerinden iletişim bilgisi karşılığı gönderiliyor."]
+  ],
+  fixes:[
+    ["M6","<b>Değerleme açıklama pilotu için en güçlü aday</b>: üç giriş noktasında aynı anda test edilebilir."],
+    ["M6","Virtual Valuation'ı “AI ön-rapor + insan onayı” akışına çevirin: 24 saat → 2 dakikada taslak, danışman düzeltip gönderir."],
+    ["M5","Kalifikasyon verisini skora bağlayın — girdi hazır, çıktı yok."]
+  ]
+},
+{
+  n:"16", dom:"beercocks.com", name:"Beercocks", grp:"Grup D",
+  tag:"<b>515 ilan, 11 şube</b> — çalışmada incelenen en büyük ajans. Ölçek burada her sorunu büyütüyor.",
+  cov:[0,0,0,0,2,0,0,0,0],
+  finds:[
+    ["win","Anlık değerleme <b>rakamı gerçekten ekranda gösteriyor</b> (“recent local sales + property data”) — çoğu tenant'ın aksine."],
+    ["bug","…ama hangi özelliklerin bu rakamı ürettiğini <b>hiç açıklamıyor</b>. Çalışmanın en temiz “sadece neden eksik” kanıtı: sayı var, gerekçe yok."],
+    ["gap","515 ilanda akıllı daraltma yokluğu en çok burada acıtıyor — NL arama yatırımının ROI'si en yüksek tenant."],
+    ["gap","<b>11 şube ayrı ayrı listeleniyor</b>; kullanıcı doğru ofisi hiçbir rehberlik olmadan kendisi seçmek zorunda."],
+    ["win","14 Nicholsons'taki <b>aynı paylaşımlı Neuron filtre şeması</b> burada da doğrulandı — API yüzeyinin gerçekten platform geneli ve yeniden kullanılabilir olduğunun ikinci kanıtı."]
+  ],
+  fixes:[
+    ["M1","<b>NL arama pilotu buradan başlamalı</b>: en çok ilan, en çok şube, en çok kullanıcı acısı, en ölçülebilir sonuç."],
+    ["M6","Değerleme açıklama katmanı için de en temiz pilot: rakam üretimi zaten çalışıyor, sadece “neden”i ekliyorsunuz."],
+    ["M5","Postcode → şube yönlendirici. Neredeyse sıfır AI, gözle görülür sürtünme azalması."]
+  ]
+},
+{
+  n:"17", dom:"greyandco.co.uk", name:"Grey &amp; Co", grp:"Grup D",
+  tag:"Wembley / kuzeybatı Londra. Sağlam statik yerel bölge rehberleri olan az sayıdaki tenant'tan biri.",
+  cov:[0,0,0,1,1,0,1,0,0],
+  finds:[
+    ["bug","<code>ice.js</code> aktif olarak <b>davranışsal veri topluyor</b> — ve sitede hiçbir yerde hiçbir kişiselleştirmeyi beslemiyor. “Veri toplanıyor, hiç kullanılmıyor” temasının en net örneği."],
+    ["gap","İlan sayfasında <b>benzer ilan bloğu hiç yok</b> — sayfa EPC'den doğrudan footer'a giriyor."],
+    ["risk","Anlık değerlemenin rakam gösterip göstermediği konusunda <b>turlar birbiriyle çelişiyor</b>: bir tur “60 saniyede tahmini değer veriyor” diyor, üç tur “iletişim bilgisi olmadan rakam yok” diyor. Canlı doğrulama şart."],
+    ["gap","msgboxx WhatsApp widget'ı kaynakta referanslı ama arayüzde hiç çalışırken görülmedi — uykuda bileşen deseni."],
+    ["win","Bölge rehberleri 08 Jacksons'ın Advice Hub'ıyla aynı desen: hazır, kaliteli, bağlanmamış grounding malzemesi."]
+  ],
+  fixes:[
+    ["M1","<code>ice.js</code> verisini öneri motoruna bağlayın — <b>en ucuz kişiselleştirme kazancı</b>, yeni veri toplamaya gerek yok."],
+    ["M2","Bölge rehberlerini RAG korpusu yapın; alan soruları zaten yazılı cevaplara sahip."],
+    ["M2","En basit hâliyle bile bir “benzer evler” bloğu — şu an sıfır olan bir yeri doldurur."]
+  ]
+},
+{
+  n:"18", dom:"allen-residential.co.uk", name:"Allen Residential", grp:"Grup D",
+  tag:"Bath / Bristol çevresi. Footer'da Neuron/Iceberg imzası yok — ama filtre davranışı platformla birebir aynı.",
+  cov:[0,0,0,1,1,0,0,0,0],
+  finds:[
+    ["bug","Otokomple <b>aktif olarak yanıltıyor</b>: “Paultn” yazınca Paulton yerine Kings Hill'deki “<b>Paul Tann Ltd</b>” öneriyor ve kullanıcıyı sessizce yanlış bölgede aramaya sokuyor."],
+    ["risk","Bu, çalışmadaki en keskin kanıt: sorgu anlama bir “nice-to-have” değil, <b>gerçekten AI-şekilli bir hata</b>. Google Places emlak bağlamı olmadan çalışıyor."],
+    ["gap","Bristol ve Bath'e ulaşım bilgisi ilan açıklamalarına elle yazılıyor — 13 Keys &amp; Lee'deki aynı desen, artık tekrarlayan bir örüntü."],
+    ["gap","Boş sonuçta tek çıkış “Heads-Up alert kur”; hangi kriteri gevşetmesi gerektiği söylenmiyor."],
+    ["risk","Değerlemenin rakam gösterip göstermediğinde <b>17 Grey &amp; Co ile aynı tur çelişkisi</b> — aynı araç, aynı belirsizlik, iki farklı tenant."]
+  ],
+  fixes:[
+    ["M1","Otokompleyi tenant'ın hizmet alanına kısıtlayın ve emlak bağlamıyla yeniden sıralayın. Bu tek başına bir <b>hata düzeltmesi</b>, özellik bile değil."],
+    ["M1","Boş sonuçta otomatik kriter gevşetme: “yarıçapı 3 mile çıkardık, 12 sonuç bulduk”."],
+    ["M4","Ulaşım verisini yapılandırın; elle yazma yükü kalksın."]
+  ]
+},
+{
+  n:"19", dom:"brownsestateagents.co.uk", name:"Browns Estate Agents", grp:"Grup D",
+  tag:"Çalışmadaki <b>en gelişmiş self-servis altyapı</b>: 24/7 viewing rezervasyonu ve değişikliği, ev sahiplerinin 24/7 teklif kabulü, reklamı yapılan mesai dışı servis.",
+  cov:[0,0,0,1,2,0,0,1,0],
+  finds:[
+    ["win","Platformun “AI matching” iddiasının <b>arayüzde gerçekten göründüğü tek tenant</b>: yüzde eşleşme skoru ve “bu bir tahmindir” diyen tooltip."],
+    ["gap","…ama skor tamamen kayıtlı kritere dayanıyor. Davranış yok, semantik ilan anlama yok. Yani mevcut, görünür bir özelliğin <b>yükseltilmesi</b> gerekiyor — sıfırdan inşa değil."],
+    ["risk","Valuations sayfası açıkça yazıyor: “<i>otomatik rakam mülkünüzün benzersizliğini hesaba katmıyor</i>”. Çalışmadaki <b>en net itiraf</b> — açıklama katmanının tarif ettiği boşluğun tam kendisi."],
+    ["bug","Otokomple aynı hatayı yapıyor: “Sheilds” → South Shields yerine Hull'daki “SHEilds Ltd”. 18 Allen ile birlikte artık <b>sistemik</b> bir sorun."],
+    ["risk","Reklamı yapılan 3D Matterport turu, iki bağımsız incelemecinin baktığı ilan sayfalarında <b>bulunamadı</b> — vaat/sayfa uyuşmazlığı."]
+  ],
+  fixes:[
+    ["M5","<b>Mesai dışı asistan ve lead qualifier pilotu için en iyi aday</b>: booking ve out-of-hours altyapısı zaten çalışıyor, AI'ı sıfırdan altyapı kurmadan üstüne koyuyorsunuz."],
+    ["M1","Mevcut match skorunu semantik + davranışsal hâle yükseltin. Kullanıcı zaten skoru görüyor; sadece doğru olsun."],
+    ["M6","Sitenin kendi itirafını ürüne çevirin: “benzersizliği hesaba katmayan” rakamın yanına neyin hesaba katıldığını yazın."]
+  ]
+},
+{
+  n:"20", dom:"bydesignhomes.com", name:"By Design Homes", grp:"Grup D",
+  tag:"Devon, premium segment (£4,5m'lik malikâne dahil). Her ilanda elle yazılmış “Seller's Story” ve “Location” bölümü.",
+  cov:[0,0,0,1,0,0,1,0,0],
+  finds:[
+    ["bug","Çalışmanın <b>en net “platform uykuda AI gönderiyor” kanıtı</b>: kaynak kodda <code>Chatbot</code>, <code>InstantValuation</code> ve <code>StampDutyCalculator</code> bileşenlerinin üçü de yükleniyor — <b>üçü de kapalı</b>. Üç bağımsız incelemeci doğruladı."],
+    ["bug","“100% MATCH” rozeti burada <b>hiç kriter girilmemişken bile</b> %100 gösteriyor — rozetin dekoratif olduğunun tekrarlanabilir kanıtı."],
+    ["win","İlan metinleri çalışmanın <b>en iyi yazılmış içeriği</b>: birinci tekil şahıs “Seller's Story”, elle yazılmış bölge anlatımı — ideal grounding malzemesi."],
+    ["gap","Anlık değerleme bilinçli olarak yok; 01 Kinetic gibi insan-only marka duruşu (4 turda tutarlı, çelişki yok)."],
+    ["gap","£4,5m'lik ilanda bile mortgage / stamp duty widget'ı yok."]
+  ],
+  fixes:[
+    ["M2","<b>M2 pilotu için ideal tenant</b>: kaynak metin kalitesi en yüksek olan yerde özet ve Q&amp;A en iyi sonucu verir."],
+    ["M6","Değerleme önerisi burada da “randevu öncesi brifing” olarak çerçevelenmeli — marka duruşuna saygı, anlık rakam değil."],
+    ["M0","Uykuda bileşen envanteri = <b>config ile bugün açılabilecek özellik listesi</b>. Kod yazmadan kazanılacak alan burada."]
+  ]
+},
+{
+  n:"21", dom:"courtyardhomes.co.uk", name:"Courtyard Homes", grp:"Grup D",
+  tag:"Rotasyonun son sitesi. “Quick Online Estimate” ve bölge/pazar içerikli bir Advice Hub ile platformun tipik profilini özetliyor.",
+  cov:[0,0,0,1,2,0,1,0,0],
+  finds:[
+    ["win","“Quick Online Estimate” 60 saniyenin altında rehber fiyat veriyor — 16 Beercocks ve 19 Browns gibi, <b>rakam var</b>."],
+    ["gap","…ama rakamı neyin sürüklediğine dair tek kelime yok. Az efor, yüksek etki: çalışan bir rakamın üstüne açıklama koymak."],
+    ["gap","Advice Hub'daki bölge ve pazar içeriği <b>hiçbir etkileşimli özelliği beslemiyor</b> — 08 ve 17 ile birebir aynı desen."],
+    ["risk","Heads-Up “Rightmove/Zoopla'dan önce” vaadi güçlü, ama altında saf kriter eşleştirmesi var."],
+    ["win","Teknik olarak diğer 20 siteyle <b>aynı yığın</b>: aynı filtre davranışı, aynı Heads-Up akışı, aynı “Couldn't find the address” yanıtı."]
+  ],
+  fixes:[
+    ["M6","Çalışan rakamın üstüne açıklama katmanı — düşük efor pilot."],
+    ["M2","Advice Hub'ı grounding korpusu yapın."],
+    ["M1","Heads-Up'ı semantik/davranışsal eşleştirmeye yükseltin: zaten çekici olan bir özelliği keskinleştirin, yenisini kurmayın."]
+  ],
+  note:"21 sitenin sonunda tablo net: <b>her tenant'ta aynı bileşenler var</b> (Chatbot, InstantValuation, match-scoring, WhatsApp). Farklı olan tek şey hangisinin açık olduğu. AI, ajans başına değil <b>platform seviyesinde bir kez</b> inşa edilip config ile dağıtılmalı."
+}
+];
+
+/* ══════════════════ SLAYT ÜRETİMİ ══════════════════ */
+const esc = s => s;
+const slides = [];
+
+/* — 1 · kapak — */
+slides.push({sec:"Kapak", html:`
+<div class="wrap cover">
+  <div class="rule"></div>
+  <div class="lbl" style="margin-bottom:16px">Neuron / Iceberg Digital platformu · 21 canlı emlak sitesi · 4 tur × 4 bağımsız incelemeci</div>
+  <h1 class="disp">“AI Operating System<br>for Estate Agents”<br>— ama çekirdek yok.</h1>
+  <p class="lede">21 sitenin tamamı aynı platformda çalışıyor, aynı bileşenleri yüklüyor ve hiçbirinin ağ trafiğinde tek bir LLM çağrısı görünmüyor. Bu sunum önce her siteyi tek tek ele alıyor, sonra 21 kez tekrarlanan sorunun tek bir çözümünü öneriyor.</p>
+  <div class="meta">
+    <div><div class="lbl">İncelenen site</div><div class="v">21</div></div>
+    <div><div class="lbl">Bağımsız inceleme</div><div class="v">84 (21 × 4 tur)</div></div>
+    <div><div class="lbl">Ekip</div><div class="v">Görkem · Ayselin · Yasemin · Berkay</div></div>
+    <div><div class="lbl">Çıktı</div><div class="v">Gap analizi + ürün önerisi</div></div>
+  </div>
+  <p class="lbl" style="margin-top:30px">← → tuşlarıyla gezinin</p>
+</div>`});
+
+/* — 2 · yöntem — */
+slides.push({sec:"Yöntem", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Yöntem</span></div>
+  <h2 class="disp">Her siteyi 4 farklı kişi, birbirinden habersiz inceledi</h2>
+  <p class="lede" style="margin-bottom:26px">21 site dört gruba bölündü; gruplar dört tur boyunca kişiler arasında döndü. Ayrı bir çapraz kontrol aşamasına gerek kalmadı — doğrulama rotasyonun içine gömülü.</p>
+  <div class="grid g4" style="margin-bottom:22px">
+    <div class="stat"><div class="n">21</div><div class="c">canlı site, gerçekten kullanılarak incelendi — arama yapıldı, ilan açıldı, değerleme formu denendi</div></div>
+    <div class="stat"><div class="n">84</div><div class="c">bağımsız inceleme bloğu; her site için dört ayrı gözlem seti</div></div>
+    <div class="stat"><div class="n">0</div><div class="c">ağ trafiğinde görülen AI/LLM servis çağrısı — 21 sitenin hiçbirinde</div></div>
+    <div class="stat"><div class="n">9<small>+</small></div><div class="c">tenant'ta kaynak kodda bulunan ama kapalı duran AI bileşeni</div></div>
+  </div>
+  <div class="grid g3">
+    <div class="card"><span class="lbl">Ne aradık</span><p>Sitelerin bugün <b>elle yaptığı ama AI'ın daha iyi yapabileceği</b> işler. “Var/yok” değil, ne olduğu: “sadece dropdown filtre, doğal dil yok”.</p></div>
+    <div class="card"><span class="lbl">Nasıl baktık</span><p>Kullanıcı gözüyle akış + DevTools: SSR mi CSR mi, Network'te hangi API'ler, hangi bileşenler yükleniyor ama çalışmıyor.</p></div>
+    <div class="card"><span class="lbl">Çelişkiler</span><p>Turlar çeliştiğinde canlı yeniden test yapıldı. Bir bulgu (02'nin değerleme aracı) bu şekilde <b>düzeltildi</b>, biri (03'ün sayaç hatası) çözülmüş bulundu.</p></div>
+  </div>
+</div>`});
+
+/* — 3 · matris — */
+function matrix(){
+  const head = COLS.map(c=>`<th title="${c[1]}">${c[0]}</th>`).join("");
+  const rows = sites.map(s=>{
+    const cells = s.cov.map((v,i)=>{
+      const g = v===0?"—":(v===1?"◐":"●");
+      const t = v===0?"Yok":(v===1?"Var ama elle / kural tabanlı":"Otomatik çalışıyor");
+      return `<td><span class="cell s${v}" title="${COLS[i][1]}: ${t}" aria-label="${COLS[i][1]}: ${t}">${g}</span></td>`;
+    }).join("");
+    return `<tr><td class="site"><b>${s.n}</b> ${s.dom}</td>${cells}</tr>`;
+  }).join("");
+  return `<div class="matrix-wrap"><table class="mx"><thead><tr><th class="site">Site</th>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+slides.push({sec:"Teşhis", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Platform teşhisi</span></div>
+  <h2 class="disp">189 hücrelik tablo, tek bir mesaj veriyor</h2>
+  <p class="lede" style="margin-bottom:20px">21 site × 9 AI yeteneği. Beş sütun <b>istisnasız boş</b>: doğal dil arama, ilan özeti, soru-cevap, değerleme açıklaması, lead skorlama.</p>
+  ${matrix()}
+  <div class="legend">
+    <span><span class="cell s0">—</span> Yok</span>
+    <span><span class="cell s1">◐</span> Var ama elle yazılmış / kural tabanlı</span>
+    <span><span class="cell s2">●</span> Otomatik çalışıyor</span>
+  </div>
+  <div class="note"><b>Kritik nokta:</b> tablodaki hiçbir <span class="cell s2" style="width:19px;height:19px;font-size:11px;vertical-align:-4px">●</span> generative AI değil. Hepsi kural tabanlı otomasyon (ValPal, Propalt, Cal.com). 21 sitenin ağ trafiğinde tek bir LLM çağrısı yok — platformun kendisi “AI Operating System for Estate Agents” diye imzalanmasına rağmen.</div>
+</div>`});
+
+/* — 4 · beş kalıp — */
+slides.push({sec:"Teşhis", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Teşhis · 21 sitede tekrarlayan beş kalıp</span></div>
+  <h2 class="disp">Sorun 21 ayrı sorun değil — beş tanesi, 21 kez</h2>
+  <div class="grid g2" style="margin-top:20px">
+    <div class="card"><span class="lbl">Kalıp 1 · Uykuda bileşenler</span><p>Kaynak kodda <code>Chatbot</code>, <code>InstantValuation</code>, <code>StampDutyCalculator</code>, <code>whatsapp-chatbot</code>, <code>live-search-container</code> yükleniyor — <b>hiçbiri açık değil</b>. En net kanıt: 20 By Design (üç bileşen birden, üç incelemeci doğruladı).</p><p><b>Anlamı:</b> dağıtım mekanizması zaten var. Yeni özellik config ile açılabilir.</p></div>
+    <div class="card"><span class="lbl">Kalıp 2 · Veri toplanıyor, hiç kullanılmıyor</span><p>Heads-Up formları taşınma zamanı, solicitor durumu, mortgage ihtiyacı, satılacak ev sorularını <b>21 tenant'ın hepsinde</b> soruyor. <code>ice.js</code> davranış izliyor. Virtual Valuation fotoğraf topluyor.</p><p><b>Anlamı:</b> lead skorlama ve kişiselleştirmenin girdisi hazır — sadece okuyan yok.</p></div>
+    <div class="card"><span class="lbl">Kalıp 3 · Sahte kişiselleştirme</span><p>“100% MATCH” rozeti anonim ziyaretçide, sıfır kriterde ve hatta SSTC ilanlarda bile %100 gösteriyor (02: 44/44, 03: 8/8, 04: 9/9, 20: kriter yokken).</p><p><b>Anlamı:</b> bu bir güven riski. Düzeltilmeden üstüne AI koymak riski büyütür.</p></div>
+    <div class="card"><span class="lbl">Kalıp 4 · Arama = adres eşleştirme</span><p>Serbest cümle “Couldn't find the address” dönüyor. Otokomple Google Places'ten geliyor, emlak bağlamı yok ve <b>aktif olarak yanıltıyor</b>: “Paultn” → Paul Tann Ltd (18), “Sheilds” → SHEilds Ltd (19), “lin” → İskoçya (01).</p><p><b>Anlamı:</b> query understanding bir süs değil, mevcut bir hatanın çözümü.</p></div>
+    <div class="card"><span class="lbl">Kalıp 5 · Rakam var, gerekçe yok</span><p>Değerleme araçları rakam üretiyor (16, 19, 21, 02, 03) ama hiçbiri <b>neden</b>ini söylemiyor. Ajanslar bunu kendileri itiraf ediyor: “only ever a guide” (04), “just a starting point” (08), “mülkünüzün benzersizliğini hesaba katmıyor” (19).</p><p><b>Anlamı:</b> AVM inşa etmenize gerek yok. Eksik olan “neden”.</p></div>
+    <div class="card" style="border-color:var(--accent);border-width:1.5px"><span class="lbl" style="color:var(--accent)">Sonuç</span><p style="color:var(--ink);font-size:15px">Beş kalıbın beşi de <b>tenant'a özgü değil, platforma özgü</b>. Bu yüzden çözüm 21 ayrı entegrasyon değil: Neuron seviyesinde tek bir katman, tenant başına config ile açılan modüller.</p></div>
+  </div>
+</div>`});
+
+/* — 5 · site indeksi — */
+slides.push({sec:"İndeks", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">İndeks</span></div>
+  <h2 class="disp">21 site, tek tek</h2>
+  <p class="lede" style="margin-bottom:22px">Her sayfa bir siteyi ele alıyor: kimlik, doğrulanmış bulgular ve o siteye özel öneriler. Atlamak için bir satıra tıklayın.</p>
+  <div class="idx">${sites.map((s,i)=>`<button data-goto="${i+5}"><b>${s.n}</b><span>${s.dom}</span></button>`).join("")}</div>
+</div>`});
+
+/* — 6..26 · site sayfaları — */
+const SEV = {bug:"Hata", risk:"Risk", gap:"Boşluk", win:"Kazanım"};
+sites.forEach(s=>{
+  const cov = s.cov.map((v,i)=>{
+    const g = v===0?"—":(v===1?"◐":"●");
+    const t = v===0?"Yok":(v===1?"Elle / kural tabanlı":"Otomatik");
+    return `<span style="display:inline-flex;align-items:center;gap:5px;margin-right:13px;margin-bottom:5px"><span class="cell s${v}" title="${COLS[i][1]}: ${t}">${g}</span><span class="lbl" style="font-size:9.5px">${COLS[i][0]}</span></span>`;
+  }).join("");
+  slides.push({sec:`${s.n} · ${s.name}`, html:`
+<div class="wrap">
+  <div class="sheet">
+    <div class="row1"><span class="code">${s.n}</span><span class="dom">${s.dom}</span><span class="grp">${s.grp}</span></div>
+    <p class="tag">${s.tag}</p>
+    <div style="margin-top:14px;display:flex;flex-wrap:wrap;align-items:center">${cov}</div>
+  </div>
+  <div class="cols">
+    <div>
+      <div class="colhead"><span class="lbl">Bulgular · 4 turun ortak sentezi</span></div>
+      <ul class="finds">${s.finds.map(f=>`<li><span class="sev ${f[0]}">${SEV[f[0]]}</span><span>${f[1]}</span></li>`).join("")}</ul>
+    </div>
+    <div>
+      <div class="colhead"><span class="lbl">Öneri</span></div>
+      ${s.fixes.map(f=>`<div class="fix"><span class="m">${f[0]}</span><p>${f[1]}</p></div>`).join("")}
+      ${s.note?`<div class="note">${s.note}</div>`:""}
+    </div>
+  </div>
+</div>`});
+});
+
+/* — 27 · ürün — */
+slides.push({sec:"Çözüm", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Çözüm · ürün</span></div>
+  <h2 class="disp">Neuron Kernel</h2>
+  <p class="lede" style="margin-bottom:8px">21 ajans için 21 entegrasyon değil: platformun altına giren <b>tek bir zekâ çekirdeği</b>. İlanları indeksler, mevcut Neuron API'sini tool-calling ile çağırır, her cevabı ilanın kendi verisine dayandırır ve tenant başına config ile açılır.</p>
+  <p class="kicker" style="margin-bottom:24px">Adı bilinçli: platform kendini zaten “AI Operating System” diye tanımlıyor. Eksik olan uygulamalar değil, <b>çekirdek</b>.</p>
+  <div class="stack">
+    <div class="layer"><div class="who">Yerel makine<em>batch · sabit maliyet</em></div><div><h4>1 · Ingest &amp; Index</h4><p>Neuron REST API → ilan kayıtları → normalize → embedding → vektör veritabanı. Yanına statik korpus (Advice Hub, bölge rehberleri) ve harici veri (Land Registry satış fiyatları, EPC kaydı, okul/ulaşım). İlan her düzenlendiğinde yeniden indekslenir.</p></div></div>
+    <div class="layer"><div class="who">Yerel makine<em>gece · toplu iş</em></div><div><h4>2 · Enrichment</h4><p>Özet, highlights, “kimler için ideal”, EPC ve kat planı sade açıklaması, <b>veri kalitesi denetimi</b>, alt-text. Üretilen her şey <b>saklanır</b> — kullanıcı istediğinde yeniden üretilmez. Maliyeti sabitleyen tek karar bu.</p></div></div>
+    <div class="layer"><div class="who">Bulut API<em>canlı · düşük gecikme</em></div><div><h4>3 · Serving</h4><p>Doğal dil arama çözümlemesi (structured output), ilan soru-cevabı (retrieval + üretim), değerleme açıklaması, mesai dışı asistan. Kalitenin ve gecikmenin pazarlık konusu olmadığı tek katman.</p></div></div>
+    <div class="layer"><div class="who">Ortak<em>sözleşme</em></div><div><h4>4 · Tool katmanı</h4><p>Model bilgi <i>uydurmaz</i>, araç <i>çağırır</i>. Neuron API'si, haritalar, Land Registry, Cal.com ve danışman kutusu tek bir araç sözleşmesinin arkasında. Bir sonraki sayfada tam liste.</p></div></div>
+    <div class="layer"><div class="who">Ortak<em>zorunlu</em></div><div><h4>5 · Guardrail &amp; log</h4><p>Her cevap ilanın kendi alanına dayanır ve alanı gösterir; bilinmiyorsa “bilmiyorum + danışmana yönlendir”. Yayına giden her metin insan onaylı. Her üretim loglanır — hem denetim izi, hem gelecekteki eğitim verisi.</p></div></div>
+    <div class="layer"><div class="who">Platform<em>dağıtım</em></div><div><h4>6 · Config &amp; feature flag</h4><p>Tenant başına hangi modülün açık olduğu. Bu mekanizma <b>zaten var</b>: uykuda duran <code>Chatbot</code> / <code>InstantValuation</code> bileşenleri tam olarak böyle kapatılmış. Yeni bir dağıtım altyapısı kurmuyorsunuz.</p></div></div>
+  </div>
+</div>`});
+
+/* — 28 · modüller — */
+slides.push({sec:"Çözüm", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Çözüm · modüller ve öncelik</span></div>
+  <h2 class="disp">Sekiz modül, sırası önemli</h2>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card" style="border-color:var(--crit);border-width:1.5px"><span class="lbl" style="color:var(--crit)">M0 · Güven onarımı — <b>AI değil, önkoşul</b></span><p>Sahte “100% MATCH”; İskoçya'da İngiliz SDLT hesabı (06); 600 km yanlış harita (06); çift footer / “Company Number: NaN” (01, 07); varsayılan “Highest Price” sıralaması (12); 0,25 millik varsayılan yarıçap (11); “anlık değerleme” diyip rakam göstermeyen akışlar.</p><p><b>Neden önce:</b> yanlış vergi hesaplayan bir sayfaya AI eklemek, çürük temele kat çıkmaktır.</p></div>
+    <div class="card"><span class="lbl">M1 · Doğal dil arama + sorgu anlama</span><p>Cümle → filtre JSON. Hedef şema <b>telde zaten görünüyor</b> (14, 16'da doğrulandı). Otokomplenin yanıltma hatasını da düzeltir; boş sonuçta kriterleri gevşetip ne gevşettiğini söyler.</p><p><b>Yeniden kullanım:</b> tek bileşen × 21 tenant. En yüksek kaldıraç.</p></div>
+    <div class="card"><span class="lbl">M2 · İlan zekâsı</span><p>Özet + highlights + soru-cevap + EPC/kat planı sade açıklaması. İlan başına <b>bir kez</b> toplu üretilir. Kalite dalgalanmasını alıcı tarafında normalize eder (12).</p></div>
+    <div class="card"><span class="lbl">M3 · Veri kalitesi &amp; uyumluluk denetçisi</span><p>Yayın öncesi çelişki yakalama: başlık “2 yatak odası”, material info “3” (01). <b>Ticari olarak en kolay satılan modül</b> — çünkü sihir değil, uyumluluk. Material Information zorunlulukları bunu bir ihtiyaç hâline getiriyor.</p></div>
+    <div class="card"><span class="lbl">M4 · Bölge &amp; ulaşım zekâsı</span><p>Elle yazılan mesafeleri (“Paddington 1.5 hours”, “0.8 miles to Clockhouse primary”) doğrulanmış yapılandırılmış veriye çevirir. Londra'da yarıçapın yerini <b>ulaşım süresi</b> alır (04).</p></div>
+    <div class="card"><span class="lbl">M5 · Lead zekâsı &amp; mesai dışı asistan</span><p>Girdi 21 tenant'ta <b>zaten toplanıyor</b>. Skorla, önceliklendir, doğru ofise yönlendir. Tool-calling ile gerçek randevu (Cal.com 03 ve 14'te zaten çalışıyor). Gelir atfı en net modül.</p></div>
+    <div class="card"><span class="lbl">M6 · Değerleme açıklama katmanı</span><p><b>AVM inşa etmeyin — “neden”i inşa edin.</b> Rakam 5 tenant'ta zaten ekranda. İnsan-only markalarda (01, 20) çerçeve “anlık fiyat” değil <b>randevu öncesi brifing</b>.</p></div>
+    <div class="card"><span class="lbl">M7 · Danışman içerik stüdyosu</span><p>Tek girdi → site metni + portal ilanı + sosyal post + alt-text (05'te aynı içerik üç kez elle yazılıyor). Danışman onayı zorunlu. <b>Fine-tune'un mantıklı olduğu tek yer burası</b> — olgu için değil, üslup için.</p></div>
+  </div>
+</div>`});
+
+/* — 29 · tool-calling — */
+slides.push({sec:"Çözüm", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Mimari · tool-calling</span></div>
+  <h2 class="disp">Modeli bilgi kaynağı değil, arayüz yapın</h2>
+  <p class="lede" style="margin-bottom:22px">Bir emlak sitesinde halüsinasyon hukuki risktir. Çözüm modeli daha çok bilgiyle beslemek değil, <b>bilgi üretmesini engellemek</b>: model sadece hangi aracın çağrılacağına ve sonucun nasıl anlatılacağına karar verir.</p>
+  <div class="tools">
+    <div class="tool"><code>search_properties()</code><span>Cümleden çıkarılan filtreleri mevcut Neuron REST uç noktasına verir</span></div>
+    <div class="tool"><code>get_property()</code><span>Tek ilanın tam kaydı — cevapların dayandığı kaynak</span></div>
+    <div class="tool"><code>get_comparables()</code><span>Land Registry satış verisiyle benzer mülkler (M6'nın yakıtı)</span></div>
+    <div class="tool"><code>get_area_insights()</code><span>Okul, ulaşım, sel riski, geniş bant — postcode bazlı</span></div>
+    <div class="tool"><code>get_commute()</code><span>Kullanıcının iş/okul adresine gerçek seyahat süresi</span></div>
+    <div class="tool"><code>calc_stamp_duty()</code><span><b>Ülke-farkında</b>: SDLT / LBTT / LTT — 06'daki hatanın çözümü</span></div>
+    <div class="tool"><code>book_viewing()</code><span>Cal.com üzerinden gerçek slot — 03 ve 14'te zaten çalışıyor</span></div>
+    <div class="tool"><code>create_alert()</code><span>Heads-Up kaydı; sohbetin içinden kurulur</span></div>
+    <div class="tool"><code>flag_data_issue()</code><span>Çelişkiyi danışmanın kutusuna düşürür (M3)</span></div>
+    <div class="tool"><code>handoff_to_agent()</code><span>Emin olmadığında insana devret — varsayılan davranış</span></div>
+  </div>
+  <div class="note" style="margin-top:24px"><b>Test edilebilirlik avantajı:</b> doğal dil arama böyle kurulduğunda çıktı serbest metin değil, doğrulanabilir bir JSON. “Bath yakınında bahçeli 3+1, £450k altı” → beklenen filtre nesnesi. 200 örnekten oluşan altın küme ile her prompt değişikliği <b>regresyon testinden geçirilebilir</b>. Serbest metin üreten bir sistemde bu mümkün değil.</div>
+</div>`});
+
+/* — 30 · yerel vs bulut — */
+slides.push({sec:"Çözüm", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Altyapı · elinizdeki makine nerede kullanılmalı</span></div>
+  <h2 class="disp">Yerel makine batch içindir, canlı trafik için değil</h2>
+  <p class="lede" style="margin-bottom:22px">Sağlam bir yerel makine bu projede gerçek bir avantaj — ama doğru işe koşulursa. Ayrım basit: <b>hacimli ve tekrarlı iş yerelde, kullanıcının beklediği iş bulutta</b>.</p>
+  <div class="grid g2">
+    <div class="card" style="border-left:3px solid var(--accent)"><span class="lbl">Yerelde çalıştırın</span>
+      <p><b>Embedding üretimi.</b> Tüm ilan korpusu + her düzenlemede yeniden. En yüksek hacimli, en tekrarlı, en pahalı-eğer-buluttaysa iş. Burada tasarruf gerçek.</p>
+      <p><b>Reranking.</b> Arama sonuçlarının yeniden sıralanması — küçük model, yüksek frekans.</p>
+      <p><b>Gece enrichment.</b> Özet, highlights, EPC açıklaması, veri kalitesi denetimi. 7B–30B sınıfı model fazlasıyla yeterli; kullanıcı beklemiyor.</p>
+      <p><b>Vektör veritabanı ve ingestion pipeline'ı.</b></p>
+      <p><b>Eval harness.</b> 21 siteden toplanmış gerçek sorgulardan altın küme; her prompt değişikliğinden önce regresyon. <b>En çok atlanan, en çok işe yarayan parça.</b></p>
+      <p><b>İleride LoRA fine-tune.</b> Veri biriktiğinde.</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--ink-3)"><span class="lbl">Bulutta çalıştırın</span>
+      <p><b>Doğal dil arama çözümlemesi.</b> Kullanıcı tuşa bastıktan sonra bekliyor; küçük ve hızlı model, structured output, agresif cache.</p>
+      <p><b>İlan soru-cevabı ve sohbet.</b> Kullanıcının önünde; kalite pazarlık konusu değil.</p>
+      <p><b>Değerleme açıklaması.</b> Az sayıda, yüksek değerli çağrı — en iyi modeli kullanmanın maliyeti önemsiz.</p>
+      <hr class="sep" style="margin:16px 0">
+      <p style="color:var(--ink)"><b>Neden yerelde değil:</b> 21 canlı sitenin trafiğini tek bir makineye bağlamak, tek noktadan arıza demek. SLA veremezsiniz, bakım penceresi siteleri düşürür.</p>
+      <p><b>Yerelin ikinci avantajı:</b> lead verisi ve danışman içeriği hiç dışarı çıkmadan işlenebilir — GDPR ve veri ikameti tarafında somut bir koz.</p>
+    </div>
+  </div>
+</div>`});
+
+/* — 31 · fine-tune verdict — */
+slides.push({sec:"Görüş", html:`
+<div class="wrap narrow">
+  <div class="eyebrow"><span class="lbl">Görüş · fine-tune, RAG, tool-calling</span></div>
+  <h2 class="disp">Sorunuzun net cevabı</h2>
+  <p class="lede" style="margin-bottom:14px">Üçü rakip değil, katman. Ama <b>sıra yanlış kurulursa</b> proje aylarını kaybeder.</p>
+  <div class="verdict"><span class="vmark yes">Önce bu</span><div><h4>Tool-calling + structured output — omurga</h4><p>Doğal dil arama zaten bir fonksiyon çağrısı problemi: cümle → filtre JSON. Model bilgi üretmiyor, mevcut API'yi çağırıyor. Halüsinasyon riski en düşük, test edilebilirliği en yüksek, mevcut Neuron altyapısına uyumu en doğrudan olan yaklaşım.</p></div></div>
+  <div class="verdict"><span class="vmark yes">Sonra bu</span><div><h4>RAG / grounding — ikinci katman</h4><p>İlan soru-cevabı, bölge soruları, Advice Hub içeriği. Kural: her cevap ilanın kendi alanına ya da tenant'ın kendi metnine dayanacak ve <b>kaynağı gösterecek</b>. Kaynak yoksa cevap yok — danışmana devir.</p></div></div>
+  <div class="verdict"><span class="vmark no">Şimdi değil</span><div><h4>Fine-tune — üçüncü, ve başlangıçta değil</h4><p><b>1.</b> Burada eksik olan bilgi değil, <i>erişim</i>. Fiyat, ilan durumu, EPC sürekli değişiyor; ağırlıklara gömülen olgu bayatlar ve kaynak gösteremez.</p><p><b>2.</b> Henüz etiketli veri yok. Fine-tune'un girdisi, ürünün kendisi çalışmaya başladıktan sonra oluşur.</p><p><b>3.</b> Baz modeller bu görevleri zaten yapıyor. Kazanç, harcanan haftaya değmez.</p></div></div>
+  <div class="verdict"><span class="vmark later">Ne zaman evet</span><div><h4>Fine-tune ~1.000 danışman-onaylı örnekten sonra, iki amaçla</h4><p><b>Üslup:</b> her ajansın kendi ses tonunda ilan metni (M7). By Design'ın “Seller's Story” tonu ile Kinetic'in anti-kurumsal tonu aynı modelden çıkmamalı. Bu ağırlıkların gerçekten çözdüğü bir problem.</p><p><b>Maliyet:</b> büyük modelin çıktısıyla küçük modeli damıtıp yüksek hacimli işi (özet, highlight) ucuzlatmak.</p><p><b>Bu yüzden 1. günden itibaren her üretimi ve her danışman düzeltmesini loglayın.</b> Fine-tune veri setiniz ürünün kendi kullanımından doğsun.</p></div></div>
+  <div class="note"><b>Model seçimi:</b> Gemini API makul bir başlangıç — özellikle Flash sınıfı, yüksek hacimli ucuz iş ve uzun bağlam için. Ama mimariyi sağlayıcıya kilitlemeyin: tek bir <code>LLMProvider</code> arayüzü, tüm çağrılar structured output + araç şeması üzerinden. Zor yolda (Q&amp;A, değerleme açıklaması) güçlü model, kolay yolda küçük model. Fiyat/kalite dengesi 6 ayda bir değişiyor; değiştirebilir olun.</div>
+</div>`});
+
+/* — 32 · iş modeli — */
+slides.push({sec:"Görüş", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Görüş · iş modeli</span></div>
+  <h2 class="disp">“İlan başına ek ücret” — sayaç yanlış</h2>
+  <div class="grid g3" style="margin-bottom:24px">
+    <div class="card" style="border-color:var(--crit);border-width:1.5px"><span class="lbl" style="color:var(--crit)">Neden yanlış · 1</span><p>İlan başına ücret, tam da teşvik etmek istediğiniz davranışı cezalandırır: <b>platforma daha çok ilan koymayı</b>. Emlakçı ilanı esirger.</p></div>
+    <div class="card" style="border-color:var(--crit);border-width:1.5px"><span class="lbl" style="color:var(--crit)">Neden yanlış · 2</span><p>Maliyet ilan sayısıyla ölçeklenmiyor. Özet ve highlight ilan başına <b>bir kez</b> üretiliyor (kuruşluk iş). Asıl maliyet soru-cevap ve sohbet — yani <b>alıcı trafiği</b>, danışmanın kontrol etmediği şey.</p></div>
+    <div class="card" style="border-color:var(--crit);border-width:1.5px"><span class="lbl" style="color:var(--crit)">Neden yanlış · 3</span><p>Emlakçı “AI” için ödemez, <b>sonuç</b> için öder: daha çok viewing, daha çok market appraisal, daha az boşa giden lead. Sayaç sonuca yakın olmalı.</p></div>
+  </div>
+  <h3 class="disp" style="margin-bottom:14px">Önerilen üç katman</h3>
+  <div class="grid g3">
+    <div class="tier"><span class="meter">Lisansa dahil</span><span class="t">Core</span><ul><li>Doğal dil arama</li><li>AI ilan özeti + highlights</li><li>Veri kalitesi denetçisi</li></ul><p class="why">Paywall'a koymayın. Bunlar dönüşümü <b>her tenant için</b> yükseltir, önceden üretildiği için ucuzdur ve platformun “AI OS” iddiasını nihayet doğru kılar. Rekabet avantajınız burada — sattığınız şey değil, <b>farkınız</b>.</p></div>
+    <div class="tier hi"><span class="meter">Şube / ay</span><span class="t">Pro</span><ul><li>İlan soru-cevap asistanı</li><li>Mesai dışı asistan + gerçek randevu</li><li>Lead skorlama ve yönlendirme</li><li>Bölge / ulaşım zekâsı</li></ul><p class="why">Fiyatı <b>kaçırılan lead</b> üzerinden çerçeveleyin: mesai dışında yakalanan tek bir market appraisal aylık ücreti karşılar. 21 tenant'ın hiçbirinde mesai dışı yanıt yok — anlatı hazır.</p></div>
+    <div class="tier"><span class="meter">Birim başına</span><span class="t">Eklentiler</span><ul><li>İçerik Paketi (ilan başına)</li><li>AI Değerleme Raporu (randevu öncesi brifing)</li></ul><p class="why"><b>Sizin “ilan başına ücret” fikrinin doğru yeri burası.</b> Tetikleyen de faydalanan da danışman; çıktı elle tutulur. Adil ve savunulabilir — çünkü kullanıcı trafiğine değil, danışmanın kendi kararına bağlı.</p></div>
+  </div>
+  <div class="note"><b>Maliyet kontrolü:</b> ön-üretim + agresif cache (ilan başına özet bir kez); şube başına aylık soru-cevap kotası; kota aşımında küçük modele düş, <b>kesme</b>. 500 ilanlık bir tenant'ın tüm korpusunu özetlemek tek seferlik birkaç dolarlık iş — değişken maliyetin tamamı sohbette. Sayacın şube/ay olmasının teknik gerekçesi de bu.</div>
+</div>`});
+
+/* — 33 · pilot — */
+slides.push({sec:"Plan", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Plan · kanıta dayalı pilot haritası</span></div>
+  <h2 class="disp">Hangi modül hangi sitede test edilmeli</h2>
+  <p class="lede" style="margin-bottom:20px">Pilot tenant'ları rastgele seçmeyin. 84 incelemenin verisi, her modül için hangi sitenin en net sinyali vereceğini zaten söylüyor.</p>
+  <div class="grid g2">
+    <div class="card"><span class="lbl">M1 · Doğal dil arama</span><p><b>16 Beercocks</b> — 515 ilan, 11 şube: en çok kullanıcı acısı, en ölçülebilir sonuç.<br><b>14 Nicholsons</b> — filtre şeması telde doğrulanmış; teknik referans.</p></div>
+    <div class="card"><span class="lbl">M2 · İlan zekâsı</span><p><b>20 By Design</b> — çalışmanın en iyi yazılmış kaynak metinleri.<br><b>08 Jacksons</b> — Advice Hub hazır grounding korpusu.</p></div>
+    <div class="card"><span class="lbl">M3 · Veri kalitesi</span><p><b>01 Kinetic</b> — çelişki zaten belgelendi (2 vs 3 yatak odası).<br><b>06 Property Connections</b> — SDLT/LBTT hatası; en yüksek riskli örnek.</p></div>
+    <div class="card"><span class="lbl">M4 · Bölge &amp; ulaşım</span><p><b>04 Lloyds</b> — Londra; yarıçapın en yanlış olduğu yer.<br><b>10 Roderick Thomas</b> — kırsal; mesafeler elle yazılıyor.</p></div>
+    <div class="card"><span class="lbl">M5 · Lead &amp; mesai dışı</span><p><b>19 Browns</b> — booking ve out-of-hours altyapısı zaten çalışıyor; AI'ı sıfırdan altyapı kurmadan üstüne koyuyorsunuz.<br><b>14 Nicholsons</b> — canlı WhatsApp kanalı hazır.</p></div>
+    <div class="card"><span class="lbl">M6 · Değerleme açıklaması</span><p><b>16 Beercocks</b> / <b>21 Courtyard</b> — rakam zaten ekranda; sadece “neden” ekleniyor.<br><b>15 No.86</b> — üç değerleme rotası, tek pilotta üç senaryo.</p></div>
+    <div class="card"><span class="lbl">M7 · İçerik stüdyosu</span><p><b>05 Property Cloud</b> — aynı içeriği bugün üç kez elle yazıyorlar; zaman kazancı doğrudan ölçülebilir.</p></div>
+    <div class="card" style="border-color:var(--accent);border-width:1.5px"><span class="lbl" style="color:var(--accent)">Ölçüm</span><p style="color:var(--ink)">Her pilotta tek bir birincil metrik: <b>arama → ilan görüntüleme oranı</b> (M1), <b>ilan → enquiry oranı</b> (M2), <b>mesai dışı yakalanan lead sayısı</b> (M5), <b>değerleme formu tamamlama oranı</b> (M6). A/B, tenant içinde.</p></div>
+  </div>
+</div>`});
+
+/* — 34 · yol haritası — */
+slides.push({sec:"Plan", html:`
+<div class="wrap narrow">
+  <div class="eyebrow"><span class="lbl">Plan · yol haritası</span></div>
+  <h2 class="disp">Altı ayda çekirdek, sonrası birikimle</h2>
+  <div class="road" style="margin-top:16px">
+    <div class="phase"><span class="wk">Hafta 0–4</span><div><h4>M0 + altyapı</h4><p>Güven onarımı (sahte rozet, SDLT/LBTT, harita, footer, varsayılanlar). Paralelde ingest/index pipeline'ı ve <b>eval harness</b>: 21 siteden toplanmış ~200 gerçek sorgudan altın küme. Bu hafta atlanırsa sonraki her sürüm körlemesine çıkar.</p></div></div>
+    <div class="phase"><span class="wk">Hafta 4–10</span><div><h4>M1 + M2, iki pilot tenant</h4><p>Doğal dil arama ve ilan zekâsı; 16 Beercocks + 20 By Design. Tenant içi A/B. Bu aşamanın sonunda platformun “AI” iddiası ilk kez doğru olur.</p></div></div>
+    <div class="phase"><span class="wk">Hafta 10–16</span><div><h4>M3 + M6, danışman paneli</h4><p>Veri kalitesi denetçisi ve değerleme açıklaması. Danışman tarafında ilk somut fayda — ve satılabilir ilk paket. Onay/düzeltme arayüzü buradan itibaren <b>eğitim verisi üretmeye başlar</b>.</p></div></div>
+    <div class="phase"><span class="wk">Hafta 16–24</span><div><h4>M5 + M4, gerçek randevu</h4><p>Mesai dışı asistan ve lead skorlama; tool-calling ile Cal.com üzerinden gerçek rezervasyon. Bölge ve ulaşım zekâsı. Gelir atfının en net olduğu aşama.</p></div></div>
+    <div class="phase"><span class="wk">Hafta 24+</span><div><h4>M7 + ilk fine-tune</h4><p>İçerik stüdyosu. Biriken danışman-onaylı örneklerle ilk LoRA: üslup uyumu ve yüksek hacimli işin ucuzlatılması. <b>Buraya ancak veri birikince gelinir</b> — takvimle değil, veriyle tetiklenir.</p></div></div>
+  </div>
+</div>`});
+
+/* — 35 · riskler — */
+slides.push({sec:"Riskler", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Riskler ve korkuluklar</span></div>
+  <h2 class="disp">Bu sektörde halüsinasyon hukuki risktir</h2>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card" style="border-color:var(--crit);border-width:1.5px"><span class="lbl" style="color:var(--crit)">En büyük tehlike · yanlış beyan</span><p>Emlak ilanında uydurulmuş bir özellik <b>misdescription</b>'dır. Kural üçlüsü: her cevap ilanın kendi alanına dayanacak, alan gösterilecek, bilinmiyorsa “bilmiyorum + danışmana yönlendir”. Bu bir tercih değil, mimari zorunluluk.</p></div>
+    <div class="card"><span class="lbl">Yayına giden metin</span><p>M7'nin ürettiği hiçbir metin <b>danışman onayı olmadan</b> yayına çıkmasın. Onay ekranı aynı zamanda eğitim verisi toplama noktanız.</p></div>
+    <div class="card"><span class="lbl">Değerleme dili</span><p>Açıklama katmanı <b>tavsiye değil, açıklama</b>. “Şu fiyata satın” değil, “bu tahmini şu üç faktör sürüklüyor, kesinlik için yerinde inceleme gerekir”. Uyumluluk dili baştan kurulmalı.</p></div>
+    <div class="card"><span class="lbl">Lead skorlama · GDPR</span><p>Skorlama otomatik karar üretir. Şeffaflık ve itiraz yolu gerekir; skor <b>insanı yönlendirsin, kapıyı kapatmasın</b>. Düşük skorlu lead sıraya alınır, elenmez.</p></div>
+    <div class="card"><span class="lbl">Sıra riski</span><p>“100% MATCH” düzeltilmeden AI eklenirse, güven bir kez kırıldığında <b>AI'ı da beraberinde götürür</b>. Kullanıcı sahte %100'ü fark ettiğinde asistanın cevabına da inanmaz.</p></div>
+    <div class="card"><span class="lbl">Maliyet ve regresyon</span><p>Kota + cache + ön-üretim olmadan sohbet maliyeti kontrolden çıkar. Eval harness olmadan prompt değişikliği <b>sessiz bozulma</b> demektir — her sürüm altın kümeden geçsin.</p></div>
+  </div>
+</div>`});
+
+/* — 36 · kapanış — */
+slides.push({sec:"Kapanış", html:`
+<div class="wrap cover">
+  <div class="rule"></div>
+  <div class="lbl" style="margin-bottom:18px">Kapanış · tek cümlelik öneri</div>
+  <p class="big-quote disp">Eksik olan 21 ayrı AI özelliği değil — hepsinin altına giren tek bir çekirdek.</p>
+  <p class="kicker" style="margin-bottom:14px">İlanları indeksleyen, mevcut Neuron API'sini tool-calling ile çağıran, her cevabı ilanın kendi verisine dayandıran ve tenant başına config ile açılan bir katman. <b>Bir kez inşa edin, 21 kez açın</b> — ve platforma katılan her yeni ajansta sıfır ek işle tekrar.</p>
+  <div class="grid g4" style="margin-top:30px">
+    <div class="stat"><div class="n">M0</div><div class="c"><b>Önce güven onarımı.</b> Sahte rozet, yanlış vergi hesabı, yanlış harita. AI'dan önce doğruluk.</div></div>
+    <div class="stat"><div class="n">M1</div><div class="c"><b>Sonra doğal dil arama.</b> Hedef şema hazır, tek bileşen 21 tenant'a hizmet ediyor.</div></div>
+    <div class="stat"><div class="n">M2</div><div class="c"><b>Sonra ilan zekâsı.</b> Toplu üretim, ilan başına bir kez, sabit maliyet.</div></div>
+    <div class="stat"><div class="n">M5</div><div class="c"><b>Sonra lead ve mesai dışı.</b> Gelir atfının en net olduğu modül.</div></div>
+  </div>
+  <div class="note" style="margin-top:26px">Ve tek satırlık iş modeli cevabı: <b>ilan başına değil, şube başına aylık ücretlendirin</b> — “ilan başına” fiyatlamayı yalnızca danışmanın kendi tetiklediği çıktılar (içerik paketi, değerleme raporu) için saklayın. Fine-tune'u başlangıç mimarisi değil, altıncı aydan sonraki bir optimizasyon olarak planlayın; ama <b>eğitim verisini birinci günden itibaren toplamaya başlayın</b>.</div>
+</div>`});
+
+/* ══════════════════ RENDER + NAV ══════════════════ */
+const deck = document.getElementById('deck');
+deck.innerHTML = slides.map((s,i)=>`<section class="slide" id="s${i}" data-active="${i===0}" aria-hidden="${i!==0}">${s.html}</section>`).join("");
+
+const rail = document.getElementById('rail');
+rail.innerHTML = slides.map((s,i)=>{
+  const gap = (i===5||i===26) ? '<span class="gap"></span>' : '';
+  return `${gap}<button data-goto="${i}" title="${s.sec}" aria-label="${i+1}. sayfa: ${s.sec}"></button>`;
+}).join("");
+
+let cur = 0;
+const counter = document.getElementById('counter');
+const bar = document.getElementById('progress');
+const prevB = document.getElementById('prev');
+const nextB = document.getElementById('next');
+
+function go(i, push){
+  i = Math.max(0, Math.min(slides.length-1, i));
+  const old = deck.children[cur];
+  old.dataset.active = "false"; old.setAttribute('aria-hidden','true');
+  cur = i;
+  const el = deck.children[cur];
+  el.dataset.active = "true"; el.setAttribute('aria-hidden','false');
+  el.scrollTop = 0;
+  counter.textContent = String(cur+1).padStart(2,'0') + " / " + slides.length;
+  bar.style.width = ((cur+1)/slides.length*100) + "%";
+  prevB.disabled = cur===0; nextB.disabled = cur===slides.length-1;
+  [...rail.querySelectorAll('button')].forEach((b,j)=>b.setAttribute('aria-current', j===cur ? "true":"false"));
+  const active = rail.querySelector('button[aria-current="true"]');
+  if(active) active.scrollIntoView({block:'nearest', inline:'nearest'});
+  if(push !== false) history.replaceState(null,"","#"+cur);
+}
+
+prevB.addEventListener('click', ()=>go(cur-1));
+nextB.addEventListener('click', ()=>go(cur+1));
+document.addEventListener('click', e=>{
+  const b = e.target.closest('[data-goto]');
+  if(b) go(parseInt(b.dataset.goto,10));
+});
+document.addEventListener('keydown', e=>{
+  if(e.metaKey||e.ctrlKey||e.altKey) return;
+  if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(cur+1); }
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(cur-1); }
+  else if(e.key===' '){ e.preventDefault(); go(cur+1); }
+  else if(e.key==='Home'){ e.preventDefault(); go(0); }
+  else if(e.key==='End'){ e.preventDefault(); go(slides.length-1); }
+});
+
+const start = parseInt((location.hash||"").replace('#',''),10);
+go(Number.isFinite(start) ? start : 0);
+</script>
