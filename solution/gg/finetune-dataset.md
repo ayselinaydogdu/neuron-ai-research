@@ -1,7 +1,8 @@
 # Fine-tune Örnek Veri Seti — Neuron Kernel
 
-Dosya: [`finetune-dataset.jsonl`](finetune-dataset.jsonl) — **14 örnek**, her satır bir
-eğitim örneği. Üreteç ve gerekçe: [`oneri.md`](oneri.md) §5, tam trace mantığı:
+Dosya: [`finetune-dataset.json`](finetune-dataset.json) — **14 örnek**, girintili ve
+okunur (sunumda `thinking` / `tool_use` / `tool_result` bloklarını satır satır
+göstermek için). Üreteç ve gerekçe: [`oneri.md`](oneri.md) §5, tam trace mantığı:
 [`tool-calling-example.md`](tool-calling-example.md).
 
 Bu, fine-tune'un **1. günden** başlaması gereken şeyin somut hâli: müşteri–asistan
@@ -13,11 +14,15 @@ setiniz ürünün kendi kullanımından doğsun — bu 14 örnek o akışın toh
 
 Anthropic Messages API sözleşmesine birebir uyar. Roller yalnızca `user` ve
 `assistant`; bir tool sonucu, `tool_result` bloğu taşıyan bir `user` mesajıdır
-(ayrı "tool" rolü yoktur). Her satır:
+(ayrı "tool" rolü yoktur). Dosya girintili bir JSON dizisi — her örnek:
 
 ```json
 { "system": "...guardrail kuralları...", "messages": [ /* user / assistant turns */ ] }
 ```
+
+> **Eğitime verirken:** çoğu fine-tune boru hattı satır-başına-bir-örnek (JSONL)
+> ister. Bu girintili dosya okunabilirlik/sunum içindir; tek komutla sıkıştırılır:
+> `python -c "import json;[print(json.dumps(r,ensure_ascii=False)) for r in json.load(open('finetune-dataset.json',encoding='utf-8'))]" > finetune-dataset.jsonl`
 
 Her `assistant` mesajı sırayla: `thinking` (görünür akıl yürütme) → `text` (opsiyonel)
 → bir veya daha çok `tool_use`. Paralel araç çağrıları tek `assistant` mesajında,
