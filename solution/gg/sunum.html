@@ -299,6 +299,22 @@ table.mx tbody tr:hover td{background:var(--surface-2)}
 .tool code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--accent);background:var(--accent-soft);padding:2px 6px;border-radius:2px;white-space:nowrap}
 .tool span{font-size:13.5px;line-height:1.45;color:var(--ink-2)}
 
+/* fine-tune trace (chat + thinking + tool-calling) */
+.trace{display:flex;flex-direction:column;gap:9px}
+.turn{display:grid;grid-template-columns:70px 1fr;gap:14px;align-items:start}
+@media (max-width:640px){.turn{grid-template-columns:1fr;gap:4px}}
+.turn .role{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;padding-top:9px;color:var(--ink-3)}
+.turn.u .role{color:var(--accent)}
+.bubble{background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:10px 13px;font-size:13.5px;line-height:1.5;color:var(--ink);box-shadow:var(--shadow)}
+.turn.u .bubble{border-left:3px solid var(--accent)}
+.think{background:var(--surface-2);border:1px dashed var(--rule-2);border-radius:3px;padding:9px 12px;font-size:12.5px;line-height:1.5;color:var(--ink-2);font-style:italic}
+.think::before{content:"thinking";display:block;font-style:normal;font-family:ui-monospace,Menlo,monospace;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.tcall{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--ink-2);padding:2px 0}
+.tcall .fn{color:var(--accent);background:var(--accent-soft);padding:2px 7px;border-radius:2px;white-space:nowrap}
+.tcall .arg{font-size:11.5px;color:var(--ink-3)}
+.tres{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:var(--ink-3);border-left:2px solid var(--rule-2);padding:2px 0 2px 11px}
+.tres b{color:var(--ink-2);font-weight:700}
+
 /* index list */
 .idx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 22px}
 @media (max-width:820px){.idx{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -928,6 +944,32 @@ slides.push({sec:"Görüş", html:`
   <div class="verdict"><span class="vmark no">Şimdi değil</span><div><h4>Fine-tune — üçüncü, ve başlangıçta değil</h4><p><b>1.</b> Burada eksik olan bilgi değil, <i>erişim</i>. Fiyat, ilan durumu, EPC sürekli değişiyor; ağırlıklara gömülen olgu bayatlar ve kaynak gösteremez.</p><p><b>2.</b> Henüz etiketli veri yok. Fine-tune'un girdisi, ürünün kendisi çalışmaya başladıktan sonra oluşur.</p><p><b>3.</b> Baz modeller bu görevleri zaten yapıyor. Kazanç, harcanan haftaya değmez.</p></div></div>
   <div class="verdict"><span class="vmark later">Ne zaman evet</span><div><h4>Fine-tune ~1.000 danışman-onaylı örnekten sonra, iki amaçla</h4><p><b>Üslup:</b> her ajansın kendi ses tonunda ilan metni (M7). By Design'ın “Seller's Story” tonu ile Kinetic'in anti-kurumsal tonu aynı modelden çıkmamalı. Bu ağırlıkların gerçekten çözdüğü bir problem.</p><p><b>Maliyet:</b> büyük modelin çıktısıyla küçük modeli damıtıp yüksek hacimli işi (özet, highlight) ucuzlatmak.</p><p><b>Bu yüzden 1. günden itibaren her üretimi ve her danışman düzeltmesini loglayın.</b> Fine-tune veri setiniz ürünün kendi kullanımından doğsun.</p></div></div>
   <div class="note"><b>Model seçimi:</b> Gemini API makul bir başlangıç — özellikle Flash sınıfı, yüksek hacimli ucuz iş ve uzun bağlam için. Ama mimariyi sağlayıcıya kilitlemeyin: tek bir <code>LLMProvider</code> arayüzü, tüm çağrılar structured output + araç şeması üzerinden. Zor yolda (Q&amp;A, değerleme açıklaması) güçlü model, kolay yolda küçük model. Fiyat/kalite dengesi 6 ayda bir değişiyor; değiştirebilir olun.</div>
+</div>`});
+
+/* — 31b · fine-tune veri örneği — */
+slides.push({sec:"Görüş", html:`
+<div class="wrap">
+  <div class="eyebrow"><span class="lbl">Görüş · fine-tune verisi neye benzer</span></div>
+  <h2 class="disp">Bir eğitim örneği: düşünen ve araç çağıran sohbet</h2>
+  <p class="lede" style="margin-bottom:8px">Fine-tune “bir gün” değil, <b>1. günden</b> loglanan gerçek konuşmalardan doğar. Her örnek müşteri–asistan diyaloğu; asistan önce <b>düşünür</b>, sonra <b>araç çağırır</b>, cevabı yalnızca aracın döndürdüğüne dayandırır. 14 örneklik başlangıç seti: <code>finetune-dataset.jsonl</code>.</p>
+  <p class="kicker" style="margin-bottom:18px">Aşağıdaki örnek 06 Property Connections'ın gerçek hatasını hedefler: İskoçya'daki bir mülkte İngiliz SDLT gösterilmişti. Şema <code>country</code>'yi zorunlu kılınca o hata sınıfı <b>erişilemez</b> hâle gelir.</p>
+  <div class="grid g2" style="align-items:start">
+    <div class="trace">
+      <div class="turn u"><span class="role">Müşteri</span><div class="bubble">Edinburgh'daki £310.000'lık daire için damga vergisi ne kadar? İlk evimiz olacak.</div></div>
+      <div class="turn"><span class="role">Asistan</span><div class="think">“Edinburgh” bir ipucu, kaynak değil. Ülke <b>kayıttan</b> gelmeli: önce <code>get_property</code>. Vergiyi kendim hesaplamam — 06'nın hatası tam olarak buydu.</div></div>
+      <div class="turn"><span class="role"></span><div class="tcall"><span class="fn">get_property</span><span class="arg">property_id: "pc-2210"</span></div></div>
+      <div class="turn u"><span class="role">↳ sonuç</span><div class="tres">Leith Walk, Edinburgh EH6 · £310.000 · <b>country: "scotland"</b></div></div>
+      <div class="turn"><span class="role">Asistan</span><div class="think">country = scotland, doğrulandı. Demek SDLT değil <b>LBTT</b>. İlk-kez-alıcı statüsü kullanıcının kendi cümlesinden.</div></div>
+      <div class="turn"><span class="role"></span><div class="tcall"><span class="fn">calc_stamp_duty</span><span class="arg">price: 310000, country: "scotland", buyer_status: "first-time"</span></div></div>
+      <div class="turn u"><span class="role">↳ sonuç</span><div class="tres">tax: <b>LBTT</b> · total_due: <b>£3.100</b> · FTB relief: true</div></div>
+      <div class="turn"><span class="role">Asistan</span><div class="bubble">O mülk İskoçya'da, yani İngiliz damga vergisi değil <b>LBTT</b> — ve ilk kez alıcı olarak muafiyet var:<br>• £0–£175k — %0 → £0 &nbsp;• £175k–£250k — %2 → £1.500 &nbsp;• £250k–£310k — %5 → £3.000<br><b>Toplam: £3.100.</b> Bu bir tahmindir; kesin rakamı teklif aşamasında avukatınız onaylar.</div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="card"><span class="lbl">Her örnekte üç sabit</span><p><b>1 · Düşünme görünür.</b> Model “neden bu aracı, neden bu argüman” gerekçesini yazar — etiketli akıl yürütme zinciri.</p><p><b>2 · Olgu üretmez, araç çağırır.</b> Fiyat, vergi, mesafe — hepsi <code>tool_result</code>'tan. Halüsinasyon yüzeyi yok.</p><p><b>3 · Bilinmiyorsa devreder.</b> Boş/çelişkili alan → <code>flag_data_issue</code> + <code>handoff_to_agent</code>.</p></div>
+      <div class="card"><span class="lbl">14 örnek neyi kapsıyor</span><p>NL arama + boş sonuçta kriter gevşetme (16) · ülke-farkında SDLT/LBTT/LTT (06) · kendiyle çelişen ilan → flag + handoff (01) · otokomple yanıltması (19) · değerleme = açıklama, tavsiye değil (16/21) · Cal.com randevu (03/14) · Heads-Up alarmı · bölge/okul/sel zekâsı · sahte “100% MATCH” reddi (20) · Londra'da yarıçap yerine ulaşım süresi (04) · mesai dışı asistan (21/21).</p></div>
+      <div class="note" style="margin-top:0"><b>Neden JSONL + Messages formatı:</b> çıktı serbest metin değil, doğrulanabilir yapı. Aynı set hem <b>eğitim verisi</b> hem <b>regresyon altın kümesi</b> — emitlenen argümanları karşılaştırırsınız, prozayı değil.</div>
+    </div>
+  </div>
 </div>`});
 
 /* — 32 · iş modeli — */
